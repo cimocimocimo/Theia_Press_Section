@@ -1,0 +1,6 @@
+/.sass-cache/
+*.pyc
+*~
+*.db
+/media/
+/static/
