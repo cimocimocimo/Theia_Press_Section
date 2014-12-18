@@ -152,7 +152,9 @@ INSTALLED_APPS = (
     'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
     'reversion',
     'compressor',
+    'uuslug',
     'press_contacts',
+    'press_items',
     'press_section'
 )
 

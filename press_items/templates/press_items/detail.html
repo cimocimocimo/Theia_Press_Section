@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block page_header %}
+<h2>{{ item.title }}</h2>
+{% endblock %}
+
+{% block content %}
+<div class="press-item-block">
+  {% render_placeholder item.content %}
+</div>
+{% endblock %}

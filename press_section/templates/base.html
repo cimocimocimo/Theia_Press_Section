@@ -181,7 +181,9 @@
         <div class="customer-account-content-hero">
           <div class="wrapper-8-col">
 
+            {% block page_header %}
             <h2>{% page_attribute "title" %}</h2>
+            {% endblock %}
 
             {% block content %}
             {% endblock content %}
