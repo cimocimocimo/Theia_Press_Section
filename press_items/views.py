@@ -6,9 +6,8 @@ from press_items.models import PressItem
 # Create your views here.
 
 def index(request, item_filter):
-    # **TODO** filter by press item type
     if item_filter is not None:
-        latest_press_items = PressItem.objects.filter(item_type__slug=item_filter)
+        latest_press_items = PressItem.objects.filter(item_type__slug=item_filter)[:5]
     else: 
         latest_press_items = PressItem.objects.order_by('-published_date')[:5]
 

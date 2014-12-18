@@ -152,9 +152,11 @@ INSTALLED_APPS = (
     'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
     'reversion',
     'compressor',
-    'uuslug',
+
+    # Theia apps
     'press_contacts',
     'press_items',
+    'celebrities',
     'press_section'
 )
 

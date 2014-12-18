@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block page_header %}
+<h2>{{ celebrity.name }}</h2>
+{% endblock %}
+
+{% block content %}
+<div class="celebrity-block">
+  {% render_placeholder celebrity.content %}
+
+  <div class="celebrity-dresses-block">
+    {% if dresses %}
+    <ul>
+      {% for dress in dresses %}
+      <li><a href="{% url 'celebrities:dress_detail' celebrity.slug dress.slug %}">{{ dress.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No dresses are available.</p>
+    {% endif %}
+    
+  </div>
+</div>
+{% endblock %}

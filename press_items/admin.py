@@ -5,9 +5,9 @@ from press_items.models import PressItem, PressItemType
 # Register your models here.
 @admin.register(PressItem)
 class PressItemAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
-    pass
+    prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(PressItemType)
 class PressItemTypeAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {'slug': ('name',)}
 
