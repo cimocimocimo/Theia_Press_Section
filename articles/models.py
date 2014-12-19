@@ -4,7 +4,7 @@ from cms.models.fields import PlaceholderField
 
 # Create your models here.
 
-class PressItemType(models.Model):
+class ArticleType(models.Model):
     name = models.TextField(max_length=64)
     slug = models.SlugField(max_length=64, unique=True)
 
@@ -12,7 +12,7 @@ class PressItemType(models.Model):
         return self.name
 
 
-class PressItem(models.Model):
+class Article(models.Model):
 
     slug_max_length = 256
 
@@ -23,7 +23,7 @@ class PressItem(models.Model):
     original_publication_date = models.DateField()
     published_date = models.DateField()
     content = PlaceholderField('press_item_content')
-    item_type = models.ForeignKey(PressItemType)
+    item_type = models.ForeignKey(ArticleType)
 
     # **TODO** Add django-taggit
 

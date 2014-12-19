@@ -2,11 +2,11 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags %}
 
 {% block page_header %}
-<h2>{{ item.title }}</h2>
+<h2>{{ article.title }}</h2>
 {% endblock %}
 
 {% block content %}
-<div class="press-item-block">
-  {% render_placeholder item.content %}
+<div class="article-block">
+  {% render_placeholder article.content %}
 </div>
 {% endblock %}

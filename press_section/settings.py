@@ -155,7 +155,8 @@ INSTALLED_APPS = (
 
     # Theia apps
     'press_contacts',
-    'press_items',
+    'articles',
+    # 'events',
     'celebrities',
     'press_section'
 )

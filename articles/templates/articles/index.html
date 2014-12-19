@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+{% block content %}
+{% if latest_articles %}
+    <ul>
+    {% for article in latest_articles %}
+      <li><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles are available.</p>
+{% endif %}
+{% endblock %}
