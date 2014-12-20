@@ -1,13 +1,25 @@
 from django.shortcuts import get_object_or_404, render_to_response
+from django.http import Http404
+from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
+from django.core.urlresolvers import reverse
 
 from articles.models import Article
 
-def index(request):
-    latest_articles = Article.objects.order_by('-published_date')[:5]
+def index(request, page_number=1):
+
+    articles_per_page = 4
+    query_set = Article.objects.all()
+    paginator = Paginator(query_set, articles_per_page)
+    base_url = reverse('articles:index')
+
+    try:
+        current_page = paginator.page(page_number)
+    except InvalidPage:
+        raise Http404
 
     return render_to_response('articles/index.html',
-                              {'latest_articles': latest_articles},
+                              {'current_page': current_page, 'base_url': base_url},
                               context_instance=RequestContext(request))
 
 def detail(request, slug):

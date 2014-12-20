@@ -3,10 +3,14 @@
 
 {% block page_header %}
 <h2>{{ article.title }}</h2>
+<h4>Featured by {{ article.organization_name }} on {{ article.original_publication_date }}</h4>
 {% endblock %}
 
 {% block content %}
 <div class="article-block">
   {% render_placeholder article.content %}
+  {% if article.url %}
+  <p><a href="{{ article.url }}" target="_blank">Read the original article</a></p>
+  {% endif %}
 </div>
 {% endblock %}

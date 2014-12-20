@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'compressor',
 
     # Theia apps
+    'pagination',
     'press_contacts',
     'articles',
     # 'events',

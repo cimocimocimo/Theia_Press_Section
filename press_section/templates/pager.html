@@ -1,0 +1,26 @@
+<ul class="pagination-block">
+  {% if paginate.previous %}
+  <li><a href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}">Previous</a></li>
+  {% else %}
+  <li class="disabled"><span>Prev<span class="hide-on-small">ious</span></span></li>
+  {% endif %}
+
+  {% for part in paginate.parts %}
+  {% if part.is_link %}
+  <li>
+    <a href="{{ part.url }}">{{ part.title }}</a>
+  </li>
+  {% elif part.is_separator %}
+  <li>&hellip;</li>
+  {% elif part.title == paginate.current_page_number %}
+  <li class="active"><span>{{ part.title }}</span></li>
+  {% endif %}
+  {% endfor %}
+
+  {% if paginate.next %}
+  <li><a href="{{ paginate.next.url }}" title="{{ paginate.next.title }}">Next</a></li>
+  {% else %}
+  <li class="disabled"><span>Next</span></li>
+  {% endif %}
+</ul>    
+
