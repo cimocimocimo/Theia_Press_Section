@@ -1,0 +1,16 @@
+{% extends "base.tmpl.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
+
+{% block page_header %}
+  <h2>{{ event.title }}</h2>
+  <h4>{{ event.event_date }}</h4>
+{% endblock %}
+
+{% block content %}
+  <div class="event-block">
+    {% render_placeholder event.content %}
+  </div>
+
+  {% show_prev_next base_url=base_url %}
+
+{% endblock %}

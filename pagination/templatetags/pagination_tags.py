@@ -9,6 +9,8 @@ def format_url(base_url, page_number):
 def show_pager(context, adjacent_links=2, base_url='/'):
 
     page = context['current_page']
+    if not page.has_other_pages():
+        return {'paginate': False}
 
     # prev/next links
     if page.has_previous():

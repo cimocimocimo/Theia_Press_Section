@@ -1,0 +1,11 @@
+{% load thumbnail %}
+<div class="event-summary-block">
+  <h4>{{ event.title }}</h4>
+  {% if event.event_date %}
+    {{  event.event_date }}
+  {% endif %}
+  <div class="event-summary-image">
+    <img src="{{  event.video_still | thumbnail_url:'event_summary' }}" alt="" />
+  </div>
+  <a href="{% url 'events:detail' event.slug %}">Read more</a>  
+</div>

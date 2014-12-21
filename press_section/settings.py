@@ -149,6 +149,12 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_link',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
     'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
     'reversion',
     'compressor',
@@ -160,7 +166,7 @@ INSTALLED_APPS = (
     'pagination',
     'press_contacts',
     'articles',
-    # 'events',
+    'events',
     'celebrities',
     'press_section'
 )
@@ -233,7 +239,20 @@ MIGRATION_MODULES = {
     'djangocms_video': 'djangocms_video.migrations_django',
     'djangocms_snippet': 'djangocms_snippet.migrations_django',
     'filer': 'filer.migrations_django',
+    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
+    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
 }
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    # 'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
 
 THUMBNAIL_ALIASES = {
     '': {

@@ -1,0 +1,18 @@
+{% extends "base.tmpl.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
+
+{% block content %}
+
+  {% static_placeholder 'media_contacts' %}
+
+  {% if current_page %}
+    {% for event in current_page %}
+      {% include 'events/event_summary.tmpl.html' %}
+    {% endfor %}
+
+    {% show_pager base_url=base_url %}
+
+  {% else %}
+    <p>No events are available.</p>
+  {% endif %}
+{% endblock %}
