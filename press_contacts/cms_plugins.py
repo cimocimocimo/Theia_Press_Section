@@ -6,7 +6,7 @@ from .models import PressContactPluginModel
 class PressContactPlugin(CMSPluginBase):
     model = PressContactPluginModel
     name = _("Press Contact Plugin")
-    render_template = "press_contacts/plugin.html"
+    render_template = "press_contacts/plugin.tmpl.html"
 
     def render(self, context, instance, placeholder):
         context.update({'instance':instance})

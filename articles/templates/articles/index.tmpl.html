@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
 
 {% block content %}
@@ -7,8 +7,9 @@
 
   {% if current_page %}
     {% for article in current_page %}
-      <li><a href="{% url 'articles:detail' article.slug %}">{{ article.title }}</a></li>
+      {% include 'articles/article_summary.tmpl.html' %}
     {% endfor %}
+
     {% show_pager base_url=base_url %}
 
   {% else %}

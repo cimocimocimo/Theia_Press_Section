@@ -18,7 +18,7 @@ def index(request, page_number=1):
     except InvalidPage:
         raise Http404
 
-    return render_to_response('articles/index.html',
+    return render_to_response('articles/index.tmpl.html',
                               {'current_page': current_page, 'base_url': base_url},
                               context_instance=RequestContext(request))
 
@@ -36,7 +36,7 @@ def detail(request, slug):
     except Article.DoesNotExist:
         previous_item = False
 
-    return render_to_response('articles/detail.html',
+    return render_to_response('articles/detail.tmpl.html',
                               {'article': article,
                                'base_url': base_url,
                                'previous_item': previous_item,

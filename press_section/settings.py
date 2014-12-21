@@ -153,6 +153,8 @@ INSTALLED_APPS = (
     'reversion',
     'compressor',
     'adminsortable',
+    'filer',
+    'easy_thumbnails',
 
     # Theia apps
     'pagination',
@@ -196,8 +198,8 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('page.html', 'Page'),
-    ('feature.html', 'Page with Feature')
+    ('page.tmpl.html', 'Page'),
+    ('feature.tmpl.html', 'Page with Feature')
 )
 
 CMS_PERMISSION = True
@@ -229,5 +231,12 @@ MIGRATION_MODULES = {
     'djangocms_style': 'djangocms_style.migrations_django',
     'djangocms_teaser': 'djangocms_teaser.migrations_django',
     'djangocms_video': 'djangocms_video.migrations_django',
-    'djangocms_snippet': 'djangocms_snippet.migrations_django'
+    'djangocms_snippet': 'djangocms_snippet.migrations_django',
+    'filer': 'filer.migrations_django',
+}
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'artical_summary': {'size': (320, 320), 'crop': 'scale', 'upscale': True},
+    },
 }

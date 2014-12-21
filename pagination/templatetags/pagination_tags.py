@@ -5,7 +5,7 @@ register = template.Library()
 def format_url(base_url, page_number):
     return '{0}page/{1}/'.format(base_url, page_number)
 
-@register.inclusion_tag('pager.html', takes_context=True)
+@register.inclusion_tag('pager.tmpl.html', takes_context=True)
 def show_pager(context, adjacent_links=2, base_url='/'):
 
     page = context['current_page']
@@ -67,7 +67,7 @@ def show_pager(context, adjacent_links=2, base_url='/'):
         }
     }
 
-@register.inclusion_tag('prev_next.html', takes_context=True)
+@register.inclusion_tag('prev_next.tmpl.html', takes_context=True)
 def show_prev_next(context, base_url='/'):
 
     def get_item_url(item):
