@@ -13,10 +13,10 @@
     <!-- Title and description ================================================== -->
     <title>
       {% block title %}
-      {% comment %}
-      <!-- **TODO** for the title tag generator from the Shopify theme. -->
-      {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-      {% endcomment %}
+        {% comment %}
+        <!-- **TODO** for the title tag generator from the Shopify theme. -->
+        {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+        {% endcomment %}
       {% endblock title %}
     </title>
 
@@ -182,7 +182,7 @@
           <div class="wrapper-8-col">
 
             {% block page_header %}
-            <h2>{% page_attribute "title" %}</h2>
+              <h2>{% page_attribute "title" %}</h2>
             {% endblock %}
 
             {% block content %}
