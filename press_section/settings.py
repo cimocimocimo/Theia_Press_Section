@@ -237,6 +237,6 @@ MIGRATION_MODULES = {
 
 THUMBNAIL_ALIASES = {
     '': {
-        'artical_summary': {'size': (320, 320), 'crop': 'scale', 'upscale': True},
+        'article_summary': {'size': (320, 320), 'crop': 'scale', 'upscale': True},
     },
 }

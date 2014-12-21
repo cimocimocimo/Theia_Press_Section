@@ -8,7 +8,7 @@
     {{ article.organization_name }}
   {% endif %}
   <div class="article-summary-image">
-    <img src="{{  article.screenshot | thumbnail_url:'artical_summary' }}" alt="" />
+    <img src="{{  article.screenshot | thumbnail_url:'article_summary' }}" alt="" />
   </div>
   <p>{{ article.excerpt }}</p>
   <a href="{% url 'articles:detail' article.slug %}">Read more</a>  
