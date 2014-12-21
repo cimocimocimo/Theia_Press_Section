@@ -5,6 +5,10 @@ import datetime
 
 class Article(models.Model):
 
+    class Meta:
+        verbose_name = 'Article'
+        verbose_name_plural = 'Articles'
+
     slug_max_length = 256
 
     title = models.TextField(
@@ -21,10 +25,9 @@ class Article(models.Model):
         blank=True,
         default='')
     original_publication_date = models.DateField(
-        blank=True,
-        null=True)
-    published_date = models.DateField(
         default=datetime.date.today())
+    published_date = models.DateTimeField(
+        default=datetime.datetime.now())
     content = PlaceholderField('press_item_content')
 
     # **TODO** Add django-taggit

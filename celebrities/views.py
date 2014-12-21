@@ -1,13 +1,26 @@
 from django.shortcuts import get_object_or_404, render_to_response, render
+from django.http import Http404
+from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
+from django.core.urlresolvers import reverse
 
 from celebrities.models import Celebrity, Dress
 
 # Create your views here.
-def index(request):
-    celebs = Celebrity.objects.all()
+def index(request, page_number=1):
+
+    items_per_page = 6
+    query_set = Celebrity.objects.all()
+    paginator = Paginator(query_set, items_per_page)
+    base_url = reverse('celebrities:index')
+
+    try:
+        current_page = paginator.page(page_number)
+    except InvalidPage:
+        raise Http404
+
     return render_to_response('celebrities/index.html',
-                              {'celebrities': celebs},
+                              {'current_page': current_page, 'base_url': base_url},
                               context_instance=RequestContext(request))
 
 def celeb_detail(request, slug):

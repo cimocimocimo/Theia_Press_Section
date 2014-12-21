@@ -8,9 +8,9 @@ from articles.models import Article
 
 def index(request, page_number=1):
 
-    articles_per_page = 4
-    query_set = Article.objects.all()
-    paginator = Paginator(query_set, articles_per_page)
+    items_per_page = 4
+    query_set = Article.objects.order_by('original_publication_date')
+    paginator = Paginator(query_set, items_per_page)
     base_url = reverse('articles:index')
 
     try:
@@ -24,6 +24,22 @@ def index(request, page_number=1):
 
 def detail(request, slug):
     article = get_object_or_404(Article, slug=slug)
+    base_url = reverse('articles:index')
+
+    try:
+        next_item = article.get_next_by_original_publication_date()
+    except Article.DoesNotExist:
+        next_item = False
+
+    try:
+        previous_item = article.get_previous_by_original_publication_date()
+    except Article.DoesNotExist:
+        previous_item = False
+
     return render_to_response('articles/detail.html',
-                              {'article': article},
+                              {'article': article,
+                               'base_url': base_url,
+                               'previous_item': previous_item,
+                               'next_item': next_item,
+                               'verbose_name': Article._meta.verbose_name},
                               context_instance=RequestContext(request))

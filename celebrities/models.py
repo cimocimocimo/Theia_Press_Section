@@ -3,6 +3,11 @@ from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 
 class Celebrity(models.Model):
+
+    class Meta:
+        verbose_name = 'Celebrity'
+        verbose_name_plural = 'Celebrities'
+
     name = models.TextField(max_length=256)
     content = PlaceholderField('celebrity_content')
     # tags?
@@ -15,6 +20,11 @@ class Celebrity(models.Model):
 
 
 class Dress(models.Model):
+
+    class Meta:
+        verbose_name = 'Dress'
+        verbose_name_plural = 'Dresses'
+
     title = models.TextField(max_length=256)
     # event dress worn at?
     celebrity = models.ForeignKey(Celebrity)

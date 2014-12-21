@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
 
 {% block page_header %}
 <h2>{{ article.title }}</h2>
@@ -13,4 +13,7 @@
   <p><a href="{{ article.url }}" target="_blank">Read the original article</a></p>
   {% endif %}
 </div>
+
+{% show_prev_next base_url=base_url %}
+
 {% endblock %}
