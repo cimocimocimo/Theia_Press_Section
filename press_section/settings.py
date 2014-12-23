@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '&k*63f5)n03s2)^z5)+k7b*2-sjy4w*m3po)j6wmm^ss9b7%re'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -224,17 +224,6 @@ if 'RDS_DB_NAME' in os.environ:
         }
     }
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'project.db',
-        'HOST': 'localhost',
-        'USER': '',
-        'PASSWORD': '',
-        'PORT': ''
-    }
-}
 
 MIGRATION_MODULES = {
     'cms': 'cms.migrations_django',
