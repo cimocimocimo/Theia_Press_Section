@@ -1,0 +1,11 @@
+{% load thumbnail %}
+<h3>Other dresses worn by {{ celebrity.name }}</h3>
+
+{% for dress in dresses %}
+  <div class="dresses-grid-item">
+    <a href="{% url 'celebrities:dress_detail' celebrity.slug dress.slug %}">
+      <img src="{% thumbnail dress.main_image 'dress_summary' subject_location=dress.main_image.subject_location %}" alt="" />
+      {{ dress.title }}
+    </a>
+  </div>
+{% endfor %}

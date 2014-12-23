@@ -13,15 +13,15 @@ class Event(models.Model):
 
     slug_max_length = 256
 
-    title = models.TextField(
+    title = models.CharField(
         max_length=256)
     slug = models.SlugField(
         max_length=64,
         unique=True)
     event_date = models.DateField(
-        default=datetime.date.today())
+        default=datetime.date.today)
     published_date = models.DateTimeField(
-        default=datetime.datetime.now())
+        default=datetime.datetime.now)
     content = PlaceholderField('event_content')
     video_still = FilerImageField(null=True, blank=True)
 

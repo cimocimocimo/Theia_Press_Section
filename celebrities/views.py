@@ -11,7 +11,8 @@ def index(request, page_number=1):
 
     items_per_page = 6
     query_set = Celebrity.objects.all()
-    paginator = Paginator(query_set, items_per_page)
+    featured_celebrity = query_set[:1].get()
+    paginator = Paginator(query_set[1:], items_per_page)
     base_url = reverse('celebrities:index')
 
     try:
@@ -20,7 +21,7 @@ def index(request, page_number=1):
         raise Http404
 
     return render_to_response('celebrities/index.tmpl.html',
-                              {'current_page': current_page, 'base_url': base_url},
+                              {'current_page': current_page, 'featured_celebrity': featured_celebrity, 'base_url': base_url},
                               context_instance=RequestContext(request))
 
 def celeb_detail(request, slug):

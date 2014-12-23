@@ -158,7 +158,7 @@ INSTALLED_APPS = (
     'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
     'reversion',
     'compressor',
-    'adminsortable',
+    'ordered_model',
     'filer',
     'easy_thumbnails',
 
@@ -257,5 +257,8 @@ THUMBNAIL_PROCESSORS = (
 THUMBNAIL_ALIASES = {
     '': {
         'article_summary': {'size': (320, 320), 'crop': 'scale', 'upscale': True},
+        'celebrity_featured': {'size': (768, 576), 'crop': 'scale', 'upscale': True},
+        'celebrity_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
+        'dress_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
     },
 }

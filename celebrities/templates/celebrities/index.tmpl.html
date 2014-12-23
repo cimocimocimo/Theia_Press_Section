@@ -1,13 +1,26 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block content %}
+  {% if featured_celebrity and current_page.number == 1 %}
+    <div class="featured-celebrity-block">
+      <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
+      <img src="{% thumbnail featured_celebrity.main_image 'celebrity_featured' subject_location=featured_celebrity.main_image.subject_location %}">
+      <h3>{{ featured_celebrity.name }}</h3>
+      <p>{{ featured_celebrity.byline }}</p>
+      </a>
+    </div>
+  {% endif %}
+  
   {% if current_page %}
-    <ul>
       {% for celeb in current_page %}
-        <li><a href="{% url 'celebrities:celeb_detail' celeb.slug %}">{{ celeb.name }}</a></li>
+          <div class="celebrity-summary-block">
+            <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
+              <h4>{{ celeb.name }}</h4>
+              <img src="{% thumbnail celeb.main_image 'celebrity_summary' subject_location=celeb.main_image.subject_location %}">
+            </a>
+          </div>
       {% endfor %}
-    </ul>
 
     {% show_pager base_url=base_url %}
 

@@ -1,5 +1,5 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags thumbnail %}
 
 {% block page_header %}
   <h2>{{ celebrity.name }}</h2>
@@ -7,15 +7,15 @@
 
 {% block content %}
   <div class="celebrity-block">
+
+    <img src="{% thumbnail celebrity.main_image 'celebrity_featured' subject_location=celebrity.main_image.subject_location %}">
+    
     {% render_placeholder celebrity.content %}
 
     <div class="celebrity-dresses-block">
+
       {% if dresses %}
-        <ul>
-          {% for dress in dresses %}
-            <li><a href="{% url 'celebrities:dress_detail' celebrity.slug dress.slug %}">{{ dress.title }}</a></li>
-          {% endfor %}
-        </ul>
+        {% include 'celebrities/dress_list.tmpl.html' %}
       {% else %}
         <p>No dresses are available.</p>
       {% endif %}

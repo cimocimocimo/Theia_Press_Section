@@ -13,12 +13,12 @@ class Article(models.Model):
 
     slug_max_length = 256
 
-    title = models.TextField(
+    title = models.CharField(
         max_length=256)
     slug = models.SlugField(
         max_length=64,
         unique=True)
-    organization_name = models.TextField(
+    organization_name = models.CharField(
         max_length=256,
         blank=True,
         default='')
@@ -27,9 +27,9 @@ class Article(models.Model):
         blank=True,
         default='')
     original_publication_date = models.DateField(
-        default=datetime.date.today())
+        default=datetime.date.today)
     published_date = models.DateTimeField(
-        default=datetime.datetime.now())
+        default=datetime.datetime.now)
     content = PlaceholderField('press_item_content')
     excerpt = models.TextField(blank=True, null=True)
     screenshot = FilerImageField(null=True, blank=True)
