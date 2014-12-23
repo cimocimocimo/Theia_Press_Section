@@ -212,6 +212,19 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
+    }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -262,3 +275,9 @@ THUMBNAIL_ALIASES = {
         'dress_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
     },
 }
+
+# Local Development settings
+try:
+    from local_settings import *
+except ImportError, e:
+    pass
