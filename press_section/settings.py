@@ -147,13 +147,13 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
-    'cmsplugin_filer_file',
-    'cmsplugin_filer_folder',
-    'cmsplugin_filer_link',
-    'cmsplugin_filer_image',
-    'cmsplugin_filer_teaser',
-    'cmsplugin_filer_video',
-    'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
+    # 'cmsplugin_filer_file',
+    # 'cmsplugin_filer_folder',
+    # 'cmsplugin_filer_link',
+    # 'cmsplugin_filer_image',
+    # 'cmsplugin_filer_teaser',
+    # 'cmsplugin_filer_video',
+    # 'djangocms_snippet', # **TODO** possible security risk, add custom plugin for adding blocks of html
     'reversion',
     'compressor',
     'ordered_model',
@@ -161,11 +161,11 @@ INSTALLED_APPS = (
     'easy_thumbnails',
 
     # Theia apps
-    'pagination',
-    'press_contacts',
-    'articles',
-    'events',
-    'celebrities',
+    # 'pagination',
+    # 'press_contacts',
+    # 'articles',
+    # 'events',
+    # 'celebrities',
     'press_section'
 )
 
