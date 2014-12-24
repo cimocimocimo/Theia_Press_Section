@@ -11,21 +11,21 @@ class Article(models.Model):
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
 
-    slug_max_length = 256
+    slug_max_length = 255
 
     title = models.CharField(
-        max_length=256)
+        max_length=255)
     slug = models.SlugField(
         max_length=64,
         unique=True)
     organization_name = models.CharField(
-        max_length=256,
+        max_length=255,
         blank=True,
-        default='')
+        null=True)
     url = models.URLField(
         max_length=512,
         blank=True,
-        default='')
+        null=True)
     original_publication_date = models.DateField(
         default=datetime.date.today)
     published_date = models.DateTimeField(

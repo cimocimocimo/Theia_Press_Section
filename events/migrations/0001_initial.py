@@ -19,10 +19,10 @@ class Migration(migrations.Migration):
             name='Event',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('title', models.TextField(max_length=256)),
+                ('title', models.CharField(max_length=255)),
                 ('slug', models.SlugField(unique=True, max_length=64)),
-                ('event_date', models.DateField(default=datetime.date(2014, 12, 21))),
-                ('published_date', models.DateTimeField(default=datetime.datetime(2014, 12, 21, 16, 10, 45, 636423))),
+                ('event_date', models.DateField(default=datetime.date.today)),
+                ('published_date', models.DateTimeField(default=datetime.datetime.now)),
                 ('content', cms.models.fields.PlaceholderField(slotname=b'event_content', editable=False, to='cms.Placeholder', null=True)),
                 ('video_still', filer.fields.image.FilerImageField(blank=True, to='filer.Image', null=True)),
             ],
