@@ -15,10 +15,10 @@ class Migration(migrations.Migration):
             name='PressContact',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('descriptive_text', models.CharField(max_length=2048)),
-                ('name', models.CharField(max_length=256)),
-                ('address', models.CharField(max_length=512)),
-                ('email', models.CharField(max_length=256)),
+                ('descriptive_text', models.CharField(max_length=255)),
+                ('name', models.CharField(max_length=255)),
+                ('address', models.CharField(max_length=255)),
+                ('email', models.CharField(max_length=255)),
                 ('phone', models.CharField(max_length=64)),
             ],
             options={

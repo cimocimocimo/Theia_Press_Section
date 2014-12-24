@@ -11,10 +11,10 @@ class Event(models.Model):
         verbose_name = 'Event'
         verbose_name_plural = 'Events'
 
-    slug_max_length = 256
+    slug_max_length = 255
 
     title = models.CharField(
-        max_length=256)
+        max_length=255)
     slug = models.SlugField(
         max_length=64,
         unique=True)

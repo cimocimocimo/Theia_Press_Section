@@ -10,14 +10,14 @@ class Celebrity(OrderedModel):
         verbose_name = 'Celebrity'
         verbose_name_plural = 'Celebrities'
 
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=255)
     byline = models.CharField(max_length=128, blank=True, null=True)
     main_image = FilerImageField()
     content = PlaceholderField('celebrity_content')
 
     # **TODO** celebrity tags?
 
-    slug_max_length = 256
+    slug_max_length = 255
     slug = models.SlugField(max_length=slug_max_length, unique=True)
 
     def __unicode__(self):
@@ -30,7 +30,7 @@ class Dress(OrderedModel):
         verbose_name = 'Dress'
         verbose_name_plural = 'Dresses'
 
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=255)
     # event dress worn at?
     celebrity = models.ForeignKey(Celebrity)
     main_image = FilerImageField()
@@ -39,7 +39,7 @@ class Dress(OrderedModel):
     # tags?
     # link to dress product page
 
-    slug_max_length = 256
+    slug_max_length = 255
     slug = models.SlugField(max_length=slug_max_length, unique=True)
 
     def __unicode__(self):
