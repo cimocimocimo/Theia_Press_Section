@@ -2,10 +2,10 @@
 
 try: 
 
-    import sys
-    # required now to setup the environment
-    import django
-    django.setup()
+    # import sys
+    # # required now to setup the environment
+    # import django
+    # django.setup()
 
     # from django.contrib.auth.models import User
     # if User.objects.count() == 0:
