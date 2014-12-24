@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-try: 
+import sys
 
-    # import sys
+# try: 
+
     # # required now to setup the environment
     # import django
     # django.setup()
