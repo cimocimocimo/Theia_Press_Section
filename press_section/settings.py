@@ -25,7 +25,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -166,7 +166,7 @@ INSTALLED_APPS = (
     # 'articles',
     # 'events',
     # 'celebrities',
-    # 'press_section'
+    'press_section'
 )
 
 LANGUAGES = (
