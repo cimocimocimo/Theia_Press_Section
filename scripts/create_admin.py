@@ -2,7 +2,7 @@
 
 import sys
 
-try: 
+try:
 
     # required now to setup the environment
     import django
@@ -12,5 +12,8 @@ try:
     if User.objects.count() == 0:
         admin = User.objects.create_superuser('admin', 'aaron@cimolini.com', 'admin')
         admin.save()
+
+except:
+    pass
 
 sys.exit()
