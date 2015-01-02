@@ -5,3 +5,4 @@
 /media/
 /static/
 /press_section/local_settings.py
+.elasticbeanstalk/
