@@ -4,5 +4,4 @@
 *.db
 /media/
 /static/
-.elasticbeanstalk/
 /press_section/local_settings.py
