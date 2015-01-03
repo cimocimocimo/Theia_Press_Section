@@ -295,7 +295,8 @@ THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-    'theia-press-section-assets.s3.amazonaws.com',
+    'press-section-dev.elasticbeanstalk.com',
+    'theia-press-section-assets.s3.amazonaws.com'
 )
 
 
