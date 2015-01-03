@@ -13,7 +13,7 @@ class CachedS3BotoStorage(S3BotoStorage):
     def __init__(self, *args, **kwargs):
 
         # merge in any arguments that were passed
-        # kwargs.update(dict(location='', querystring_auth=False))
+        kwargs.update(dict(location='', querystring_auth=False))
 
         super(CachedS3BotoStorage, self).__init__(*args, **kwargs)
         self.local_storage = get_storage_class(
