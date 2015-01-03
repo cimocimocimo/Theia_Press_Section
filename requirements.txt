@@ -17,6 +17,7 @@ django-ordered-model==0.4.0
 django-polymorphic==0.6.1
 django-reversion==1.8.5
 django-sekizai==0.7
+django-storages==1.1.8
 djangocms-admin-style==0.2.4
 djangocms-column==1.5
 djangocms-file==0.1

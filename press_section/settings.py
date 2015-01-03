@@ -73,6 +73,9 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
     ('text/scss', 'helpers.ScssFilter'),
@@ -159,6 +162,7 @@ INSTALLED_APPS = (
     'ordered_model',
     'filer',
     'easy_thumbnails',
+    'storages',
 
     # Theia apps
     'pagination',
@@ -262,6 +266,20 @@ THUMBNAIL_ALIASES = {
         'celebrity_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
         'dress_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
     },
+}
+
+THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
+# Django Storages
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
+AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
+# see http://developer.yahoo.com/performance/rules.html#expires
+AWS_HEADERS = {
+    'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
+    'Cache-Control': 'max-age=86400',
 }
 
 # Local Development settings
