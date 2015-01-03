@@ -285,20 +285,7 @@ THUMBNAIL_ALIASES = {
 
 THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-
-# see http://developer.yahoo.com/performance/rules.html#expires
-# AWS_HEADERS = {
-#     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
-#     'Cache-Control': 'max-age=86400',
-# }
-
 CORS_ORIGIN_ALLOW_ALL = True
-
-CORS_ORIGIN_WHITELIST = (
-    'press-section-dev.elasticbeanstalk.com',
-    'theia-press-section-assets.s3.amazonaws.com'
-)
-
 
 # Local Development settings
 try:
