@@ -82,7 +82,6 @@ AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
 AWS_PRELOAD_METADATA = True
 
 AWS_QUERYSTRING_AUTH = False
-AWS_S3_SECURE_URLS = False
 
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
