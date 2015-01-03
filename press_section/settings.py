@@ -82,7 +82,7 @@ AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
 
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
-    ('text/scss', 'helpers.ScssFilter'),
+    ('text/scss', 'press_section.helpers.ScssFilter'),
 )
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
