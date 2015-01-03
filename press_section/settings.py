@@ -84,6 +84,7 @@ STATICFILES_STORAGE = 'press_section.storage.CachedS3BotoStorage'
 AWS_PRELOAD_METADATA = True
 
 AWS_QUERYSTRING_AUTH = False
+AWS_S3_SECURE_URLS = False
 
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
