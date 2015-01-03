@@ -277,10 +277,10 @@ AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
 AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
 # see http://developer.yahoo.com/performance/rules.html#expires
-AWS_HEADERS = {
-    'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
-    'Cache-Control': 'max-age=86400',
-}
+# AWS_HEADERS = {
+#     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
+#     'Cache-Control': 'max-age=86400',
+# }
 
 # Local Development settings
 try:
