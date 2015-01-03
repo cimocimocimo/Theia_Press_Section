@@ -91,7 +91,7 @@ COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 STATIC_URL = COMPRESS_URL = "http://theia-press-section-assets.s3.amazonaws.com/"
 COMPRES_ROOT = STATIC_ROOT
-STATICFILES_STORAGE = COMPRESS_STORAGE = DEFAULT_FILE_STORAGE # 'press_section.storage.CachedS3BotoStorage'
+STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.CachedS3BotoStorage'
 
 SITE_ID = 1
 
