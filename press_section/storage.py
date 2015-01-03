@@ -7,6 +7,8 @@ class CachedS3BotoStorage(S3BotoStorage):
     """
     def __init__(self, *args, **kwargs):
         super(CachedS3BotoStorage, self).__init__(*args, **kwargs)
+
+        self.querystring_auth=False
         self.local_storage = get_storage_class(
             "compressor.storage.CompressorFileStorage")()
 
