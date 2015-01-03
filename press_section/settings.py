@@ -79,6 +79,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
 AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
+AWS_QUERYSTRING_AUTH = False
 
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
@@ -88,6 +89,7 @@ COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 COMPRESS_URL = "http://theia-press-section-assets.s3.amazonaws.com/"
 STATIC_URL = COMPRESS_URL
+COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_STORAGE = 'press_section.storage.CachedS3BotoStorage'
 
 SITE_ID = 1
