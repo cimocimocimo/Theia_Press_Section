@@ -72,13 +72,17 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-STATICFILES_STORAGE = 'press_section.storage.CachedS3BotoStorage'
-
 # Django Storages
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
 AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
+
+STATICFILES_STORAGE = 'press_section.storage.CachedS3BotoStorage'
+
+# Used to make sure that only changed files are uploaded with collectstatic
+AWS_PRELOAD_METADATA = True
+
 AWS_QUERYSTRING_AUTH = False
 
 COMPRESS_PRECOMPILERS = (
