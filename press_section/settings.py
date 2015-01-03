@@ -102,6 +102,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -172,6 +173,7 @@ INSTALLED_APPS = (
     'filer',
     'easy_thumbnails',
     'storages',
+    'corsheaders',
 
     # Theia apps
     'pagination',
@@ -181,6 +183,9 @@ INSTALLED_APPS = (
     'celebrities',
     'press_section'
 )
+
+
+
 
 LANGUAGES = (
     ## Customize this
@@ -285,6 +290,11 @@ THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 #     'Expires': 'Thu, 15 Apr 2010 20:00:00 GMT',
 #     'Cache-Control': 'max-age=86400',
 # }
+
+CORS_ORIGIN_WHITELIST = (
+    'theia-press-section-assets.s3.amazonaws.com',
+)
+
 
 # Local Development settings
 try:
