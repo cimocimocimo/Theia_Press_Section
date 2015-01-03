@@ -5,10 +5,14 @@ class CachedS3BotoStorage(S3BotoStorage):
     """
     S3 storage backend that saves the files locally, too.
     """
+
+    querystring_auth=False
+
     def __init__(self, *args, **kwargs):
         super(CachedS3BotoStorage, self).__init__(*args, **kwargs)
 
         self.querystring_auth=False
+
         self.local_storage = get_storage_class(
             "compressor.storage.CompressorFileStorage")()
 
