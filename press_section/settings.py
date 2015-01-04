@@ -77,6 +77,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 AWS_SECRET_KEY = os.environ['AWS_SECRET_KEY']
 AWS_STORAGE_BUCKET_NAME = 'theia-press-section-assets'
+S3_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 # Used to make sure that only changed files are uploaded with collectstatic
 AWS_PRELOAD_METADATA = True
@@ -90,7 +91,7 @@ COMPRESS_PRECOMPILERS = (
 )
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
-STATIC_URL = COMPRESS_URL = "http://theia-press-section-assets.s3.amazonaws.com/"
+STATIC_URL = COMPRESS_URL = S3_URL
 COMPRES_ROOT = STATIC_ROOT
 STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.CachedS3BotoStorage'
 
