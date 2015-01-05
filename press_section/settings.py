@@ -99,7 +99,7 @@ AWS_S3_SECURE_URLS = False
 
 
 DEFAULT_FILE_STORAGE = 'press_section.storage.DefaultS3BotoStorage'
-STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStorage'
+THUMBNAIL_DEFAULT_STORAGE = STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStorage'
 
 DEFAULT_S3_PATH = "media"
 STATIC_S3_PATH = "static"
@@ -298,8 +298,6 @@ THUMBNAIL_ALIASES = {
         'dress_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
     },
 }
-
-THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
