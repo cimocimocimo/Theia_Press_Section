@@ -5,13 +5,14 @@ import posixpath
 from compressor.cache import get_hashed_mtime, get_hashed_content
 from compressor.conf import settings
 from compressor.filters import FilterBase, FilterError
+from compressor.filters.css_default import CssAbsoluteFilter
 from compressor.utils import staticfiles
 
 URL_PATTERN = re.compile(r'url\(([^\)]+)\)')
 SRC_PATTERN = re.compile(r'src=([\'"])(.+?)\1')
 SCHEMES = ('http://', 'https://', '/', 'data:')
 
-
+# https://github.com/django-compressor/django-compressor/pull/337
 class CustomCssAbsoluteFilter(CssAbsoluteFilter):
 
     def input(self, filename=None, basename=None, **kwargs):
