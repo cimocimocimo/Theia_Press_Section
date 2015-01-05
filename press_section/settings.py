@@ -80,9 +80,9 @@ COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
     ('text/scss', 'press_section.helpers.ScssFilter'),
 )
-# COMPRESS_CSS_FILTERS = [
-#     'compressor.filters.css_default.CssAbsoluteFilter'
-# ]
+COMPRESS_CSS_FILTERS = [
+    'press_section.compressor_filters.CustomCssAbsoluteFilter'
+]
 
 # Django Storages
 AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
