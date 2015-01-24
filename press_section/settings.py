@@ -205,6 +205,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'storages',
     'corsheaders',
+    'sorl.thumbnail',
 
     # Theia apps
     'pagination',
