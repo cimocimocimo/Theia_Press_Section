@@ -1,8 +1,8 @@
 from django.db import models
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
-from filer.fields.image import FilerImageField
-from filer.fields.file import FilerFileField
+# from filer.fields.image import FilerImageField
+# from filer.fields.file import FilerFileField
 import datetime
 
 class Event(models.Model):
@@ -23,7 +23,7 @@ class Event(models.Model):
     published_date = models.DateTimeField(
         default=datetime.datetime.now)
     content = PlaceholderField('event_content')
-    video_still = FilerImageField(null=True, blank=True)
+    # video_still = FilerImageField(null=True, blank=True)
 
     # **TODO** Add django-taggit
 
