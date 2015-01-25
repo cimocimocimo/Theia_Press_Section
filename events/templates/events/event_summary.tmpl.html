@@ -5,7 +5,9 @@
     {{  event.event_date }}
   {% endif %}
   <div class="event-summary-image">
-    <img src="{{  event.video_still | thumbnail_url:'event_summary' }}" alt="" />
+    {% thumbnail event.video_still '320x320' as img %}
+    <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
   </div>
   <a href="{% url 'events:detail' event.slug %}">Read more</a>  
 </div>

@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
+from sorl.thumbnail import ImageField
 
 import datetime
 
@@ -31,7 +32,7 @@ class Article(models.Model):
         default=datetime.datetime.now)
     content = PlaceholderField('press_item_content')
     excerpt = models.TextField(blank=True, null=True)
-    # screenshot = FilerImageField(null=True, blank=True)
+    screenshot = ImageField(null=True, blank=True)
 
     # **TODO** Add django-taggit
 

@@ -2,6 +2,7 @@ from django.db import models
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 from ordered_model.models import OrderedModel
+from sorl.thumbnail import ImageField
 
 class Celebrity(OrderedModel):
 
@@ -11,7 +12,7 @@ class Celebrity(OrderedModel):
 
     name = models.CharField(max_length=255)
     byline = models.CharField(max_length=128, blank=True, null=True)
-    # main_image = FilerImageField()
+    main_image = ImageField(null=True, blank=True)
     content = PlaceholderField('celebrity_content')
 
     # **TODO** celebrity tags?
@@ -32,7 +33,7 @@ class Dress(OrderedModel):
     title = models.CharField(max_length=255)
     # event dress worn at?
     celebrity = models.ForeignKey(Celebrity)
-    # main_image = FilerImageField()
+    main_image = ImageField(null=True, blank=True)
     order_with_respect_to = 'celebrity'
     content = PlaceholderField('celebrity_content')
     # tags?

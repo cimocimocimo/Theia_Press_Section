@@ -16,8 +16,13 @@ class FixedS3BotoStorage(S3BotoStorage):
         if 'x-amz-security-token' in params:
             del params['x-amz-security-token']
         query = urllib.urlencode(params)
-        return urlparse.urlunparse((scheme, netloc, path, params, query, fragment))
 
+        url = urlparse.urlunparse((scheme, netloc, path, params, query, fragment))
+
+        # Fix for django error abusing {% static %}
+        if name.endswith('/') and not url.endswith('/'):
+            url += '/'
+        return url
 
 class DefaultS3BotoStorage(FixedS3BotoStorage):
     def __init__(self, *args, **kwargs):

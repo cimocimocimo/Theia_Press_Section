@@ -1,6 +1,7 @@
 from django.contrib import admin
 from cms.admin.placeholderadmin import PlaceholderAdminMixin
 from ordered_model.admin import OrderedModelAdmin
+from sorl.thumbnail.admin import AdminImageMixin
 
 from celebrities.models import Celebrity, Dress
 
@@ -10,7 +11,7 @@ class DressInline(admin.TabularInline):
     list_display = ('title', 'move_up_down_links')
 
 @admin.register(Celebrity)
-class CelebrityAdmin(PlaceholderAdminMixin, OrderedModelAdmin):
+class CelebrityAdmin(AdminImageMixin, PlaceholderAdminMixin, OrderedModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'move_up_down_links')
     inlines = [
@@ -18,5 +19,5 @@ class CelebrityAdmin(PlaceholderAdminMixin, OrderedModelAdmin):
     ]    
 
 @admin.register(Dress)
-class DressAdmin(OrderedModelAdmin):
+class DressAdmin(AdminImageMixin, OrderedModelAdmin):
     prepopulated_fields = {'slug': ('title',)}

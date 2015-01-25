@@ -8,7 +8,9 @@
 
 {% block content %}
   <div class="dress-block">
-    <img src="{% thumbnail dress.main_image 'celebrity_featured' subject_location=dress.main_image.subject_location %}">
+    {% thumbnail dress.main_image '768x576' as img %}
+    <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
 
     {% render_placeholder dress.content %}
 

@@ -1,0 +1,15 @@
+{% load i18n thumbnail %}
+
+{% spaceless %}
+
+{% if picture.url %}<a href="{{ picture.url }}">{% endif %}
+
+{% if "content" in placeholder %}
+    <img src="{% thumbnail picture.image.name '484x1500'  %}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+{% endif %}
+{% if "teaser" in placeholder %}
+    <img src="{% thumbnail picture.image.name '484x1500'  %}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+{% endif %}
+{% if picture.url %}</a>{% endif %}
+
+{% endspaceless %}

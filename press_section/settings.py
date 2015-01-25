@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '&k*63f5)n03s2)^z5)+k7b*2-sjy4w*m3po)j6wmm^ss9b7%re'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 
 # allowed hosts
@@ -75,7 +75,6 @@ STATICFILES_FINDERS = (
 # Compressor Settings
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
-
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
     ('text/scss', 'press_section.helpers.ScssFilter'),
@@ -94,12 +93,14 @@ S3_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 AWS_PRELOAD_METADATA = True
 
 # remove the auth string from the generated static file urls
+# this setting was not working last I checked - AC 2015-01-25
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
 
-
+# Media files use the default storage, sorl.thumbnail uses this for storage as well
 DEFAULT_FILE_STORAGE = 'press_section.storage.DefaultS3BotoStorage'
-THUMBNAIL_DEFAULT_STORAGE = STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStorage'
+# static files and compressor for the css/js output
+STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStorage'
 
 DEFAULT_S3_PATH = "media"
 STATIC_S3_PATH = "static"
@@ -108,20 +109,10 @@ MEDIA_ROOT = '/%s/' % DEFAULT_S3_PATH
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 
 # STATIC_ROOT = "/%s/" % STATIC_S3_PATH
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '//%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
-
-COMPRESS_URL = STATIC_URL
-COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_ROOT = STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+COMPRESS_URL = STATIC_URL = '//%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = COMPRESS_URL = S3_URL
-# COMPRES_ROOT = STATIC_ROOT
-
 
 
 SITE_ID = 1
@@ -202,7 +193,6 @@ INSTALLED_APPS = (
     'compressor',
     'ordered_model',
     'filer',
-    'easy_thumbnails',
     'storages',
     'corsheaders',
     'sorl.thumbnail',
@@ -258,7 +248,6 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-
 MIGRATION_MODULES = {
     'cms': 'cms.migrations_django',
     'menus': 'menus.migrations_django',
@@ -281,23 +270,6 @@ MIGRATION_MODULES = {
     'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
     'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
     'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
-}
-
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    # 'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
-
-THUMBNAIL_ALIASES = {
-    '': {
-        'article_summary': {'size': (320, 320), 'crop': 'scale', 'upscale': True},
-        'celebrity_featured': {'size': (768, 576), 'crop': 'scale', 'upscale': True},
-        'celebrity_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
-        'dress_summary': {'size': (256, 192), 'crop': 'scale', 'upscale': True},
-    },
 }
 
 CORS_ORIGIN_ALLOW_ALL = True

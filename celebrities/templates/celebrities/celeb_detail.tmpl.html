@@ -8,8 +8,10 @@
 {% block content %}
   <div class="celebrity-block">
 
-    <img src="{% thumbnail celebrity.main_image 'celebrity_featured' subject_location=celebrity.main_image.subject_location %}">
-    
+    {% thumbnail celebrity.main_image '768x576' as img %}
+    <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
+        
     {% render_placeholder celebrity.content %}
 
     <div class="celebrity-dresses-block">

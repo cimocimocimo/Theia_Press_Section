@@ -5,9 +5,12 @@
   {% if featured_celebrity and current_page.number == 1 %}
     <div class="featured-celebrity-block">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-      <img src="{% thumbnail featured_celebrity.main_image 'celebrity_featured' subject_location=featured_celebrity.main_image.subject_location %}">
-      <h3>{{ featured_celebrity.name }}</h3>
-      <p>{{ featured_celebrity.byline }}</p>
+        {% thumbnail featured_celebrity.main_image '768x576' as img %}
+        <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
+    
+        <h3>{{ featured_celebrity.name }}</h3>
+        <p>{{ featured_celebrity.byline }}</p>
       </a>
     </div>
   {% endif %}
