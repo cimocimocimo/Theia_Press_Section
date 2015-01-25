@@ -6,8 +6,8 @@
     <div class="featured-celebrity-block">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
         {% thumbnail featured_celebrity.main_image '768x576' as img %}
-        <img src="{{  img.url }}" alt="" />
-    {% endthumbnail %}
+          <img src="{{  img.url }}" alt="" />
+        {% endthumbnail %}
     
         <h3>{{ featured_celebrity.name }}</h3>
         <p>{{ featured_celebrity.byline }}</p>
@@ -20,7 +20,10 @@
           <div class="celebrity-summary-block">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
-              <img src="{% thumbnail celeb.main_image 'celebrity_summary' subject_location=celeb.main_image.subject_location %}">
+              {% thumbnail celeb.main_image '320x320' as img %}
+                <img src="{{  img.url }}" alt="" />
+              {% endthumbnail %}
+
             </a>
           </div>
       {% endfor %}
