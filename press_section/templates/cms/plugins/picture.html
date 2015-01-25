@@ -5,10 +5,14 @@
 {% if picture.url %}<a href="{{ picture.url }}">{% endif %}
 
 {% if "content" in placeholder %}
-    <img src="{% thumbnail picture.image.name '484x1500'  %}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+  {% thumbnail picture.image.name '484x1500' as img %}
+  <img src="{{ img.url }}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+  {% endthumbnail %}
 {% endif %}
 {% if "teaser" in placeholder %}
-    <img src="{% thumbnail picture.image.name '484x1500'  %}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+  {% thumbnail picture.image.name '484x1500' as img %}
+  <img src="{{ img.url }}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
+  {% endthumbnail %}
 {% endif %}
 {% if picture.url %}</a>{% endif %}
 
