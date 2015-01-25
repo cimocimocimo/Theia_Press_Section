@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import filer.fields.image
+import sorl.thumbnail.fields
 import datetime
 import cms.models.fields
 
@@ -11,7 +11,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('cms', '0003_auto_20140926_2347'),
-        ('filer', '0001_initial'),
     ]
 
     operations = [
@@ -23,8 +22,8 @@ class Migration(migrations.Migration):
                 ('slug', models.SlugField(unique=True, max_length=64)),
                 ('event_date', models.DateField(default=datetime.date.today)),
                 ('published_date', models.DateTimeField(default=datetime.datetime.now)),
+                ('video_still', sorl.thumbnail.fields.ImageField(null=True, upload_to=b'', blank=True)),
                 ('content', cms.models.fields.PlaceholderField(slotname=b'event_content', editable=False, to='cms.Placeholder', null=True)),
-                ('video_still', filer.fields.image.FilerImageField(blank=True, to='filer.Image', null=True)),
             ],
             options={
                 'verbose_name': 'Event',

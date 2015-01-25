@@ -5,7 +5,6 @@ South==1.0.1
 Unidecode==0.04.17
 argparse==1.2.2
 boto==2.34.0
-cmsplugin-filer==0.10.1
 dj-database-url==0.3.0
 django-appconf==0.6
 django-classy-tags==0.5.2
@@ -33,7 +32,6 @@ djangocms-style==1.5
 djangocms-teaser==0.1
 djangocms-text-ckeditor==2.4.1
 djangocms-video==0.1
-easy-thumbnails==2.2
 html5lib==0.999
 python-slugify==0.1.0
 pytz==2014.10

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import filer.fields.image
+import sorl.thumbnail.fields
 import datetime
 import cms.models.fields
 
@@ -11,7 +11,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('cms', '0003_auto_20140926_2347'),
-        ('filer', '0001_initial'),
     ]
 
     operations = [
@@ -26,8 +25,8 @@ class Migration(migrations.Migration):
                 ('original_publication_date', models.DateField(default=datetime.date.today)),
                 ('published_date', models.DateTimeField(default=datetime.datetime.now)),
                 ('excerpt', models.TextField(null=True, blank=True)),
+                ('screenshot', sorl.thumbnail.fields.ImageField(null=True, upload_to=b'', blank=True)),
                 ('content', cms.models.fields.PlaceholderField(slotname=b'press_item_content', editable=False, to='cms.Placeholder', null=True)),
-                ('screenshot', filer.fields.image.FilerImageField(blank=True, to='filer.Image', null=True)),
             ],
             options={
                 'verbose_name': 'Article',
