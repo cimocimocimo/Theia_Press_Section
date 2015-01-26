@@ -9,5 +9,6 @@
     <img src="{{  img.url }}" alt="" />
     {% endthumbnail %}
   </div>
+  <p>{{ event.excerpt }}</p>
   <a href="{% url 'events:detail' event.slug %}">Read more</a>  
 </div>

@@ -22,6 +22,7 @@ class Event(models.Model):
         default=datetime.date.today)
     published_date = models.DateTimeField(
         default=datetime.datetime.now)
+    excerpt = models.TextField(null=True, blank=True)
     content = PlaceholderField('event_content')
     video_still = ImageField(null=True, blank=True)
 
