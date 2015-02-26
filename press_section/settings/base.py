@@ -131,6 +131,7 @@ INSTALLED_APPS = (
 
     # Theia apps
     'pagination',
+    'cms_extra_tags',
     'press_contacts',
     'articles',
     'events',
