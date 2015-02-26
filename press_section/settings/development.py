@@ -20,8 +20,8 @@ DATABASES = {
 }
 
 # Compressor Settings
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
+COMPRESS_ENABLED = False
+COMPRESS_OFFLINE = False
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

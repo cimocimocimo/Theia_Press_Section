@@ -21,12 +21,8 @@ module.exports = function(grunt) {
                 files: 'press_section/static/*.scss',
                 tasks: ['sass']
             },
-            css: {
-                files: 'press_section/static/*.css',
-                tasks: ['shell:djangoCompress']
-            },
             livereload: {
-                files: 'static/CACHE/*.css',
+                files: 'press_section/static/*.css',
                 options: {
                     livereload: true
                 }
@@ -47,6 +43,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     
     // Default task(s).
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['watch']);
 
 };
