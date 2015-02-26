@@ -5,33 +5,36 @@
   {% if featured_celebrity and current_page.number == 1 %}
     <div class="featured-celebrity-block">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-        {% thumbnail featured_celebrity.main_image '768x576' as img %}
+        {% thumbnail featured_celebrity.main_image '800x520' crop='center' as img %}
           <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
-    
-        <h3>{{ featured_celebrity.name }}</h3>
-        <p>{{ featured_celebrity.byline }}</p>
+
+        <div class="content">
+          <h3>{{ featured_celebrity.name }}</h3>
+          <p>{{ featured_celebrity.byline }}</p>
+        </div>
       </a>
     </div>
   {% endif %}
   
   {% if current_page %}
+    <div class="celebrities-list-block">
       {% for celeb in current_page %}
           <div class="celebrity-summary-block">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
-              {% thumbnail celeb.main_image '320x320' as img %}
+              {% thumbnail celeb.main_image '245x183' crop='top' as img %}
                 <img src="{{  img.url }}" alt="" />
               {% endthumbnail %}
 
             </a>
           </div>
       {% endfor %}
-
+    </div>
     {% show_pager base_url=base_url %}
 
-  {% else %}
-    <p>No celebrities are available.</p>
+  {% elif not current_page and not featured_celebrity %}
+      <p>No celebrities are available.</p>
   {% endif %}
 
 {% endblock %}
