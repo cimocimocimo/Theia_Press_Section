@@ -1,17 +1,25 @@
 {% load thumbnail %}
 <div class="article-summary-block">
-  <h4>{{ article.title }}</h4>
-  {% if article.original_publication_date %}
-    {{  article.original_publication_date }}
-  {% endif %}
-  {% if article.organization_name %}
-    {{ article.organization_name }}
-  {% endif %}
+  <h3>{{ article.title }}</h3>
+  <div class="article-summary-meta">
+    <span class="article-summary-publication-date">
+      {% if article.original_publication_date %}
+        {{  article.original_publication_date }}
+      {% endif %}
+    </span>
+    <span class="article-summary-organization-name">
+      {% if article.organization_name %}
+        {{ article.organization_name }}
+      {% endif %}
+    </span>
+  </div>
   <div class="article-summary-image">
-    {% thumbnail article.screenshot '320x320' as img %}
+    <a href="{% url 'articles:detail' article.slug %}">
+    {% thumbnail article.screenshot '352' as img %}
     <img src="{{  img.url }}" alt="" />
     {% endthumbnail %}
+    </a>
   </div>
   <p>{{ article.excerpt }}</p>
-  <a href="{% url 'articles:detail' article.slug %}">Read more</a>  
+  <a class="article-summary-read-more-link" href="{% url 'articles:detail' article.slug %}">Read more</a>  
 </div>

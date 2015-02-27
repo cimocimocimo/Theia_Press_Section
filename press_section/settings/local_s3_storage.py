@@ -1,26 +1,9 @@
 from press_section.settings.base import *
+from press_section.settings.local_base import *
 
 """
-Production Settings
+Local S3 Storage Settings
 """
-
-TEMPLATE_DEBUG = DEBUG = False
-
-ALLOWED_HOSTS = ['press.theiacouture.com', 'theia-press-section.elasticbeanstalk.com']
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
 
 # Compressor Settings
 COMPRESS_ENABLED = True

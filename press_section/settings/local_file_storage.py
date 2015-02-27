@@ -1,23 +1,9 @@
 from press_section.settings.base import *
+from press_section.settings.local_base import *
 
 """
-Local Development Settings
+Local Filestorage Development Settings
 """
-
-TEMPLATE_DEBUG = DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-
-DATABASES = {
- 'default': {
-  'ENGINE': 'django.db.backends.mysql',
-  'NAME': 'theia_press_section',
-  'USER': 'root',
-  'PASSWORD': '',
-  'HOST': 'localhost',
-  'PORT': '3306',
- }
-}
 
 # Compressor Settings
 COMPRESS_ENABLED = False

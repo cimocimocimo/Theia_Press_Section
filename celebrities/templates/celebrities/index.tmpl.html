@@ -7,7 +7,7 @@
   {% if featured_celebrity and current_page.number == 1 %}
     <div class="featured-celebrity-block">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-        {% thumbnail featured_celebrity.main_image '832x540' crop='center' as img %}
+        {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
           <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
 

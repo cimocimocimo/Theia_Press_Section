@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 gettext = lambda s: s
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# ugly but works.
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '&k*63f5)n03s2)^z5)+k7b*2-sjy4w*m3po)j6wmm^ss9b7%re'

@@ -628,6 +628,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     @extend %character-suffix-base;
 
     &:after {
+        content: '\00BB';
+    }
+}
+
+%rdaquo {
+    @extend %character-suffix-base;
+
+    &:after {
         content: '\BB';
     }
 }
@@ -3006,19 +3014,32 @@ $smallSocialIconRatio: (2.66/3.375);
             line-height: 1.42;
             text-transform: uppercase;
             font-weight: 700;
+
+            &:before,
+            &:after {
+                top: -1px;
+            }
         }
 
         /* Previous Link */
         &:first-child > a,
         &:first-child > span {
+            @extend %lsaquo-prefix;
+            
             margin-left: 0;
             padding-left: $gutter * 3;
             padding-right: $gutter;
+
+            &:before {
+                padding-right: 8px;
+            }
         }
 
         /* Next Link */
         &:last-child > a,
         &:last-child > span {
+            @extend %rsaquo;
+
             padding-left: $gutter;
             padding-right: $gutter * 3;
         }
@@ -9419,6 +9440,18 @@ span#resultMessage {
     padding: $gutter;
 }
 
+//
+// Press Section
+//
+
+.press-content-hero {
+    @extent .content-hero;
+
+    h2 {
+        text-align: center;
+    }
+}
+
 %feature-block-base {
     position: relative;
     width: 832px;
@@ -9445,7 +9478,7 @@ span#resultMessage {
 
     .content {
         position: absolute;
-        top: 182px;
+        bottom: $gutter *4;
         left: $gutter *2;
     }
 
@@ -9453,6 +9486,7 @@ span#resultMessage {
     p {
         color: white;
         margin: 0;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
 
     h3 {
@@ -9602,5 +9636,79 @@ span#resultMessage {
 
     .image {
         margin-bottom: $gutter*2;
+    }
+}
+
+
+%article-summary-meta-text-base {
+    font-family: $helveticaFontStack;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    color: $colorWarmLightGray;
+}
+
+.article-summary-block {
+    width: 352px;
+    display: inline-block;
+    margin: $gutter ($gutter - 2px);
+    vertical-align: top;
+    
+    h3 {
+        font-size: 24px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 7px;
+        text-align: left;
+    }
+
+    .article-summary-meta {
+        margin-bottom: $gutter*(2/3);
+
+        > span {
+            display: inline-block;
+            padding: 1px $gutter*(2/3) 0;
+            border-left: 1px solid $colorWarmLightGray;
+
+            &:first-child {
+                border-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
+
+    .article-summary-organization-name {
+        @extend %article-summary-meta-text-base;
+    }
+
+    .article-summary-publication-date {
+        @extend %article-summary-meta-text-base;        
+    }
+
+    .article-summary-image {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .article-summary-read-more-link {
+        @extend %gold-hover-underline-link;
+        @extend %small-arial-text;
+        @extend %rdaquo;
+
+        text-transform: uppercase;
+        &:after {
+            top: -1px;
+        }
+    }
+}
+
+
+.article-detail-content {
+    .article-detail-pagination-row {
+        margin: $gutter*3 0 $gutter*4;
+        text-align: center;
     }
 }
