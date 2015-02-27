@@ -1,27 +1,35 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags thumbnail %}
+{% load cms_tags staticfiles sekizai_tags menu_tags thumbnail cms_extra_tags %}
 
 {% block page_header %}
   <h2>{{ celebrity.name }}</h2>
 {% endblock %}
 
 {% block content %}
-  <div class="celebrity-block">
-
-    {% thumbnail celebrity.main_image '768x576' as img %}
-    <img src="{{  img.url }}" alt="" />
-    {% endthumbnail %}
-        
-    {% render_placeholder celebrity.content %}
-
-    <div class="celebrity-dresses-block">
-
-      {% if dresses %}
-        {% include 'celebrities/dress_list.tmpl.html' %}
-      {% else %}
-        <p>No dresses are available.</p>
+  <div class="wrapper-9-col-offset-right">
+    <div class="celebrity-detail-featured-image-block">
+      <div class="image">
+        {% thumbnail celebrity.main_image '832x540' crop='top' as img %}
+        <img src="{{  img.url }}" alt="" />
+      {% endthumbnail %}
+      </div>
+      {% if celebrity.byline %}
+        <div class="content">
+          <h5>{{ celebrity.byline }}</h5>
+        </div>
       {% endif %}
-      
     </div>
+
+    {% get_placeholder celebrity.content as celebrity_content %}
+    {% if celebrity_content %}
+      <div class="celebrity-detail-content-block">
+        {{ celebrity_content }}
+      </div>
+    {% endif %}
+
+    {% if dresses %}
+      {% include 'celebrities/dress_list.tmpl.html' %}
+    {% endif %}
+
   </div>
 {% endblock %}

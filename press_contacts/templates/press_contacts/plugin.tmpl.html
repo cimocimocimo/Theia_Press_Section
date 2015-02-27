@@ -1,11 +1,11 @@
 <div class="contact-block">
-  <p>{{ instance.press_contact.descriptive_text }} {{ instance.press_contact.name }}</p>
+  <h4>{{ instance.press_contact.descriptive_text }} {{ instance.press_contact.name }}</h4>
   <address>
+    <div class="address">
+      {{ instance.press_contact.address|linebreaksbr }}
+    </div>
     <div class="email">
       <a href="mailto:{{ instance.press_contact.email }}">{{ instance.press_contact.email }}</a>
-    </div>
-    <div class="address">
-      {{ instance.press_contact.address }}
     </div>
     <div class="phone">
       {{ instance.press_contact.phone }}

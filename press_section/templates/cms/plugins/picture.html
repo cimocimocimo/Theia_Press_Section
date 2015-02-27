@@ -5,7 +5,7 @@
 {% if picture.url %}<a href="{{ picture.url }}">{% endif %}
 
 {% if "content" in placeholder %}
-  {% thumbnail picture.image.name '484x1500' as img %}
+  {% thumbnail picture.image.name '832x540' crop='center' as img %}
   <img src="{{ img.url }}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
   {% endthumbnail %}
 {% endif %}

@@ -2,10 +2,12 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block content %}
+  <div class="wrapper-9-col-offset-right">
+
   {% if featured_celebrity and current_page.number == 1 %}
     <div class="featured-celebrity-block">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-        {% thumbnail featured_celebrity.main_image '800x520' crop='center' as img %}
+        {% thumbnail featured_celebrity.main_image '832x540' crop='center' as img %}
           <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
 
@@ -23,10 +25,9 @@
           <div class="celebrity-summary-block">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
-              {% thumbnail celeb.main_image '245x183' crop='top' as img %}
+              {% thumbnail celeb.main_image '256x192' crop='top' as img %}
                 <img src="{{  img.url }}" alt="" />
               {% endthumbnail %}
-
             </a>
           </div>
       {% endfor %}
@@ -37,4 +38,5 @@
       <p>No celebrities are available.</p>
   {% endif %}
 
+  </div>
 {% endblock %}

@@ -6,9 +6,12 @@ from cms.models import CMSPlugin
 class PressContact(models.Model):
     descriptive_text = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
+    address = models.TextField()
     email = models.CharField(max_length=255)
     phone = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.name
 
 
 class PressContactPluginModel(CMSPlugin):

@@ -2,7 +2,7 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
 
 {% block content %}
-
+  <div class="wrapper-8-col">
   {% static_placeholder 'media_contacts' %}
 
   {% if current_page %}
@@ -18,4 +18,5 @@
 
   {% static_placeholder 'articles_index_footer' %}
 
+  </div>
 {% endblock %}

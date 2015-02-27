@@ -97,6 +97,16 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+
+    # Theia apps
+    'pagination',
+    'cms_extra_tags',
+    'press_contacts',
+    'articles',
+    'events',
+    'celebrities',
+    'press_section',
+
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
     'django.contrib.auth',
@@ -128,15 +138,6 @@ INSTALLED_APPS = (
     'storages',
     'corsheaders',
     'sorl.thumbnail',
-
-    # Theia apps
-    'pagination',
-    'cms_extra_tags',
-    'press_contacts',
-    'articles',
-    'events',
-    'celebrities',
-    'press_section'
 )
 
 

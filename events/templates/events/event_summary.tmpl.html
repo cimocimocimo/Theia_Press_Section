@@ -1,14 +1,12 @@
 {% load thumbnail %}
 <div class="event-summary-block">
-  <h4>{{ event.title }}</h4>
-  {% if event.event_date %}
-    {{  event.event_date }}
-  {% endif %}
-  <div class="event-summary-image">
-    {% thumbnail event.video_still '320x320' as img %}
-    <img src="{{  img.url }}" alt="" />
+  <a href="{% url 'events:detail' event.slug %}">
+    <h3>{{ event.title }}</h3>
+    <div class="image">
+      {% thumbnail event.video_still '736x414' crop='top' as img %}
+      <img src="{{  img.url }}" alt="" />
     {% endthumbnail %}
-  </div>
+    </div>
+  </a>  
   <p>{{ event.excerpt }}</p>
-  <a href="{% url 'events:detail' event.slug %}">Read more</a>  
 </div>

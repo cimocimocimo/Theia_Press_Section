@@ -7,19 +7,16 @@
 {% endblock %}
 
 {% block content %}
-  <div class="dress-block">
-    {% thumbnail dress.main_image '768x576' as img %}
-    <img src="{{  img.url }}" alt="" />
-    {% endthumbnail %}
+  <div class="wrapper-9-col-offset-right">
+    <div class="dress-detail-block">
+      {% thumbnail dress.main_image '832' as img %}
+      <img src="{{  img.url }}" alt="" />
+      {% endthumbnail %}
 
-    {% render_placeholder dress.content %}
-
-    <div class="celebrity-dresses-block">
+      {% render_placeholder dress.content %}
 
       {% if dresses %}
         {% include 'celebrities/dress_list.tmpl.html' %}
-      {% else %}
-        <p>No dresses are available.</p>
       {% endif %}
 
     </div>

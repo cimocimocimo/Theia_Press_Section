@@ -61,7 +61,7 @@
   <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} layout-{{ top-level-layout }}">
   -->
   {% endcomment %}
-  <body class="layout-customer-account">
+  <body class="layout-main">
     <!-- for the scroll to top link -->
     <div id="top"></div>
     {% cms_toolbar %}
@@ -178,17 +178,15 @@
           </div>
         </div>
 
-        <div class="customer-account-content-hero">
-          <div class="wrapper-8-col">
+        <div class="customer-account-content-hero press-content-hero">
 
+          <div class="wrapper-8-col">
             {% block page_header %}
               <h2>{% page_attribute "title" %}</h2>
             {% endblock %}
-
-            {% block content %}
-            {% endblock content %}
-
           </div>
+          {% block content %}
+          {% endblock content %}
         </div>
 
       </main>
