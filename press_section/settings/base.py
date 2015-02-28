@@ -44,6 +44,7 @@ STATICFILES_FINDERS = (
 )
 
 
+# if using scss precompiler use the compress.sh script for the compress command on Elastic Beanstalk
 COMPRESS_PRECOMPILERS = (
     # ('text/scss', 'sass --scss {infile} {outfile}'),
     # ('text/scss', 'press_section.helpers.ScssFilter'),

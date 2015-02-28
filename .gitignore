@@ -11,8 +11,6 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-/press_section/static/base.css
-/press_section/static/base.css.map
 /press_section/static/CACHE/
 /press_section/static/.sass-cache/
 /press_section/media/
