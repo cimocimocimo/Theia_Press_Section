@@ -6,7 +6,7 @@ Production Settings
 
 TEMPLATE_DEBUG = DEBUG = False
 
-ALLOWED_HOSTS = ['press.theiacouture.com', 'theia-press-section.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['press.theiacouture.com', 'press-section-dev.elasticbeanstalk.com']
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
