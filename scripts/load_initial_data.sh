@@ -5,9 +5,7 @@ python manage.py loaddata fixtures/press_contacts.json
 python manage.py loaddata fixtures/articles.json
 python manage.py loaddata fixtures/events.json
 python manage.py loaddata fixtures/celebrities.json
-python manage.py loaddata fixtures/press_section.json
 python manage.py loaddata fixtures/cms.json
-python manage.py loaddata fixtures/menus.json
 python manage.py loaddata fixtures/djangocms_style.json
 python manage.py loaddata fixtures/djangocms_column.json
 python manage.py loaddata fixtures/djangocms_file.json
@@ -19,7 +17,5 @@ python manage.py loaddata fixtures/djangocms_picture.json
 python manage.py loaddata fixtures/djangocms_teaser.json
 python manage.py loaddata fixtures/djangocms_video.json
 python manage.py loaddata fixtures/djangocms_snippet.json
-python manage.py loaddata fixtures/reversion.json
-python manage.py loaddata fixtures/compressor.json
 python manage.py loaddata fixtures/sorl_thumbnail.json
 

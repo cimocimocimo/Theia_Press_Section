@@ -7,10 +7,19 @@
 {% endblock %}
 
 {% block content %}
-  <div class="event-block">
-    {% render_placeholder event.content %}
+  <div class="wrapper-8-col">
+
+    <div class="event-block">
+      {% render_placeholder event.content %}
+
+      {% with share_url=current_url %}
+        {% include 'social-share-buttons.tmpl.html' %}
+      {% endwith %}
+    </div>
+
+    <div class="pagination-row">
+      {% show_prev_next base_url=base_url %}
+    </div>
+
   </div>
-
-  {% show_prev_next base_url=base_url %}
-
 {% endblock %}

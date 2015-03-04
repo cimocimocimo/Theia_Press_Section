@@ -25,6 +25,7 @@ def index(request, page_number=1):
 def detail(request, slug):
     event = get_object_or_404(Event, slug=slug)
     base_url = reverse('events:index')
+    
 
     try:
         next_item = event.get_next_by_event_date()
@@ -41,5 +42,6 @@ def detail(request, slug):
                                'base_url': base_url,
                                'previous_item': previous_item,
                                'next_item': next_item,
-                               'verbose_name': Event._meta.verbose_name},
+                               'verbose_name': Event._meta.verbose_name,
+                               'current_url': request.build_absolute_uri(request.path)},
                               context_instance=RequestContext(request))

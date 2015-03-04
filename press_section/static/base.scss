@@ -9705,9 +9705,22 @@ span#resultMessage {
     }
 }
 
+.press-section {
+    .share-buttons {
+        height: 20px;
+        width: 354px;
 
-.article-detail-content {
-    .article-detail-pagination-row {
+        > * {
+            display: inline-block !important;
+            vertical-align: top !important;
+        }
+
+        .twitter-share-button {
+            width: 80px !important;
+        }
+    }
+
+    .pagination-row {
         margin: $gutter*3 0 $gutter*4;
         text-align: center;
     }

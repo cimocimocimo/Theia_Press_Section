@@ -1,1 +1,1 @@
-[{"fields": {"descriptive_text": "For any events enquiries, please contact", "email": "ryan@theiacouture.com", "name": "Ryan Hops", "phone": "514-123-1234", "address": "1412 Broadway Suite 1200\r\nNewYork, New York 10018"}, "model": "press_contacts.presscontact", "pk": 1}, {"fields": {"press_contact": 1}, "model": "press_contacts.presscontactpluginmodel", "pk": 12}, {"fields": {"press_contact": 1}, "model": "press_contacts.presscontactpluginmodel", "pk": 13}]
+[]

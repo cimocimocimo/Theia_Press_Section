@@ -11,7 +11,9 @@ def index(request, page_number=1):
 
     items_per_page = 6
     query_set = Celebrity.objects.all()
-    featured_celebrity = query_set[:1].get()
+    featured_celebrity = False
+    if query_set.exists():
+        featured_celebrity = query_set[:1].get()
     paginator = Paginator(query_set[1:], items_per_page)
     base_url = reverse('celebrities:index')
 

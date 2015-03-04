@@ -1,1 +1,1 @@
-[]
+[{"fields": {"fullscreen": true, "loadingbarcolor": "828282", "buttonovercolor": "000000", "auto_hide": false, "movie": "", "image": "", "buttonoutcolor": "333333", "seekbarcolor": "13ABEC", "bgcolor": "000000", "height": 420, "width": 736, "seekbarbgcolor": "333333", "auto_play": false, "buttonhighlightcolor": "FFFFFF", "textcolor": "FFFFFF", "loop": false, "movie_url": "https://www.youtube.com/watch?v=ooWrdJ-JUEM"}, "model": "djangocms_video.video", "pk": 1}]

@@ -61,7 +61,9 @@
   <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} layout-{{ top-level-layout }}">
   -->
   {% endcomment %}
-  <body class="layout-main">
+  <body class="layout-main press-section">
+    {% include 'social-share-scripts.tmpl.html' %}
+
     <!-- for the scroll to top link -->
     <div id="top"></div>
     {% cms_toolbar %}

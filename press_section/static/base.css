@@ -6222,6 +6222,14 @@ span#resultMessage {
     .article-summary-block .article-summary-read-more-link:after {
       top: -1px; }
 
-.article-detail-content .article-detail-pagination-row {
+.press-section .share-buttons {
+  height: 20px;
+  width: 354px; }
+  .press-section .share-buttons > * {
+    display: inline-block !important;
+    vertical-align: top !important; }
+  .press-section .share-buttons .twitter-share-button {
+    width: 80px !important; }
+.press-section .pagination-row {
   margin: 48px 0 64px;
   text-align: center; }
