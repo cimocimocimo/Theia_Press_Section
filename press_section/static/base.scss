@@ -5954,7 +5954,8 @@ address {
 %grid-block-base {
     text-align: center;
 
-    h2 {
+    > h2,
+    > h3 {
         text-align: center;
         margin-top: 0;
         margin-bottom: $gutter;
@@ -9725,3 +9726,26 @@ span#resultMessage {
         text-align: center;
     }
 }
+
+// for the press section plugins on the press home page.
+%press-plugin-base {
+    @extend %grid-block-base;
+}
+
+.latest-articles-plugin-block {
+    @extend %press-plugin-base;
+}
+
+.latest-articles-summary-block {
+    @extend %grid-item-2-col;
+}
+
+.celebrities-plugin-block {
+    @extend %press-plugin-base;
+}
+
+.celebrities-plugin-summary-block {
+    @extend %grid-item-2-col;
+}
+
+    
