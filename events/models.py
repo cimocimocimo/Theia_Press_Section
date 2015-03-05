@@ -32,5 +32,7 @@ class Event(models.Model):
         return self.title
 
 
-
-
+class EventsPluginModel(CMSPlugin):
+    title = models.CharField(max_length=255,
+                             default="Events")
+    

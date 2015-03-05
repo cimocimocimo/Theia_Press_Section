@@ -44,3 +44,9 @@ class Dress(OrderedModel):
 
     def __unicode__(self):
         return self.title
+
+class CelebritiesPluginModel(CMSPlugin):
+    number_to_show = models.PositiveSmallIntegerField(default=4)
+    title = models.CharField(max_length=255,
+                             default="Celebrities")
+    

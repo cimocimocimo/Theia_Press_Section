@@ -1,0 +1,11 @@
+{% load thumbnail %}
+<div class="celebrities-summary-block">
+  <h4>{{ celebrity.name }}</h4>
+  <div class="celebrity-summary-image">
+    <a href="{% url 'celebrities:celeb_detail' celebrity.slug %}">
+    {% thumbnail celebrity.main_image '160' as img %}
+    <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
+    </a>
+  </div>
+</div>

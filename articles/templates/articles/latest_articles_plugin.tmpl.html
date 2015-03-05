@@ -1,0 +1,16 @@
+{% load cms_tags staticfiles sekizai_tags %}
+
+<div class="latest-articles-plugin-block">
+
+  <h3>{{ instance.title }}</h3>
+
+  {% if articles %}
+    {% for article in articles %}
+      {% include 'articles/latest_articles_plugin_summary.tmpl.html' %}
+    {% endfor %}
+
+  {% else %}
+    <p>No articles are available.</p>
+  {% endif %}
+
+</div>

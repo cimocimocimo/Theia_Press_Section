@@ -40,5 +40,7 @@ class Article(models.Model):
         return self.title
 
 
-
-
+class LatestArticlesPluginModel(CMSPlugin):
+    number_to_show = models.PositiveSmallIntegerField(default=4)
+    title = models.CharField(max_length=255,
+                             default="Latest Articles")

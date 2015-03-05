@@ -1,0 +1,12 @@
+{% load thumbnail %}
+<div class="latest-articles-summary-block">
+  <h4>{{ article.title }}</h4>
+  <div class="article-summary-image">
+    <a href="{% url 'articles:detail' article.slug %}">
+    {% thumbnail article.screenshot '160' as img %}
+    <img src="{{  img.url }}" alt="" />
+    {% endthumbnail %}
+    </a>
+  </div>
+  <a class="article-summary-read-more-link" href="{% url 'articles:detail' article.slug %}">Read more</a>  
+</div>

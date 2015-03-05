@@ -1,0 +1,16 @@
+{% load cms_tags staticfiles sekizai_tags %}
+
+<div class="celebrities-plugin-block">
+
+  <h3>{{ instance.title }}</h3>
+
+  {% if celebrities %}
+    {% for celebrity in celebrities %}
+      {% include 'celebrities/celebrities_plugin_summary.tmpl.html' %}
+    {% endfor %}
+
+  {% else %}
+    <p>No celebrities are available.</p>
+  {% endif %}
+
+</div>
