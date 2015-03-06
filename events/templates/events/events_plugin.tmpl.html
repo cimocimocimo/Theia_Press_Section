@@ -6,6 +6,14 @@
 
   {% if event %}
     {% include 'events/events_plugin_summary.tmpl.html' %}
+
+    <div class="button-row">
+      <a class="button-view-all" href="{% url 'events:index' %}">
+        <span class="label">View All Events</span>
+        <span class="icon"></span>
+      </a>
+    </div>
+
   {% else %}
     <p>No event is available.</p>
   {% endif %}

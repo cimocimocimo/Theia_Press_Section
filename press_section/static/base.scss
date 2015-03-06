@@ -1532,6 +1532,20 @@ hr {
     }
 }
 
+/* gold, large button with solid arrow icon */
+%medium-gold-arrow-button {
+    @extend %button-base;
+    @extend %medium-button-base;
+    @extend %gold-button-base;
+    @extend %arrow-icon-button-base;
+
+    .icon {
+        padding-left: 2px;
+        top: -1px;
+    }
+}
+
+
 /* gold, small button with solid arrow icon */
 %small-gold-arrow-button {
     @extend %button-base;
@@ -9772,6 +9786,18 @@ span#resultMessage {
         &:before {
             display: none;
         }
+    }
+
+    .button-row {
+        margin: $gutter 0;
+    }
+
+    .button-view-all {
+        @extend %medium-gold-arrow-button;
+        @include transition(all 0.3s);
+
+        padding-left: $gridGutter;
+        padding-right: $gridGutter;
     }
 }
 

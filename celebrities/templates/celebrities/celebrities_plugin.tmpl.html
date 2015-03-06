@@ -13,6 +13,13 @@
       {% endif %}
     {% endfor %}
 
+    <div class="button-row">
+      <a class="button-view-all" href="{% url 'celebrities:index' %}">
+        <span class="label">View All Celebrities</span>
+        <span class="icon"></span>
+      </a>
+    </div>
+
   {% else %}
     <p>No celebrities are available.</p>
   {% endif %}

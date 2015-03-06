@@ -14,6 +14,12 @@
       {% endif %}
     {% endfor %}
 
+    <div class="button-row">
+      <a class="button-view-all" href="{% url 'articles:index' %}">
+        <span class="label">View All Articles</span>
+        <span class="icon"></span>
+      </a>
+    </div>
   {% else %}
     <p>No articles are available.</p>
   {% endif %}
