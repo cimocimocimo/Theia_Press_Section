@@ -1,8 +1,8 @@
 {% load thumbnail %}
-<div class="latest-articles-summary-block">
+<div class="latest-articles-summary-block-large">
   <a href="{% url 'articles:detail' article.slug %}">
     <div class="image">
-      {% thumbnail article.screenshot '158x214' crop='top' as img %}
+      {% thumbnail article.screenshot '350x462' crop='top' as img %}
       <img src="{{  img.url }}" alt="" />
     {% endthumbnail %}
   </div>

@@ -6,7 +6,11 @@
 
   {% if celebrities %}
     {% for celebrity in celebrities %}
-      {% include 'celebrities/celebrities_plugin_summary.tmpl.html' %}
+      {% if forloop.first %}
+        {% include 'celebrities/celebrities_plugin_summary_large.tmpl.html' %}
+      {% else %}
+        {% include 'celebrities/celebrities_plugin_summary.tmpl.html' %}
+      {% endif %}
     {% endfor %}
 
   {% else %}

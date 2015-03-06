@@ -6058,6 +6058,16 @@ address {
     }
 }
 
+%grid-item-4-col {
+    @extend %grid-item-base;
+
+    /* Desktop */
+    @include at-query ($min, $postSmall) {
+        width: 352px;
+        height: auto;
+    }
+}
+
 %grid-item-3-col {
     @extend %grid-item-base;
 
@@ -9727,9 +9737,105 @@ span#resultMessage {
     }
 }
 
+%gradient-1px-stroke {
+    background: #bbbbbb;
+    background: linear-gradient(to top left, #bbbbbb, #efefef);
+    padding: 1px;
+}
+
 // for the press section plugins on the press home page.
 %press-plugin-base {
     @extend %grid-block-base;
+
+    margin: $gutter 0;
+    padding: $gutter*4 0 $gutter*2;
+    position: relative;
+
+    h3 {
+        font-size: 2.8125em;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: $gutter;
+        right: $gutter;
+        height: 1px;
+        background: #f2f2f2;
+    }
+
+    &:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+        
+        &:before {
+            display: none;
+        }
+    }
+}
+
+%press-plugin-item-base {
+    overflow: visible;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    position: relative;
+
+    .image {
+        @include box-shadow(none);
+        @include transition(all 0.3s);
+        @extend %gradient-1px-stroke;
+    }
+
+    .content {
+        @include transition(all 0.3s);
+
+        opacity: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: $gutter/2;
+        text-align: center;
+        background: rgba($colorDarkGold, 0.42);
+
+        h4 {
+            @include transition(all 0.3s);
+
+            color: white;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.42);
+        }
+    }
+
+    &:hover {
+        .image {
+            @include box-shadow(0 1px 9px rgba(0,0,0,0.42));
+        }
+
+        .content {
+            opacity: 0;
+            // background-color: rgba(black, 0.42);
+
+            h4 {
+                color: black;
+                text-shadow: 0 0 0 rgba(0,0,0,0);
+            }
+        }
+    }
+}
+
+%press-plugin-item {
+    @extend %press-plugin-item-base;
+    
+    height: 216px;
+}
+
+%press-plugin-item-large {
+    @extend %press-plugin-item-base;
+
+    height: 464px;
+    float: left;
 }
 
 .latest-articles-plugin-block {
@@ -9738,14 +9844,38 @@ span#resultMessage {
 
 .latest-articles-summary-block {
     @extend %grid-item-2-col;
+    @extend %press-plugin-item;
+    
+}
+.latest-articles-summary-block-large {
+    @extend %grid-item-4-col;
+    @extend %press-plugin-item-large;
 }
 
 .celebrities-plugin-block {
     @extend %press-plugin-base;
 }
-
 .celebrities-plugin-summary-block {
     @extend %grid-item-2-col;
+    @extend %press-plugin-item;
+    
+}
+.celebrities-plugin-summary-block-large {
+    @extend %grid-item-4-col;
+    @extend %press-plugin-item-large;
+
+    float: right;
+
+    .content {
+        padding: $gutter;
+        
+        h4 {
+            font-size: 1.66em;
+            font-weight: 300;
+        }
+    }
 }
 
-    
+.events-plugin-block {
+    @extend %press-plugin-base;
+}

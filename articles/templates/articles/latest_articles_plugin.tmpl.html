@@ -6,7 +6,12 @@
 
   {% if articles %}
     {% for article in articles %}
-      {% include 'articles/latest_articles_plugin_summary.tmpl.html' %}
+
+      {% if forloop.first %}
+        {% include 'articles/latest_articles_plugin_summary_large.tmpl.html' %}
+      {% else %}
+        {% include 'articles/latest_articles_plugin_summary.tmpl.html' %}
+      {% endif %}
     {% endfor %}
 
   {% else %}
