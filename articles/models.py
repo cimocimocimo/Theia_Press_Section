@@ -32,7 +32,9 @@ class Article(models.Model):
         default=datetime.datetime.now)
     content = PlaceholderField('press_item_content')
     excerpt = models.TextField(blank=True, null=True)
+    lead_content = models.TextField(blank=True, null=True)
     screenshot = ImageField(null=True, blank=True)
+    screenshot_2 = ImageField(null=True, blank=True)
 
     # **TODO** Add django-taggit
 

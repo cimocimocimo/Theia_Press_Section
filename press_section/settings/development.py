@@ -33,4 +33,3 @@ if ENABLE_MEDIA_LOCAL_STORAGE:
     from press_section.settings.media_local_storage import *
 else:
     from press_section.settings.media_s3_storage import *
-

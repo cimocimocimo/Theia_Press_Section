@@ -43,7 +43,7 @@ Some things to know about this file:
 #Blogs and Comments
 #Notes and Form Feedback
 #Cart Page
-#Demo Styles - for empty store state
+#Press Section
 ==============================================================================*/
 
 /*============================================================================
@@ -159,6 +159,7 @@ $siteWidth: 1152px; // 12 col width standard
 $siteWidth10Col: 960px;
 $siteWidth9Col: 864px;
 $siteWidth8Col: 768px;
+$siteWidth6Col: 576px;
 $gutter: 16px;
 $gridGutter: 32px; // can be a %, but nested grids will have smaller margins because of it
 
@@ -9465,9 +9466,10 @@ span#resultMessage {
     padding: $gutter;
 }
 
-//
-// Press Section
-//
+
+/*============================================================================
+  #Press Section
+  ============================================================================*/
 
 .press-content-hero {
     @extent .content-hero;
@@ -9727,6 +9729,50 @@ span#resultMessage {
         &:after {
             top: -1px;
         }
+    }
+}
+
+// article detail page
+
+.article-detail-header {
+    @extend .clearfix;
+
+    width: $siteWidth6Col;
+    padding: 0 $gutter;
+    margin: $gridGutter auto 0;
+
+    h2 {
+        border-bottom: 1px solid $colorLightestGray;
+        margin: 0;
+        padding-bottom: 6px;
+    }
+
+    p {
+        font-size: 18px;
+        text-align: center;
+        margin: 18px 0;
+    }
+}
+
+.article-detail-lead {
+    @extend .clearfix;
+
+    > div {
+        width: 352px;
+        float: left;
+        margin: $gutter;
+    }
+
+    .image {
+        @extend %gradient-1px-stroke;
+        
+        img {
+            display: block;
+        }
+    }
+
+    .content.full-width {
+        width: auto;
     }
 }
 

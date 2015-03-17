@@ -91,7 +91,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
-    'cms.context_processors.cms_settings'
+    'cms.context_processors.cms_settings',
+    'press_section.context_processors.appname',
 )
 
 TEMPLATE_DIRS = (
@@ -140,6 +141,7 @@ INSTALLED_APPS = (
     'storages',
     'corsheaders',
     'sorl.thumbnail',
+    'debug_toolbar',
 )
 
 

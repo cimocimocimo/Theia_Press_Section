@@ -54,14 +54,7 @@
     <script src="{% static 'modernizr.min.js' %}"></script>
 
   </head>
-
-  {% comment %}
-  **TODO**
-  <!--
-  <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} layout-{{ top-level-layout }}">
-  -->
-  {% endcomment %}
-  <body class="layout-main press-section">
+  <body class="layout-main press-section{% if appname %} {{ appname }}-app{% endif %}{% if current_page.is_home %} press-homepage{% endif %}">
     {% include 'social-share-scripts.tmpl.html' %}
 
     <!-- for the scroll to top link -->
@@ -184,11 +177,11 @@
         <div class="press-content-hero">
 
           <div class="wrapper-8-col">
-            <header>
             {% block page_header %}
-              <h2>{% page_attribute "title" %}</h2>
+              <header>
+                <h2>{% page_attribute "title" %}</h2>
+              </header>
             {% endblock %}
-            </header>
           </div>
           {% block content %}
           {% endblock content %}

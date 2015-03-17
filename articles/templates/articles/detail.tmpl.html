@@ -2,20 +2,38 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block page_header %}
-  <h2>{{ article.title }}</h2>
-  <h4>Featured by {{ article.organization_name }} on {{ article.original_publication_date }}</h4>
+  <header class="article-detail-header">
+    <h2>{{ article.title }}</h2>
+    <p>Featured by {{ article.organization_name }} on {{ article.original_publication_date }}</p>
+  </header>
 {% endblock %}
 
 {% block content %}
   <div class="wrapper-8-col article-detail-content">
-    <div class="article-detail-block">
-      <div class="article-detail-image">
-        {% thumbnail article.screenshot '736' as img %}
+    <div class="article-detail-lead">
+      <div class="image">
+        {% thumbnail article.screenshot '350' as img %}
         <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
       </div>
-
-      
+      {% if article.screenshot_2 %}
+        <div class="image">
+          {% thumbnail article.screenshot_2 '350' as img %}
+          <img src="{{  img.url }}" alt="" />
+        {% endthumbnail %}
+        </div>
+      {% endif %}
+      {% if article.lead_content or article.excerpt %}
+        <div class="content {% if article.screenshot_2 %}full-width{% endif %}">
+          {% if article.lead_content %}
+            {{ article.lead_content|linebreaks }}
+          {% else %}
+            {{ article.excerpt|linebreaks }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="article-detail-body">
       {% render_placeholder article.content %}
       {% if article.url %}
         <p>
