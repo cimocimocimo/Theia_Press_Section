@@ -10,7 +10,9 @@
       {% include 'articles/article_summary.tmpl.html' %}
     {% endfor %}
 
-    {% show_pager base_url=base_url %}
+    <div class="pagination-row">
+      {% show_pager base_url=base_url %}
+    </div>
 
   {% else %}
     <p>No articles are available.</p>

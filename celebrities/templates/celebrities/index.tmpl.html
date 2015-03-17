@@ -32,8 +32,9 @@
           </div>
       {% endfor %}
     </div>
-    {% show_pager base_url=base_url %}
-
+    <div class="pagination-row">
+      {% show_pager base_url=base_url %}
+    </div>
   {% elif not current_page and not featured_celebrity %}
       <p>No celebrities are available.</p>
   {% endif %}
