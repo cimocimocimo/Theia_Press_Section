@@ -1,1 +1,1 @@
-[]
+[{"fields": {}, "model": "djangocms_column.multicolumns", "pk": 68}, {"fields": {}, "model": "djangocms_column.multicolumns", "pk": 128}, {"fields": {"width": "50%"}, "model": "djangocms_column.column", "pk": 69}, {"fields": {"width": "50%"}, "model": "djangocms_column.column", "pk": 70}, {"fields": {"width": "50%"}, "model": "djangocms_column.column", "pk": 129}, {"fields": {"width": "50%"}, "model": "djangocms_column.column", "pk": 131}]
