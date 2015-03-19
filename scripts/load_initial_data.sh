@@ -18,4 +18,5 @@ python manage.py loaddata fixtures/djangocms_teaser.json
 python manage.py loaddata fixtures/djangocms_video.json
 python manage.py loaddata fixtures/djangocms_snippet.json
 python manage.py loaddata fixtures/sorl_thumbnail.json
+python manage.py loaddata fixtures/gallery.json
 

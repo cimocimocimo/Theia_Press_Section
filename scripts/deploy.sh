@@ -18,3 +18,4 @@ python manage.py dumpdata --natural-foreign djangocms_teaser > fixtures/djangocm
 python manage.py dumpdata --natural-foreign djangocms_video > fixtures/djangocms_video.json
 python manage.py dumpdata --natural-foreign djangocms_snippet > fixtures/djangocms_snippet.json
 python manage.py dumpdata --natural-foreign thumbnail > fixtures/sorl_thumbnail.json
+python manage.py dumpdata --natural-foreign gallery > fixtures/gallery.json
