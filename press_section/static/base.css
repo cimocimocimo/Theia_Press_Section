@@ -96,10 +96,10 @@ Some things to know about this file:
 /*============================================================================
   #Sass Mixins
   ==============================================================================*/
-.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .customer-account-menu:after, .newsletter-form:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-header:after, .article-detail-lead:after, .clearfix:before, .wrapper-14-col:before, .wrapper:before, .page-content:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before, .contact-form-title:before, .contact-form-sender-type:before, .pagination-block:before, .product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before, .product-info-block .tablet-column:before, .product-options-block:before, .product-options-block .selector-wrapper:before, .shopping-cart:before, .shopping-cart .accepted-credit-cards:before, .search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, .site-content:before, .billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before, .celebrity-gallery .thumbs-block > a:before, .latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before, .collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before, .login-form-hero .login-form-fields-block:before, .login-form-hero .register-benefits-block:before, .register-form-hero .login-form-fields-block:before, .register-form-hero .register-benefits-block:before, .password-reset-form-hero .login-form-fields-block:before, .password-reset-form-hero .register-benefits-block:before, .main-content .customer-account-menu:before, .newsletter-form:before, .homepage-press-releases .row:before, .slick-track:before, .carousel-hero header:before, .wishlist-item .option-column:before, .contact-block address:before, .article-detail-header:before, .article-detail-lead:before {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, .press-content-header:after, .press-content-body:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .customer-account-menu:after, .newsletter-form:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-header:after, .article-detail-lead:after, .clearfix:before, .wrapper-14-col:before, .wrapper:before, .page-content:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, .press-content-header:before, .press-content-body:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before, .contact-form-title:before, .contact-form-sender-type:before, .pagination-block:before, .product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before, .product-info-block .tablet-column:before, .product-options-block:before, .product-options-block .selector-wrapper:before, .shopping-cart:before, .shopping-cart .accepted-credit-cards:before, .search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, .site-content:before, .billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before, .celebrity-gallery .thumbs-block > a:before, .latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before, .collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before, .login-form-hero .login-form-fields-block:before, .login-form-hero .register-benefits-block:before, .register-form-hero .login-form-fields-block:before, .register-form-hero .register-benefits-block:before, .password-reset-form-hero .login-form-fields-block:before, .password-reset-form-hero .register-benefits-block:before, .main-content .customer-account-menu:before, .newsletter-form:before, .homepage-press-releases .row:before, .slick-track:before, .carousel-hero header:before, .wishlist-item .option-column:before, .contact-block address:before, .article-detail-header:before, .article-detail-lead:before {
   content: "";
   display: table; }
-.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .customer-account-menu:after, .newsletter-form:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-header:after, .article-detail-lead:after {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, .press-content-header:after, .press-content-body:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .customer-account-menu:after, .newsletter-form:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-header:after, .article-detail-lead:after {
   clear: both; }
 
 /* Vertical Centering Mixin - now 100% table free!
@@ -384,7 +384,7 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
 /*================================================================================
   # Layouts
   ================================================================================*/
-.wrapper-14-col, .wrapper, .page-content, .wrapper-10-col, .site-footer, .events-press-releases-hero .wrapper, .events-press-releases-hero .page-content, .wrapper-9-col, .wrapper-9-col-offset-right, .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .ajax-cart-container {
+.wrapper-14-col, .wrapper, .page-content, .wrapper-10-col, .site-footer, .events-press-releases-hero .wrapper, .events-press-releases-hero .page-content, .wrapper-9-col, .wrapper-9-col-offset-right, .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .press-content-header, .press-content-body, .ajax-cart-container {
   position: relative;
   margin: 0 auto; }
 
@@ -411,13 +411,13 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
   padding-left: 32px;
   box-sizing: content-box; }
 
-.wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content {
+.wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .press-content-header, .press-content-body {
   /* Desktop */ }
   @media screen and (max-width: 799px) {
-    .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content {
+    .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .press-content-header, .press-content-body {
       margin: 0 16px; } }
   @media screen and (min-width: 800px) {
-    .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content {
+    .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .press-content-header, .press-content-body {
       max-width: 768px; } }
 
 .row-2-col, .login-form-hero .register-form-field-row, .register-form-hero .register-form-field-row, .password-reset-form-hero .register-form-field-row, .template-customers-account .shipping-account-info-row, .row-3-col {
@@ -6077,10 +6077,65 @@ span#resultMessage {
 /*============================================================================
   #Press Section
   ============================================================================*/
+.article-detail-lead .image, .latest-articles-summary-block .image, .celebrities-plugin-summary-block .image, .latest-articles-summary-block-large .image, .celebrities-plugin-summary-block-large .image, .gallery-image-block .image {
+  background: #bbbbbb;
+  background: linear-gradient(to top left, #bbbbbb, #efefef);
+  padding: 1px; }
+
+.press-section .share-buttons {
+  height: 20px;
+  width: 354px; }
+  .press-section .share-buttons > * {
+    display: inline-block !important;
+    vertical-align: top !important; }
+  .press-section .share-buttons .twitter-share-button {
+    width: 80px !important; }
+.press-section .pagination-row {
+  margin: 48px 0 64px;
+  text-align: center; }
+
 .press-content-hero {
   @extent .content-hero; }
   .press-content-hero h2 {
     text-align: center; }
+  .press-content-hero h3 > a {
+    color: #c19946; }
+  .press-content-hero .newsletter-signup-hero {
+    margin-bottom: 28px; }
+  .press-content-hero .social-link-hero {
+    margin-top: 28px;
+    margin-bottom: 56px; }
+
+.press-content-header h2 {
+  margin-bottom: 0px; }
+
+.press-content-body h2 {
+  margin-bottom: 21px; }
+.press-content-body h4 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 6px; }
+.press-content-body .multicolumn2, .press-content-body .press-company-description {
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 40px;
+  margin-bottom: 56px; }
+  .press-content-body .multicolumn2 .column, .press-content-body .press-company-description .column {
+    padding: 0 16px 0 48px;
+    position: relative; }
+    .press-content-body .multicolumn2 .column:first-child, .press-content-body .press-company-description .column:first-child {
+      padding: 0 48px 0 16px; }
+      .press-content-body .multicolumn2 .column:first-child:after, .press-content-body .press-company-description .column:first-child:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 96px;
+        width: 1px;
+        right: 0;
+        background: #f2f2f2; }
+.press-content-body .press-company-description {
+  padding-left: 16px;
+  padding-right: 16px; }
 
 .featured-celebrity-block, .celebrity-detail-featured-image-block {
   position: relative;
@@ -6153,22 +6208,19 @@ span#resultMessage {
   .celebrity-detail-content-block p {
     margin: 24px 0; }
 
-.press-content-hero h3 > a {
-  color: #c19946; }
-
 .contact-block {
   max-width: 548px;
   border-top: 1px solid #f2f2f2;
-  margin: 0 auto;
-  padding: 24px 0; }
+  margin: 0 auto 12px;
+  padding: 12px 0 24px; }
   .contact-block h4 {
     text-align: center;
     font-size: 18px;
     font-weight: 400;
     color: #797778;
-    margin-bottom: 12px; }
+    margin-bottom: 6px; }
   .contact-block address > div {
-    width: 40%;
+    width: 42%;
     float: left;
     font-size: 14px;
     line-height: 1.7857142857;
@@ -6177,10 +6229,10 @@ span#resultMessage {
     color: #a5a2a4; }
     .contact-block address > div:before {
       font-size: 16px;
-      top: 4px;
-      left: -7px; }
+      top: 3px;
+      left: 6px; }
   .contact-block .address {
-    width: 60%; }
+    width: 58%; }
 
 .event-summary-block {
   padding: 0 16px 32px;
@@ -6258,23 +6310,6 @@ span#resultMessage {
   display: block; }
 .article-detail-lead .content.full-width {
   width: auto; }
-
-.press-section .share-buttons {
-  height: 20px;
-  width: 354px; }
-  .press-section .share-buttons > * {
-    display: inline-block !important;
-    vertical-align: top !important; }
-  .press-section .share-buttons .twitter-share-button {
-    width: 80px !important; }
-.press-section .pagination-row {
-  margin: 48px 0 64px;
-  text-align: center; }
-
-.article-detail-lead .image, .latest-articles-summary-block .image, .celebrities-plugin-summary-block .image, .latest-articles-summary-block-large .image, .celebrities-plugin-summary-block-large .image, .gallery-image-block .image {
-  background: #bbbbbb;
-  background: linear-gradient(to top left, #bbbbbb, #efefef);
-  padding: 1px; }
 
 .latest-articles-plugin-block, .celebrities-plugin-block, .events-plugin-block {
   margin: 16px 0;
@@ -6369,7 +6404,10 @@ span#resultMessage {
       font-weight: 300; }
 
 .gallery-block {
-  text-align: center; }
+  text-align: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-bottom: 40px;
+  margin-bottom: 56px; }
 
 .gallery-image-block {
   text-align: left; }

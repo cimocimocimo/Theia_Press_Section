@@ -9471,11 +9471,109 @@ span#resultMessage {
   #Press Section
   ============================================================================*/
 
+%gradient-1px-stroke {
+    background: #bbbbbb;
+    background: linear-gradient(to top left, #bbbbbb, #efefef);
+    padding: 1px;
+}
+
+.press-section {
+    .share-buttons {
+        height: 20px;
+        width: 354px;
+
+        > * {
+            display: inline-block !important;
+            vertical-align: top !important;
+        }
+
+        .twitter-share-button {
+            width: 80px !important;
+        }
+    }
+
+    .pagination-row {
+        margin: $gutter*3 0 $gutter*4;
+        text-align: center;
+    }
+
+    
+}
+
 .press-content-hero {
     @extent .content-hero;
 
     h2 {
         text-align: center;
+    }
+
+    h3 > a {
+        color: $colorGold;
+    }
+
+    .newsletter-signup-hero {
+        margin-bottom: $gutter * 1.75;
+    }
+
+    .social-link-hero {
+        margin-top: $gutter * 1.75;
+        margin-bottom: $gutter * 3.5;
+    }
+}
+
+.press-content-header {
+    @extend %clearfix;
+    @extend .wrapper-8-col;
+    
+    h2 {
+        margin-bottom: 0px;
+    }
+}
+
+.press-content-body {
+    @extend .wrapper-8-col;
+
+    h2 {
+        margin-bottom: 21px;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        margin-bottom: 6px;
+    }
+
+    .multicolumn2,
+    .press-company-description {
+        border-bottom: 1px solid $colorLightestGray;
+        padding-bottom: 40px;
+        margin-bottom: 56px;
+
+        .column {
+            padding: 0 $gutter 0 $gutter*3;
+            position: relative;
+
+            &:first-child {
+                padding: 0 $gutter*3 0 $gutter;
+
+                &:after {
+                    content: '';
+
+                    position: absolute;
+                    top: 0;
+                    bottom: $gridGutter*3;
+                    width: 1px;
+                    right: 0;
+                    background: $colorLightestGray;
+                }
+            }
+        }
+    }
+
+    .press-company-description {
+        padding-left: $gutter;
+        padding-right: $gutter;
     }
 }
 
@@ -9591,31 +9689,25 @@ span#resultMessage {
     }
 }
 
-.press-content-hero {
-    h3 > a {
-        color: $colorGold;
-    }
-}
-
 .contact-block {
     max-width: 548px;
     border-top: 1px solid $colorLightestGray;
-    margin: 0 auto;
-    padding: $gutter*1.5 0;
+    margin: 0 auto 12px;
+    padding: 12px 0 $gutter*1.5;
 
     h4 {
         text-align: center;
         font-size: 18px;
         font-weight: 400;
         color: $colorWarmGray;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
     }
 
     address {
         @extend .clearfix;
 
         > div {
-            width: 40%;
+            width: 42%;
             float: left;
             font-size: 14px;
             line-height: (25/14);
@@ -9625,14 +9717,14 @@ span#resultMessage {
 
             &:before {
                 font-size: 16px;
-                top: 4px;
-                left: -7px;
+                top: 3px;
+                left: 6px;
             }
         }
     }
 
     .address {
-        width: 60%;
+        width: 58%;
     }
 }
 
@@ -9776,36 +9868,6 @@ span#resultMessage {
     }
 }
 
-.press-section {
-    h2 {
-        
-    }
-
-    .share-buttons {
-        height: 20px;
-        width: 354px;
-
-        > * {
-            display: inline-block !important;
-            vertical-align: top !important;
-        }
-
-        .twitter-share-button {
-            width: 80px !important;
-        }
-    }
-
-    .pagination-row {
-        margin: $gutter*3 0 $gutter*4;
-        text-align: center;
-    }
-}
-
-%gradient-1px-stroke {
-    background: #bbbbbb;
-    background: linear-gradient(to top left, #bbbbbb, #efefef);
-    padding: 1px;
-}
 
 // for the press section plugins on the press home page.
 %press-plugin-base {
@@ -9962,6 +10024,9 @@ span#resultMessage {
     @extend %clearfix;
     
     text-align: center;
+    border-bottom: 1px solid $colorLightestGray;
+    padding-bottom: 40px;
+    margin-bottom: 56px;
 }
 
 .gallery-image-block {

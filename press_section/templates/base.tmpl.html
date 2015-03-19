@@ -175,14 +175,11 @@
         </div>
 
         <div class="press-content-hero">
-
-          <div class="wrapper-8-col">
-            {% block page_header %}
-              <header>
-                <h2>{% page_attribute "title" %}</h2>
-              </header>
-            {% endblock %}
-          </div>
+          {% block page_header %}
+            <header class="press-content-header">
+              <h2>{% page_attribute "title" %}</h2>
+            </header>
+          {% endblock %}
           {% block content %}
           {% endblock content %}
         </div>
