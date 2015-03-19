@@ -9777,6 +9777,10 @@ span#resultMessage {
 }
 
 .press-section {
+    h2 {
+        
+    }
+
     .share-buttons {
         height: 20px;
         width: 354px;
@@ -9950,4 +9954,54 @@ span#resultMessage {
 
 .events-plugin-block {
     @extend %press-plugin-base;
+}
+
+// Gallery Images
+
+.gallery-block {
+    @extend %clearfix;
+    
+    text-align: center;
+}
+
+.gallery-image-block {
+    @extend %grid-item-2-col;
+
+    text-align: left;
+
+    .image {
+        @extend %gradient-1px-stroke;
+
+        margin-bottom: 6px;
+
+        > div {
+            background: #fff;
+            height: 100%;
+            width: 100%;
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    .caption {
+        color: $colorWarmLightGray;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    .image-files {
+        color: $colorGold;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+
+        a {
+            @extend %gold-hover-underline-link;
+
+            text-transform: uppercase;
+        }
+    }
 }

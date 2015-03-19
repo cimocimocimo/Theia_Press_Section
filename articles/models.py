@@ -2,9 +2,11 @@ from django.db import models
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 from sorl.thumbnail import ImageField
+from django.utils.encoding import python_2_unicode_compatible
 
 import datetime
 
+@python_2_unicode_compatible
 class Article(models.Model):
 
     class Meta:
@@ -38,7 +40,7 @@ class Article(models.Model):
 
     # **TODO** Add django-taggit
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 

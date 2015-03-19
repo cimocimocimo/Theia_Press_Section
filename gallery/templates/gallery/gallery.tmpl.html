@@ -1,0 +1,26 @@
+{% load thumbnail %}
+<div class="gallery-block">
+  <h2>{{ gallery.title }}</h2>
+  {% for image in images %}
+    <div class="gallery-image-block">
+      {% thumbnail image '159x159' padding=True padding_color='#ffffff' format=image.thumb_format as img %}
+        <div class="image">
+          <div>
+            <img src="{{  img.url }}" alt="" />
+          </div>
+        </div>
+      {% endthumbnail %}
+      <div class="caption">
+        {{ image.caption }}
+      </div>
+      {% if image.files %}
+      <div class="image-files">
+        {% for file in image.files %}
+          <a href="{{ MEDIA_URL }}{{ file.file.name }}">{{ file.link_text }}</a>
+          {% if not forloop.last %}&#183;{% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

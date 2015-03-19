@@ -109,6 +109,7 @@ INSTALLED_APPS = (
     'events',
     'celebrities',
     'press_section',
+    'gallery',
 
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
