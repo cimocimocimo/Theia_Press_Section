@@ -25,7 +25,9 @@ class Migration(migrations.Migration):
                 ('original_publication_date', models.DateField(default=datetime.date.today)),
                 ('published_date', models.DateTimeField(default=datetime.datetime.now)),
                 ('excerpt', models.TextField(null=True, blank=True)),
+                ('lead_content', models.TextField(null=True, blank=True)),
                 ('screenshot', sorl.thumbnail.fields.ImageField(null=True, upload_to=b'', blank=True)),
+                ('screenshot_2', sorl.thumbnail.fields.ImageField(null=True, upload_to=b'', blank=True)),
                 ('content', cms.models.fields.PlaceholderField(slotname=b'press_item_content', editable=False, to='cms.Placeholder', null=True)),
             ],
             options={
@@ -33,5 +35,17 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Articles',
             },
             bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='LatestArticlesPluginModel',
+            fields=[
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('number_to_show', models.PositiveSmallIntegerField(default=4)),
+                ('title', models.CharField(default=b'Latest Articles', max_length=255)),
+            ],
+            options={
+                'abstract': False,
+            },
+            bases=('cms.cmsplugin',),
         ),
     ]
