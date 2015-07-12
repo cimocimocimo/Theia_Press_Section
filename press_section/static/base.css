@@ -6112,9 +6112,8 @@ span#resultMessage {
 .press-content-body h2 {
   margin-bottom: 21px; }
 .press-content-body h4 {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 25px;
   margin-bottom: 6px; }
 .press-content-body .multicolumn2, .press-content-body .press-company-description {
   border-bottom: 1px solid #f2f2f2;
@@ -6355,53 +6354,28 @@ span#resultMessage {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
-  .latest-articles-summary-block .content, .celebrities-plugin-summary-block .content, .latest-articles-summary-block-large .content, .celebrities-plugin-summary-block-large .content {
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    opacity: 1;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 8px;
-    text-align: center;
-    background: rgba(169, 135, 65, 0.42); }
-    .latest-articles-summary-block .content h4, .celebrities-plugin-summary-block .content h4, .latest-articles-summary-block-large .content h4, .celebrities-plugin-summary-block-large .content h4 {
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
-      color: white;
-      font-weight: 400;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.42); }
   .latest-articles-summary-block:hover .image, .celebrities-plugin-summary-block:hover .image, .latest-articles-summary-block-large:hover .image, .celebrities-plugin-summary-block-large:hover .image {
     -webkit-box-shadow: 0 1px 9px rgba(0, 0, 0, 0.42);
     -moz-box-shadow: 0 1px 9px rgba(0, 0, 0, 0.42);
     box-shadow: 0 1px 9px rgba(0, 0, 0, 0.42); }
-  .latest-articles-summary-block:hover .content, .celebrities-plugin-summary-block:hover .content, .latest-articles-summary-block-large:hover .content, .celebrities-plugin-summary-block-large:hover .content {
-    opacity: 0; }
-    .latest-articles-summary-block:hover .content h4, .celebrities-plugin-summary-block:hover .content h4, .latest-articles-summary-block-large:hover .content h4, .celebrities-plugin-summary-block-large:hover .content h4 {
-      color: black;
-      text-shadow: 0 0 0 transparent; }
-
-.latest-articles-summary-block, .celebrities-plugin-summary-block {
-  height: 216px; }
 
 .latest-articles-summary-block-large, .celebrities-plugin-summary-block-large {
-  height: 464px;
   float: left; }
+
+.latest-articles-summary-block {
+  height: 216px; }
+
+.latest-articles-summary-block-large {
+  height: 464px; }
+
+.celebrities-plugin-summary-block {
+  height: auto; }
 
 .celebrities-plugin-summary-block-large {
   float: right; }
-  .celebrities-plugin-summary-block-large .content {
-    padding: 16px; }
-    .celebrities-plugin-summary-block-large .content h4 {
-      font-size: 1.66em;
-      font-weight: 300; }
+  .celebrities-plugin-summary-block-large h4 {
+    font-size: 1.66em;
+    font-weight: 300; }
 
 .gallery-block {
   text-align: center;

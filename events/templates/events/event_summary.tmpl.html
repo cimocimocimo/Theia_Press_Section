@@ -1,7 +1,7 @@
 {% load thumbnail %}
 <div class="event-summary-block">
+  <h3>{{ event.title }}</h3> 
   <a href="{% url 'events:detail' event.slug %}">
-    <h3>{{ event.title }}</h3>
     <div class="image">
       {% thumbnail event.video_still '736x414' crop='top' as img %}
       <img src="{{  img.url }}" alt="" />
