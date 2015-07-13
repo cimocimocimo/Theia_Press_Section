@@ -4,19 +4,16 @@ from cms.toolbar_pool import toolbar_pool
 from cms.toolbar_base import CMSToolbar
 
 @toolbar_pool.register
-class CelebritiesToolbar(CMSToolbar):
+class ArticlesToolbar(CMSToolbar):
 
     def populate(self):
         menu_items_data = [
-            ('admin:celebrities_celebrity_changelist', 'Celebrities overview'),
-            ('admin:celebrities_celebrity_add', 'Add Celebrity'),
-            'break',
-            ('admin:celebrities_dress_changelist', 'Dresses overview'),
-            ('admin:celebrities_dress_add', 'Add Dress'),
+            ('admin:articles_article_changelist', 'Articles overview'),
+            ('admin:articles_article_add', 'Add article')
         ]
 
         if self.is_current_app:
-            menu = self.toolbar.get_or_create_menu('celebrities-app', _('Celebrities'))
+            menu = self.toolbar.get_or_create_menu('articles-app', _('Articles'))
             for item in menu_items_data:
                 if item == 'break':
                     menu.add_break()
