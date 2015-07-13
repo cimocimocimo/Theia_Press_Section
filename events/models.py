@@ -35,4 +35,3 @@ class Event(models.Model):
 class EventsPluginModel(CMSPlugin):
     title = models.CharField(max_length=255,
                              default="Events")
-    

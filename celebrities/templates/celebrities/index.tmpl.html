@@ -1,11 +1,17 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
+{% block page_header %}
+  <header class="press-content-header" {% if first_page == 1 %} id="first" {% endif %}>
+    <h2>{% page_attribute "title" %}</h2>
+  </header>
+{% endblock %}
+
 {% block content %}
   <div class="wrapper-9-col-offset-right">
 
   {% if featured_celebrity and current_page.number == 1 %}
-    <div class="featured-celebrity-block">
+    <div class="featured-celebrity-block" id="first">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
         {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
           <img src="{{  img.url }}" alt="" />
@@ -18,10 +24,13 @@
       </a>
     </div>
   {% endif %}
-  
+
   {% if current_page %}
+
     <div class="celebrities-list-block">
       {% for celeb in current_page %}
+
+        {% if not forloop.last %}
           <div class="celebrity-summary-block">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
@@ -30,14 +39,44 @@
               {% endthumbnail %}
             </a>
           </div>
+          {% elif forloop.last %}
+          <div class="celebrity-summary-block last-item">
+            <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
+              <h4>{{ celeb.name }}</h4>
+              {% thumbnail celeb.main_image '256x192' crop='top' as img %}
+                <img src="{{  img.url }}" alt="" />
+              {% endthumbnail %}
+            </a>
+
+          </div>
+          {% endif %}
       {% endfor %}
+
+      {% if has_next %}
+
+        <div class="more" style="padding-bottom: 30px;">
+          <a style="display: none;" href="{{ base_url }}page/{{next_page}}/"></a>
+        </div>
+
+      {% elif not has_next %}
+
+        <div id="last-page" class="pagination-row">
+          <a data-scroll="" class="back-to-top-link" href="#first">Back to Top</a>
+          <!-- <a href="#top" style="text-decoration: none;">Back to Top</a> -->
+        </div>
+      {% endif %}
     </div>
-    <div class="pagination-row">
+    <span style="display: none;" id="list-foot"></span>
+
+    <!-- <div class="pagination-row">
+
       {% show_pager base_url=base_url %}
-    </div>
+    </div> -->
   {% elif not current_page and not featured_celebrity %}
       <p>No celebrities are available.</p>
   {% endif %}
 
   </div>
+
+
 {% endblock %}

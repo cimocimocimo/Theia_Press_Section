@@ -36,6 +36,8 @@ timber.init = function () {
     // cart count link
     timber.initCartCount();
 
+    timber.infiniteScroll();
+
 };
 
 timber.initCartCount = function(){
@@ -335,6 +337,56 @@ timber.accessibleNav = function () {
     function removeFocus ($el) {
         $el.removeClass(focusClass);
     }
+};
+
+
+timber.infiniteScroll = function() {
+    var $celebritiesListBlock = $(".celebrities-list-block");
+
+    // add a way point to the last item currently shown on the page.
+    $('.last-item').last().waypoint(function() {
+        var waypoint = this;
+
+        // you're at the end of the page, stop assigning waypoints.
+        if (typeof $('#last-page')[0] != 'undefined') {
+            waypoint.disable();
+            return;
+        }
+
+        var loadingImage,
+            pInfScrNode = $('.more').last(),
+            pInfScrURL = $('.more a').last().attr("href");
+
+        $.ajax({
+            type: 'GET',
+            url: pInfScrURL,
+            beforeSend: function() {
+                loadingImage = pInfScrNode.clone().empty().append('<img src=\"http://cdn.shopify.com/s/files/1/0068/2162/assets/loading.gif?105791\" />');
+                loadingImage.insertAfter(pInfScrNode);
+                pInfScrNode.hide();
+            },
+            success: function(data) {
+                // remove loading
+                console.log('got it');
+                pInfScrNode.next().remove();
+                var filteredData = $(data).find(".celebrities-list-block").html();
+                console.log(filteredData);
+                $celebritiesListBlock.append(filteredData);
+                // filteredData.insertBefore( $("#list-foot") );
+                loadingImage.remove();
+                waypoint.disable();
+                // recursively call yourself to attach another waypoint to the last item we just received
+
+                // leave this commented out until it works...
+                timber.infiniteScroll();
+            },
+            dataType: "html"
+        });
+
+        console.log('You have scrolled to my waypoint.');
+    }, {
+        offset: 'bottom-in-view'
+    });
 };
 
 // Initialize Timber's JS on docready
