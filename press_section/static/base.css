@@ -5780,7 +5780,7 @@ This file includes
   ============================================================================*/
 /* Required styles for the menu */
 /* Transitions */
-.mobile-side-nav, .container {
+.mobile-side-nav, .body-container, .header-container {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
@@ -5796,12 +5796,29 @@ This file includes
     right: 0px; }
 
 /* Push classes applied to the body */
-.container {
+.body-container, .header-container {
   overflow-x: hidden;
   position: relative;
   left: 0; }
-  .container.menu-open {
+  .body-container.menu-open, .header-container.menu-open {
     left: -258px; }
+
+.body-container {
+  position: relative;
+  overflow-x: hidden; }
+  @media screen and (max-width: 1023px) {
+    .body-container {
+      padding-top: 44px; } }
+  @media screen and (min-width: 1024px) {
+    .body-container {
+      padding-top: 85px; } }
+
+@media screen and (max-width: 1023px) {
+  .js-header-waypoint.js-headroom-active {
+    padding-top: 44px; } }
+@media screen and (min-width: 1024px) {
+  .js-header-waypoint.js-headroom-active {
+    padding-top: 85px; } }
 
 /* end required styles */
 .mobile-side-nav {

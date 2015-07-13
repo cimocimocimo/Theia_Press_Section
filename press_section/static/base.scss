@@ -9091,7 +9091,8 @@ $opacity-not-active: .25;
 }
 
 /* Push classes applied to the body */
-.container {
+.body-container,
+.header-container {
     @extend %mobile-side-nav-transitions;
 
     overflow-x: hidden;
@@ -9102,6 +9103,34 @@ $opacity-not-active: .25;
         left: -$mobileNavMenuWidth;
     }
 }
+
+.body-container {
+    position: relative;
+    overflow-x: hidden;
+    
+    // add padding to get the page content right
+    @include at-query($max, $preLarge){
+        padding-top: 44px;
+    }
+
+    @include at-query($min, $large){
+        padding-top: 85px;
+    }
+}
+
+.js-header-waypoint {
+    &.js-headroom-active {
+        // add padding to get the page content right
+        @include at-query($max, $preLarge){
+            padding-top: 44px;
+        }
+
+        @include at-query($min, $large){
+            padding-top: 85px;
+        }
+    }
+}
+
 
 /* end required styles */
 
