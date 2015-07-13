@@ -21,7 +21,7 @@
 
   {% if current_page %}
 
-    <div class="celebrities-list-block">
+    <div class="celebrities-list-block" {% if first_page %} id="first"{% endif %}>
       {% for celeb in current_page %}
 
         {% if not forloop.last %}
@@ -48,13 +48,16 @@
 
       {% if has_next %}
 
-      <span class="more" style="display: none;">
-        <a href="{{ base_url }}page/{{next_page}}/"></a>
-      </span>
+        <div class="more" style="padding-bottom: 30px;">
+          <a style="display: none;" href="{{ base_url }}page/{{next_page}}/"></a>
+        </div>
 
       {% elif not has_next %}
 
-        <span id="last-page" style="display: none"></span>
+        <div id="last-page" class="pagination-row">
+          <a data-scroll="" class="back-to-top-link" href="#first">Back to Top</a>
+          <!-- <a href="#top" style="text-decoration: none;">Back to Top</a> -->
+        </div>
       {% endif %}
     </div>
     <span style="display: none;" id="list-foot"></span>

@@ -29,9 +29,8 @@ timber.init = function () {
     // timber.mobileProductInfoBlock();
     // timber.productDescriptionBlock();
     // timber.loader.init();
-    //
     // // initialize smooth scroll
-    // smoothScroll.init();
+    smoothScroll.init();
 };
 
 timber.mobileSideNav = function(){
