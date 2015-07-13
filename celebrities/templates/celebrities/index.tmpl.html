@@ -1,11 +1,17 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
+{% block page_header %}
+  <header class="press-content-header" {% if first_page == 1 %} id="first" {% endif %}>
+    <h2>{% page_attribute "title" %}</h2>
+  </header>
+{% endblock %}
+
 {% block content %}
   <div class="wrapper-9-col-offset-right">
 
   {% if featured_celebrity and current_page.number == 1 %}
-    <div class="featured-celebrity-block">
+    <div class="featured-celebrity-block" id="first">
       <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
         {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
           <img src="{{  img.url }}" alt="" />
@@ -21,7 +27,7 @@
 
   {% if current_page %}
 
-    <div class="celebrities-list-block" {% if first_page %} id="first"{% endif %}>
+    <div class="celebrities-list-block">
       {% for celeb in current_page %}
 
         {% if not forloop.last %}
