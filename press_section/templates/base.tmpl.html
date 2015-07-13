@@ -52,7 +52,14 @@
     <!-- html-head-scripts -->
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
     <script src="{% static 'modernizr.min.js' %}"></script>
-
+    
+    {% addtoblock 'js' %}
+    <script src="{% static 'smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'headroom.min.js' %}"></script>
+    <script src="{% static 'jQuery.headroom.min.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+    {% endaddtoblock %}
+    
   </head>
   <body class="layout-main press-section{% if appname %} {{ appname }}-app{% endif %}{% if current_page.is_home %} press-homepage{% endif %}">
     {% include 'social-share-scripts.tmpl.html' %}
@@ -80,73 +87,19 @@
     <!-- pinterest -->
     <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
-    {% comment %}
-    **TODO**
-    {% include 'mobile-side-nav' %}
-    {% endcomment %}
-
-    <div class="container">
-
-      <header class="site-header" role="banner">
-        <div class="wrapper">
-
-          <div class="logo-column">
-            <h1 class="site-logo">
-              <a href="http://theiacouture.com/">
-                <img src="{% static 'theia-logo.svg' %}" alt="" />
-                <img src="{% static 'theia-logo.png' %}" alt="" />
-              </a>
-            </h1>
-          </div>
-
-          <div class="main-menu-column">
-            <nav class="main-menu" role="navigation">
-              <ul>
-                <li><a class="main-menu-link" href="http://theiacouture.com/collections">Collections</a></li>
-                <li><a class="main-menu-link" href="http://press.theiacouture.com/">Press</a></li>
-                <li><a class="main-menu-link" href="http://theiacouture.com/pages/about-us">About</a></li>
-                <li><a class="main-menu-link" href="http://theiacouture.com/pages/contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-
-          <div class="customer-menu-column">
-
-            <nav class="customer-menu" role="navigation">
-              <ul>
-                <li class="side-menu-toggle-block">
-                  <a id="sideNavToggle" class="customer-menu-link side-menu-toggle-link" href="#">
-                    <span class="icon-menu"></span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-          </div>
-
-          <div class="search-column">
-
-            <form action="http://theia.myshopify.com/search" method="get" class="search-bar" role="search">
-
-              {% comment %}
-              Uncomment the following hidden input to only show products in your search results
-              {% endcomment %}
-              <input type="hidden" name="type" value="product">
-
-              <button class="icon-fallback-text" type="submit">
-                <span class="icon icon-search" aria-hidden="true"></span>
-                <span class="fallback-text">Search</span>
-              </button>
-              <input type="search" name="q" value="" placeholder="Search for a dress here" aria-label="Search for a dress here">
-            </form>
-
-          </div>
-
-        </div>
-      </header>
+    {% include 'mobile-side-nav.tmpl.html' %}
+    
+    <div data-headroom data-offset="160" id="header-container" class="header-container">
+      
+      {% include 'header.tmpl.html' %}
+      
+    </div>
+    
+    <div id="body-container" class="body-container">
 
       <main class="main-content" role="main">
 
+        <!-- **todo** rename this block -->
         <div class="contact-page-hero">
           <div class="wrapper">
             <div class="content">
@@ -158,6 +111,7 @@
           </div>
         </div>
 
+        <!-- **todo** rename this block to the press section side nav. -->
         <div class="customer-account-nav-row">
           <div class="wrapper">
 
@@ -185,35 +139,9 @@
         </div>
 
       </main>
-
-      <footer class="site-footer" role="contentinfo">
-        <div class="first-column">
-
-          <nav class="meta-menu" role="navigation">
-            <ul>
-              <li><a class="meta-menu-link" href="http://theiacouture.com/pages/about-us">About</a></li>
-              <li><a class="meta-menu-link" href="http://theiacouture.com/pages/privacy-policy">Privacy Policy</a></li>
-              <li><a class="meta-menu-link" href="http://theiacouture.com/pages/return-policy">Return Policy</a></li>
-              <li><a class="meta-menu-link" href="http://theiacouture.com/pages/terms-of-service">Terms of Service</a></li>
-            </ul>
-          </nav>
-
-        </div>
-        <div class="last-column">
-
-          <nav class="language-menu" role="navigation">
-            <ul>
-              <li>
-                <a data-scroll class="language-menu-link" href="#top">
-                  Back to Top<span class="icon-arrow-up"></span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-        </div>
-      </footer>
-
+      
+      {% include 'footer.tmpl.html' %}
+      
     </div>
 
     {% render_block "js" %}

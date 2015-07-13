@@ -1,0 +1,13 @@
+<form action="/search" method="get" class="search-bar" role="search">
+
+  {% comment %}
+  Uncomment the following hidden input to only show products in your search results
+  {% endcomment %}
+  <input type="hidden" name="type" value="product">
+
+  <button class="icon-fallback-text" type="submit">
+    <span class="icon icon-search" aria-hidden="true"></span>
+    <span class="fallback-text">Search</span>
+  </button>
+  <input type="search" name="q" value="" placeholder="Search for a dress here" aria-label="Search for a dress here">
+</form>

@@ -1,0 +1,30 @@
+<div id="mobileSideNav" class="mobile-side-nav">
+
+  <div class="search-bar-row">
+
+    {% include 'search-bar.tmpl.html' %}
+
+  </div>
+
+  <div class="main-block">
+
+    <div class="main-menu-row">
+      {% include 'main-menu.tmpl.html' with show_home_link=true %}
+    </div>
+
+    {% comment %}
+    <div class="customer-profile-login-link-row">
+      {% include 'customer-profile-login-link' %}
+    </div>
+
+    {% if customer %}
+
+      <div class="customer-account-menu-row">
+        {% include 'customer-account-menu' %}
+      </div>
+
+    {% endif %}
+    {% endcomment %}
+  </div>
+
+</div>

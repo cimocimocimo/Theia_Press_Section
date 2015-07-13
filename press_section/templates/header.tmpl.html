@@ -1,0 +1,68 @@
+{% load cms_tags compress staticfiles sekizai_tags menu_tags %}
+<div id="top"></div>
+<header class="site-header" role="banner">
+  <div class="site-header-top-row">
+    <div class="wrapper">
+
+      <div class="logo-column">
+        <h1 class="site-logo">
+          <a href="http://theiacouture.com/">
+            <img src="{% static 'theia-logo.svg' %}" alt="" />
+            <img src="{% static 'theia-logo.png' %}" alt="" />
+          </a>
+        </h1>
+      </div>
+
+      <div class="main-menu-column">
+        {% include 'main-menu.tmpl.html' %}
+      </div>
+
+      <div class="customer-menu-column">
+
+        <nav class="customer-menu" role="navigation">
+          <ul>
+
+            {% comment %}
+            I'll need to find a way to get the name and email of a logged in client to the site
+            One possible way is to use query string variables.
+
+            <li class="profile-login-links-block">
+
+            {% include 'customer-profile-login-link' %}
+
+            </li>
+            {% endcomment %}
+
+            <li>
+
+              {% comment %}
+              Documentation:  http://shopify.com/timber#ajax-cart
+              {% endcomment %}
+              <a id="cartToggle" class="customer-menu-link cart-count-link" href="/cart">
+                <span class="icon-shopping-bag">
+                  <span id="cartCount" class="count{% if cart.item_count > 0 %} positive-count{% endif %}">{{ cart.item_count }}</span>
+                </span>
+                <span class="label">Cart</span>
+              </a>
+
+            </li>
+
+            <li class="side-menu-toggle-block">
+              <a id="sideNavToggle" class="customer-menu-link side-menu-toggle-link" href="#">
+                <span class="icon-menu"></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="search-column">
+
+        {% include 'search-bar.tmpl.html' %}
+
+      </div>
+
+    </div>
+  </div>
+</header>
