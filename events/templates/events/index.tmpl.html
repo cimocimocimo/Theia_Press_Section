@@ -7,9 +7,25 @@
     {% static_placeholder 'media_contacts' %}
 
     {% if current_page %}
-      {% for event in current_page %}
-        {% include 'events/event_summary.tmpl.html' %}
-      {% endfor %}
+      <div data-infinite-scroll class="events-list-block" {% spaceless %}
+           {% if has_next_page %}
+           data-next-page-url="{{ base_url }}page/{{ next_page_number }}/"
+           data-has-next-page="true"
+           {% else %}
+           data-has-next-page="false"
+           {% endif %}
+      {% endspaceless %}>
+        {% for event in current_page %}
+          {% include 'events/event_summary.tmpl.html' %}
+        {% endfor %}
+      </div>
+
+      <div class="spinner-block">
+      </div>
+
+      <div class="back-to-top-block">
+        <a data-scroll data-options='{"offset": 110, "updateURL": false}' class="back-to-top-link" href="#top">Back to Top</a>
+      </div>
 
       <div class="pagination-row">
         {% show_pager base_url=base_url %}

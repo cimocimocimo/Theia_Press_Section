@@ -8,18 +8,25 @@ from articles.models import Article
 
 def index(request, page_number=1):
 
-    items_per_page = 4
+    items_per_page = 2
     query_set = Article.objects.order_by('original_publication_date')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('articles:index')
 
     try:
         current_page = paginator.page(page_number)
+        has_next = current_page.has_next()
+        next_page_number = None
+        if current_page.has_next():
+            next_page_number = current_page.next_page_number()
     except InvalidPage:
         raise Http404
 
     return render_to_response('articles/index.tmpl.html',
-                              {'current_page': current_page, 'base_url': base_url},
+                              {'current_page': current_page,
+                               'has_next_page' : has_next,
+                               'next_page_number' : next_page_number,
+                               'base_url': base_url},
                               context_instance=RequestContext(request))
 
 def detail(request, slug):

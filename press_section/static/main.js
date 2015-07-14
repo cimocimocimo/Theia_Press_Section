@@ -353,18 +353,21 @@ timber.infiniteScrollInit = function(){
 
     $paginationBlock.addClass('js-hidden');
 
-    nextPageUrl = hasNextPage ? $infiniteScrollBlock.attr('data-next-page-url') : '';
+    if (hasNextPage){
+        var waypointTrigger = new Waypoint({
+            element: $infiniteScrollBlock[0],
+            handler: waypointCallback,
+            offset: 'bottom-in-view'
+        });
 
-    var waypointTrigger = new Waypoint({
-        element: $infiniteScrollBlock[0],
-        handler: waypointCallback,
-        offset: 'bottom-in-view'
-    });
+        nextPageUrl = $infiniteScrollBlock.attr('data-next-page-url');
+
+    } else {
+        nextPageUrl = '';
+    }
 
     function waypointCallback(direction){
-        console.log('hit new wp');
-
-        if (!isRequestActive && direction === 'down'){
+        if (!isRequestActive && direction === 'down' && hasNextPage){
             getNextPage();
         }
     }

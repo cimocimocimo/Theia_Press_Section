@@ -29,8 +29,8 @@
     {% if current_page %}
 
       <div data-infinite-scroll class="celebrities-list-block" {% spaceless %}
-           {% if has_next %}
-           data-next-page-url="{{ base_url }}page/{{ next_page }}/"
+           {% if has_next_page %}
+           data-next-page-url="{{ base_url }}page/{{ next_page_number }}/"
            data-has-next-page="true"
            {% else %}
            data-has-next-page="false"

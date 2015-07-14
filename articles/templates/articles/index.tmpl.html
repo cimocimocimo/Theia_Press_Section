@@ -3,22 +3,39 @@
 
 {% block content %}
   <div class="wrapper-8-col">
-  {% static_placeholder 'media_contacts' %}
 
-  {% if current_page %}
-    {% for article in current_page %}
-      {% include 'articles/article_summary.tmpl.html' %}
-    {% endfor %}
+    {% static_placeholder 'media_contacts' %}
 
-    <div class="pagination-row">
-      {% show_pager base_url=base_url %}
-    </div>
+    {% if current_page %}
+      <div data-infinite-scroll class="articles-list-block" {% spaceless %}
+           {% if has_next_page %}
+           data-next-page-url="{{ base_url }}page/{{ next_page_number }}/"
+           data-has-next-page="true"
+           {% else %}
+           data-has-next-page="false"
+           {% endif %}
+      {% endspaceless %}>
+        {% for article in current_page %}
+          {% include 'articles/article_summary.tmpl.html' %}
+        {% endfor %}
+      </div>
 
-  {% else %}
-    <p>No articles are available.</p>
-  {% endif %}
+      <div class="spinner-block">
+      </div>
 
-  {% static_placeholder 'articles_index_footer' %}
+      <div class="back-to-top-block">
+        <a data-scroll data-options='{"offset": 110, "updateURL": false}' class="back-to-top-link" href="#top">Back to Top</a>
+      </div>
+
+      <div class="pagination-row">
+        {% show_pager base_url=base_url %}
+      </div>
+
+    {% else %}
+      <p>No articles are available.</p>
+    {% endif %}
+
+    {% static_placeholder 'articles_index_footer' %}
 
   </div>
 {% endblock %}
