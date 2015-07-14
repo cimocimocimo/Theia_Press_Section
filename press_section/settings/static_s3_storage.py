@@ -8,7 +8,7 @@ base settings for the storing static files on s3
 
 # Compressor Settings
 COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = False
+COMPRESS_OFFLINE = True
 
 # static files and compressor for the css/js output
 STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStorage'
