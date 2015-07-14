@@ -42,7 +42,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <!-- CSS ================================================== -->
-    {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
+    {% render_block "css" %}
     {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}base.css" />
     {% endcompress %}
@@ -52,6 +52,14 @@
     <!-- html-head-scripts -->
     <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
     <script src="{% static 'modernizr.min.js' %}"></script>
+    
+    {% addtoblock 'js' %}
+    <script src="{% static 'smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'headroom.min.js' %}"></script>
+    <script src="{% static 'jQuery.headroom.min.js' %}"></script>
+    <script src="{% static 'jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+    {% endaddtoblock %}
     
   </head>
   <body class="layout-main press-section{% if appname %} {{ appname }}-app{% endif %}{% if current_page.is_home %} press-homepage{% endif %}">
@@ -137,14 +145,7 @@
       
     </div>
 
-    {% compress js %}
-    <script src="{% static 'smooth-scroll.min.js' %}"></script>
-    <script src="{% static 'headroom.min.js' %}"></script>
-    <script src="{% static 'jQuery.headroom.min.js' %}"></script>
-    <script src="{% static 'jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'main.js' %}"></script>
-    {% endcompress %}
-    {% render_block "js" postprocessor "compressor.contrib.sekizai.compress" %}
+    {% render_block "js" %}
     
     <script type="text/template" id="loaderAnimationTemplate">
         <div class="spinner">
