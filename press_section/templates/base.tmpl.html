@@ -58,7 +58,6 @@
     <script src="{% static 'headroom.min.js' %}"></script>
     <script src="{% static 'jQuery.headroom.min.js' %}"></script>
     <script src="{% static 'jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'main.js' %}"></script>
     {% endaddtoblock %}
     
   </head>
@@ -146,6 +145,9 @@
     </div>
 
     {% render_block "js" %}
+    {% compress js %}
+    <script src="{% static 'main.js' %}"></script>
+    {% endcompress %}
     
     <script type="text/template" id="loaderAnimationTemplate">
         <div class="spinner">
