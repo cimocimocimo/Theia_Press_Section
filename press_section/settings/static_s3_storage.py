@@ -15,6 +15,6 @@ STATICFILES_STORAGE = COMPRESS_STORAGE = 'press_section.storage.StaticS3BotoStor
 STATIC_S3_PATH = "static"
 
 COMPRESS_ROOT = STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-COMPRESS_URL = STATIC_URL = '//%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
+COMPRESS_URL = STATIC_URL = 'http://%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
