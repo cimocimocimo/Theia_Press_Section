@@ -9,6 +9,7 @@ class FixedS3BotoStorage(S3BotoStorage):
     def url(self, name):
         """
         Removes security tokens from static file urls.
+        testing
         """
         orig = super(FixedS3BotoStorage, self).url(name)
         scheme, netloc, path, params, query, fragment = urlparse.urlparse(orig)
