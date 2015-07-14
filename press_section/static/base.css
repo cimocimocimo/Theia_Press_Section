@@ -173,14 +173,14 @@ pre {
       font-size: 0.9375em;
       /* ~15px */ } }
 
-.pagination-block > li > a, .pagination-block > li > span, address {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
   font-family: Arial, sans-serif; }
   @media screen and (min-width: 481px) {
-    .pagination-block > li > a, .pagination-block > li > span, address {
+    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
       font-size: 0.875em;
       /* ~14px */ } }
   @media screen and (max-width: 480px) {
-    .pagination-block > li > a, .pagination-block > li > span, address {
+    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
       font-size: 0.8125em;
       /* ~13px */ } }
 
@@ -280,16 +280,16 @@ pre {
 .customer-account-content-hero .shipping-account-info-block a:after, .wishlist-hero .shipping-account-info-block a:after, .article-summary-block .article-summary-read-more-link:after {
   content: '\BB'; }
 
-.pagination-block > li > a, .pagination-block > li > span, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link, .breadcrumb-block a, .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .login-form-hero p a, .register-form-hero p a, .password-reset-form-hero p a, .search-result-item .remove-item-link, .cart-item .remove-item-link, .order-line-item .remove-item-link, .wishlist-item .remove-item-link, .order-line-item .fulfillment-status a, .meta-menu-link, .language-menu-link, .wishlist-item .header-row a, p a, .product-purchase-block .add-to-wishlist-link, .add-new-address-link, .homepage-press-releases h3 a, .dress-sizing-link, .modal-close-link, address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link, .collections-hero .content a, .celebrity-gallery .scheme-dark .content a, .social-media-feed-item .content a, .homepage-press-releases .read-more, .article-summary-block .article-summary-read-more-link, .gallery-image-block .image-files a, .celebrity-gallery .scheme-light .content a, .content-hero main p a, .customer-account-content-hero main p a, .wishlist-hero main p a, .other-enquires-hero main p a, .login-form-hero main p a, .register-form-hero main p a, .password-reset-form-hero main p a, .latest-collections-link, .social-media-feed-item .source a {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link, .breadcrumb-block a, .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .login-form-hero p a, .register-form-hero p a, .password-reset-form-hero p a, .search-result-item .remove-item-link, .cart-item .remove-item-link, .order-line-item .remove-item-link, .wishlist-item .remove-item-link, .order-line-item .fulfillment-status a, .meta-menu-link, .language-menu-link, .wishlist-item .header-row a, p a, .product-purchase-block .add-to-wishlist-link, .add-new-address-link, .homepage-press-releases h3 a, .dress-sizing-link, .modal-close-link, address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link, .collections-hero .content a, .celebrity-gallery .scheme-dark .content a, .social-media-feed-item .content a, .homepage-press-releases .read-more, .article-summary-block .article-summary-read-more-link, .gallery-image-block .image-files a, .celebrity-gallery .scheme-light .content a, .content-hero main p a, .customer-account-content-hero main p a, .wishlist-hero main p a, .other-enquires-hero main p a, .login-form-hero main p a, .register-form-hero main p a, .password-reset-form-hero main p a, .latest-collections-link, .social-media-feed-item .source a {
   white-space: nowrap; }
 
 /* link text styles */
 /* gray link base */
 /* gray, gold on hover */
-.pagination-block > li > a, .pagination-block > li > span, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link {
   color: #8d8d8d;
   text-decoration: none; }
-  .pagination-block > li > a:hover, .pagination-block > li > span:hover, .product-description-expand-link:hover, .shopping-cart .checkout-button-row a:hover, .main-menu-link:hover, .customer-menu-link:hover, .customer-account-menu-link:hover, .pagination-block > li > a:active, .pagination-block > li > span:active, .product-description-expand-link:active, .shopping-cart .checkout-button-row a:active, .main-menu-link:active, .customer-menu-link:active, .customer-account-menu-link:active, .pagination-block > li > a:focus, .pagination-block > li > span:focus, .product-description-expand-link:focus, .shopping-cart .checkout-button-row a:focus, .main-menu-link:focus, .customer-menu-link:focus, .customer-account-menu-link:focus {
+  .pagination-block > li > a:hover, .pagination-block > li > span:hover, .back-to-top-link:hover, .product-description-expand-link:hover, .shopping-cart .checkout-button-row a:hover, .main-menu-link:hover, .customer-menu-link:hover, .customer-account-menu-link:hover, .pagination-block > li > a:active, .pagination-block > li > span:active, .back-to-top-link:active, .product-description-expand-link:active, .shopping-cart .checkout-button-row a:active, .main-menu-link:active, .customer-menu-link:active, .customer-account-menu-link:active, .pagination-block > li > a:focus, .pagination-block > li > span:focus, .back-to-top-link:focus, .product-description-expand-link:focus, .shopping-cart .checkout-button-row a:focus, .main-menu-link:focus, .customer-menu-link:focus, .customer-account-menu-link:focus {
     color: #c19946; }
 
 /* gray, gold on hover */
@@ -1829,6 +1829,20 @@ label.error {
     .pagination-block > .disabled > span, .pagination-block > .disabled > a, .pagination-block > .disabled > a:hover, .pagination-block > .disabled > a:focus {
       color: #999999;
       cursor: not-allowed; } }
+
+.back-to-top-block {
+  text-align: center;
+  margin: 64px 0; }
+
+.back-to-top-link {
+  display: inline-block;
+  height: 40px;
+  width: 192px;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  text-transform: uppercase;
+  line-height: 38px;
+  font-weight: 700; }
 
 /*============================================================================
   #Site Header
@@ -6506,3 +6520,19 @@ span#resultMessage {
     line-height: 20px; }
     .gallery-image-block .image-files a {
       text-transform: uppercase; }
+
+.spinner-block .spinner {
+  font-size: 0;
+  /* set to remove the spacing from the :before element */
+  height: 200px;
+  text-align: center; }
+  .spinner-block .spinner:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+  .spinner-block .spinner > * {
+    font-size: 16px;
+    /* ratchet up the font-size to the default base hight; */
+    display: inline-block;
+    vertical-align: middle; }

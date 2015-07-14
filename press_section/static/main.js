@@ -33,10 +33,12 @@ timber.init = function () {
     // initialize smooth scroll
     smoothScroll.init();
 
+    timber.loader.init();
+
     // cart count link
     timber.initCartCount();
 
-    timber.infiniteScroll();
+    timber.infiniteScrollInit();
 
 };
 
@@ -187,6 +189,7 @@ timber.mobileSideNav = function(){
 
 timber.headerSubNav = function(){
 
+    // debug
     return;
 
     // get elements
@@ -339,54 +342,128 @@ timber.accessibleNav = function () {
     }
 };
 
+timber.infiniteScrollInit = function(){
 
-timber.infiniteScroll = function() {
-    var $celebritiesListBlock = $(".celebrities-list-block");
+    // we should only have one infinite scrolling block per page
+    var $infiniteScrollBlock = $('[data-infinite-scroll]').first(),
+        isRequestActive = false, // prevent repeated ajax calls
+        hasNextPage = $infiniteScrollBlock.attr('data-has-next-page') === 'true',
+        nextPageUrl = '',
+        $paginationBlock = $('.pagination-block');
 
-    // add a way point to the last item currently shown on the page.
-    $('.last-item').last().waypoint(function() {
-        var waypoint = this;
+    $paginationBlock.addClass('js-hidden');
 
-        // you're at the end of the page, stop assigning waypoints.
-        if (typeof $('#last-page')[0] != 'undefined') {
-            waypoint.disable();
+    nextPageUrl = hasNextPage ? $infiniteScrollBlock.attr('data-next-page-url') : '';
+
+    var waypointTrigger = new Waypoint({
+        element: $infiniteScrollBlock[0],
+        handler: waypointCallback,
+        offset: 'bottom-in-view'
+    });
+
+    function waypointCallback(direction){
+        console.log('hit new wp');
+
+        if (!isRequestActive && direction === 'down'){
+            getNextPage();
+        }
+    }
+
+    function getNextPage(){
+        isRequestActive = true;
+        $.ajax({
+            type: 'GET',
+            url: nextPageUrl,
+            dataType: 'html',
+            beforeSend: showLoader,
+            success: loadPage
+        });
+    }
+
+    function loadPage(response){
+        var $responseBlock = $(response).find('[data-infinite-scroll]'),
+            pageHtml = $responseBlock.html();
+
+        // add the page to the rest of the pages
+        $infiniteScrollBlock.append(pageHtml);
+
+        hasNextPage = $responseBlock.attr('data-has-next-page') === 'true';
+        nextPageUrl = '';
+
+        if (hasNextPage){
+            // refresh the position of the waypoint
+            waypointTrigger.context.refresh();
+            nextPageUrl = $responseBlock.attr('data-next-page-url');
+        } else {
+            // no more pages, destroy the waypoint
+            waypointTrigger.destroy();
+        }
+
+        hideLoader();
+        isRequestActive = false;
+    }
+
+    function showLoader(){
+        console.log('showing loader');
+
+        timber.loader.show('.spinner-block');
+    }
+
+    function hideLoader(){
+        console.log('hiding loader');
+
+        timber.loader.hide('.spinner-block');
+    }
+};
+
+timber.loader = {
+    element: '',
+    selector: '.spinner',
+
+    init: function(){
+        // get loader template
+        timber.loader.element = $('#loaderAnimationTemplate').html();
+    },
+
+    show: function( target ){
+        // append the loader element to the target element and show it
+
+        if ( typeof target === 'undefined' ) {
             return;
         }
 
-        var loadingImage,
-            pInfScrNode = $('.more').last(),
-            pInfScrURL = $('.more a').last().attr("href");
+        var $target = $(target),
+            $spinner = $target.find(timber.loader.selector);
 
-        $.ajax({
-            type: 'GET',
-            url: pInfScrURL,
-            beforeSend: function() {
-                loadingImage = pInfScrNode.clone().empty().append('<img src=\"http://cdn.shopify.com/s/files/1/0068/2162/assets/loading.gif?105791\" />');
-                loadingImage.insertAfter(pInfScrNode);
-                pInfScrNode.hide();
-            },
-            success: function(data) {
-                // remove loading
-                console.log('got it');
-                pInfScrNode.next().remove();
-                var filteredData = $(data).find(".celebrities-list-block").html();
-                console.log(filteredData);
-                $celebritiesListBlock.append(filteredData);
-                // filteredData.insertBefore( $("#list-foot") );
-                loadingImage.remove();
-                waypoint.disable();
-                // recursively call yourself to attach another waypoint to the last item we just received
+        if ($spinner.length > 0){
+            $spinner.removeClass('js-hidden');
+        } else {
+            $target.append( timber.loader.element );
+        }
+    },
 
-                // leave this commented out until it works...
-                timber.infiniteScroll();
-            },
-            dataType: "html"
-        });
+    hide: function( target ){
+        // hide the loader element in the target
 
-        console.log('You have scrolled to my waypoint.');
-    }, {
-        offset: 'bottom-in-view'
-    });
+        if ( typeof target === 'undefined' ) {
+            return;
+        }
+
+        var $target = $(target),
+            $spinner = $target.find(timber.loader.selector);
+
+        $spinner.addClass('js-hidden');
+    },
+
+    destroy: function( target ){
+        if( typeof target === 'undefined' ){
+            // no target element, hide and destroy all loader animations
+            return;
+        }
+
+        // hide and destroy the loader in the target element
+        $( target ).remove();
+    }
 };
 
 // Initialize Timber's JS on docready

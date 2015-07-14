@@ -2,7 +2,7 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block page_header %}
-  <header class="press-content-header" {% if first_page == 1 %} id="first" {% endif %}>
+  <header class="press-content-header" id="press-content-header">
     <h2>{% page_attribute "title" %}</h2>
   </header>
 {% endblock %}
@@ -10,10 +10,11 @@
 {% block content %}
   <div class="wrapper-9-col-offset-right">
 
-  {% if featured_celebrity and current_page.number == 1 %}
-    <div class="featured-celebrity-block" id="first">
-      <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-        {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
+    {% if featured_celebrity and current_page.number == 1 %}
+
+      <div class="featured-celebrity-block" id="first">
+        <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
+          {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
           <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
 
@@ -21,62 +22,49 @@
           <h3>{{ featured_celebrity.name }}</h3>
           <p>{{ featured_celebrity.byline }}</p>
         </div>
-      </a>
-    </div>
-  {% endif %}
+        </a>
+      </div>
 
-  {% if current_page %}
+    {% endif %}
+    {% if current_page %}
 
-    <div class="celebrities-list-block">
-      {% for celeb in current_page %}
+      <div data-infinite-scroll class="celebrities-list-block" {% spaceless %}
+           {% if has_next %}
+           data-next-page-url="{{ base_url }}page/{{ next_page }}/"
+           data-has-next-page="true"
+           {% else %}
+           data-has-next-page="false"
+           {% endif %}
+      {% endspaceless %}>
+        {% for celeb in current_page %}
 
-        {% if not forloop.last %}
-          <div class="celebrity-summary-block">
+          <div class="celebrity-summary-block{% if forloop.last %} last-item{% endif %}">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
               {% thumbnail celeb.main_image '256x192' crop='top' as img %}
-                <img src="{{  img.url }}" alt="" />
+              <img src="{{  img.url }}" alt="" />
               {% endthumbnail %}
             </a>
           </div>
-          {% elif forloop.last %}
-          <div class="celebrity-summary-block last-item">
-            <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
-              <h4>{{ celeb.name }}</h4>
-              {% thumbnail celeb.main_image '256x192' crop='top' as img %}
-                <img src="{{  img.url }}" alt="" />
-              {% endthumbnail %}
-            </a>
 
-          </div>
-          {% endif %}
-      {% endfor %}
+        {% endfor %}
+      </div>
 
-      {% if has_next %}
+      <div class="spinner-block">
+      </div>
 
-        <div class="more" style="padding-bottom: 30px;">
-          <a style="display: none;" href="{{ base_url }}page/{{next_page}}/"></a>
-        </div>
+      <div class="back-to-top-block">
+        <a data-scroll data-options='{"offset": 110, "updateURL": false}' class="back-to-top-link" href="#top">Back to Top</a>
+      </div>
 
-      {% elif not has_next %}
+      <div class="pagination-row">
+        {% show_pager base_url=base_url %}
+      </div>
 
-        <div id="last-page" class="pagination-row">
-          <a data-scroll="" class="back-to-top-link" href="#first">Back to Top</a>
-          <!-- <a href="#top" style="text-decoration: none;">Back to Top</a> -->
-        </div>
-      {% endif %}
-    </div>
-    <span style="display: none;" id="list-foot"></span>
-
-    <!-- <div class="pagination-row">
-
-      {% show_pager base_url=base_url %}
-    </div> -->
-  {% elif not current_page and not featured_celebrity %}
+    {% elif not current_page and not featured_celebrity %}
       <p>No celebrities are available.</p>
-  {% endif %}
+    {% endif %}
 
   </div>
-
 
 {% endblock %}
