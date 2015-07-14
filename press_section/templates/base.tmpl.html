@@ -42,10 +42,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <!-- CSS ================================================== -->
-    {% compress css %}
-    {% render_block "css" %}
+    {% addtoblock 'css' %}
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}base.css" />
-    {% endcompress %}
+    {% endaddtoblock %}
+
+    {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
 
     <link rel="shortcut icon" href="{% static 'theia.ico' %}" type="image/x-icon">
 
@@ -145,9 +146,7 @@
       
     </div>
 
-    {% compress css %}
-    {% render_block "js" %}
-    {% endcompress %}
+    {% render_block "js" postprocessor "compressor.contrib.sekizai.compress" %}
     
     <script type="text/template" id="loaderAnimationTemplate">
         <div class="spinner">
