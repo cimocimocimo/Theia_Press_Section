@@ -10,6 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
+ADMINS = (('Aaron Cimolini', 'aaron@cimolini.com'),)
+
+# Amazon SES settings for sending emails
+# only authorized to send to/from aaron@cimolini.com
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST_PASSWORD = 'ArRShrMAXfhjkq0Y5Oj7Jt02MdogInJG26D+eKEscPbY'
+EMAIL_HOST_USER = 'AKIAJBTRFE5YWGEZPWVQ'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'aaron@cimolini.com' # this is the email that is authorized to send from/to through Amazon SES.
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 gettext = lambda s: s
 # ugly but works.
@@ -144,7 +155,6 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'debug_toolbar',
 )
-
 
 LANGUAGES = (
     ## Customize this
