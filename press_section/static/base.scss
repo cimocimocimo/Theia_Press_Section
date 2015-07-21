@@ -175,8 +175,6 @@ $desktopHeaderHeight: 85px;
 // moblie side nav
 $mobileNavMenuWidth: 258px;
 
-
-
 // Z-Indexes
 // navigation, header and side nav
 // 10000
@@ -9746,15 +9744,10 @@ span#resultMessage {
 .featured-celebrity-block {
     @extend %feature-block-base;
     
-    height: 540px;
+    height: auto;
 
     > a {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
     }
 
     img {

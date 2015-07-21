@@ -5,7 +5,7 @@
   {% for dress in dresses %}
     <div class="celebrity-dresses-grid-item">
       <a href="{% url 'celebrities:dress_detail' celebrity.slug dress.slug %}">
-        {% thumbnail dress.main_image '256x192' crop='top' as img %}
+        {% thumbnail dress.main_image '256x346' crop='top' as img %}
         <img src="{{  img.url }}" alt="" />
       {% endthumbnail %}
       </a>

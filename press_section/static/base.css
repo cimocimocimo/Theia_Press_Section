@@ -6257,14 +6257,9 @@ span#resultMessage {
   margin: 0 16px; }
 
 .featured-celebrity-block {
-  height: 540px; }
+  height: auto; }
   .featured-celebrity-block > a {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
+    display: block; }
   .featured-celebrity-block img {
     display: block; }
   .featured-celebrity-block .content {

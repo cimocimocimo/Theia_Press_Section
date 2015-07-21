@@ -14,14 +14,19 @@
 
       <div class="featured-celebrity-block" id="first">
         <a href="{% url 'celebrities:celeb_detail' featured_celebrity.slug %}">
-          {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
-          <img src="{{  img.url }}" alt="" />
-        {% endthumbnail %}
-
-        <div class="content">
-          <h3>{{ featured_celebrity.name }}</h3>
-          <p>{{ featured_celebrity.byline }}</p>
-        </div>
+          {% if featured_celebrity.main_image|is_portrait %}
+            {% thumbnail featured_celebrity.main_image '832' as img %}
+            <img src="{{  img.url }}" alt="" />
+            {% endthumbnail %}
+          {% else %}
+            {% thumbnail featured_celebrity.main_image '832x540' crop='top' as img %}
+            <img src="{{  img.url }}" alt="" />
+            {% endthumbnail %}
+          {% endif %}
+          <div class="content">
+            <h3>{{ featured_celebrity.name }}</h3>
+            <p>{{ featured_celebrity.byline }}</p>
+          </div>
         </a>
       </div>
 
@@ -41,7 +46,7 @@
           <div class="celebrity-summary-block{% if forloop.last %} last-item{% endif %}">
             <a href="{% url 'celebrities:celeb_detail' celeb.slug %}">
               <h4>{{ celeb.name }}</h4>
-              {% thumbnail celeb.main_image '256x192' crop='top' as img %}
+              {% thumbnail celeb.main_image '256x346' crop='top' as img %}
               <img src="{{  img.url }}" alt="" />
               {% endthumbnail %}
             </a>
