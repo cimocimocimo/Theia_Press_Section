@@ -79,6 +79,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   ==============================================================================*/
 
 // Theia Colors
+$colorWhite: #ffffff;
 $colorOffWhite: #fefefe;
 
 $colorPaleGray: #fafafa;
@@ -88,6 +89,7 @@ $colorLightGray: #d8d8d8;
 $colorMidGray: #bcbbbb;
 $colorGray: #8d8d8d;
 $colorDarkGray: #616161;
+$colorDarkerMidGray: #4d4c4c;
 $colorDarkerGray: #2f2f2f;
 
 $colorWarmLighterGray: #f9f8f8;
@@ -1477,7 +1479,7 @@ hr {
 
 %medium-button-base {
     height: 44px;
-    padding: 4px $gutter;
+    padding: 6px $gutter;
     line-height: 36px;
 
     font-size: 1.125em;
@@ -1511,7 +1513,14 @@ hr {
 }
 
 %gray-button-base {
-    @extend %gray-outline-block-small;
+    @include transition(all 0.3s);
+    
+    background: $colorDarkerMidGray;
+    color: $colorWhite;
+
+    &:hover {
+        background-color: $colorDarkGold;
+    }
 }
 
 %lightGray-button-base {
@@ -1564,6 +1573,19 @@ hr {
     @extend %button-base;
     @extend %medium-button-base;
     @extend %gold-button-base;
+    @extend %arrow-icon-button-base;
+
+    .icon {
+        padding-left: 2px;
+        top: -1px;
+    }
+}
+
+/* gold, large button with solid arrow icon */
+%medium-gray-arrow-button {
+    @extend %button-base;
+    @extend %medium-button-base;
+    @extend %gray-button-base;
     @extend %arrow-icon-button-base;
 
     .icon {
@@ -10876,6 +10898,20 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
     .image {
         margin-bottom: $gutter*2;
+
+        img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+    }
+
+    @include at-query($min, $medium){
+        
+    }
+
+    @include at-query($max, $preMedium){
+
     }
 }
 
@@ -11026,7 +11062,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     }
 
     .button-view-all {
-        @extend %medium-gold-arrow-button;
+        @extend %medium-gray-arrow-button;
         @include transition(all 0.3s);
 
         padding-left: $gridGutter;

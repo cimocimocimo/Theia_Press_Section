@@ -3,9 +3,9 @@
   <h3>{{ event.title }}</h3>
   <a href="{% url 'events:detail' event.slug %}">
     <div class="image">
-      {% thumbnail event.video_still '736x414' crop='top' as img %}
-      <img src="{{  img.url }}" alt="" />
-    {% endthumbnail %}
+      {% thumbnail event.video_still '736' as img %}
+        <img src="{{  img.url }}" alt="" />
+      {% endthumbnail %}
     </div>
   </a>  
 </div>
