@@ -1,5 +1,5 @@
 {% load thumbnail %}
-<div class="celebrities-plugin-summary-block-large">
+<div class="celebrities-plugin-summary-block-large{% if hide_max_medium %} hide-max-medium{% endif %}">
   <h4>{{ celebrity.name }}</h4>
   <a href="{% url 'celebrities:celeb_detail' celebrity.slug %}">
     <div class="image">

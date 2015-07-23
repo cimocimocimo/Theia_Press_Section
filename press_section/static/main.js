@@ -89,7 +89,6 @@ timber.getUrlVars = function () {
 };
 
 timber.mobileSideNav = function(){
-
     var $body = timber.cache.$body,
         $bodyContainer = timber.cache.mobileSideNav.$bodyContainer,
         $headerContainer = timber.cache.mobileSideNav.$headerContainer,
@@ -133,6 +132,9 @@ timber.mobileSideNav = function(){
     };
 
     // side nav sub menus
+    //
+
+    return;
 
     // get the natural hight of the sub menus to allow for the transition animations to work.
 
@@ -210,7 +212,6 @@ timber.headerSubNav = function(){
 
         $availableOnlineSubMenu.css('left', shopLinkLeftOffset);
         $exclusiveSubMenu.css('left', collectionsLinkLeftOffset);
-        console.log('setting positions');
     }
     setMenuHorizontalPositions();
 

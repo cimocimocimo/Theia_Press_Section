@@ -7,7 +7,8 @@
   {% if articles %}
     {% for article in articles %}
       {% if forloop.first %}
-        {% include 'articles/latest_articles_plugin_summary_large.tmpl.html' %}
+        {% include 'articles/latest_articles_plugin_summary_large.tmpl.html' with hide_max_medium=True %}
+        {% include 'articles/latest_articles_plugin_summary.tmpl.html' with hide_min_post_medium=True %}
       {% else %}
         {% include 'articles/latest_articles_plugin_summary.tmpl.html' %}
       {% endif %}

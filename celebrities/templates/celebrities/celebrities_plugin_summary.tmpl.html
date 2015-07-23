@@ -1,5 +1,5 @@
 {% load thumbnail %}
-<div class="celebrities-plugin-summary-block">
+<div class="celebrities-plugin-summary-block{% if hide_min_post_medium %} hide-min-post-medium{% endif %}">
   <h4>{{ celebrity.name }}</h4>
   <a href="{% url 'celebrities:celeb_detail' celebrity.slug %}">
     <div class="image">

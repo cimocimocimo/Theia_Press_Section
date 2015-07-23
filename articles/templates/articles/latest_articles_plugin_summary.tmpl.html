@@ -1,5 +1,5 @@
 {% load thumbnail %}
-<div class="latest-articles-summary-block">
+<div class="latest-articles-summary-block{% if hide_min_post_medium %} hide-min-post-medium{% endif %}">
   <a href="{% url 'articles:detail' article.slug %}">
     <div class="image">
       {% thumbnail article.screenshot '158x214' crop='top' as img %}

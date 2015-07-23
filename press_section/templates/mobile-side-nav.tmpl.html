@@ -9,21 +9,19 @@
   <div class="main-block">
 
     <div class="main-menu-row">
-      {% include 'main-menu.tmpl.html' with show_home_link=true %}
+      {% include 'main-menu.tmpl.html' with show_home_link=True mobile=True %}
     </div>
 
     {% comment %}
     <div class="customer-profile-login-link-row">
       {% include 'customer-profile-login-link' %}
     </div>
+    {% endcomment %}
 
-    {% if customer %}
-
-      <div class="customer-account-menu-row">
-        {% include 'customer-account-menu' %}
-      </div>
-
-    {% endif %}
+    {% comment %}
+    <div class="customer-account-menu-row">
+      {% include 'customer-account-menu' %}
+    </div>
     {% endcomment %}
   </div>
 

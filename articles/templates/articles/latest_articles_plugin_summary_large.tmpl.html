@@ -1,5 +1,5 @@
 {% load thumbnail %}
-<div class="latest-articles-summary-block-large">
+<div class="latest-articles-summary-block-large{% if hide_max_medium %} hide-max-medium{% endif %}">
   <a href="{% url 'articles:detail' article.slug %}">
     <div class="image">
       {% thumbnail article.screenshot '350x462' crop='top' as img %}
