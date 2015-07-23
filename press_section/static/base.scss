@@ -265,7 +265,8 @@ $socialIconFontStack: 'theia-icons';
     }
 }
 
-.clearfix {
+.clearfix,
+%clearfix {
     @include clearfix();
 }
 
@@ -5959,8 +5960,11 @@ address {
     }
 }
 
-%social-hero-base {
+.social-link-newsletter-hero {
+    @extend %clearfix;
+    
     text-align: center;
+    padding: $gutter * 3 0;
 
     h2 {
         letter-spacing: -1px;
@@ -5980,12 +5984,16 @@ address {
     }
 }
 
-.social-link-hero {
-    @extend %social-hero-base;
-}
+.social-link-newsletter-column {
+    float: left;
+    width: 50%;
+    padding: $gutter * 3 $gutter;
+    text-align: center;
 
-.newsletter-signup-hero {
-    @extend %social-hero-base;
+    @include at-query($max, $medium){
+        float: none;
+        width: auto;
+    }
 }
 
 .social-link-block {
@@ -6041,8 +6049,130 @@ address {
     }
 }
 
-.social-media-feed-block {
+/* **todo** clean the newsletter block up. Do we need two different layouts for the interior pages vs. the home page? */
+.newsletter-signup-block {
+    display: inline-block;
 
+    h4 {
+        color: $colorWarmGray;
+        margin: 0;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+
+    .form-block {
+        margin: 0 auto;
+    }
+
+    @include at-query( $min, $postSmall ){
+
+        h4 {
+            font-size: 1.75em;
+        }
+
+        .header-block {
+            max-width: 416px;
+            margin: 0 auto ( $gutter / 2 );
+        }
+
+        .form-block {
+            max-width: 352px;
+        }
+    }
+
+    @include at-query( null, $postSmall, $medium) {
+        max-width: $small - $gutter;
+
+        h4 {
+            font-size: 1.5em;
+        }
+    }
+
+    @include at-query( $max, $small ){
+        width: 100%;
+
+        border-left: 0;
+        border-right: 0;
+
+        h4 {
+            font-size: 1.25em;
+        }
+
+        .header-block {
+            margin: 0 auto $gutter;
+        }
+    }
+}
+
+.newsletter-form {
+    @extend .clearfix;
+
+    position: relative;
+    border: 1px solid $colorDarkerGray;
+    margin: 0;
+
+    input, button {
+        background: $colorWarmDarkGray;
+        display: block;
+    }
+
+    button {
+        color: $colorWarmLightGray;
+    }
+    
+    input {
+        @extend %medium-arial-text;
+
+        color: $colorWhite;
+        line-height: 1;
+
+        @include placeholder {
+            color: $colorWarmLightGray;
+            line-height: 1.2;
+        }
+
+        border: 0;
+        margin: 0;
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    @include at-query( $min, $postSmall ){
+        input, button {
+            height: 48px;
+        }
+
+        input {
+            padding: 9px 48px 11px 20px;
+        }
+
+        button {
+            font-size: 0.6875em;
+            width: 48px;
+            padding-top: 2px;
+        }
+    }
+
+    @include at-query( $max, $small ){
+        input, button {
+            height: 45px;
+        }
+
+        input {
+            padding: 8px 45px 9px 19px;
+        }
+
+        button {
+            font-size: 0.6445em;
+            width: 45px;
+            padding-top: 2px;
+        }
+    }
 }
 
 .social-media-feed-item {
@@ -7412,223 +7542,6 @@ address {
             font-size: 14px;
             top: 16px;
             left: 0;
-        }
-    }
-}
-
-/* **todo** clean the newsletter block up. Do we need two different layouts for the interior pages vs. the home page? */
-.newsletter-signup-block {
-    @extend %gold-outline-block-large;
-
-    display: inline-block;
-
-    h4 {
-        color: #fff;
-        margin: 0;
-    }
-
-    /* template specific layouts */
-
-    /* two row layout */
-    .template-index &,
-    &.layout-two-row {
-        h4 {
-            font-weight: 300;
-            line-height: 1.25;
-        }
-
-        .form-block {
-            margin: 0 auto;
-        }
-
-        @include at-query( $min, $postSmall ){
-            width: 608px;
-            padding: $gutter * 1.75;
-
-            h4 {
-                font-size: 1.75em;
-            }
-
-            .header-block {
-                max-width: 416px;
-                margin: 0 auto ( $gutter / 2 );
-            }
-
-            .form-block {
-                max-width: 352px;
-            }
-        }
-
-        @include at-query( null, $postSmall, $medium) {
-            max-width: $small - $gutter;
-
-            h4 {
-                font-size: 1.5em;
-            }
-        }
-
-        @include at-query( $max, $small ){
-            width: 100%;
-            padding: $gutter;
-
-            border-left: 0;
-            border-right: 0;
-
-            h4 {
-                font-size: 1.25em;
-            }
-
-            .header-block {
-                margin: 0 auto $gutter;
-            }
-        }
-    }
-
-    /* single row, two column layout */
-    .template-collection &,
-    .template-product &,
-    .template-list-collections &,
-    &.layout-single-row {
-        padding: 0 5px;
-
-        /* Desktop */
-        @include at-query ($min, $large) {
-            > * {
-                display: inline-block;
-                height: 68px;
-                vertical-align: top;
-                margin: 0 5px;
-            }
-
-            .form-block {
-                width: 300px;
-                padding-top: 10px;
-            }
-
-            h4 {
-                line-height: 68px;
-                font-family: $arialFontStack;
-                font-size: 1.125em;
-            }
-        }
-
-        @include at-query( null, $postSmall, $preLarge ){
-            width: 608px;
-            padding: $gutter * 1.75;
-
-            h4 {
-                font-size: 1.75em;
-                line-height: 1.25;
-                font-weight: 300;
-            }
-
-            .header-block {
-                max-width: 416px;
-                margin: 0 auto ( $gutter / 2 );
-            }
-
-            .form-block {
-                max-width: 352px;
-                margin: 0 auto;
-            }
-        }
-
-        @include at-query( null, $postSmall, $medium) {
-            max-width: $small - $gutter;
-
-            h4 {
-                font-size: 1.5em;
-            }
-        }
-
-        /* Mobile */
-        @include at-query ($max, $small) {
-            width: 100%;
-            padding: ($gutter * 2) $gutter;
-
-            border: {
-                left: 0;
-                right: 0;
-            }
-
-            h4 {
-                font-weight: 300;
-                font-size: 1.25em;
-                line-height: 1.1;
-            }
-
-            .header-block {
-                margin: 0 auto $gutter;
-            }
-        }
-    }
-}
-
-.newsletter-form {
-    @extend .clearfix;
-
-    position: relative;
-    border: 1px solid $colorDarkerGold;
-    border-bottom: 1px solid $colorLightGold;
-    margin: 0;
-
-    input, button {
-        background: $colorDarkGold;
-        display: block;
-        color: $colorLighterGold;
-    }
-
-    input {
-        @extend %medium-arial-text;
-
-        color: $colorLighterGold;
-        line-height: 1;
-
-        @include placeholder {
-            color: $colorLighterGold;
-            line-height: 1.2;
-        }
-
-        border: 0;
-        margin: 0;
-    }
-
-    button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-    }
-
-    @include at-query( $min, $postSmall ){
-        input, button {
-            height: 48px;
-        }
-    
-        input {
-            padding: 9px 48px 11px 20px;
-        }
-
-        button {
-            font-size: 0.6875em;
-            width: 48px;
-            padding-top: 2px;
-        }
-    }
-
-    @include at-query( $max, $small ){
-        input, button {
-            height: 45px;
-        }
-
-        input {
-            padding: 8px 45px 9px 19px;
-        }
-
-        button {
-            font-size: 0.6445em;
-            width: 45px;
-            padding-top: 2px;
         }
     }
 }
