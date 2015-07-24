@@ -223,16 +223,65 @@ $zindexNavigation: 10000;
     font-weight:  100;
 }
 
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('{{ "century-gothic.eot" | asset_url }}'); /* IE9 Compat Modes */
+    src: url('{{ "century-gothic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
+    url('{{ "century-gothic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
+    url('{{ "century-gothic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
+    url('{{ "century-gothic.svg#13db03934b676bad49f0835d401d12db" | asset_url }}') format('svg'); /* Legacy iOS */
+    
+    font-style:   normal;
+    font-weight:  400;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('{{ "century-gothic-bold.eot" | asset_url }}'); /* IE9 Compat Modes */
+    src: url('{{ "century-gothic-bold.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
+    url('{{ "century-gothic-bold.woff" | asset_url }}') format('woff'), /* Modern Browsers */
+    url('{{ "century-gothic-bold.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
+    url('{{ "century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a" | asset_url }}') format('svg'); /* Legacy iOS */
+    
+    font-style:   normal;
+    font-weight:  700;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('{{ "century-gothic-bold-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
+    src: url('{{ "century-gothic-bold-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
+    url('{{ "century-gothic-bold-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
+    url('{{ "century-gothic-bold-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
+    url('{{ "century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25" | asset_url }}') format('svg'); /* Legacy iOS */
+    
+    font-style:   italic;
+    font-weight:  700;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('{{ "century-gothic-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
+    src: url('{{ "century-gothic-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
+    url('{{ "century-gothic-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
+    url('{{ "century-gothic-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
+    url('{{ "century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65" | asset_url }}') format('svg'); /* Legacy iOS */
+    
+    font-style:   italic;
+    font-weight:  400;
+}
+
 // Font Stacks
 $helveticaFontStack: "HelveticaNeueLT", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $arialFontStack: Arial, sans-serif;
+$centuryGothicFontStack: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 
 // Header Font
-$headerFontStack: $helveticaFontStack;
+$headerFontStack: $centuryGothicFontStack;
 $headerFontWeight: 100;
 
 // Body Font
-$bodyFontStack: $helveticaFontStack;
+$bodyFontStack: $centuryGothicFontStack;
 $baseFontSize: 100%; // Henseforth known as 1em (assumed at 16px)e
 
 
@@ -482,7 +531,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   ================================================================================*/
 
 %large-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
 
     @include at-query ($min, $postSmall) {
         font-size: 1.5em; /* ~24px */
@@ -494,7 +543,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 %medium-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
 
     @include at-query ($min, $postSmall) {
         font-size: 1.125em; /* ~18px */
@@ -506,7 +555,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 %small-mid-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
 
     @include at-query ($min, $postSmall) {
         font-size: 0.875em; /* ~14px */
@@ -518,7 +567,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }    
 
 %small-bold-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
     font-weight: 700;
 
     @include at-query ($min, $postSmall) {
@@ -531,7 +580,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 %small-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
     font-weight: 700;
 
     @include at-query ($min, $postSmall) {
@@ -544,14 +593,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }    
 
 %smallish-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
     font-weight: 700;
 
     font-size: 0.75em; /* ~12px */
 }    
 
 %smaller-arial-text {
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
     font-weight: 700;
 
     @include at-query ($min, $postSmall) {
@@ -1173,7 +1222,7 @@ textarea,
 button,
 select {
     font-size: 1em;
-    font-family: $arialFontStack;
+    font-family: $bodyFontStack;
     line-height: 1.4375; // ~23px with a font size of 16px
     font-weight: 400;
     color: $colorWarmGray;
@@ -1182,7 +1231,7 @@ select {
 
     @include placeholder {
         line-height: 1.4375; // ~23px with a font size of 16px
-        font-family: $arialFontStack;
+        font-family: $bodyFontStack;
         color: $colorMidGray;
     }
 }
@@ -4653,7 +4702,7 @@ $smallSocialIconRatio: (2.66/3.375);
         line-height: 1;
         text-transform: uppercase;
         font-size: 12px;
-        font-family: $arialFontStack;
+        font-family: $bodyFontStack;
         font-weight: 700;
     }
 
@@ -10677,7 +10726,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     }
 
     p {
-        font-family: $arialFontStack;
+        font-family: $bodyFontStack;
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;

@@ -84,6 +84,42 @@ Some things to know about this file:
   font-weight: 100; }
 
 @font-face {
+  font-family: 'Century Gothic';
+  src: url('{{ "century-gothic.eot" | asset_url }}');
+  /* IE9 Compat Modes */
+  src: url('{{ "century-gothic.eot?#iefix" | asset_url }}') format('embedded-opentype'), url('{{ "century-gothic.woff" | asset_url }}') format('woff'), url('{{ "century-gothic.ttf" | asset_url }}') format('truetype'), url('{{ "century-gothic.svg#13db03934b676bad49f0835d401d12db" | asset_url }}') format('svg');
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('{{ "century-gothic-bold.eot" | asset_url }}');
+  /* IE9 Compat Modes */
+  src: url('{{ "century-gothic-bold.eot?#iefix" | asset_url }}') format('embedded-opentype'), url('{{ "century-gothic-bold.woff" | asset_url }}') format('woff'), url('{{ "century-gothic-bold.ttf" | asset_url }}') format('truetype'), url('{{ "century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a" | asset_url }}') format('svg');
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('{{ "century-gothic-bold-italic.eot" | asset_url }}');
+  /* IE9 Compat Modes */
+  src: url('{{ "century-gothic-bold-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), url('{{ "century-gothic-bold-italic.woff" | asset_url }}') format('woff'), url('{{ "century-gothic-bold-italic.ttf" | asset_url }}') format('truetype'), url('{{ "century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25" | asset_url }}') format('svg');
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('{{ "century-gothic-italic.eot" | asset_url }}');
+  /* IE9 Compat Modes */
+  src: url('{{ "century-gothic-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), url('{{ "century-gothic-italic.woff" | asset_url }}') format('woff'), url('{{ "century-gothic-italic.ttf" | asset_url }}') format('truetype'), url('{{ "century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65" | asset_url }}') format('svg');
+  /* Legacy iOS */
+  font-style: italic;
+  font-weight: 400; }
+
+@font-face {
   font-family: 'theia-icons';
   src: url('theia-icons.eot'); }
 
@@ -163,7 +199,7 @@ pre {
   #Extends - these are for common text and block styles
   ================================================================================*/
 .newsletter-form input {
-  font-family: Arial, sans-serif; }
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; }
   @media screen and (min-width: 481px) {
     .newsletter-form input {
       font-size: 1.125em;
@@ -174,7 +210,7 @@ pre {
       /* ~15px */ } }
 
 .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
-  font-family: Arial, sans-serif; }
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; }
   @media screen and (min-width: 481px) {
     .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
       font-size: 0.875em;
@@ -185,7 +221,7 @@ pre {
       /* ~13px */ } }
 
 .sub-menu-link {
-  font-family: Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700; }
   @media screen and (min-width: 481px) {
     .sub-menu-link {
@@ -197,7 +233,7 @@ pre {
       /* ~10px */ } }
 
 .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .meta-menu-link, .language-menu-link, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .sub-menu-link, .article-summary-block .article-summary-read-more-link {
-  font-family: Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700; }
   @media screen and (min-width: 481px) {
     .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .meta-menu-link, .language-menu-link, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .sub-menu-link, .article-summary-block .article-summary-read-more-link {
@@ -209,13 +245,13 @@ pre {
       /* ~10px */ } }
 
 .search-result-item .style-number .label, .cart-item .style-number .label, .order-line-item .style-number .label, .wishlist-item .style-number .label, .search-result-item .remove-item-link .label, .cart-item .remove-item-link .label, .order-line-item .remove-item-link .label, .wishlist-item .remove-item-link .label, .search-result-item .button, .collection-grid-item .button, .product-grid-item .button, .order-grid-item .button, .wishlist-item .add-to-cart-button, .shopping-cart .update-cart-button, .customer-address-view-edit-block .submit-cancel-row a, .customer-address-view-edit-row .button-block > a, label, legend, .breadcrumb-block a, .breadcrumb-block span, .product-meta-block .product-style-number, .product-purchase-block .add-to-wishlist-link, .product-offer-block .text, .product-share-block .label, .product-description-block h6, .shopping-cart h6, .shopping-cart .checkout-button-row a, .shopping-cart .free-shipping .label, .shopping-cart .shipped-by-date .label, .order-line-item .fulfillment-status, .customer-account-content-hero h6, .wishlist-hero h6, .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .product-grid-item .info-block, .order-grid-item .meta-row > div, .login-form-hero h6, .register-form-hero h6, .password-reset-form-hero h6, .mobile-side-nav .customer-menu-link .label, .main-content .customer-account-menu-link, .wishlist-item .button-label, .dress-sizing-link {
-  font-family: Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700;
   font-size: 0.75em;
   /* ~12px */ }
 
 .product-description-expand-link .label, .cart-count-link .count, .homepage-press-releases time, .js-qty input[type="text"], .ajaxifyCart--qty input[type="text"], .wishlist-item .single-option-selector {
-  font-family: Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700; }
   @media screen and (min-width: 481px) {
     .product-description-expand-link .label, .cart-count-link .count, .homepage-press-releases time, .js-qty input[type="text"], .ajaxifyCart--qty input[type="text"], .wishlist-item .single-option-selector {
@@ -578,7 +614,7 @@ html, body {
   ==============================================================================*/
 body, input, textarea, button, select {
   font-size: 1em;
-  font-family: Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   line-height: 1.4375;
   font-weight: 400;
   color: #797778;
@@ -586,25 +622,25 @@ body, input, textarea, button, select {
   -webkit-text-size-adjust: 100%; }
   body::-webkit-input-placeholder, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, button::-webkit-input-placeholder, select::-webkit-input-placeholder {
     line-height: 1.4375;
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     color: #bcbbbb; }
   body:-moz-placeholder, input:-moz-placeholder, textarea:-moz-placeholder, button:-moz-placeholder, select:-moz-placeholder {
     line-height: 1.4375;
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     color: #bcbbbb; }
   body::-moz-placeholder, input::-moz-placeholder, textarea::-moz-placeholder, button::-moz-placeholder, select::-moz-placeholder {
     line-height: 1.4375;
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     color: #bcbbbb; }
   body:-ms-input-placeholder, input:-ms-input-placeholder, textarea:-ms-input-placeholder, button:-ms-input-placeholder, select:-ms-input-placeholder {
     line-height: 1.4375;
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     color: #bcbbbb; }
 
 /* h1 tags have been excluded from this list. The h1 tag is used for the site header. */
 h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   display: block;
-  font-family: "HelveticaNeueLT", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 100;
   margin: 0.5em 0;
   line-height: 1; }
@@ -2651,7 +2687,7 @@ label.error {
     line-height: 1;
     text-transform: uppercase;
     font-size: 12px;
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     font-weight: 700; }
   .order-line-item .fulfillment-status {
     color: #a5a2a4;
@@ -3985,7 +4021,7 @@ address .email:before {
     position: relative;
     margin: 0 auto;
     font-weight: 100;
-    font-family: "HelveticaNeueLT", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     line-height: 1;
     color: #f2f2f2;
     letter-spacing: -8px; }
@@ -6706,7 +6742,7 @@ body.vex-open {
     font-weight: 100;
     margin-bottom: 4px; }
   .featured-celebrity-block p {
-    font-family: Arial, sans-serif;
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase; }
