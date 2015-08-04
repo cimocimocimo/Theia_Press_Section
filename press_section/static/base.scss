@@ -10887,11 +10887,16 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     color: $colorWarmLightGray;
 }
 
+.articles-list-block {
+    text-align: center;
+}
+
 .article-summary-block {
     width: 352px;
     display: inline-block;
     margin: $gutter ($gutter - 2px);
     vertical-align: top;
+    text-align: left;
     
     h3 {
         font-size: 24px;
@@ -10939,6 +10944,15 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         text-transform: uppercase;
         &:after {
             top: -1px;
+        }
+    }
+
+    @include at-query($max, $medium){
+        width: 236px;
+        margin: 16px 8px;
+        
+        span.article-summary-organization-name {
+            display: none;
         }
     }
 }

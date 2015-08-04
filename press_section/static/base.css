@@ -6841,11 +6841,15 @@ body.vex-open {
   line-height: 1;
   color: #a5a2a4; }
 
+.articles-list-block {
+  text-align: center; }
+
 .article-summary-block {
   width: 352px;
   display: inline-block;
   margin: 16px 14px;
-  vertical-align: top; }
+  vertical-align: top;
+  text-align: left; }
   .article-summary-block h3 {
     font-size: 24px;
     font-weight: 400;
@@ -6868,6 +6872,12 @@ body.vex-open {
     text-transform: uppercase; }
     .article-summary-block .article-summary-read-more-link:after {
       top: -1px; }
+  @media screen and (max-width: 768px) {
+    .article-summary-block {
+      width: 236px;
+      margin: 16px 8px; }
+      .article-summary-block span.article-summary-organization-name {
+        display: none; } }
 
 .article-detail-header {
   width: 576px;
