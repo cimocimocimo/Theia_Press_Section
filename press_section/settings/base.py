@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'sorl.thumbnail',
     'debug_toolbar',
+    'location_field',
 )
 
 LANGUAGES = (
