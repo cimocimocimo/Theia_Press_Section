@@ -1004,13 +1004,23 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     max-width: $siteWidth9Col;
     padding-left: $gutter*2;
     box-sizing: content-box;
+    
+    @include at-query(null, $large, $xLarge){
+        max-width: $siteWidth8Col;
+        padding-left: 192px;
+        box-sizing: content-box;
+    }
+    
+    /* Desktop */
+    @include at-query($max, $preLarge){
+        margin: 0 auto;
+        padding-left: 0;
+        max-width: $siteWidth8Col;
+    }
 }
 
 .wrapper-8-col {
     @extend %wrapper-base;
-
-    $breakPoint: $siteWidth8Col + ($gutter * 2);
-    $preBreakPoint: $breakPoint - 1px;
 
     @include at-query($max, $preMedium){
         margin: 0 $gutter;
@@ -5424,6 +5434,9 @@ address {
 }
 
 .secondary-nav-row {
+    position: relative;
+    z-index: 100;
+    
     /* Mobile */
     @include at-query ($max, $preLarge) {
         display: none;
@@ -10633,6 +10646,8 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     @extend %clearfix;
     @extend %press-content-inner-base;
     
+    margin-bottom: 32px;
+    
     h2 {
         margin-bottom: 0px;
     }
@@ -10650,7 +10665,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         line-height: 25px;
         margin-bottom: 6px;
     }
-
 }
 
 .multicolumn2 {
@@ -10691,6 +10705,24 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     position: relative;
     width: 832px;
     margin: 0 $gutter;
+
+    @include at-query(null, $postLarge, $xLarge){
+        width: 736px;
+    }
+
+    @include at-query($max, $large){
+        width: auto;
+    }
+    
+    @include at-query($max, $medium){
+        max-width: 468px;
+        margin: 0 auto;
+        background: blue;
+    }
+
+    @include at-query($max, $small){
+        max-width: 224px;
+    }
 }
 
 .featured-celebrity-block {
@@ -10704,6 +10736,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
     img {
         display: block;
+        width: 100%;
     }
 
     .content {
@@ -10773,6 +10806,10 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         text-decoration: none;
     }
 
+    img {
+        width: 100%;
+    }
+    
     h4 {
         color: $colorWarmDarkGray;
         text-align: center;
@@ -10783,6 +10820,16 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
     p {
         color: $colorWarmLightGray;
+    }
+
+    @include at-query(null, $large, $xLarge){
+        
+    }
+    
+    /* Desktop */
+    @include at-query($max, $xLarge){
+        width: 224px;
+        margin: 16px 8px;
     }
 }
 

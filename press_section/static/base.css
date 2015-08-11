@@ -468,7 +468,18 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
 .wrapper-9-col-offset-right {
   max-width: 864px;
   padding-left: 32px;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  /* Desktop */ }
+  @media screen and (min-width: 1024px) and (max-width: 1152px) {
+    .wrapper-9-col-offset-right {
+      max-width: 768px;
+      padding-left: 192px;
+      box-sizing: content-box; } }
+  @media screen and (max-width: 1023px) {
+    .wrapper-9-col-offset-right {
+      margin: 0 auto;
+      padding-left: 0;
+      max-width: 768px; } }
 
 .wrapper-8-col, #about-us .featured-press-hero .wrapper, #about-us .featured-press-hero .page-content, .press-content-header, .press-content-body {
   /* Desktop */ }
@@ -3308,6 +3319,8 @@ address .email:before {
       margin-bottom: 36px; } }
 
 .secondary-nav-row {
+  position: relative;
+  z-index: 100;
   /* Mobile */ }
   @media screen and (max-width: 1023px) {
     .secondary-nav-row {
@@ -6686,8 +6699,10 @@ body.vex-open {
   .press-content-header, .press-content-body {
     margin: 0 auto; } }
 
-.press-content-header h2 {
-  margin-bottom: 0px; }
+.press-content-header {
+  margin-bottom: 32px; }
+  .press-content-header h2 {
+    margin-bottom: 0px; }
 
 .press-content-body h2 {
   margin-bottom: 21px; }
@@ -6722,13 +6737,28 @@ body.vex-open {
   position: relative;
   width: 832px;
   margin: 0 16px; }
+  @media screen and (min-width: 1025px) and (max-width: 1152px) {
+    .featured-celebrity-block, .celebrity-detail-featured-image-block {
+      width: 736px; } }
+  @media screen and (max-width: 1024px) {
+    .featured-celebrity-block, .celebrity-detail-featured-image-block {
+      width: auto; } }
+  @media screen and (max-width: 768px) {
+    .featured-celebrity-block, .celebrity-detail-featured-image-block {
+      max-width: 468px;
+      margin: 0 auto;
+      background: blue; } }
+  @media screen and (max-width: 480px) {
+    .featured-celebrity-block, .celebrity-detail-featured-image-block {
+      max-width: 224px; } }
 
 .featured-celebrity-block {
   height: auto; }
   .featured-celebrity-block > a {
     display: block; }
   .featured-celebrity-block img {
-    display: block; }
+    display: block;
+    width: 100%; }
   .featured-celebrity-block .content {
     position: absolute;
     bottom: 64px;
@@ -6766,10 +6796,13 @@ body.vex-open {
 
 .celebrity-summary-block, .celebrity-dresses-grid-item {
   display: inline-block;
-  margin: 32px 14px; }
+  margin: 32px 14px;
+  /* Desktop */ }
   .celebrity-summary-block > a, .celebrity-dresses-grid-item > a {
     display: block;
     text-decoration: none; }
+  .celebrity-summary-block img, .celebrity-dresses-grid-item img {
+    width: 100%; }
   .celebrity-summary-block h4, .celebrity-dresses-grid-item h4 {
     color: #4d4c4c;
     text-align: center;
@@ -6778,6 +6811,10 @@ body.vex-open {
     margin: 0 0 13px; }
   .celebrity-summary-block p, .celebrity-dresses-grid-item p {
     color: #a5a2a4; }
+  @media screen and (max-width: 1152px) {
+    .celebrity-summary-block, .celebrity-dresses-grid-item {
+      width: 224px;
+      margin: 16px 8px; } }
 
 .celebrity-detail-content-block {
   margin: 0 16px; }
