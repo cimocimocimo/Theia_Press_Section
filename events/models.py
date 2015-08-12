@@ -33,7 +33,8 @@ class Event(models.Model):
         blank=True)
     address = models.CharField(
         max_length=255,
-        default='New York, NY')
+        default='New York, NY',
+        help_text='Used to search Google for the location.')
     location = PlainLocationField(
         based_fields=[address],
         zoom=7,

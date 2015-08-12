@@ -9,7 +9,7 @@ from events.models import Event
 def index(request, page_number=1):
 
     items_per_page = 1
-    query_set = Event.objects.order_by('event_date')
+    query_set = Event.objects.order_by('event_date_from')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('events:index')
 
@@ -35,12 +35,12 @@ def detail(request, slug):
     
 
     try:
-        next_item = event.get_next_by_event_date()
+        next_item = event.get_next_by_event_date_from()
     except Event.DoesNotExist:
         next_item = False
 
     try:
-        previous_item = event.get_previous_by_event_date()
+        previous_item = event.get_previous_by_event_date_from()
     except Event.DoesNotExist:
         previous_item = False
 

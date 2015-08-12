@@ -30,6 +30,10 @@ class Article(models.Model):
         null=True)
     original_publication_date = models.DateField(
         default=datetime.date.today)
+    original_publication_date_label = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True)
     published_date = models.DateTimeField(
         default=datetime.datetime.now)
     content = PlaceholderField('press_item_content')
