@@ -4,6 +4,7 @@ from cms.models.fields import PlaceholderField
 from sorl.thumbnail import ImageField
 from location_field.models.plain import PlainLocationField
 from press_contacts.models import PressContact
+from tinymce.models import HTMLField
 
 import datetime
 
@@ -18,9 +19,9 @@ class Event(models.Model):
     slug = models.SlugField(
         max_length=64,
         unique=True)
-    event_date_from = models.DateTimeField(
+    from_datetime = models.DateTimeField(
         default=datetime.datetime.now)
-    event_date_to = models.DateTimeField(
+    to_datetime = models.DateTimeField(
         default=datetime.datetime.now)
     published_date = models.DateTimeField(
         default=datetime.datetime.now)
@@ -31,8 +32,7 @@ class Event(models.Model):
         max_length=255,
         null=True,
         blank=True)
-    address = models.CharField(
-        max_length=255,
+    address = models.TextField(
         default='New York, NY',
         help_text='Used to search Google for the location.')
     location = PlainLocationField(

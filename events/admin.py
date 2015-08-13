@@ -14,8 +14,8 @@ class EventAdmin(AdminImageMixin, PlaceholderAdminMixin, admin.ModelAdmin):
             'fields': [
                 'title',
                 'slug',
-                'event_date_from',
-                'event_date_to',
+                'from_datetime',
+                'to_datetime',
                 'excerpt',
                 'main_image',
             ]

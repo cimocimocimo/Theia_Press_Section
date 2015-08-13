@@ -1,12 +1,14 @@
 {% load thumbnail %}
 <div class="event-summary-block">
-  <h3>{{ event.title }}</h3> 
   <a href="{% url 'events:detail' event.slug %}">
+    <h3>{{ event.title }}</h3> 
+    <h4>{{ event.from_datetime | date:"D F jS" }} from {{ event.from_datetime | date:"P" }} till {{ event.to_datetime | date:"P" }}</h4>
     <div class="image">
-      {% thumbnail event.main_image '736x414' crop='top' as img %}
+      {% thumbnail event.main_image '736' as img %}
       <img src="{{  img.url }}" alt="" />
     {% endthumbnail %}
     </div>
   </a>  
   <p>{{ event.excerpt }}</p>
+  <p><a href="{% url 'events:detail' event.slug %}">More info</a></p>
 </div>

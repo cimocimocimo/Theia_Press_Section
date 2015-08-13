@@ -1,25 +1,115 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block page_header %}
   <h2>{{ event.title }}</h2>
-  <h4>{{ event.event_date_from }}</h4>
+  <h4>{{ event.from_datetime }}</h4>
 {% endblock %}
 
 {% block content %}
+
   <div class="wrapper-8-col">
 
     <div class="event-block">
+
+      <div class="image">
+        {% thumbnail event.main_image '736' as img %}
+        <img src="{{  img.url }}" alt="" />
+        {% endthumbnail %}
+      </div>
+
       {% render_placeholder event.content %}
+
+      <div class="contact-info-block">
+        <h3>Contact Information</h3>
+
+        <div class="contact-block">
+          <h4>{{ event.event_contact.name }}</h4>
+          <address>
+            <div class="email">
+              <a href="mailto:{{ event.event_contact.email }}">{{ event.event_contact.email }}</a>
+            </div>
+            <div class="phone">
+              {{ event.event_contact.phone }}
+            </div>
+          </address>
+        </div>
+
+        {% if event.extra_contact_information %}
+          <p>{{ event.extra_contact_information }}</p>
+        {% endif %}
+
+      </div>
+
 
       {% with share_url=current_url %}
         {% include 'social-share-buttons.tmpl.html' %}
       {% endwith %}
-    </div>
 
-    <div class="pagination-row">
-      {% show_prev_next base_url=base_url %}
     </div>
 
   </div>
+
+  <div class="location-block">
+    <h3>Location</h3>
+
+    {% if event.address_display or event.address %}
+      <h4>Address</h4>
+
+      {% if event.location_name %}
+        <h5>{{ event.location_name }}</h5>
+      {% endif %}
+
+      <div class="address-block">
+        <address>
+          <div class="address">
+            {{ event.address|linebreaksbr }}
+          </div>
+        </address>
+    {% endif %}
+
+    {% addtoblock "js" %}
+    <script>
+        // You can set control options to change the default position or style of many
+        // of the map controls.
+
+        //
+        function initMap() {
+            var latLngArr = '{{ event.location }}'.split(','),
+                latLng = {
+                    lat: parseFloat(latLngArr[0]),
+                    lng: parseFloat(latLngArr[1])
+                },
+                map = new google.maps.Map(document.getElementById('location-map-block'), {
+                    zoom: 14,
+                    center: latLng,
+                    mapTypeControl: false,
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.SMALL
+                    }
+                }),
+                marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: 'event location'
+                });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
+        {% endaddtoblock %}
+
+        <div style="width: 500px; height: 500px; "class="location-map-block" id="location-map-block">
+
+        </div>
+      </div>
+
+  </div>
+
+  <div class="wrapper-8-col">
+    <div class="pagination-row">
+      {% show_prev_next base_url=base_url %}
+    </div>
+  </div>
+
 {% endblock %}

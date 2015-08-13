@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'debug_toolbar',
     'location_field',
+    'tinymce',
 )
 
 LANGUAGES = (
@@ -216,3 +217,7 @@ MIGRATION_MODULES = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+}

@@ -3,13 +3,14 @@ from django.http import Http404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
+from datetime import datetime
 
 from events.models import Event
 
 def index(request, page_number=1):
 
-    items_per_page = 1
-    query_set = Event.objects.order_by('event_date_from')
+    items_per_page = 4
+    query_set = Event.objects.order_by('-from_datetime')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('events:index')
 
@@ -35,12 +36,12 @@ def detail(request, slug):
     
 
     try:
-        next_item = event.get_next_by_event_date_from()
+        next_item = event.get_next_by_from_datetime()
     except Event.DoesNotExist:
         next_item = False
 
     try:
-        previous_item = event.get_previous_by_event_date_from()
+        previous_item = event.get_previous_by_from_datetime()
     except Event.DoesNotExist:
         previous_item = False
 
