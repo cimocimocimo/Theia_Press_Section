@@ -155,7 +155,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'debug_toolbar',
     'location_field',
-    'tinymce',
+    'solo',
 )
 
 LANGUAGES = (

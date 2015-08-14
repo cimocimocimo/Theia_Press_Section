@@ -4,9 +4,21 @@ from cms.models.fields import PlaceholderField
 from sorl.thumbnail import ImageField
 from location_field.models.plain import PlainLocationField
 from press_contacts.models import PressContact
-from tinymce.models import HTMLField
+from solo.models import SingletonModel
 
 import datetime
+
+class EventsConfig(SingletonModel):
+    contact = models.ForeignKey(
+        'press_contacts.PressContact',
+        null=True,
+        blank=True)
+
+    def __unicode__(self):
+        return 'Events Configuration'
+
+    class Meta:
+        verbose_name = "Events Configuration"
 
 class Event(models.Model):
 

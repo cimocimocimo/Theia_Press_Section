@@ -1,7 +1,8 @@
 from django.contrib import admin
 from cms.admin.placeholderadmin import PlaceholderAdminMixin
-from events.models import Event
+from .models import Event, EventsConfig
 from sorl.thumbnail.admin import AdminImageMixin
+from solo.admin import SingletonModelAdmin
 
 # Register your models here.
 @admin.register(Event)
@@ -35,3 +36,6 @@ class EventAdmin(AdminImageMixin, PlaceholderAdminMixin, admin.ModelAdmin):
         })
     ]
 
+@admin.register(EventsConfig)
+class EventsConfigAdmin(SingletonModelAdmin):
+    pass

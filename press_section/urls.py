@@ -13,7 +13,7 @@ urlpatterns = i18n_patterns(
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^', include('cms.urls')),
-    (r'^tinymce/', include('tinymce.urls')))
+)
 
 
 # This is only needed when using runserver.

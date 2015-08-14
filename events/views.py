@@ -5,7 +5,7 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from datetime import datetime
 
-from events.models import Event
+from .models import Event, EventsConfig
 
 def index(request, page_number=1):
 
@@ -13,6 +13,7 @@ def index(request, page_number=1):
     query_set = Event.objects.order_by('-from_datetime')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('events:index')
+    events_config = EventsConfig.get_solo()
 
     try:
         current_page = paginator.page(page_number)
@@ -27,7 +28,8 @@ def index(request, page_number=1):
                               {'current_page': current_page,
                                'has_next_page' : has_next,
                                'next_page_number' : next_page_number,
-                               'base_url': base_url},
+                               'base_url': base_url,
+                               'events_config': events_config},
                               context_instance=RequestContext(request))
 
 def detail(request, slug):
