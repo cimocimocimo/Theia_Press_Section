@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='EventConfig',
+            name='EventsConfig',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('contact', models.ForeignKey(blank=True, to='press_contacts.PressContact', null=True)),
