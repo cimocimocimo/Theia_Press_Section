@@ -2,15 +2,17 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
 {% block page_header %}
-  <h2>{{ event.title }}</h2>
-  <h4>{{ event.from_datetime }}</h4>
+  <header class="press-content-header">
+    <h2>{{ event.title }}</h2>
+    <h4>{{ event.from_datetime | date:"l, F jS" }} from {{ event.from_datetime | date:"P" }} till {{ event.to_datetime | date:"P" }}</h4>
+  </header>
 {% endblock %}
 
 {% block content %}
 
-  <div class="wrapper-8-col">
+  <div class="press-content-body">
 
-    <div class="event-block">
+    <div class="event-detail-block">
 
       <div class="image">
         {% thumbnail event.main_image '736' as img %}
@@ -50,23 +52,8 @@
 
   </div>
 
-  <div class="location-block">
+  <div class="event-location-block">
     <h3>Location</h3>
-
-    {% if event.address_display or event.address %}
-      <h4>Address</h4>
-
-      {% if event.location_name %}
-        <h5>{{ event.location_name }}</h5>
-      {% endif %}
-
-      <div class="address-block">
-        <address>
-          <div class="address">
-            {{ event.address|linebreaksbr }}
-          </div>
-        </address>
-    {% endif %}
 
     {% addtoblock "js" %}
     <script>
@@ -80,14 +67,12 @@
                     lat: parseFloat(latLngArr[0]),
                     lng: parseFloat(latLngArr[1])
                 },
-                map = new google.maps.Map(document.getElementById('location-map-block'), {
+                map = new google.maps.Map(document.getElementById('location-map'), {
                     zoom: 14,
                     center: latLng,
-                    mapTypeControl: false,
-                    zoomControl: true,
-                    zoomControlOptions: {
-                        style: google.maps.ZoomControlStyle.SMALL
-                    }
+                    scrollwheel: false,
+                    draggable: false,
+                    disableDefaultUI: true,
                 }),
                 marker = new google.maps.Marker({
                     position: latLng,
@@ -96,13 +81,31 @@
                 });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
-        {% endaddtoblock %}
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    {% endaddtoblock %}
 
-        <div style="width: 500px; height: 500px; "class="location-map-block" id="location-map-block">
+    <div class="event-location-map-block">
+      <div class="inner" id="location-map"></div>
 
+      <div class="event-location-overlay">
+        <div class="event-location-address-block">
+          <header class="block-header">
+            <h4>{{ event.location_name }}</h4>
+          </header>
+          <div class="block-body">
+            <div class="address-block">
+              <address>
+                <div class="address">
+                  {{ event.address|linebreaksbr }}
+                </div>
+              </address>
+            </div>
+
+            <p><a href="https://maps.google.com/?q={{ event.address|urlencode }}" target="_blank">Get Directions</a></p>
+          </div>
         </div>
       </div>
+    </div>
 
   </div>
 
