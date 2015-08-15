@@ -1,0 +1,17 @@
+<div class="contact-block">
+  <h4>{{ contact.descriptive_text }} {{ contact.name }}</h4>
+  <address>
+    <div class="address">
+      {{ contact.address|linebreaksbr }}
+    </div>
+    <br class="hidden" />
+    <div class="email">
+      <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+    </div>
+    <br class="hidden" />
+    <div class="phone">
+      {{ contact.phone }}
+    </div>
+  </address>
+</div>
+

@@ -4,7 +4,9 @@
 {% block content %}
   <div class="press-content-body">
 
-    {% static_placeholder 'media_contacts' %}
+    {% if events_config.contact %}
+      {% include 'press_contacts/contact.tmpl.html' with contact=events_config.contact only %}
+    {% endif %}
 
     {% if current_page %}
       <div data-infinite-scroll class="events-list-block" {% spaceless %}

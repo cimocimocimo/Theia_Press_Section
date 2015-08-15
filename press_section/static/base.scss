@@ -3272,6 +3272,10 @@ $smallSocialIconRatio: (2.66/3.375);
 .back-to-top-block {
     text-align: center;
     margin: $gutter * 4 0;
+
+    @include at-query($max, $small){
+        margin: $gutter * 2 0;
+    }
 }
 
 .back-to-top-link {
@@ -5453,7 +5457,7 @@ address {
     $width: 176px;
 
     position: absolute;
-    top: 40px;
+    top: $gutter*2;
     width: 176px;
     left: $gutter;
 }
@@ -7699,14 +7703,6 @@ address {
 .media-events-contact-block {
     .contact-block {
         margin-bottom: $gridGutter;
-    }
-}
-
-.contact-block {
-    margin-bottom: $gutter * 1.5;
-
-    p {
-        @extend %small-helvetica-text;
     }
 }
 
@@ -10648,10 +10644,10 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     @extend %clearfix;
     @extend %press-content-inner-base;
     
-    margin-bottom: 32px;
+    margin: 22px auto $gutter;
     
     h2 {
-        margin-bottom: 0px;
+        margin: 0px;
     }
 }
 
@@ -10846,7 +10842,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 .contact-block {
     max-width: 548px;
     border-top: 1px solid $colorLightestGray;
-    margin: 0 auto 12px;
+    margin: 0 auto $gutter * 1.5;
     padding: 12px 0 $gutter*1.5;
 
     h4 {
@@ -10880,19 +10876,104 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     .address {
         width: 58%;
     }
+
+    p {
+        @extend %small-helvetica-text;
+    }
+    
+    @include at-query($max, $medium){
+        margin: 0 20px $gutter * 1.5;
+        
+        address {
+            
+            > div,
+            .address {
+                width: auto;
+                float: none;
+                font-size: 14px;
+                line-height: (25/14);
+                padding: 0 $gutter*2;
+
+                &:before {
+                    font-size: 16px;
+                    top: 3px;
+                    left: 6px;
+                }
+            }
+        }
+    }
+    
+    @include at-query(null, $postSmall, $medium){
+        address {
+            text-align: center;
+            
+            br.hidden {
+                display: inline;
+            }
+            
+            > div,
+            .address {
+                display: inline-block;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    @include at-query($max, $small){
+        border-bottom: 1px solid $colorLightestGray;
+
+        h4 {
+            text-align: left;
+            font-size: 15px;
+            line-height: 22px;
+        }
+    }
 }
 
 .event-summary-block {
-    padding: 0 $gutter $gutter*2;
+    padding-bottom: 26px;
     border-bottom: 1px solid $colorLightestGray;
-
-    &:last-of-type {
-        border-bottom: 0;
+    margin-bottom: 31px;
+    
+    %event-summary-block-base {
+        padding: 0 $gutter;
     }
+    
+    .header-block {
+        @extend %event-summary-block-base;
+        
+        margin: 0 0 38px;
 
-    > a {
-        display: block;
-        text-decoration: none;
+        a {
+            text-decoration: none;
+        }
+    }
+    
+    .image-block {
+        @extend %event-summary-block-base;
+        
+        margin-bottom: 38px;
+
+        img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+    }
+    
+    .body-block {
+        @extend %event-summary-block-base;
+        
+    }
+    
+    .more-info-link {
+        @extend %rsaquo;
+        @extend %gold-hover-gray-underline-link;
+        @extend %medium-arial-text;
+
+        text-transform: uppercase;
+        font-weight: 700;
     }
     
     %event-summary-heading-base {
@@ -10915,32 +10996,59 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         @extend %event-summary-heading-base;
     }
     
+    &:last-of-type {
+        border-bottom: 0;
+    }
+
+    > a {
+        display: block;
+        text-decoration: none;
+    }
+
     p {
         text-align: center;
         color: $colorWarmGray;
     }
 
-    .image {
-        margin-bottom: $gutter*2;
-
-        img {
-            width: 100%;
-            display: block;
-            height: auto;
+    @include at-query(null, $postSmall, $large){
+        h3 {
+            font-size: 42px;
         }
     }
-
-    @include at-query($min, $medium){
+    
+    @include at-query($max, $small){
+        padding-bottom: 17px;
+        margin-bottom: 34px;
         
-    }
-
-    @include at-query($max, $preMedium){
-
+        h3 {
+            font-size: 25px;
+            line-height: 1.1;
+        }
+        
+        p {
+            font-size: 12px;
+        }
+        
+        .header-block {
+            margin-bottom: 27px;
+        }
+        
+        .image-block {
+            padding: 0;
+            margin-bottom: 24px;
+        }
     }
 }
 
 .event-detail-block {
     
+    .main-image-block {
+        > img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 .event-location-map-block {
