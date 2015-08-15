@@ -198,25 +198,25 @@ pre {
 /*================================================================================
   #Extends - these are for common text and block styles
   ================================================================================*/
-.newsletter-form input, .event-summary-block .more-info-link {
+.newsletter-form input {
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; }
   @media screen and (min-width: 481px) {
-    .newsletter-form input, .event-summary-block .more-info-link {
+    .newsletter-form input {
       font-size: 1.125em;
       /* ~18px */ } }
   @media screen and (max-width: 480px) {
-    .newsletter-form input, .event-summary-block .more-info-link {
+    .newsletter-form input {
       font-size: 0.9375em;
       /* ~15px */ } }
 
-.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address, .event-summary-block .more-info-link {
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; }
   @media screen and (min-width: 481px) {
-    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
+    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address, .event-summary-block .more-info-link {
       font-size: 0.875em;
       /* ~14px */ } }
   @media screen and (max-width: 480px) {
-    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address {
+    .pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, address, .event-summary-block .more-info-link {
       font-size: 0.8125em;
       /* ~13px */ } }
 

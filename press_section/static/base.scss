@@ -10970,7 +10970,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     .more-info-link {
         @extend %rsaquo;
         @extend %gold-hover-gray-underline-link;
-        @extend %medium-arial-text;
+        @extend %small-mid-arial-text;
 
         text-transform: uppercase;
         font-weight: 700;
