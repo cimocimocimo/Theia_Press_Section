@@ -10585,6 +10585,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
 .press-section {
     .share-buttons {
+        display: inline-block;
         height: 20px;
         width: 354px;
 
@@ -10596,14 +10597,16 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         .twitter-share-button {
             width: 80px !important;
         }
+
+        .fb-like {
+            margin-top: -3px;
+        }
     }
 
     .pagination-row {
         margin: $gutter*3 0 $gutter*4;
         text-align: center;
     }
-
-    
 }
 
 .press-content-hero {
@@ -10644,7 +10647,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     @extend %clearfix;
     @extend %press-content-inner-base;
     
-    margin: 22px auto $gutter;
+    margin: 22px auto 29px;
     
     h2 {
         margin: 0px;
@@ -11041,14 +11044,62 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 }
 
 .event-detail-block {
-    
+    %event-detail-block-base {
+        padding: 0 $gutter;
+    }
+
     .main-image-block {
+        @extend %event-detail-block-base;
+        
+        margin-bottom: 38px;
+        
         > img {
             display: block;
             width: 100%;
             height: auto;
         }
     }
+
+    .body-block {
+        @extend %event-detail-block-base;
+        
+        text-align: center;
+        margin-bottom: 32px;
+
+        .share-buttons{
+            margin-top: 32px;
+        }
+    }
+
+    .contact-info-block {
+        @extend %event-detail-block-base;
+        
+        margin: 64px 0 32px;
+
+        h3 {
+            margin: 0 0 32px;
+        }
+
+        .contact-block {
+            margin-bottom: 0;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    @include at-query(null, $postSmall, $large){
+        
+    }
+
+    @include at-query($max, $small){
+        
+    }
+}
+
+.event-location-block {
+
 }
 
 .event-location-map-block {

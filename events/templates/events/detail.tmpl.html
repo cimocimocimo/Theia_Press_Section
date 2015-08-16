@@ -15,38 +15,29 @@
     <div class="event-detail-block">
 
       <div class="main-image-block">
-        {% thumbnail event.main_image '768' as img %}
+        {% thumbnail event.main_image '738' as img %}
         <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
       </div>
 
-      {% render_placeholder event.content %}
+      <div class="body-block">
+        {% autoescape off %}
+          {{ event.content }}
+        {% endautoescape %}
+
+        {% include 'social-share-buttons.tmpl.html' with share_url=current_url %}
+      </div>
 
       <div class="contact-info-block">
         <h3>Contact Information</h3>
 
-        <div class="contact-block">
-          <h4>{{ event.event_contact.name }}</h4>
-          <address>
-            <div class="email">
-              <a href="mailto:{{ event.event_contact.email }}">{{ event.event_contact.email }}</a>
-            </div>
-            <div class="phone">
-              {{ event.event_contact.phone }}
-            </div>
-          </address>
-        </div>
+        {% include 'press_contacts/contact.tmpl.html' with contact=event.event_contact only %}
 
         {% if event.extra_contact_information %}
           <p>{{ event.extra_contact_information }}</p>
         {% endif %}
 
       </div>
-
-
-      {% with share_url=current_url %}
-        {% include 'social-share-buttons.tmpl.html' %}
-      {% endwith %}
 
     </div>
 

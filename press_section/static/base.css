@@ -6670,6 +6670,7 @@ body.vex-open {
   padding: 1px; }
 
 .press-section .share-buttons {
+  display: inline-block;
   height: 20px;
   width: 354px; }
   .press-section .share-buttons > * {
@@ -6677,6 +6678,8 @@ body.vex-open {
     vertical-align: top !important; }
   .press-section .share-buttons .twitter-share-button {
     width: 80px !important; }
+  .press-section .share-buttons .fb-like {
+    margin-top: -3px; }
 .press-section .pagination-row {
   margin: 48px 0 64px;
   text-align: center; }
@@ -6700,7 +6703,7 @@ body.vex-open {
     margin: 0 auto; } }
 
 .press-content-header {
-  margin: 22px auto 16px; }
+  margin: 22px auto 29px; }
   .press-content-header h2 {
     margin: 0px; }
 
@@ -6927,10 +6930,27 @@ body.vex-open {
         padding: 0;
         margin-bottom: 24px; } }
 
-.event-detail-block .main-image-block > img {
-  display: block;
-  width: 100%;
-  height: auto; }
+.event-detail-block .main-image-block, .event-detail-block .body-block, .event-detail-block .contact-info-block {
+  padding: 0 16px; }
+.event-detail-block .main-image-block {
+  margin-bottom: 38px; }
+  .event-detail-block .main-image-block > img {
+    display: block;
+    width: 100%;
+    height: auto; }
+.event-detail-block .body-block {
+  text-align: center;
+  margin-bottom: 32px; }
+  .event-detail-block .body-block .share-buttons {
+    margin-top: 32px; }
+.event-detail-block .contact-info-block {
+  margin: 64px 0 32px; }
+  .event-detail-block .contact-info-block h3 {
+    margin: 0 0 32px; }
+  .event-detail-block .contact-info-block .contact-block {
+    margin-bottom: 0; }
+  .event-detail-block .contact-info-block p {
+    text-align: center; }
 
 .event-location-map-block {
   position: relative;

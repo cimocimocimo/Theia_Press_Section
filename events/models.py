@@ -5,6 +5,7 @@ from sorl.thumbnail import ImageField
 from location_field.models.plain import PlainLocationField
 from press_contacts.models import PressContact
 from solo.models import SingletonModel
+from tinymce.models import HTMLField
 
 import datetime
 
@@ -38,7 +39,9 @@ class Event(models.Model):
     published_date = models.DateTimeField(
         default=datetime.datetime.now)
     excerpt = models.TextField(null=True, blank=True)
-    content = PlaceholderField('event_content')
+    content = HTMLField(
+        null=True,
+        blank=True)
     main_image = ImageField(null=True, blank=True)
     location_name = models.CharField(
         max_length=255,

@@ -18,6 +18,7 @@ class EventAdmin(AdminImageMixin, PlaceholderAdminMixin, admin.ModelAdmin):
                 'from_datetime',
                 'to_datetime',
                 'excerpt',
+                'content',
                 'main_image',
             ]
         }),

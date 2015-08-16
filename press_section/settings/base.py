@@ -156,6 +156,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'location_field',
     'solo',
+    'tinymce',
 )
 
 LANGUAGES = (
@@ -220,4 +221,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
+    'resize': 'both',
+    'width': '100%',
+    'plugins': 'autoresize',
 }
