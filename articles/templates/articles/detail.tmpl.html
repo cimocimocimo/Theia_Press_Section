@@ -9,16 +9,16 @@
 {% endblock %}
 
 {% block content %}
-  <div class="wrapper-8-col article-detail-content">
+  <div class="wrapper-8-col press-content-body">
     <div class="article-detail-lead">
       <div class="image">
-        {% thumbnail article.screenshot '350' as img %}
+        {% thumbnail article.screenshot '736' as img %}
         <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
       </div>
       {% if article.screenshot_2 %}
         <div class="image">
-          {% thumbnail article.screenshot_2 '350' as img %}
+          {% thumbnail article.screenshot_2 '736' as img %}
           <img src="{{  img.url }}" alt="" />
         {% endthumbnail %}
         </div>
@@ -34,7 +34,9 @@
       {% endif %}
     </div>
     <div class="article-detail-body">
+
       {% render_placeholder article.content %}
+
       {% if article.url %}
         <p>
           <a href="{{ article.url }}" target="_blank">Read the original article</a>

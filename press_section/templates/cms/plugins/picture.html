@@ -4,16 +4,18 @@
 
 {% if picture.url %}<a href="{{ picture.url }}">{% endif %}
 
-{% if "content" in placeholder %}
-  {% thumbnail picture.image.name '832x540' crop='center' as img %}
+  {% if "content" in placeholder %}
+  {% thumbnail picture.image.name '832' as img %}
   <img src="{{ img.url }}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
   {% endthumbnail %}
-{% endif %}
-{% if "teaser" in placeholder %}
+  {% endif %}
+
+  {% if "teaser" in placeholder %}
   {% thumbnail picture.image.name '484x1500' as img %}
   <img src="{{ img.url }}" {% if picture.alt %}alt="{{ picture.alt }}" {% endif %}/>
   {% endthumbnail %}
-{% endif %}
+  {% endif %}
+
 {% if picture.url %}</a>{% endif %}
 
 {% endspaceless %}
