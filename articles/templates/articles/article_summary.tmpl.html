@@ -1,9 +1,10 @@
 {% load thumbnail %}
 <div class="article-summary-block">
-  <h3>{{ article.title }}</h3>
   <div class="article-summary-meta">
     <span class="article-summary-publication-date">
-      {% if article.original_publication_date %}
+      {% if article.original_publication_date_label %}
+        {{  article.original_publication_date_label }}
+      {% else %}
         {{  article.original_publication_date }}
       {% endif %}
     </span>
