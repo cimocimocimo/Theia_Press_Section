@@ -4,7 +4,8 @@
     <a href="{% url 'events:detail' event.slug %}">
       <h3>
         {{ event.title }}
-        &dash;
+      </h3>
+      <h4>
         {% if not event.is_single_day and event.is_within_same_month %}
           {{ event.from_datetime | date:"N j" }}-{{ event.to_datetime | date:"j" }}
         {% else %}
@@ -12,7 +13,7 @@
           till
           {{ event.to_datetime | date:"N j" }}
         {% endif %}
-      </h3>
+      </h4>
     </a>
   </header>
   <a href="{% url 'events:detail' event.slug %}">

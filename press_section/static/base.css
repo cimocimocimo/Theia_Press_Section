@@ -6892,6 +6892,8 @@ body.vex-open {
     margin: 0 0 38px; }
     .event-summary-block .header-block a {
       text-decoration: none; }
+    .event-summary-block .header-block h3 {
+      margin-bottom: 0; }
   .event-summary-block .image-block {
     margin-bottom: 38px; }
     .event-summary-block .image-block img {
