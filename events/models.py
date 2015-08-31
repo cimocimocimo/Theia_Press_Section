@@ -6,8 +6,7 @@ from location_field.models.plain import PlainLocationField
 from press_contacts.models import PressContact
 from solo.models import SingletonModel
 from tinymce.models import HTMLField
-
-import datetime
+from django.utils import timezone
 
 class EventsConfig(SingletonModel):
     contact = models.ForeignKey(
@@ -32,12 +31,21 @@ class Event(models.Model):
     slug = models.SlugField(
         max_length=64,
         unique=True)
+    all_day = models.BooleanField(
+        default=True)
     from_datetime = models.DateTimeField(
-        default=datetime.datetime.now)
+        default=timezone.now)
     to_datetime = models.DateTimeField(
-        default=datetime.datetime.now)
+        default=timezone.now)
+
+    by_appointment_only = models.BooleanField(
+        default=False)
+    appointment_only_info = models.TextField(
+        null=True,
+        blank=True)
+
     published_date = models.DateTimeField(
-        default=datetime.datetime.now)
+        default=timezone.now)
     excerpt = models.TextField(null=True, blank=True)
     content = HTMLField(
         null=True,
@@ -65,7 +73,43 @@ class Event(models.Model):
     def __unicode__(self):
         return self.title
 
+    @property
+    def is_single_day(self):
+        return (self.from_datetime.date() == self.to_datetime.date())
+
+    @property
+    def is_within_same_month(self):
+        if self.from_datetime.year == self.to_datetime.year:
+            return self.from_datetime.month == self.to_datetime.month
+        return False
+
+    @property
+    def has_location_hours(self):
+        hours = EventLocationHours.objects.filter(event__pk=self.id)
+        return len(hours) > 0
 
 class EventsPluginModel(CMSPlugin):
-    title = models.CharField(max_length=255,
-                             default="Events")
+    title = models.CharField(
+        max_length=255,
+        default="Events")
+
+class EventLocationHours(models.Model):
+    WEEKDAYS = [
+        (1, "Monday"),
+        (2, "Tuesday"),
+        (3, "Wednesday"),
+        (4, "Thursday"),
+        (5, "Friday"),
+        (6, "Saturday"),
+        (7, "Sunday"),
+    ]
+
+    event = models.ForeignKey(
+        Event
+    )
+    weekday = models.IntegerField(
+        choices=WEEKDAYS,
+        unique=True
+    )
+    from_hour = models.TimeField()
+    to_hour = models.TimeField()

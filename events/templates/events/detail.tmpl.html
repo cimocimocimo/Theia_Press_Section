@@ -4,7 +4,29 @@
 {% block page_header %}
   <header class="press-content-header">
     <h2>{{ event.title }}</h2>
-    <h4>{{ event.from_datetime | date:"l, F jS" }} from {{ event.from_datetime | date:"P" }} till {{ event.to_datetime | date:"P" }}</h4>
+    <h4>
+      {% if not event.all_day and not event.is_single_day %}
+        {% comment %}show date/time for both from and two dates{% endcomment %}
+        {{ event.from_datetime | date:"l, F jS - P" }}
+        through
+        {{ event.to_datetime | date:"l, F jS - P" }}
+      {% elif event.all_day and not event.is_single_day %}
+        {% comment %}multi day, all day event. Show the date range but no times{% endcomment %}
+        {{ event.from_datetime | date:"l, F jS" }}
+        through
+        {{ event.to_datetime | date:"l, F jS" }}
+      {% elif not event.all_day and event.is_single_day %}
+        {% comment %}show a single date and times{% endcomment %}
+        {{ event.from_datetime | date:"l, F jS" }}
+        from
+        {{ event.from_datetime | date:"P" }}
+        till
+        {{ event.to_datetime | date:"P" }}
+      {% else %}
+        {% comment %}single day, all day event. Just show the date{% endcomment %}
+        {{ event.from_datetime | date:"l, F jS" }}
+      {% endif %}
+    </h4>
   </header>
 {% endblock %}
 
@@ -88,11 +110,25 @@
               <address>
                 <div class="address">
                   {{ event.address|linebreaksbr }}
+                  <br />
+                  <a href="https://maps.google.com/?daddr={{ event.address|urlencode }}" target="_blank">Get Directions</a>
                 </div>
               </address>
             </div>
-
-            <p><a href="https://maps.google.com/?q={{ event.address|urlencode }}" target="_blank">Get Directions</a></p>
+            {% if event.by_appointment_only %}
+              <h5>By Appointment Only</h5>
+              {% if event.appointment_only_info %}
+                <p>{{ event.appointment_only_info }}</p>
+              {% endif %}
+            {% endif %}
+            {% if event.has_location_hours %}
+              <h5>Location Hours</h5>
+              <p>
+                {% for open_time in location_hours %}
+                  <strong>{{ open_time.day }}:</strong> {{ open_time.from|date:'P' }} - {{ open_time.to }} <br />
+                {% endfor %}
+              </p>
+            {% endif %}
           </div>
         </div>
       </div>

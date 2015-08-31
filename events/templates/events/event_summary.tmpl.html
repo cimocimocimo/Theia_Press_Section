@@ -2,7 +2,17 @@
 <div class="event-summary-block">
   <header class="header-block">
     <a href="{% url 'events:detail' event.slug %}">
-      <h3>{{ event.title }} &dash; {{ event.from_datetime | date:"N j" }}</h3> 
+      <h3>
+        {{ event.title }}
+        &dash;
+        {% if not event.is_single_day and event.is_within_same_month %}
+          {{ event.from_datetime | date:"N j" }}-{{ event.to_datetime | date:"j" }}
+        {% else %}
+          {{ event.from_datetime | date:"N j" }}
+          till
+          {{ event.to_datetime | date:"N j" }}
+        {% endif %}
+      </h3>
     </a>
   </header>
   <a href="{% url 'events:detail' event.slug %}">
