@@ -21,4 +21,5 @@ class ArticleAdmin(AdminImageMixin, PlaceholderAdminMixin, admin.ModelAdmin):
                 'excerpt',
                 'lead_content',
                 ('screenshot',
-                 'screenshot_2',),]}),)
+                 'screenshot_2',),
+                'tags',]}),)

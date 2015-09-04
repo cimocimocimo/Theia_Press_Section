@@ -3,6 +3,7 @@ from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
 from sorl.thumbnail import ImageField
 from django.utils.encoding import python_2_unicode_compatible
+from taggit.managers import TaggableManager
 
 import datetime
 
@@ -42,7 +43,8 @@ class Article(models.Model):
     screenshot = ImageField(null=True, blank=True)
     screenshot_2 = ImageField(null=True, blank=True)
 
-    # **TODO** Add django-taggit
+    tags = TaggableManager(
+        blank=True)
 
     def __str__(self):
         return self.title

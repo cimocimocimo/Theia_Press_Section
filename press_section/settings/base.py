@@ -157,6 +157,7 @@ INSTALLED_APPS = (
     'location_field',
     'solo',
     'tinymce',
+    'taggit',
 )
 
 LANGUAGES = (

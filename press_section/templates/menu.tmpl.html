@@ -2,6 +2,14 @@
 
 {% for child in children %}
   <li class="sub-menu-column">
-    <a class="sub-menu-link{% if child.selected %} active{% endif %}" href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+    <a class="sub-menu-link{% if child.selected %} active{% endif %}"
+       href="{{ child.get_absolute_url }}">
+      {{ child.get_menu_title }}
+    </a>
+    {% if child.children %}
+      <ul>
+	{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+      </ul>
+    {% endif %}
   </li>
 {% endfor %}
