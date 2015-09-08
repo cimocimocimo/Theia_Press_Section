@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'reversion',
     'compressor',
     'ordered_model',
+    'adminsortable',
     'storages',
     'corsheaders',
     'sorl.thumbnail',

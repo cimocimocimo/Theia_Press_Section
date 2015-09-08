@@ -1,19 +1,23 @@
 from django.db import models
 from cms.models import CMSPlugin
 from cms.models.fields import PlaceholderField
-from ordered_model.models import OrderedModel
+from adminsortable.models import SortableMixin
 from sorl.thumbnail import ImageField
 
-class Celebrity(OrderedModel):
+class Celebrity(SortableMixin):
 
-    class Meta(OrderedModel.Meta):
+    class Meta:
         verbose_name = 'Celebrity'
         verbose_name_plural = 'Celebrities'
+        ordering = ['order']
 
     name = models.CharField(max_length=255)
     byline = models.CharField(max_length=128, blank=True, null=True)
     main_image = ImageField(null=True, blank=True)
     content = PlaceholderField('celebrity_content')
+
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+    order_field_name = 'order'
 
     # **TODO** celebrity tags?
 
@@ -24,9 +28,9 @@ class Celebrity(OrderedModel):
         return self.name
 
 
-class Dress(OrderedModel):
+class Dress(models.Model):
 
-    class Meta(OrderedModel.Meta):
+    class Meta:
         verbose_name = 'Dress'
         verbose_name_plural = 'Dresses'
 
@@ -34,8 +38,8 @@ class Dress(OrderedModel):
     # event dress worn at?
     celebrity = models.ForeignKey(Celebrity)
     main_image = ImageField(null=True, blank=True)
-    order_with_respect_to = 'celebrity'
     content = PlaceholderField('celebrity_content')
+
     # tags?
     # link to dress product page
 
