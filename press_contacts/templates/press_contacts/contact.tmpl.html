@@ -1,17 +1,37 @@
 <div class="contact-block">
-  <h4>{{ contact.descriptive_text }} {{ contact.name }}</h4>
+  {% if contact.name %}
+    <h4>{{ contact.descriptive_text }} {{ contact.name }}</h4>
+  {% endif %}
   <address>
+    {% if contact.address %}
     <div class="address">
       {{ contact.address|linebreaksbr }}
     </div>
     <br class="hidden" />
+    {% endif %}
+    {% if contact.email %}
     <div class="email">
       <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
     </div>
     <br class="hidden" />
+    {% endif %}
+    {% if contact.phone %}
     <div class="phone">
       {{ contact.phone }}
     </div>
+    <br class="hidden" />
+    {% endif %}
+    {% if contact.url %}
+    <div class="url">
+      <a href="{{ contact.url }}">
+        {% if contact.url_label %}
+          {{ contact.url_label }}
+        {% else %}
+          {{ contact.url }}
+        {% endif %}
+      </a>
+    </div>
+    {% endif %}
   </address>
 </div>
 

@@ -1,15 +1,34 @@
 <div class="contact-block">
-  <h4>{{ instance.press_contact.descriptive_text }} {{ instance.press_contact.name }}</h4>
+  {% if instance.press_contact.name %}
+    <h4>{{ instance.press_contact.descriptive_text }} {{ instance.press_contact.name }}</h4>
+  {% endif %}
   <address>
-    <div class="address">
-      {{ instance.press_contact.address|linebreaksbr }}
-    </div>
-    <div class="email">
-      <a href="mailto:{{ instance.press_contact.email }}">{{ instance.press_contact.email }}</a>
-    </div>
-    <div class="phone">
-      {{ instance.press_contact.phone }}
-    </div>
+    {% if instance.press_contact.address %}
+      <div class="address">
+        {{ instance.press_contact.address|linebreaksbr }}
+      </div>
+    {% endif %}
+    {% if instance.press_contact.email %}
+      <div class="email">
+        <a href="mailto:{{ instance.press_contact.email }}">{{ instance.press_contact.email }}</a>
+      </div>
+    {% endif %}
+    {% if instance.press_contact.phone %}
+      <div class="phone">
+        {{ instance.press_contact.phone }}
+      </div>
+    {% endif %}
+    {% if instance.press_contact.url %}
+      <div class="url">
+        <a href="{{ instance.press_contact.url }}">
+          {% if instance.press_contact.url_label %}
+            {{ instance.press_contact.url_label }}
+          {% else %}
+            {{ instance.press_contact.url }}
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
   </address>
 </div>
 
