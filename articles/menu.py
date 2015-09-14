@@ -10,7 +10,7 @@ class ArticleTagMenu(CMSAttachMenu):
     name = _("Article Tag Menu")
     
     def get_link_url(self, slug):
-        url = '/en/articles/{}/'.format(slug)
+        url = '/en/articles/tag/{}/'.format(slug)
         return url
     
     def get_nodes(self, request):
@@ -24,4 +24,4 @@ class ArticleTagMenu(CMSAttachMenu):
             nodes.append(node)
         return nodes
     
-# menu_pool.register_menu(ArticleTagMenu)
+menu_pool.register_menu(ArticleTagMenu)
