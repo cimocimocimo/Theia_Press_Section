@@ -170,8 +170,9 @@ $radius: 3px;
 
 
 // header heights
-$mobileHeaderHeight: 44px;
-$desktopHeaderHeight: 85px;
+$headerTopRowHeight: 32px;
+$desktopHeaderMainRowHeight: 85px;
+$mobileHeaderMainRowHeight: 88px;
 
 
 // moblie side nav
@@ -4839,7 +4840,6 @@ address {
     }
 }
 
-/* Header */
 
 /* Header */
 .header-container {
@@ -4863,12 +4863,7 @@ address {
         @include transform(translateY(-100%));
         opacity: 0;
     }
-
-    .cms-toolbar-expanded & {
-        padding-top: 35px;
-    }
 }
-
 
 .site-header {
     position: relative;
@@ -4888,123 +4883,346 @@ address {
         }
     }
 }
-.site-header-top-row {
-    @include box-shadow(0 2px 3px rgba(0,0,0,0.05));
+
+/* Using a mixin here since this is shared between media queries */
+@mixin site-header-column() {
+    @include verticalCenterChildElements();
+    @include box-sizing( content-box );
 
     position: relative;
+    display: block;
+    float: left;
+}
+
+%site-header-row-base {
+    position: relative;
     z-index: $zindexNavigation + 100;
+    
+    .wrapper {
+        @extend %clearfix;
+    }
+    
+    @include at-query ($min, $postMedium) {
+        .wrapper {
+            position: relative;
+        }
 
-    /* Using a mixin here since this is shared between media queries */
-    @mixin header-column() {
-        @include verticalCenterChildElements();
-        @include box-sizing( content-box );
-
-        position: relative;
-        display: block;
-        float: left;
+        div[class$='-column'] {
+            margin: 0 $gutter;
+        }
     }
 
-    .layout-main & {
-        background: white;
+    @include at-query ($max, $medium) {
+        .wrapper {
+            position: relative;
+            margin: 0 $gutter;
+        }
+    }
+}
 
-        .wrapper > div {
-            @extend %column-base;
+.site-header-top-row {
+    @extend %site-header-row-base;
+    @include box-shadow(inset 0 -4px 3px -3px rgba(0,0,0,0.05));
+    
+    background: $colorLightestGray;
+    height: $headerTopRowHeight;
+    padding: $gutter/4 0;
+    
+    .site-message-column,
+    .customer-secondary-menu-column {
+        @include site-header-column();
+        
+        height: $headerTopRowHeight - $gutter/2;
+        margin: 0 !important;
+        box-sizing: border-box;
+        padding: 0 $gutter;
+    }
+    
+    .site-message-column {
+        width: 60%;
+    }
+    
+    .customer-secondary-menu-column {
+        text-align: right;
+        width: 40%;
+    }
+    
+    @include at-query($max, $medium){
+        .site-message-column {
+            float: none;
+            text-align: center;
+            width: auto;
+        }
+        
+        .customer-secondary-menu-column {
+            display: none;
+        }
+    }
+}
+
+.site-message-block {
+    p {
+        margin: 0;
+        font-size: 13px;
+        font-family: $centuryGothicFontStack;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    @include at-query(null, $postSmall, $large){
+        p {
+            font-size: 12px;
+        }
+    }
+    
+    @include at-query($max, $small){
+        p {
+            font-size: 10px;
+        }
+    }
+}
+
+.site-header-main-row {
+    @extend %site-header-row-base;
+    @include box-shadow(0 2px 3px rgba(0,0,0,0.05));
+
+    background: $colorWhite;
+    
+    @include at-query ($min, $postMedium) {
+        height: $desktopHeaderMainRowHeight;
+        padding: $gutter 0;
+
+        %site-header-main-row-column-postLarge {
+            @include site-header-column();
+
+            height: $desktopHeaderMainRowHeight - $gridGutter;
+        }
+        
+        .logo-column {
+            @extend %site-header-main-row-column-postLarge;
         }
 
-        /* Large Desktop */
-        @include at-query ($min, $large) {
-            padding: $gutter 0;
-            height: $desktopHeaderHeight;
+        .main-menu-column {
+            @extend %site-header-main-row-column-postLarge;
+            width: 684px;
+            text-align: center;
 
-            .wrapper {
-                position: relative;
-                @extend .clearfix;
-            }
-
-            %header-column {
-                @include header-column();
-
-                height: $desktopHeaderHeight - $gridGutter;
-                margin: 0 $gutter;
-            }
-
-            .logo-column {
-                @extend %header-column;
-            }
-
-            .main-menu-column {
-                @extend %header-column;
-                width: 432px;
-                text-align: right;
-
-                ul {
-                    padding-top: 2px;
-                }
-            }
-
-            .customer-menu-column {
-                @extend %header-column;
-
-                text-align: right;
-                width: 218px;
-            }
-
-            .search-column {
-                @extend %header-column;
-
-                width: 220px;
+            ul {
+                padding-top: 2px;
             }
         }
 
-        /* Desktop */
-        // narrow some of the widths defined above
-        @include at-query(null, $postLarge, $xLarge) {
-            .main-menu-column {
-                width: 362px;
-            }
+        .search-column {
+            @extend %site-header-main-row-column-postLarge;
 
-            .customer-menu-column {
-                width: 190px;
-            }
+            width: 218px;
+        }
+        
+        .mobile-ui-block,
+        .mobile-cart-block {
+            display: none;
+        }
+    }
 
-            .search-column {
-                width: 190px;
-            }
+    @include at-query(null, $postLarge, $preXLarge) {
+        .main-menu-column {
+            width: 584px;
+        }
+
+        .customer-menu-column {
+            width: 190px;
+        }
+
+        .search-column {
+            width: 190px;
+        }
+    }
+
+    @include at-query(null, $postMedium, $large) {
+        .logo-column {
+            position: absolute;
+            left: 0;
+        }
+        
+        .main-menu-column {
+            width: 100%;
+            text-align: center;
+            margin: 0 !important;
+            padding: 0 190px+$gutter*2 0 154px+$gutter*2;
+            box-sizing: border-box;
+        }
+        
+        .customer-menu-column {
+            width: 190px;
+        }
+
+        .search-column {
+            position: absolute;
+            right: 0;
+            width: 190px;
+        }
+    }
+
+    @include at-query ($max, $medium) {
+        padding: $gutter/2 0;
+        height: $mobileHeaderMainRowHeight;
+
+        %site-header-main-row-column-large {
+            @include site-header-column();
+
+            height: $mobileHeaderMainRowHeight/2 - $gridGutter/2;
+        }
+
+        .logo-column {
+            @extend %site-header-main-row-column-large;
+            
+            text-align: center;
+            float: none;
+            z-index: 0;
+            margin-bottom: $gutter;
+        }
+
+        .main-menu-column {
+            @extend %site-header-main-row-column-large;
+            text-align: center;
+            float: none;
+            z-index: 0;
+        }
+        
+        %site-header-main-row-max-large-mobile-block-base {
+            float: none;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+        }
+        
+        .mobile-ui-block {
+            @extend %site-header-main-row-column-large;
+            @extend %site-header-main-row-max-large-mobile-block-base;
+            
+            right: 0;
+        }
+        
+        .mobile-cart-block {
+            @extend %site-header-main-row-column-large;
+            @extend %site-header-main-row-max-large-mobile-block-base;
+        }
+        
+        .search-column {
+            display: none;
+        }
+    }
+}
+
+.site-header-sub-row {
+    position: relative;
+    z-index: 0;
+
+    .header-sub-menu {
+        @extend %clearfix;
+        @include transform(translateY(0%));
+
+        position: absolute;
+        bottom: 0px;
+        background: rgba($colorWhite, 0.93);
+        padding: 16px 10px;
+        opacity: 0;
+        transition: all 0.3s;
+
+        &.js-open {
+            @include transform(translateY(100%));
+            opacity: 1;
+        }
+        
+        ul {
+            margin-bottom: 0;
+        }
+        
+        .sub-menu-column {
+            padding: 0 10px;
         }
 
         /* Mobile */
-        @include at-query ($max, $preLarge) {
-            padding: $gutter/2 0;
-
-            height: $mobileHeaderHeight;
-
-            .wrapper {
-                @extend .clearfix;
-
-                position: relative;
-                margin: 0 $gutter;
-            }
-
-            %header-column {
-                @include header-column();
-
-                height: $mobileHeaderHeight - $gridGutter/2;
-            }
-
-            .logo-column {
-                @extend %header-column;
-            }
-
-            .customer-menu-column {
-                @extend  %header-column;
-                float: right;
-            }
-
-            .main-menu-column,
-            .search-column {
-                display: none;
-            }
+        @include at-query ($max, $large) {
+            left: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
         }
+    }
+
+    .layout-simplified & {
+        display: none;
+    }
+}
+
+%sub-menu-link-base {
+    @extend %gray-hover-gold-link;
+
+    white-space: normal;
+    display: block;
+    line-height: (20/13);
+
+    @include at-query($max, $preLarge){
+        color: $colorGray;
+    }
+}
+
+.sub-menu-column {
+    .mobile-side-nav & {
+        padding: 6px 0;
+    }
+}
+
+.sub-menu-header {
+    @extend %small-bold-arial-text;
+    @extend %sub-menu-link-base;
+
+    text-transform: uppercase;
+
+    .site-header & {
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+    }
+
+    .mobile-side-nav & {
+        padding: 6px 4px;
+    }
+}
+
+.sub-menu-link {
+    @extend %small-arial-text;
+    @extend %sub-menu-link-base;
+
+    .mobile-side-nav & {
+        padding: 4px 4px 4px 16px;
+    }
+
+    @include at-query($max, $large){
+        .header-sub-menu & {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+    }
+}
+
+.sub-menu-mobile {
+    @include transition(all 0.3s);
+
+    margin-right: 0;
+    padding: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    a {
+        display: block;
+    }
+
+    &.js-open {
+        opacity: 1;
+        height: auto;
     }
 }
 
@@ -7049,8 +7267,6 @@ address {
     }
 }
 
-/* Naviation Menus */
-
 .main-menu {
     .site-header &,
     .site-footer & {
@@ -7070,16 +7286,12 @@ address {
     .mobile-side-nav & {
         ul {
             margin: 0 $gutter;
-            
         }
 
         li {
             border-top: 1px solid $colorLightGray;
             margin-bottom: 0;
-        }
 
-        // only remove the top border from the first top level li
-        > ul > li {
             &:first-child {
                 border-top-width: 0;
             }
@@ -7096,24 +7308,27 @@ address {
 
     .site-header &,
     .site-footer & {
-        @extend %small-arial-text;
+        @extend %small-bold-arial-text;
 
         @include at-query ($min, $postSmall) {
             padding: $gutter/4 $gutter * 1.25;
         }
 
-        @include at-query(null, $postLarge, $xLarge){
+        @include at-query(null, $postMedium, $large){
             padding-left: $gutter * (2/3);
             padding-right: $gutter * (2/3);
         }
         
         @include at-query ($max, $small) {
             padding: $gutter/2 0;
+            margin: 0 $gutter/2;
+            font-size: 12px;
         }
-    }
 
+    }
+    
     .mobile-side-nav & {
-        @extend %small-arial-text;
+        @extend %small-bold-arial-text;
         @extend %icon-base;
         @extend .icon-arrow-left;
 
@@ -7124,14 +7339,14 @@ address {
         &:before {
             @include transform(rotate(0));
             @include transition(all 0.3s);
-            
+
             display: block !important;
             position: absolute;
             font-size: 14px;
             top: 14px;
             left: 0;
         }
-        
+
         &.active {
             &:before {
                 @include transform(rotate(-90deg));
@@ -7144,28 +7359,24 @@ address {
     @extend %inline-list-base;
 
     /* Desktop */
-    @include at-query ($min, $large) {
+    @include at-query ($min, $postMedium) {
         @include verticalCenterChildElements();
 
-        height: 41px;
+        height: 24px;
         padding: 0 $gutter/2;
-        border-left: 1px solid #f2f2f2;
+        border-right: 1px solid $colorLighterGray;
 
         ul, li {
-            height: 21px;
+            height: 24px;
         }
 
         li {
             margin: 0 -2px; /* inline-block spacing fix */
         }
-
-        .side-menu-toggle-block {
-            display: none;
-        }
     }
 
     /* Mobile */
-    @include at-query ($max, $preLarge) {
+    @include at-query ($max, $medium) {
 
         &, ul, li {
             height: 22px;
@@ -7177,6 +7388,27 @@ address {
 
         .profile-login-links-block {
             display: none;
+        }
+    }
+}
+
+.secondary-menu {
+    @extend %inline-list-base;
+
+    /* Desktop */
+    @include at-query ($min, $postLarge) {
+        @include verticalCenterChildElements();
+
+        height: 24px;
+        padding: 0 $gutter/2;
+        border-left: 1px solid #f2f2f2;
+
+        ul, li {
+            height: 24px;
+        }
+
+        li {
+            margin: 0 -2px; /* inline-block spacing fix */
         }
     }
 }
@@ -7224,13 +7456,13 @@ address {
     .site-header & {
 
         .label {
-            @extend %small-arial-text;
+            @extend %small-bold-arial-text;
         }
 
         /* Desktop */
-        @include at-query ($min, $large) {
+        @include at-query ($min, $postMedium) {
             @include customerLoginLink();
-            
+
             padding: 3px $gutter/2 2px;
 
             /* used for the avatar */
@@ -7249,11 +7481,12 @@ address {
         }
 
         /* Mobile */
-        @include at-query ($max, $preLarge) {
+        @include at-query ($max, $medium) {
+            @include prefix(border-radius, 2px);
+            
             height: 22px;
             width: 22px;
             border: 1px solid $colorGray;
-            @include prefix(border-radius, 2px);
             text-align: center;
 
             #{$iconSelector} {
@@ -7267,7 +7500,7 @@ address {
                     display: block;
                 }
             }
-            
+
             .label {
                 display: none;
             }
@@ -7283,7 +7516,7 @@ address {
         .label {
             @extend %smallish-arial-text;
         }
-        
+
         /* used for the avatar */
         img {
             @include customerAvatarSize( 8px );
@@ -7291,6 +7524,13 @@ address {
             border: 1px solid $colorWarmGray;
         }
     }
+}
+
+.secondary-menu-link {
+    @extend %gray-hover-gold-link;
+    @extend %small-bold-arial-text;
+
+    padding: 3px $gutter/2 2px;
 }
 
 .cart-count-link {
@@ -7340,7 +7580,7 @@ address {
         }
     }
 
-    @include at-query($min, $large){
+    @include at-query($min, $postMedium){
         #{$iconSelector}{
             &:before {
                 top: -4px;
@@ -7350,7 +7590,7 @@ address {
         }
     }
 
-    @include at-query($max, $preLarge){
+    @include at-query($max, $medium){
         #{$iconSelector}{
             &:before {
                 top: -2px;
@@ -7372,7 +7612,7 @@ address {
 
 .meta-menu-link {
     @extend %gray-hover-underline-link;
-    @extend %small-arial-text;
+    @extend %small-bold-arial-text;
     @extend %rsaquo;
 
     display: block;
@@ -7390,12 +7630,11 @@ address {
 
 .language-menu-link {
     @extend %gray-hover-underline-link;
-    @extend %small-arial-text;
+    @extend %small-bold-arial-text;
 
     display: block;
     text-transform: uppercase;
 }
-
 
 .latest-collections-menu {
     @extend %inline-list-base;
@@ -9185,7 +9424,7 @@ $opacity-not-active: .25;
     background: $colorPaleGray;
 
     .search-bar-row {
-        height: $mobileHeaderHeight;
+        height: $mobileHeaderMainRowHeight/2;
         background: #fff;
         padding: 9px $gutter;
 

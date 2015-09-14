@@ -132,10 +132,10 @@ Some things to know about this file:
 /*============================================================================
   #Sass Mixins
   ==============================================================================*/
-.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .layout-main .site-header-top-row .wrapper:after, .layout-main .site-header-top-row .page-content:after, .layout-main .site-header-top-row .event-location-overlay:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after, .clearfix:before, .wrapper-14-col:before, .wrapper:before, .page-content:before, .event-location-overlay:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .events-press-releases-hero .event-location-overlay:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, #about-us .featured-press-hero .event-location-overlay:before, .press-content-header:before, .press-content-body:before, .article-detail-header:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before, .contact-form-title:before, .contact-form-sender-type:before, .pagination-block:before, .product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before, .product-info-block .tablet-column:before, .product-options-block:before, .product-options-block .selector-wrapper:before, .shopping-cart:before, .shopping-cart .accepted-credit-cards:before, .search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, .layout-main .site-header-top-row .wrapper:before, .layout-main .site-header-top-row .page-content:before, .layout-main .site-header-top-row .event-location-overlay:before, .site-content:before, .billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before, .celebrity-gallery .thumbs-block > a:before, .newsletter-form:before, .latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before, .collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before, .login-form-hero .login-form-fields-block:before, .login-form-hero .register-benefits-block:before, .register-form-hero .login-form-fields-block:before, .register-form-hero .register-benefits-block:before, .password-reset-form-hero .login-form-fields-block:before, .password-reset-form-hero .register-benefits-block:before, .main-content .secondary-nav-menu:before, .homepage-press-releases .row:before, .slick-track:before, .carousel-hero header:before, .wishlist-item .option-column:before, .contact-block address:before, .article-detail-lead:before, .social-link-newsletter-hero:after, .gallery-block:after, .social-link-newsletter-hero:before, .gallery-block:before {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after, .clearfix:before, .wrapper-14-col:before, .wrapper:before, .page-content:before, .event-location-overlay:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .events-press-releases-hero .event-location-overlay:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, #about-us .featured-press-hero .event-location-overlay:before, .press-content-header:before, .press-content-body:before, .article-detail-header:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before, .contact-form-title:before, .contact-form-sender-type:before, .pagination-block:before, .product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before, .product-info-block .tablet-column:before, .product-options-block:before, .product-options-block .selector-wrapper:before, .shopping-cart:before, .shopping-cart .accepted-credit-cards:before, .search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, .site-content:before, .billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before, .celebrity-gallery .thumbs-block > a:before, .newsletter-form:before, .latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before, .collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before, .login-form-hero .login-form-fields-block:before, .login-form-hero .register-benefits-block:before, .register-form-hero .login-form-fields-block:before, .register-form-hero .register-benefits-block:before, .password-reset-form-hero .login-form-fields-block:before, .password-reset-form-hero .register-benefits-block:before, .main-content .secondary-nav-menu:before, .homepage-press-releases .row:before, .slick-track:before, .carousel-hero header:before, .wishlist-item .option-column:before, .contact-block address:before, .article-detail-lead:before, .site-header-top-row .wrapper:after, .site-header-main-row .wrapper:after, .site-header-top-row .page-content:after, .site-header-main-row .page-content:after, .site-header-top-row .event-location-overlay:after, .site-header-main-row .event-location-overlay:after, .site-header-sub-row .header-sub-menu:after, .social-link-newsletter-hero:after, .gallery-block:after, .site-header-top-row .wrapper:before, .site-header-main-row .wrapper:before, .site-header-top-row .page-content:before, .site-header-main-row .page-content:before, .site-header-top-row .event-location-overlay:before, .site-header-main-row .event-location-overlay:before, .site-header-sub-row .header-sub-menu:before, .social-link-newsletter-hero:before, .gallery-block:before {
   content: "";
   display: table; }
-.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .layout-main .site-header-top-row .wrapper:after, .layout-main .site-header-top-row .page-content:after, .layout-main .site-header-top-row .event-location-overlay:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after, .social-link-newsletter-hero:after, .gallery-block:after {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after, .contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after, .product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after, .collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after, .site-header-top-row .wrapper:after, .site-header-main-row .wrapper:after, .site-header-top-row .page-content:after, .site-header-main-row .page-content:after, .site-header-top-row .event-location-overlay:after, .site-header-main-row .event-location-overlay:after, .site-header-sub-row .header-sub-menu:after, .social-link-newsletter-hero:after, .gallery-block:after {
   clear: both; }
 
 /* Vertical Centering Mixin - now 100% table free!
@@ -220,27 +220,27 @@ pre {
       font-size: 0.8125em;
       /* ~13px */ } }
 
-.sub-menu-link {
+.sub-menu-header, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .secondary-menu-link, .meta-menu-link, .language-menu-link, .sub-menu-link {
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700; }
   @media screen and (min-width: 481px) {
-    .sub-menu-link {
+    .sub-menu-header, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .secondary-menu-link, .meta-menu-link, .language-menu-link, .sub-menu-link {
       font-size: 0.8125em;
       /* ~13px */ } }
   @media screen and (max-width: 480px) {
-    .sub-menu-link {
+    .sub-menu-header, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .secondary-menu-link, .meta-menu-link, .language-menu-link, .sub-menu-link {
       font-size: 0.625em;
       /* ~10px */ } }
 
-.product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .meta-menu-link, .language-menu-link, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .sub-menu-link, .article-summary-block .article-summary-read-more-link {
+.product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .sub-menu-link, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .article-summary-block .article-summary-read-more-link {
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700; }
   @media screen and (min-width: 481px) {
-    .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .meta-menu-link, .language-menu-link, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .sub-menu-link, .article-summary-block .article-summary-read-more-link {
+    .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .sub-menu-link, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .article-summary-block .article-summary-read-more-link {
       font-size: 0.8125em;
       /* ~13px */ } }
   @media screen and (max-width: 480px) {
-    .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .site-header .main-menu-link, .site-footer .main-menu-link, .mobile-side-nav .main-menu-link, .site-header .customer-menu-link .label, .meta-menu-link, .language-menu-link, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .sub-menu-link, .article-summary-block .article-summary-read-more-link {
+    .product-options-block .selector-wrapper select, .search-result-item [class$="-column"] p, .cart-item [class$="-column"] p, .order-line-item [class$="-column"] p, .wishlist-item [class$="-column"] p, .sub-menu-link, .collections-hero .content a, .celebrity-gallery .content a, .customer-address-view-edit-block .submit-cancel-row .or-divider, .latest-collections-link, .mobile-side-nav .customer-account-menu-link, .homepage-press-releases .read-more, .search-bar input, .article-summary-block .article-summary-read-more-link {
       font-size: 0.625em;
       /* ~10px */ } }
 
@@ -328,16 +328,16 @@ pre {
 .customer-account-content-hero .shipping-account-info-block a:after, .wishlist-hero .shipping-account-info-block a:after, .article-summary-block .article-summary-read-more-link:after {
   content: '\BB'; }
 
-.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link, .sub-menu-link, .breadcrumb-block a, .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .login-form-hero p a, .register-form-hero p a, .password-reset-form-hero p a, .search-result-item .remove-item-link, .cart-item .remove-item-link, .order-line-item .remove-item-link, .wishlist-item .remove-item-link, .order-line-item .fulfillment-status a, .meta-menu-link, .language-menu-link, .wishlist-item .header-row a, p a, .product-purchase-block .add-to-wishlist-link, .add-new-address-link, .homepage-press-releases h3 a, .dress-sizing-link, address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link, .collections-hero .content a, .celebrity-gallery .scheme-dark .content a, .social-media-feed-item .content a, .homepage-press-releases .read-more, .article-summary-block .article-summary-read-more-link, .gallery-image-block .image-files a, .celebrity-gallery .scheme-light .content a, .content-hero main p a, .customer-account-content-hero main p a, .wishlist-hero main p a, .other-enquires-hero main p a, .login-form-hero main p a, .register-form-hero main p a, .password-reset-form-hero main p a, .event-summary-block .more-info-link, .latest-collections-link, .social-media-feed-item .source a {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .sub-menu-header, .sub-menu-link, .main-menu-link, .customer-menu-link, .secondary-menu-link, .customer-account-menu-link, .breadcrumb-block a, .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .login-form-hero p a, .register-form-hero p a, .password-reset-form-hero p a, .search-result-item .remove-item-link, .cart-item .remove-item-link, .order-line-item .remove-item-link, .wishlist-item .remove-item-link, .order-line-item .fulfillment-status a, .meta-menu-link, .language-menu-link, .wishlist-item .header-row a, p a, .product-purchase-block .add-to-wishlist-link, .add-new-address-link, .homepage-press-releases h3 a, .dress-sizing-link, address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link, .collections-hero .content a, .celebrity-gallery .scheme-dark .content a, .social-media-feed-item .content a, .homepage-press-releases .read-more, .article-summary-block .article-summary-read-more-link, .gallery-image-block .image-files a, .celebrity-gallery .scheme-light .content a, .content-hero main p a, .customer-account-content-hero main p a, .wishlist-hero main p a, .other-enquires-hero main p a, .login-form-hero main p a, .register-form-hero main p a, .password-reset-form-hero main p a, .event-summary-block .more-info-link, .latest-collections-link, .social-media-feed-item .source a {
   white-space: nowrap; }
 
 /* link text styles */
 /* gray link base */
 /* gray, gold on hover */
-.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .main-menu-link, .customer-menu-link, .customer-account-menu-link, .sub-menu-link {
+.pagination-block > li > a, .pagination-block > li > span, .back-to-top-link, .product-description-expand-link, .shopping-cart .checkout-button-row a, .sub-menu-header, .sub-menu-link, .main-menu-link, .customer-menu-link, .secondary-menu-link, .customer-account-menu-link {
   color: #8d8d8d;
   text-decoration: none; }
-  .pagination-block > li > a:hover, .pagination-block > li > span:hover, .back-to-top-link:hover, .product-description-expand-link:hover, .shopping-cart .checkout-button-row a:hover, .main-menu-link:hover, .customer-menu-link:hover, .customer-account-menu-link:hover, .sub-menu-link:hover, .pagination-block > li > a:active, .pagination-block > li > span:active, .back-to-top-link:active, .product-description-expand-link:active, .shopping-cart .checkout-button-row a:active, .main-menu-link:active, .customer-menu-link:active, .customer-account-menu-link:active, .sub-menu-link:active, .pagination-block > li > a.active, .pagination-block > li > span.active, .active.back-to-top-link, .active.product-description-expand-link, .shopping-cart .checkout-button-row a.active, .active.main-menu-link, .active.customer-menu-link, .active.customer-account-menu-link, .active.sub-menu-link, .pagination-block > li > a:focus, .pagination-block > li > span:focus, .back-to-top-link:focus, .product-description-expand-link:focus, .shopping-cart .checkout-button-row a:focus, .main-menu-link:focus, .customer-menu-link:focus, .customer-account-menu-link:focus, .sub-menu-link:focus {
+  .pagination-block > li > a:hover, .pagination-block > li > span:hover, .back-to-top-link:hover, .product-description-expand-link:hover, .shopping-cart .checkout-button-row a:hover, .sub-menu-header:hover, .sub-menu-link:hover, .main-menu-link:hover, .customer-menu-link:hover, .secondary-menu-link:hover, .customer-account-menu-link:hover, .pagination-block > li > a:active, .pagination-block > li > span:active, .back-to-top-link:active, .product-description-expand-link:active, .shopping-cart .checkout-button-row a:active, .sub-menu-header:active, .sub-menu-link:active, .main-menu-link:active, .customer-menu-link:active, .secondary-menu-link:active, .customer-account-menu-link:active, .pagination-block > li > a.active, .pagination-block > li > span.active, .active.back-to-top-link, .active.product-description-expand-link, .shopping-cart .checkout-button-row a.active, .active.sub-menu-header, .active.sub-menu-link, .active.main-menu-link, .active.customer-menu-link, .active.secondary-menu-link, .active.customer-account-menu-link, .pagination-block > li > a:focus, .pagination-block > li > span:focus, .back-to-top-link:focus, .product-description-expand-link:focus, .shopping-cart .checkout-button-row a:focus, .sub-menu-header:focus, .sub-menu-link:focus, .main-menu-link:focus, .customer-menu-link:focus, .secondary-menu-link:focus, .customer-account-menu-link:focus {
     color: #c19946; }
 
 /* gray, gold on hover */
@@ -549,9 +549,9 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
       padding: 8px 32px 8px;
       width: 33.3333333333%; } }
 
-.site-header .main-menu ul, .site-footer .main-menu ul, .meta-menu ul, .language-menu ul, .social-link-block ul, .customer-menu ul, .latest-collections-menu ul, .site-header .main-menu li, .site-footer .main-menu li, .meta-menu li, .language-menu li, .social-link-block li, .customer-menu li, .latest-collections-menu li {
+.site-header .main-menu ul, .site-footer .main-menu ul, .meta-menu ul, .language-menu ul, .social-link-block ul, .customer-menu ul, .secondary-menu ul, .latest-collections-menu ul, .site-header .main-menu li, .site-footer .main-menu li, .meta-menu li, .language-menu li, .social-link-block li, .customer-menu li, .secondary-menu li, .latest-collections-menu li {
   margin: 0; }
-.site-header .main-menu li, .site-footer .main-menu li, .meta-menu li, .language-menu li, .social-link-block li, .customer-menu li, .latest-collections-menu li {
+.site-header .main-menu li, .site-footer .main-menu li, .meta-menu li, .language-menu li, .social-link-block li, .customer-menu li, .secondary-menu li, .latest-collections-menu li {
   display: inline-block;
   vertical-align: top; }
 
@@ -2750,7 +2750,6 @@ address .email:before {
   color: #c19946; }
 
 /* Header */
-/* Header */
 .header-container {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -2777,8 +2776,6 @@ address .email:before {
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
     opacity: 0; }
-  .cms-toolbar-expanded .header-container {
-    padding-top: 35px; }
 
 .site-header {
   position: relative;
@@ -2793,93 +2790,259 @@ address .email:before {
       .layout-simplified .site-header {
         padding: 24px 0 32px; } }
 
+/* Using a mixin here since this is shared between media queries */
+.site-header-top-row, .site-header-main-row {
+  position: relative;
+  z-index: 10100; }
+  @media screen and (min-width: 769px) {
+    .site-header-top-row .wrapper, .site-header-main-row .wrapper, .site-header-top-row .page-content, .site-header-main-row .page-content, .site-header-top-row .event-location-overlay, .site-header-main-row .event-location-overlay {
+      position: relative; }
+    .site-header-top-row div[class$='-column'], .site-header-main-row div[class$='-column'] {
+      margin: 0 16px; } }
+  @media screen and (max-width: 768px) {
+    .site-header-top-row .wrapper, .site-header-main-row .wrapper, .site-header-top-row .page-content, .site-header-main-row .page-content, .site-header-top-row .event-location-overlay, .site-header-main-row .event-location-overlay {
+      position: relative;
+      margin: 0 16px; } }
+
 .site-header-top-row {
+  -webkit-box-shadow: inset 0 -4px 3px -3px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 -4px 3px -3px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 -4px 3px -3px rgba(0, 0, 0, 0.05);
+  background: #f2f2f2;
+  height: 32px;
+  padding: 4px 0; }
+  .site-header-top-row .site-message-column, .site-header-top-row .customer-secondary-menu-column {
+    font-size: 0;
+    /* set to remove the spacing from the :before element */
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: relative;
+    display: block;
+    float: left;
+    height: 24px;
+    margin: 0 !important;
+    box-sizing: border-box;
+    padding: 0 16px; }
+    .site-header-top-row .site-message-column:before, .site-header-top-row .customer-secondary-menu-column:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle; }
+    .site-header-top-row .site-message-column > *, .site-header-top-row .customer-secondary-menu-column > * {
+      font-size: 16px;
+      /* ratchet up the font-size to the default base hight; */
+      display: inline-block;
+      vertical-align: middle; }
+  .site-header-top-row .site-message-column {
+    width: 60%; }
+  .site-header-top-row .customer-secondary-menu-column {
+    text-align: right;
+    width: 40%; }
+  @media screen and (max-width: 768px) {
+    .site-header-top-row .site-message-column {
+      float: none;
+      text-align: center;
+      width: auto; }
+    .site-header-top-row .customer-secondary-menu-column {
+      display: none; } }
+
+.site-message-block p {
+  margin: 0;
+  font-size: 13px;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; }
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .site-message-block p {
+    font-size: 12px; } }
+@media screen and (max-width: 480px) {
+  .site-message-block p {
+    font-size: 10px; } }
+
+.site-header-main-row {
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  background: #ffffff; }
+  @media screen and (min-width: 769px) {
+    .site-header-main-row {
+      height: 85px;
+      padding: 16px 0; }
+      .site-header-main-row .logo-column, .site-header-main-row .main-menu-column, .site-header-main-row .search-column {
+        font-size: 0;
+        /* set to remove the spacing from the :before element */
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        position: relative;
+        display: block;
+        float: left;
+        height: 53px; }
+        .site-header-main-row .logo-column:before, .site-header-main-row .main-menu-column:before, .site-header-main-row .search-column:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle; }
+        .site-header-main-row .logo-column > *, .site-header-main-row .main-menu-column > *, .site-header-main-row .search-column > * {
+          font-size: 16px;
+          /* ratchet up the font-size to the default base hight; */
+          display: inline-block;
+          vertical-align: middle; }
+      .site-header-main-row .main-menu-column {
+        width: 684px;
+        text-align: center; }
+        .site-header-main-row .main-menu-column ul {
+          padding-top: 2px; }
+      .site-header-main-row .search-column {
+        width: 218px; }
+      .site-header-main-row .mobile-ui-block, .site-header-main-row .mobile-cart-block {
+        display: none; } }
+  @media screen and (min-width: 1025px) and (max-width: 1151px) {
+    .site-header-main-row .main-menu-column {
+      width: 584px; }
+    .site-header-main-row .customer-menu-column {
+      width: 190px; }
+    .site-header-main-row .search-column {
+      width: 190px; } }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .site-header-main-row .logo-column {
+      position: absolute;
+      left: 0; }
+    .site-header-main-row .main-menu-column {
+      width: 100%;
+      text-align: center;
+      margin: 0 !important;
+      padding: 0 222px 0 186px;
+      box-sizing: border-box; }
+    .site-header-main-row .customer-menu-column {
+      width: 190px; }
+    .site-header-main-row .search-column {
+      position: absolute;
+      right: 0;
+      width: 190px; } }
+  @media screen and (max-width: 768px) {
+    .site-header-main-row {
+      padding: 8px 0;
+      height: 88px; }
+      .site-header-main-row .logo-column, .site-header-main-row .main-menu-column, .site-header-main-row .mobile-ui-block, .site-header-main-row .mobile-cart-block {
+        font-size: 0;
+        /* set to remove the spacing from the :before element */
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        position: relative;
+        display: block;
+        float: left;
+        height: 28px; }
+        .site-header-main-row .logo-column:before, .site-header-main-row .main-menu-column:before, .site-header-main-row .mobile-ui-block:before, .site-header-main-row .mobile-cart-block:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle; }
+        .site-header-main-row .logo-column > *, .site-header-main-row .main-menu-column > *, .site-header-main-row .mobile-ui-block > *, .site-header-main-row .mobile-cart-block > * {
+          font-size: 16px;
+          /* ratchet up the font-size to the default base hight; */
+          display: inline-block;
+          vertical-align: middle; }
+      .site-header-main-row .logo-column {
+        text-align: center;
+        float: none;
+        z-index: 0;
+        margin-bottom: 16px; }
+      .site-header-main-row .main-menu-column {
+        text-align: center;
+        float: none;
+        z-index: 0; }
+      .site-header-main-row .mobile-ui-block, .site-header-main-row .mobile-cart-block {
+        float: none;
+        position: absolute;
+        top: 0;
+        z-index: 2; }
+      .site-header-main-row .mobile-ui-block {
+        right: 0; }
+      .site-header-main-row .search-column {
+        display: none; } }
+
+.site-header-sub-row {
   position: relative;
-  z-index: 10100;
-  /* Using a mixin here since this is shared between media queries */ }
-  .layout-main .site-header-top-row {
-    background: white;
-    /* Large Desktop */
-    /* Desktop */
+  z-index: 0; }
+  .site-header-sub-row .header-sub-menu {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+    position: absolute;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.93);
+    padding: 16px 10px;
+    opacity: 0;
+    transition: all 0.3s;
     /* Mobile */ }
-    @media screen and (min-width: 1024px) {
-      .layout-main .site-header-top-row {
-        padding: 16px 0;
-        height: 85px; }
-        .layout-main .site-header-top-row .wrapper, .layout-main .site-header-top-row .page-content, .layout-main .site-header-top-row .event-location-overlay {
-          position: relative; }
-        .layout-main .site-header-top-row .logo-column, .layout-main .site-header-top-row .main-menu-column, .layout-main .site-header-top-row .customer-menu-column, .layout-main .site-header-top-row .search-column {
-          font-size: 0;
-          /* set to remove the spacing from the :before element */
-          -webkit-box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          box-sizing: content-box;
-          position: relative;
-          display: block;
-          float: left;
-          height: 53px;
-          margin: 0 16px; }
-          .layout-main .site-header-top-row .logo-column:before, .layout-main .site-header-top-row .main-menu-column:before, .layout-main .site-header-top-row .customer-menu-column:before, .layout-main .site-header-top-row .search-column:before {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle; }
-          .layout-main .site-header-top-row .logo-column > *, .layout-main .site-header-top-row .main-menu-column > *, .layout-main .site-header-top-row .customer-menu-column > *, .layout-main .site-header-top-row .search-column > * {
-            font-size: 16px;
-            /* ratchet up the font-size to the default base hight; */
-            display: inline-block;
-            vertical-align: middle; }
-        .layout-main .site-header-top-row .main-menu-column {
-          width: 432px;
-          text-align: right; }
-          .layout-main .site-header-top-row .main-menu-column ul {
-            padding-top: 2px; }
-        .layout-main .site-header-top-row .customer-menu-column {
-          text-align: right;
-          width: 218px; }
-        .layout-main .site-header-top-row .search-column {
-          width: 220px; } }
-    @media screen and (min-width: 1025px) and (max-width: 1152px) {
-      .layout-main .site-header-top-row .main-menu-column {
-        width: 362px; }
-      .layout-main .site-header-top-row .customer-menu-column {
-        width: 190px; }
-      .layout-main .site-header-top-row .search-column {
-        width: 190px; } }
-    @media screen and (max-width: 1023px) {
-      .layout-main .site-header-top-row {
-        padding: 8px 0;
-        height: 44px; }
-        .layout-main .site-header-top-row .wrapper, .layout-main .site-header-top-row .page-content, .layout-main .site-header-top-row .event-location-overlay {
-          position: relative;
-          margin: 0 16px; }
-        .layout-main .site-header-top-row .logo-column, .layout-main .site-header-top-row .main-menu-column, .layout-main .site-header-top-row .customer-menu-column, .layout-main .site-header-top-row .search-column {
-          font-size: 0;
-          /* set to remove the spacing from the :before element */
-          -webkit-box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          box-sizing: content-box;
-          position: relative;
-          display: block;
-          float: left;
-          height: 28px; }
-          .layout-main .site-header-top-row .logo-column:before, .layout-main .site-header-top-row .main-menu-column:before, .layout-main .site-header-top-row .customer-menu-column:before, .layout-main .site-header-top-row .search-column:before {
-            content: '';
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle; }
-          .layout-main .site-header-top-row .logo-column > *, .layout-main .site-header-top-row .main-menu-column > *, .layout-main .site-header-top-row .customer-menu-column > *, .layout-main .site-header-top-row .search-column > * {
-            font-size: 16px;
-            /* ratchet up the font-size to the default base hight; */
-            display: inline-block;
-            vertical-align: middle; }
-        .layout-main .site-header-top-row .customer-menu-column {
-          float: right; }
-        .layout-main .site-header-top-row .main-menu-column, .layout-main .site-header-top-row .search-column {
-          display: none; } }
+    .site-header-sub-row .header-sub-menu.js-open {
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      -o-transform: translateY(100%);
+      transform: translateY(100%);
+      opacity: 1; }
+    .site-header-sub-row .header-sub-menu ul {
+      margin-bottom: 0; }
+    .site-header-sub-row .header-sub-menu .sub-menu-column {
+      padding: 0 10px; }
+    @media screen and (max-width: 1024px) {
+      .site-header-sub-row .header-sub-menu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center; } }
+  .layout-simplified .site-header-sub-row {
+    display: none; }
+
+.sub-menu-header, .sub-menu-link {
+  white-space: normal;
+  display: block;
+  line-height: 1.5384615385; }
+  @media screen and (max-width: 1023px) {
+    .sub-menu-header, .sub-menu-link {
+      color: #8d8d8d; } }
+
+.mobile-side-nav .sub-menu-column {
+  padding: 6px 0; }
+
+.sub-menu-header {
+  text-transform: uppercase; }
+  .site-header .sub-menu-header {
+    padding-bottom: 4px;
+    margin-bottom: 4px; }
+  .mobile-side-nav .sub-menu-header {
+    padding: 6px 4px; }
+
+.mobile-side-nav .sub-menu-link {
+  padding: 4px 4px 4px 16px; }
+@media screen and (max-width: 1024px) {
+  .header-sub-menu .sub-menu-link {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px; } }
+
+.sub-menu-mobile {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-right: 0;
+  padding: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden; }
+  .sub-menu-mobile a {
+    display: block; }
+  .sub-menu-mobile.js-open {
+    opacity: 1;
+    height: auto; }
 
 /* Main Content Layout */
 /* This contains all the blocks that are not the header, footer, cart, or slide out side bar. */
@@ -4269,7 +4432,6 @@ address .email:before {
   .login-form-hero .register-submit-button-block button, .register-form-hero .register-submit-button-block button, .password-reset-form-hero .register-submit-button-block button {
     margin-bottom: 16px; }
 
-/* Naviation Menus */
 @media screen and (min-width: 481px) {
   .site-header .main-menu li, .site-footer .main-menu li {
     border-left: 1px solid #f2f2f2; }
@@ -4280,8 +4442,8 @@ address .email:before {
 .mobile-side-nav .main-menu li {
   border-top: 1px solid #d8d8d8;
   margin-bottom: 0; }
-.mobile-side-nav .main-menu > ul > li:first-child {
-  border-top-width: 0; }
+  .mobile-side-nav .main-menu li:first-child {
+    border-top-width: 0; }
 
 .main-menu-link {
   display: block;
@@ -4290,13 +4452,15 @@ address .email:before {
   @media screen and (min-width: 481px) {
     .site-header .main-menu-link, .site-footer .main-menu-link {
       padding: 4px 20px; } }
-  @media screen and (min-width: 1025px) and (max-width: 1152px) {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
     .site-header .main-menu-link, .site-footer .main-menu-link {
       padding-left: 10.6666666667px;
       padding-right: 10.6666666667px; } }
   @media screen and (max-width: 480px) {
     .site-header .main-menu-link, .site-footer .main-menu-link {
-      padding: 8px 0; } }
+      padding: 8px 0;
+      margin: 0 8px;
+      font-size: 12px; } }
   .mobile-side-nav .main-menu-link {
     font-weight: 700;
     position: relative;
@@ -4327,13 +4491,13 @@ address .email:before {
 .customer-menu {
   /* Desktop */
   /* Mobile */ }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 769px) {
     .customer-menu {
       font-size: 0;
       /* set to remove the spacing from the :before element */
-      height: 41px;
+      height: 24px;
       padding: 0 8px;
-      border-left: 1px solid #f2f2f2; }
+      border-right: 1px solid #e5e5e5; }
       .customer-menu:before {
         content: '';
         display: inline-block;
@@ -4345,13 +4509,11 @@ address .email:before {
         display: inline-block;
         vertical-align: middle; }
       .customer-menu ul, .customer-menu li {
-        height: 21px; }
+        height: 24px; }
       .customer-menu li {
         margin: 0 -2px;
-        /* inline-block spacing fix */ }
-      .customer-menu .side-menu-toggle-block {
-        display: none; } }
-  @media screen and (max-width: 1023px) {
+        /* inline-block spacing fix */ } }
+  @media screen and (max-width: 768px) {
     .customer-menu, .customer-menu ul, .customer-menu li {
       height: 22px; }
     .customer-menu li {
@@ -4359,6 +4521,31 @@ address .email:before {
       /* inline-block spacing fix, 10px between li with the 2px per side whitespace */ }
     .customer-menu .profile-login-links-block {
       display: none; } }
+
+.secondary-menu {
+  /* Desktop */ }
+  @media screen and (min-width: 1025px) {
+    .secondary-menu {
+      font-size: 0;
+      /* set to remove the spacing from the :before element */
+      height: 24px;
+      padding: 0 8px;
+      border-left: 1px solid #f2f2f2; }
+      .secondary-menu:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle; }
+      .secondary-menu > * {
+        font-size: 16px;
+        /* ratchet up the font-size to the default base hight; */
+        display: inline-block;
+        vertical-align: middle; }
+      .secondary-menu ul, .secondary-menu li {
+        height: 24px; }
+      .secondary-menu li {
+        margin: 0 -2px;
+        /* inline-block spacing fix */ } }
 
 /* must be included within the avatar img selector block */
 /* styles shared between the desktop header and mobile side nav */
@@ -4373,7 +4560,7 @@ address .email:before {
   .site-header .customer-menu-link {
     /* Desktop */
     /* Mobile */ }
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 769px) {
       .site-header .customer-menu-link {
         /* used for the avatar */
         padding: 3px 8px 2px;
@@ -4408,16 +4595,16 @@ address .email:before {
           padding-top: 1px;
           line-height: 15px;
           max-width: 105px; } }
-    @media screen and (max-width: 1023px) {
+    @media screen and (max-width: 768px) {
       .site-header .customer-menu-link {
-        height: 22px;
-        width: 22px;
-        border: 1px solid #8d8d8d;
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
         -ms-border-radius: 2px;
         -o-border-radius: 2px;
         border-radius: 2px;
+        height: 22px;
+        width: 22px;
+        border: 1px solid #8d8d8d;
         text-align: center; }
         .site-header .customer-menu-link [class^="icon-"], .site-header .customer-menu-link [class*=" icon-"] {
           height: 1em;
@@ -4459,6 +4646,9 @@ address .email:before {
       -o-border-radius: 8px;
       border-radius: 8px;
       border: 1px solid #797778; }
+
+.secondary-menu-link {
+  padding: 3px 8px 2px; }
 
 .cart-count-link [class^="icon-"], .cart-count-link [class*=" icon-"] {
   position: relative; }
@@ -4511,12 +4701,12 @@ address .email:before {
     -o-transform: scale(1);
     transform: scale(1);
     opacity: 1; }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
   .cart-count-link [class^="icon-"]:before, .cart-count-link [class*=" icon-"]:before {
     top: -4px;
     left: -2px;
     font-size: 20px; } }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 768px) {
   .cart-count-link [class^="icon-"]:before, .cart-count-link [class*=" icon-"]:before {
     top: -2px;
     left: -1px;
@@ -5870,12 +6060,12 @@ This file includes
     background: #fff;
     border-bottom: 1px solid #d8d8d8; }
 
-.sub-menu-link {
+.sub-menu-header, .sub-menu-link {
   white-space: normal;
   display: block;
   line-height: 1.5384615385; }
   @media screen and (max-width: 1023px) {
-    .sub-menu-link {
+    .sub-menu-header, .sub-menu-link {
       color: #8d8d8d; } }
 
 .mobile-side-nav .sub-menu-column {

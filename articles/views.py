@@ -8,7 +8,7 @@ from articles.models import Article
 
 def index(request, page_number=1):
 
-    items_per_page = 2
+    items_per_page = 8
     query_set = Article.objects.order_by('original_publication_date')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('articles:index')
