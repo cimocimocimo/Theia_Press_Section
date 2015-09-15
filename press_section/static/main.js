@@ -1,5 +1,7 @@
 window.timber = window.timber || {};
 
+window.pageData = window.pageData || {};
+
 timber.cache = {
     // General
     $window: $(window),
@@ -419,6 +421,28 @@ timber.infiniteScrollInit = function(){
         timber.loader.hide('.spinner-block');
     }
 };
+
+// this is a callback for the google api loader on the event detail page.
+timber.initEventMap = function() {
+    var latLngArr = window.pageData.eventDetail.latLngArray,
+        latLng = {
+            lat: parseFloat(latLngArr[0]),
+            lng: parseFloat(latLngArr[1])
+        },
+        map = new google.maps.Map(document.getElementById('location-map'), {
+            zoom: 14,
+            center: latLng,
+            scrollwheel: false,
+            draggable: false,
+            disableDefaultUI: true
+        }),
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            title: 'event location'
+        });
+}
+
 
 timber.loader = {
     element: '',

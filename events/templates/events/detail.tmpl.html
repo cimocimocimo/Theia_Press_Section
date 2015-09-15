@@ -56,7 +56,9 @@
         {% include 'press_contacts/contact.tmpl.html' with contact=event.event_contact only %}
 
         {% if event.extra_contact_information %}
-          <p>{{ event.extra_contact_information }}</p>
+          <div class="extra-information">
+            <p>{{ event.extra_contact_information }}</p>
+          </div>
         {% endif %}
 
       </div>
@@ -70,31 +72,11 @@
 
     {% addtoblock "js" %}
     <script>
-        // You can set control options to change the default position or style of many
-        // of the map controls.
-
-        //
-        function initMap() {
-            var latLngArr = '{{ event.location }}'.split(','),
-                latLng = {
-                    lat: parseFloat(latLngArr[0]),
-                    lng: parseFloat(latLngArr[1])
-                },
-                map = new google.maps.Map(document.getElementById('location-map'), {
-                    zoom: 14,
-                    center: latLng,
-                    scrollwheel: false,
-                    draggable: false,
-                    disableDefaultUI: true,
-                }),
-                marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                    title: 'event location'
-                });
+        window.pageData.eventDetail = {
+            latLngArray: '{{ event.location }}'.split(',')
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=timber.initEventMap" async defer></script>
     {% endaddtoblock %}
 
     <div class="event-location-map-block">
