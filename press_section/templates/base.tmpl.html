@@ -54,6 +54,9 @@
     <script src="{% static 'modernizr.min.js' %}"></script>
     
     {% addtoblock 'js' %}
+    <script>
+        window.pageData = window.pageData || {};
+    </script>
     <script src="{% static 'smooth-scroll.min.js' %}"></script>
     <script src="{% static 'headroom.min.js' %}"></script>
     <script src="{% static 'jQuery.headroom.min.js' %}"></script>
@@ -143,6 +146,7 @@
     </div>
 
     {% render_block "js" %}
+    
     {% compress js %}
     <script src="{{STATIC_URL}}main.js"></script>
     {% endcompress %}
