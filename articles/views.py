@@ -32,7 +32,7 @@ def index(request, page_number=1):
 def index_by_tag(request, tag, page_number=1):
 
     items_per_page = 8
-    query_set = Article.objects.filter(tags__slug__in=[tag]).distinct().order_by('original_publication_date')
+    query_set = Article.objects.filter(tags__slug__in=[tag]).distinct().order_by('-original_publication_date')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('articles:index_by_tag', kwargs={'tag': tag})
 

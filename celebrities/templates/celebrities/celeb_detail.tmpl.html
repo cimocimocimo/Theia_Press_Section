@@ -1,5 +1,5 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags thumbnail cms_extra_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags thumbnail cms_extra_tags pagination_tags %}
 
 {% block page_header %}
   <h2>{{ celebrity.name }}</h2>
@@ -36,6 +36,10 @@
     {% if dresses %}
       {% include 'celebrities/dress_list.tmpl.html' %}
     {% endif %}
+
+    <div class="pagination-row">
+      {% show_prev_next base_url=base_url %}
+    </div>
 
   </div>
 {% endblock %}

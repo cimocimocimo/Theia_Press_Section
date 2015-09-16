@@ -37,8 +37,26 @@ def index(request, page_number=1):
 def celeb_detail(request, slug):
     celeb = get_object_or_404(Celebrity, slug=slug)
     dresses = Dress.objects.filter(celebrity=celeb)
+
+    base_url = reverse('celebrities:index')
+
+    try:
+        next_item = Celebrity.objects.filter(order__gt=celeb.order).order_by('order')[0:1].get()
+    except Celebrity.DoesNotExist:
+        next_item = False
+
+    try:
+        previous_item = Celebrity.objects.filter(order__lt=celeb.order).order_by('-order')[0:1].get()
+    except Celebrity.DoesNotExist:
+        previous_item = False
+
     return render_to_response('celebrities/celeb_detail.tmpl.html',
-                              {'celebrity': celeb, 'dresses': dresses},
+                              {'celebrity': celeb,
+                               'dresses': dresses,
+                               'base_url': base_url,
+                               'previous_item': previous_item,
+                               'next_item': next_item,
+                              'verbose_name': Celebrity._meta.verbose_name},
                               context_instance=RequestContext(request))
 
 def dress_detail(request, celeb_slug, dress_slug):
