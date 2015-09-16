@@ -1859,16 +1859,11 @@ label.error {
     .pagination-block {
       display: inline-block; } }
   @media screen and (max-width: 480px) {
+    .pagination-block .hide-on-small {
+      display: none; }
     .pagination-block > li {
       /* Previous Link */
       /* Next Link */ }
-      .pagination-block > li:first-child, .pagination-block > li:last-child {
-        position: absolute;
-        top: 0; }
-      .pagination-block > li:first-child {
-        left: 0; }
-      .pagination-block > li:last-child {
-        right: 0; }
       .pagination-block > li > a, .pagination-block > li > span {
         padding: 11px 5px 9px;
         font-size: 15px; }
@@ -1877,8 +1872,6 @@ label.error {
         padding-left: 0;
         padding-right: 16px;
         /* hide the 2nd half of the word previous. */ }
-        .pagination-block > li:first-child > a > span, .pagination-block > li:first-child > span > span {
-          display: none; }
       .pagination-block > li:last-child > a, .pagination-block > li:last-child > span {
         padding-left: 16px;
         padding-right: 0; }
@@ -6983,7 +6976,8 @@ body.vex-open {
 .celebrity-detail-featured-image-block .image {
   margin-bottom: 41px; }
 .celebrity-detail-featured-image-block img {
-  display: block; }
+  display: block;
+  width: 100%; }
 .celebrity-detail-featured-image-block .content {
   margin: 24px 0; }
 .celebrity-detail-featured-image-block h5 {
@@ -7246,8 +7240,9 @@ body.vex-open {
         display: none; } }
 
 .article-detail-header {
-  width: 576px;
-  margin: 32px auto 0; }
+  max-width: 576px;
+  margin: 32px auto 0;
+  padding: 0 32px; }
   .article-detail-header h2 {
     border-bottom: 1px solid #f2f2f2;
     margin: 0;
