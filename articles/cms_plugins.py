@@ -9,7 +9,7 @@ class LatestArticlesPlugin(CMSPluginBase):
     render_template = "articles/latest_articles_plugin.tmpl.html"
 
     def render(self, context, instance, placeholder):
-        items = Article.objects.order_by('original_publication_date')[:instance.number_to_show]
+        items = Article.objects.order_by('-original_publication_date')[:instance.number_to_show]
         context.update({'instance':instance,
                         'articles':items})
         return context

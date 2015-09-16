@@ -7258,12 +7258,10 @@ body.vex-open {
     margin: 18px 0; }
 
 .article-detail-lead > div {
-  width: 352px;
-  float: left;
   margin: 16px; }
 .article-detail-lead .image img {
   display: block;
-  width: 350px;
+  width: 100%;
   height: auto; }
 .article-detail-lead .content.full-width {
   width: auto; }
