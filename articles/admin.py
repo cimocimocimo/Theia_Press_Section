@@ -2,10 +2,13 @@ from django.contrib import admin
 from cms.admin.placeholderadmin import PlaceholderAdminMixin
 from articles.models import Article
 from sorl.thumbnail.admin import AdminImageMixin
+from .forms import ArticleForm
 
 # Register your models here.
 @admin.register(Article)
 class ArticleAdmin(AdminImageMixin, PlaceholderAdminMixin, admin.ModelAdmin):
+    form = ArticleForm
+
     prepopulated_fields = {
         'slug': ('title',)}
 

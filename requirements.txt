@@ -45,3 +45,4 @@ django-solo==1.1.0
 django-tinymce==2.0.4
 django-taggit==0.17.0
 django-admin-sortable==2.0.1
+django-taggit-labels==0.3.1

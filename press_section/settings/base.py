@@ -159,6 +159,7 @@ INSTALLED_APPS = (
     'solo',
     'tinymce',
     'taggit',
+    'taggit_labels',
 )
 
 LANGUAGES = (
