@@ -3,13 +3,16 @@ from django.http import Http404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
+import datetime
 
 from .models import Event, EventsConfig
 
 def index(request, page_number=1):
 
     items_per_page = 4
-    query_set = Event.objects.order_by('-from_datetime')
+    # lt/gt filters exclude the date specified, removing one day to include today in the range.
+    today_less_one_day = datetime.date.today() - datetime.timedelta(days=1)
+    query_set = Event.objects.filter(to_datetime__gt=today_less_one_day).order_by('to_datetime')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('events:index')
     events_config = EventsConfig.get_solo()
