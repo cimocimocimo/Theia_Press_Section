@@ -228,3 +228,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': '100%',
     'plugins': 'autoresize',
 }
+
+# Base Shopify settings
+SHOPIFY_API_KEY = os.environ['SHOPIFY_API_KEY']
+SHOPIFY_PASSWORD = os.environ['SHOPIFY_PASSWORD']

@@ -20,6 +20,10 @@ DATABASES = {
  }
 }
 
+# Shopify settings
+SHOPIFY_SHOP_NAME = 'theia2'
+SHOPIFY_ADMIN_URL = "https://%s:%s@%s.myshopify.com/admin" % (SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
+
 # switch between local and s3 storage
 ENABLE_STATIC_LOCAL_STORAGE = True
 ENABLE_MEDIA_LOCAL_STORAGE = False

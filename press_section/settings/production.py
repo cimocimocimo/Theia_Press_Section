@@ -11,6 +11,10 @@ TEMPLATE_DEBUG = DEBUG = False
 
 ALLOWED_HOSTS = ['press.theiacouture.com', 'press-section-dev.elasticbeanstalk.com']
 
+# Production Shopify settings
+SHOPIFY_SHOP_NAME = 'theia'
+SHOPIFY_ADMIN_URL = "https://%s:%s@%s.myshopify.com/admin" % (SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
+
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 if 'RDS_DB_NAME' in os.environ:
