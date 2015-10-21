@@ -57,15 +57,18 @@
     <script>
         window.pageData = window.pageData || {};
     </script>
+    <script src="{% static 'sprintf.min.js' %}"></script>
     <script src="{% static 'smooth-scroll.min.js' %}"></script>
     <script src="{% static 'headroom.min.js' %}"></script>
     <script src="{% static 'jQuery.headroom.min.js' %}"></script>
     <script src="{% static 'jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'handlebars.min.js' %}"></script>
     {% endaddtoblock %}
     
   </head>
   <body class="layout-main press-section{% if appname %} {{ appname }}-app{% endif %}{% if current_page.is_home %} press-homepage{% endif %}">
     {% include 'social-share-scripts.tmpl.html' %}
+    {% include 'data-iframe.tmpl.html' %}
 
     <!-- for the scroll to top link -->
     <div id="top"></div>

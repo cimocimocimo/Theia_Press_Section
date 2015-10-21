@@ -104,6 +104,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'cms.context_processors.cms_settings',
     'press_section.context_processors.appname',
+    'press_section.context_processors.shopify',
 )
 
 TEMPLATE_DIRS = (

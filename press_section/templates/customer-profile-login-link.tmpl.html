@@ -1,3 +1,11 @@
 <a class="customer-menu-link customer-login-link" href="http://theiacouture.com/account/login">
   <span class="label">Login</span>
 </a>
+<script id="customer-profile-link-template" type="text/x-handlebars-template">
+  <a class="customer-menu-link customer-profile-link" href="{{ shopDomain }}/account">
+    {% verbatim %}
+      <img alt="{{avatarImageAlt}}" src="{{avatarImageSrc}}">
+      <span class="label">{{customerFullName}}</span>
+    {% endverbatim %}
+  </a>
+</script>

@@ -2,6 +2,8 @@ window.timber = window.timber || {};
 
 window.pageData = window.pageData || {};
 
+window.shopData = window.shopData || {isLoaded: false};
+
 timber.cache = {
     // General
     $window: $(window),
@@ -10,6 +12,7 @@ timber.cache = {
 
     // Navigation
     $navigation: $('#accessibleNav'),
+    $customerMenu: $('.customer-menu'),
 
     $cartCount: $('#cartCount'),
 
@@ -42,6 +45,50 @@ timber.init = function () {
 
     timber.infiniteScrollInit();
 
+    timber.loadShopifyData();
+
+    // wire events
+    $(window).on('shopDataLoaded', function(event){
+        console.log(event);
+        timber.setCustomerMenuData()
+    });
+};
+
+timber.setCustomerMenuData = function(){
+    var $menu = timber.cache.$customerMenu,
+        $loginLink = $menu.find('.customer-login-link'),
+        customer = shopData.customer;
+
+// avatarImageAlt:
+// avatarImageSrc:
+// customerFullName:
+
+    $loginLink.text(sprintf('%s %s', customer.firstName, customer.lastName));
+    console.log(customer);
+};
+
+timber.loadShopifyData = function(){
+    var allowedDomains = [
+        'http://www.theiacouture.com',
+        'http://theiacouture.com',
+        'http://theia.myshopify.com',
+        'http://theia2.myshopify.com',
+    ];
+
+    // when the iframe finishes loading send a message to trigger it to
+    // send back the customer info.
+    $('#data-iframe').on('load', function(){
+        this.contentWindow.postMessage('', '*');
+    });
+
+    $(window).on('message', function(event){
+        allowedDomainIndex = $.inArray(event.originalEvent.origin, allowedDomains);
+        if (allowedDomainIndex !== -1){
+            shopData = JSON.parse(event.originalEvent.data);
+            shopData.isLoaded = true;
+            $(window).trigger('shopDataLoaded');
+        }
+    });
 };
 
 timber.initCartCount = function(){
@@ -354,7 +401,7 @@ timber.infiniteScrollInit = function(){
         nextPageUrl = '',
         $paginationBlock = $('.pagination-block');
 
-    if ($infiniteScrollBlock[0].length === 0){
+    if ($infiniteScrollBlock.length === 0){
         return;
     }
 
