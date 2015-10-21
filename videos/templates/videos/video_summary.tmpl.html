@@ -1,4 +1,4 @@
-{% load thumbnail %}
+{% load embed_video_tags %}
 <div class="video-summary-block">
   <header class="header-block">
     <a href="{% url 'videos:detail' video.slug %}">
@@ -8,10 +8,8 @@
     </a>
   </header>
   <a href="{% url 'videos:detail' video.slug %}">
-    <div class="image-block">
-      {% thumbnail video.main_image '736' as img %}
-      <img src="{{  img.url }}" alt="" />
-        {% endthumbnail %}
+    <div class="video-block">
+      {% video video.video "100%x100%" %}
     </div>
   </a>
   <div class="body-block">

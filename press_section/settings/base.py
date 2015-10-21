@@ -161,6 +161,7 @@ INSTALLED_APPS = (
     'tinymce',
     'taggit',
     'taggit_labels',
+    'embed_video',
 )
 
 LANGUAGES = (

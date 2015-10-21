@@ -3,6 +3,7 @@ from cms.models import CMSPlugin
 from sorl.thumbnail import ImageField
 from tinymce.models import HTMLField
 from django.utils import timezone
+from embed_video.fields import EmbedVideoField
 
 class Video(models.Model):
 
@@ -23,6 +24,8 @@ class Video(models.Model):
         null=True,
         blank=True)
     main_image = ImageField(null=True, blank=True)
+    video = EmbedVideoField(
+        default='https://vimeo.com/142393949')
 
     def __unicode__(self):
         return self.title
