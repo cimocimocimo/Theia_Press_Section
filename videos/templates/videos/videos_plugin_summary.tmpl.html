@@ -1,0 +1,11 @@
+{% load thumbnail %}
+<div class="video-summary-block">
+  <h3>{{ video.title }}</h3>
+  <a href="{% url 'videos:detail' video.slug %}">
+    <div class="image">
+      {% thumbnail video.main_image '736' as img %}
+        <img src="{{  img.url }}" alt="" />
+      {% endthumbnail %}
+    </div>
+  </a>  
+</div>

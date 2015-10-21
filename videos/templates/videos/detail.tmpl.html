@@ -1,0 +1,40 @@
+{% extends "base.tmpl.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
+
+{% block page_header %}
+  <header class="press-content-header">
+    <h2>{{ video.title }}</h2>
+  </header>
+{% endblock %}
+
+{% block content %}
+
+  <div class="press-content-body">
+
+    <div class="video-detail-block">
+
+      <div class="main-image-block">
+        {% thumbnail video.main_image '738' as img %}
+        <img src="{{  img.url }}" alt="" />
+        {% endthumbnail %}
+      </div>
+
+      <div class="body-block">
+        {% autoescape off %}
+          {{ video.content }}
+        {% endautoescape %}
+
+        {% include 'social-share-buttons.tmpl.html' with share_url=current_url %}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="wrapper-8-col">
+    <div class="pagination-row">
+      {% show_prev_next base_url=base_url %}
+    </div>
+  </div>
+
+{% endblock %}

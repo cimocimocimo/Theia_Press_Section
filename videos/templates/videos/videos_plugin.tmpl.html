@@ -1,0 +1,19 @@
+{% load cms_tags staticfiles sekizai_tags %}
+
+<div class="videos-plugin-block">
+
+  {% if video %}
+    {% include 'videos/videos_plugin_summary.tmpl.html' %}
+
+    <div class="button-row">
+      <a class="button-view-all" href="{% url 'videos:index' %}">
+        <span class="label">View All Videos</span>
+        <span class="icon"></span>
+      </a>
+    </div>
+
+  {% else %}
+    <p>No video is available.</p>
+  {% endif %}
+
+</div>
