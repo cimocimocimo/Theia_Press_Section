@@ -11452,13 +11452,12 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
 .video-summary-block,
 .video-detail-block {
-    
     .header-block {
         a {
             color: $colorWarmGray;
             text-decoration: none;
         }
-        
+
         h3 {
             font-size: 48px;
         }
@@ -11486,6 +11485,40 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
     .share-buttons {
         margin-top: $gutter*2;
+    }
+    
+
+    @include at-query(null, $postSmall, $large){
+        .header-block {
+            h3 {
+                font-size: 42px;
+            }
+        }
+        
+        .body-block {
+            margin: $gutter*1.5 0;
+        }
+
+        .share-buttons {
+            margin-top: $gutter*1.5;
+        }
+    }
+    
+    @include at-query($max, $small){
+        .header-block{
+            h3 {
+                font-size: 25px;
+                line-height: 1.1;
+            }
+        }
+        
+        .body-block {
+            margin: $gutter 0;
+        }
+        
+        .share-buttons {
+            margin-top: $gutter;
+        }
     }
 }
 

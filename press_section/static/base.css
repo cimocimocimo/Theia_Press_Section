@@ -7938,6 +7938,29 @@ body.vex-open {
 .video-detail-block .share-buttons {
   margin-top: 32px; }
 
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .video-summary-block .header-block h3,
+  .video-detail-block .header-block h3 {
+    font-size: 42px; }
+  .video-summary-block .body-block,
+  .video-detail-block .body-block {
+    margin: 24px 0; }
+  .video-summary-block .share-buttons,
+  .video-detail-block .share-buttons {
+    margin-top: 24px; } }
+
+@media screen and (max-width: 480px) {
+  .video-summary-block .header-block h3,
+  .video-detail-block .header-block h3 {
+    font-size: 25px;
+    line-height: 1.1; }
+  .video-summary-block .body-block,
+  .video-detail-block .body-block {
+    margin: 16px 0; }
+  .video-summary-block .share-buttons,
+  .video-detail-block .share-buttons {
+    margin-top: 16px; } }
+
 .article-summary-block .article-summary-organization-name, .article-summary-block .article-summary-publication-date {
   font-family: "HelveticaNeueLT", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
