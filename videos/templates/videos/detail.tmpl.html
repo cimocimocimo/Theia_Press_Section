@@ -1,5 +1,5 @@
 {% extends "base.tmpl.html" %}
-{% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
+{% load staticfiles sekizai_tags pagination_tags embed_video_tags %}
 
 {% block page_header %}
   <header class="press-content-header">
@@ -13,10 +13,8 @@
 
     <div class="video-detail-block">
 
-      <div class="main-image-block">
-        {% thumbnail video.main_image '738' as img %}
-        <img src="{{  img.url }}" alt="" />
-        {% endthumbnail %}
+      <div class="video-block">
+        {% video video.video "100%x100%" %}
       </div>
 
       <div class="body-block">
