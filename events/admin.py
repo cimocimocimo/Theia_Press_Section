@@ -3,7 +3,6 @@ from cms.admin.placeholderadmin import PlaceholderAdminMixin
 from .models import Event, EventsConfig, EventLocationHours
 from sorl.thumbnail.admin import AdminImageMixin
 from solo.admin import SingletonModelAdmin
-from django import forms
 
 # Register your models here.
 class EventLocationHoursAdmin(admin.TabularInline):
