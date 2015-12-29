@@ -29,7 +29,9 @@
         {% show_pager base_url=base_url %}
       </div>
     {% else %}
-      <p>No videos are available.</p>
+      <div class="error-no-events-found">
+        <p>No videos are available.</p>
+      </div>
     {% endif %}
   </div>
 {% endblock %}

@@ -32,7 +32,9 @@
       </div>
 
     {% else %}
-      <p>No articles are available.</p>
+      <div class="error-no-events-found">
+        <p>No articles are available.</p>
+      </div>
     {% endif %}
 
     {% static_placeholder 'articles_index_footer' %}

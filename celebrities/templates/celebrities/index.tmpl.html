@@ -67,7 +67,9 @@
       </div>
 
     {% elif not current_page and not featured_celebrity %}
-      <p>No celebrities are available.</p>
+      <div class="error-no-events-found">
+        <p>No celebrities are available.</p>
+      </div>
     {% endif %}
 
   </div>

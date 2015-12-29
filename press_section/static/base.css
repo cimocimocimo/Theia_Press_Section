@@ -132,101 +132,47 @@ Some things to know about this file:
 /*============================================================================
   #Sass Mixins
   ==============================================================================*/
-.clearfix:after,
-.wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after,
-.contact-form-title:after,
-.contact-form-sender-type:after,
-.pagination-block:after,
-.product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after,
-.product-info-block .tablet-column:after,
-.product-options-block:after,
-.product-options-block .selector-wrapper:after,
-.shopping-cart:after,
-.shopping-cart .accepted-credit-cards:after,
-.search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, address .url:after, .site-content:after,
-.billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after,
-.celebrity-gallery .thumbs-block > a:after,
-.newsletter-form:after,
-.latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after,
-.collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after,
-.login-form-hero .login-form-fields-block:after,
-.login-form-hero .register-benefits-block:after,
-.register-form-hero .login-form-fields-block:after,
-.register-form-hero .register-benefits-block:after,
-.password-reset-form-hero .login-form-fields-block:after,
-.password-reset-form-hero .register-benefits-block:after,
-.main-content .secondary-nav-menu:after,
-.homepage-press-releases .row:after,
-.slick-track:after,
-.carousel-hero header:after,
-.wishlist-item .option-column:after,
-.contact-block address:after,
-.article-detail-lead:after,
-.clearfix:before,
-.wrapper-14-col:before, .wrapper:before, .page-content:before, .event-location-overlay:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .events-press-releases-hero .event-location-overlay:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, #about-us .featured-press-hero .event-location-overlay:before, .press-content-header:before, .press-content-body:before, .article-detail-header:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before,
-.contact-form-title:before,
-.contact-form-sender-type:before,
-.pagination-block:before,
-.product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before,
-.product-info-block .tablet-column:before,
-.product-options-block:before,
-.product-options-block .selector-wrapper:before,
-.shopping-cart:before,
-.shopping-cart .accepted-credit-cards:before,
-.search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, address .url:before, .site-content:before,
-.billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before,
-.celebrity-gallery .thumbs-block > a:before,
-.newsletter-form:before,
-.latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before,
-.collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before,
-.login-form-hero .login-form-fields-block:before,
-.login-form-hero .register-benefits-block:before,
-.register-form-hero .login-form-fields-block:before,
-.register-form-hero .register-benefits-block:before,
-.password-reset-form-hero .login-form-fields-block:before,
-.password-reset-form-hero .register-benefits-block:before,
-.main-content .secondary-nav-menu:before,
-.homepage-press-releases .row:before,
-.slick-track:before,
-.carousel-hero header:before,
-.wishlist-item .option-column:before,
-.contact-block address:before,
-.article-detail-lead:before,
-.site-header-top-row .wrapper:after, .site-header-main-row .wrapper:after, .site-header-top-row .page-content:after, .site-header-main-row .page-content:after, .site-header-top-row .event-location-overlay:after, .site-header-main-row .event-location-overlay:after, .site-header-sub-row .header-sub-menu:after, .social-link-newsletter-hero:after, .gallery-block:after, .site-header-top-row .wrapper:before, .site-header-main-row .wrapper:before, .site-header-top-row .page-content:before, .site-header-main-row .page-content:before, .site-header-top-row .event-location-overlay:before, .site-header-main-row .event-location-overlay:before, .site-header-sub-row .header-sub-menu:before, .social-link-newsletter-hero:before, .gallery-block:before {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after,
+.contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after,
+.product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, address .url:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after,
+.collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after, .clearfix:before, .wrapper-14-col:before, .wrapper:before, .page-content:before, .event-location-overlay:before, .wrapper-10-col:before, .site-footer:before, .events-press-releases-hero .wrapper:before, .events-press-releases-hero .page-content:before, .events-press-releases-hero .event-location-overlay:before, .wrapper-9-col:before, .wrapper-9-col-offset-right:before, .wrapper-8-col:before, #about-us .featured-press-hero .wrapper:before, #about-us .featured-press-hero .page-content:before, #about-us .featured-press-hero .event-location-overlay:before, .press-content-header:before, .press-content-body:before, .article-detail-header:before, .ajax-cart-container:before, .row-2-col:before, .login-form-hero .register-form-field-row:before, .register-form-hero .register-form-field-row:before, .password-reset-form-hero .register-form-field-row:before, .template-customers-account .shipping-account-info-row:before, .row-3-col:before, .swatch:before, .contact-form-title:before,
+.contact-form-sender-type:before, .pagination-block:before, .product-meta-block:before, .product-purchase-block:before, .product-share-block:before, .product-description-block:before, .product-info-block .tablet-column-row:before,
+.product-info-block .tablet-column:before, .product-options-block:before, .product-options-block .selector-wrapper:before, .shopping-cart:before, .shopping-cart .accepted-credit-cards:before, .search-result-item:before, .cart-item:before, .order-line-item:before, .wishlist-item:before, .search-result-item .header-row:before, .cart-item .header-row:before, .order-line-item .header-row:before, .wishlist-item .header-row:before, .search-result-item .options-row:before, .cart-item .options-row:before, .order-line-item .options-row:before, .wishlist-item .options-row:before, address .email:before, address .address:before, address .phone:before, address .url:before, .site-content:before, .billing-status-block:before, .billing-address-block:before, .shipping-status-block:before, .shipping-address-block:before, .billing-status-block .content:before, .billing-address-block .content:before, .shipping-status-block .content:before, .shipping-address-block .content:before, .celebrity-gallery .main > div:before, .celebrity-gallery .thumbs-block > a:before, .newsletter-form:before, .latest-articles-summary-block-large [class$="-row"]:before, .celebrities-plugin-summary-block-large [class$="-row"]:before, .product-grid-item [class$="-row"]:before,
+.collection-grid-item [class$="-row"]:before, .order-grid-item [class$="-row"]:before, .latest-articles-summary-block [class$="-row"]:before, .celebrities-plugin-summary-block [class$="-row"]:before, .gallery-image-block [class$="-row"]:before, .customer-address-view-edit-row:before, .login-form-hero .login-form-fields-block:before, .login-form-hero .register-benefits-block:before, .register-form-hero .login-form-fields-block:before, .register-form-hero .register-benefits-block:before, .password-reset-form-hero .login-form-fields-block:before, .password-reset-form-hero .register-benefits-block:before, .main-content .secondary-nav-menu:before, .homepage-press-releases .row:before, .slick-track:before, .carousel-hero header:before, .wishlist-item .option-column:before, .contact-block address:before, .article-detail-lead:before,
+.site-header-top-row .wrapper:after,
+.site-header-main-row .wrapper:after,
+.site-header-top-row .page-content:after,
+.site-header-main-row .page-content:after,
+.site-header-top-row .event-location-overlay:after,
+.site-header-main-row .event-location-overlay:after,
+.site-header-sub-row .header-sub-menu:after,
+.social-link-newsletter-hero:after,
+.gallery-block:after,
+.site-header-top-row .wrapper:before,
+.site-header-main-row .wrapper:before,
+.site-header-top-row .page-content:before,
+.site-header-main-row .page-content:before,
+.site-header-top-row .event-location-overlay:before,
+.site-header-main-row .event-location-overlay:before,
+.site-header-sub-row .header-sub-menu:before,
+.social-link-newsletter-hero:before,
+.gallery-block:before {
   content: "";
   display: table; }
 
-.clearfix:after,
-.wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after,
-.contact-form-title:after,
-.contact-form-sender-type:after,
-.pagination-block:after,
-.product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after,
-.product-info-block .tablet-column:after,
-.product-options-block:after,
-.product-options-block .selector-wrapper:after,
-.shopping-cart:after,
-.shopping-cart .accepted-credit-cards:after,
-.search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, address .url:after, .site-content:after,
-.billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after,
-.celebrity-gallery .thumbs-block > a:after,
-.newsletter-form:after,
-.latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after,
-.collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after,
-.login-form-hero .login-form-fields-block:after,
-.login-form-hero .register-benefits-block:after,
-.register-form-hero .login-form-fields-block:after,
-.register-form-hero .register-benefits-block:after,
-.password-reset-form-hero .login-form-fields-block:after,
-.password-reset-form-hero .register-benefits-block:after,
-.main-content .secondary-nav-menu:after,
-.homepage-press-releases .row:after,
-.slick-track:after,
-.carousel-hero header:after,
-.wishlist-item .option-column:after,
-.contact-block address:after,
-.article-detail-lead:after,
-.site-header-top-row .wrapper:after, .site-header-main-row .wrapper:after, .site-header-top-row .page-content:after, .site-header-main-row .page-content:after, .site-header-top-row .event-location-overlay:after, .site-header-main-row .event-location-overlay:after, .site-header-sub-row .header-sub-menu:after, .social-link-newsletter-hero:after, .gallery-block:after {
+.clearfix:after, .wrapper-14-col:after, .wrapper:after, .page-content:after, .event-location-overlay:after, .wrapper-10-col:after, .site-footer:after, .events-press-releases-hero .wrapper:after, .events-press-releases-hero .page-content:after, .events-press-releases-hero .event-location-overlay:after, .wrapper-9-col:after, .wrapper-9-col-offset-right:after, .wrapper-8-col:after, #about-us .featured-press-hero .wrapper:after, #about-us .featured-press-hero .page-content:after, #about-us .featured-press-hero .event-location-overlay:after, .press-content-header:after, .press-content-body:after, .article-detail-header:after, .ajax-cart-container:after, .row-2-col:after, .login-form-hero .register-form-field-row:after, .register-form-hero .register-form-field-row:after, .password-reset-form-hero .register-form-field-row:after, .template-customers-account .shipping-account-info-row:after, .row-3-col:after, .swatch:after, .contact-form-title:after,
+.contact-form-sender-type:after, .pagination-block:after, .product-meta-block:after, .product-purchase-block:after, .product-share-block:after, .product-description-block:after, .product-info-block .tablet-column-row:after,
+.product-info-block .tablet-column:after, .product-options-block:after, .product-options-block .selector-wrapper:after, .shopping-cart:after, .shopping-cart .accepted-credit-cards:after, .search-result-item:after, .cart-item:after, .order-line-item:after, .wishlist-item:after, .search-result-item .header-row:after, .cart-item .header-row:after, .order-line-item .header-row:after, .wishlist-item .header-row:after, .search-result-item .options-row:after, .cart-item .options-row:after, .order-line-item .options-row:after, .wishlist-item .options-row:after, address .email:after, address .address:after, address .phone:after, address .url:after, .site-content:after, .billing-status-block:after, .billing-address-block:after, .shipping-status-block:after, .shipping-address-block:after, .billing-status-block .content:after, .billing-address-block .content:after, .shipping-status-block .content:after, .shipping-address-block .content:after, .celebrity-gallery .main > div:after, .celebrity-gallery .thumbs-block > a:after, .newsletter-form:after, .latest-articles-summary-block-large [class$="-row"]:after, .celebrities-plugin-summary-block-large [class$="-row"]:after, .product-grid-item [class$="-row"]:after,
+.collection-grid-item [class$="-row"]:after, .order-grid-item [class$="-row"]:after, .latest-articles-summary-block [class$="-row"]:after, .celebrities-plugin-summary-block [class$="-row"]:after, .gallery-image-block [class$="-row"]:after, .customer-address-view-edit-row:after, .login-form-hero .login-form-fields-block:after, .login-form-hero .register-benefits-block:after, .register-form-hero .login-form-fields-block:after, .register-form-hero .register-benefits-block:after, .password-reset-form-hero .login-form-fields-block:after, .password-reset-form-hero .register-benefits-block:after, .main-content .secondary-nav-menu:after, .homepage-press-releases .row:after, .slick-track:after, .carousel-hero header:after, .wishlist-item .option-column:after, .contact-block address:after, .article-detail-lead:after,
+.site-header-top-row .wrapper:after,
+.site-header-main-row .wrapper:after,
+.site-header-top-row .page-content:after,
+.site-header-main-row .page-content:after,
+.site-header-top-row .event-location-overlay:after,
+.site-header-main-row .event-location-overlay:after,
+.site-header-sub-row .header-sub-menu:after,
+.social-link-newsletter-hero:after,
+.gallery-block:after {
   clear: both; }
 
 /* Vertical Centering Mixin - now 100% table free!
@@ -448,33 +394,9 @@ legend, .breadcrumb-block a,
   color: #8d8d8d;
   text-decoration: none; }
   .pagination-block > li > a:hover,
-  .pagination-block > li > span:hover,
-  .back-to-top-link:hover,
-  .product-description-expand-link:hover,
-  .shopping-cart .checkout-button-row a:hover,
-  .sub-menu-header:hover, .sub-menu-link:hover, .main-menu-link:hover,
-  .customer-menu-link:hover,
-  .secondary-menu-link:hover,
-  .customer-account-menu-link:hover,
-  .pagination-block > li > a:active,
-  .pagination-block > li > span:active,
-  .back-to-top-link:active,
-  .product-description-expand-link:active,
-  .shopping-cart .checkout-button-row a:active,
-  .sub-menu-header:active, .sub-menu-link:active, .main-menu-link:active,
-  .customer-menu-link:active,
-  .secondary-menu-link:active,
-  .customer-account-menu-link:active,
-  .pagination-block > li > a.active,
-  .pagination-block > li > span.active,
-  .active.back-to-top-link,
-  .active.product-description-expand-link,
-  .shopping-cart .checkout-button-row a.active,
-  .active.sub-menu-header, .active.sub-menu-link, .active.main-menu-link,
-  .active.customer-menu-link,
-  .active.secondary-menu-link,
-  .active.customer-account-menu-link,
-  .pagination-block > li > a:focus,
+  .pagination-block > li > span:hover, .back-to-top-link:hover, .product-description-expand-link:hover, .shopping-cart .checkout-button-row a:hover, .sub-menu-header:hover, .sub-menu-link:hover, .main-menu-link:hover, .customer-menu-link:hover, .secondary-menu-link:hover, .customer-account-menu-link:hover, .pagination-block > li > a:active,
+  .pagination-block > li > span:active, .back-to-top-link:active, .product-description-expand-link:active, .shopping-cart .checkout-button-row a:active, .sub-menu-header:active, .sub-menu-link:active, .main-menu-link:active, .customer-menu-link:active, .secondary-menu-link:active, .customer-account-menu-link:active, .pagination-block > li > a.active,
+  .pagination-block > li > span.active, .active.back-to-top-link, .active.product-description-expand-link, .shopping-cart .checkout-button-row a.active, .active.sub-menu-header, .active.sub-menu-link, .active.main-menu-link, .active.customer-menu-link, .active.secondary-menu-link, .active.customer-account-menu-link, .pagination-block > li > a:focus,
   .pagination-block > li > span:focus, .back-to-top-link:focus, .product-description-expand-link:focus, .shopping-cart .checkout-button-row a:focus, .sub-menu-header:focus, .sub-menu-link:focus, .main-menu-link:focus, .customer-menu-link:focus, .secondary-menu-link:focus, .customer-account-menu-link:focus {
     color: #c19946; }
 
@@ -482,16 +404,12 @@ legend, .breadcrumb-block a,
 .breadcrumb-block a {
   color: #797778;
   text-decoration: none; }
-  .breadcrumb-block a:hover,
-  .breadcrumb-block a:active,
-  .breadcrumb-block a:focus {
+  .breadcrumb-block a:hover, .breadcrumb-block a:active, .breadcrumb-block a:focus {
     text-decoration: underline; }
 
 .customer-account-content-hero .shipping-account-info-block a, .wishlist-hero .shipping-account-info-block a, .login-form-hero p a, .register-form-hero p a, .password-reset-form-hero p a {
   color: #797778; }
-  .customer-account-content-hero .shipping-account-info-block a:hover,
-  .wishlist-hero .shipping-account-info-block a:hover, .login-form-hero p a:hover, .register-form-hero p a:hover, .password-reset-form-hero p a:hover, .customer-account-content-hero .shipping-account-info-block a:active,
-  .wishlist-hero .shipping-account-info-block a:active, .login-form-hero p a:active, .register-form-hero p a:active, .password-reset-form-hero p a:active, .customer-account-content-hero .shipping-account-info-block a:focus, .wishlist-hero .shipping-account-info-block a:focus, .login-form-hero p a:focus, .register-form-hero p a:focus, .password-reset-form-hero p a:focus {
+  .customer-account-content-hero .shipping-account-info-block a:hover, .wishlist-hero .shipping-account-info-block a:hover, .login-form-hero p a:hover, .register-form-hero p a:hover, .password-reset-form-hero p a:hover, .customer-account-content-hero .shipping-account-info-block a:active, .wishlist-hero .shipping-account-info-block a:active, .login-form-hero p a:active, .register-form-hero p a:active, .password-reset-form-hero p a:active, .customer-account-content-hero .shipping-account-info-block a:focus, .wishlist-hero .shipping-account-info-block a:focus, .login-form-hero p a:focus, .register-form-hero p a:focus, .password-reset-form-hero p a:focus {
     color: #c19946; }
 
 /* gray, gold on hover */
@@ -506,80 +424,40 @@ legend, .breadcrumb-block a,
 .order-line-item .fulfillment-status a, .meta-menu-link, .language-menu-link {
   color: #8d8d8d;
   text-decoration: none; }
-  .order-line-item .fulfillment-status a:hover,
-  .meta-menu-link:hover,
-  .language-menu-link:hover,
-  .order-line-item .fulfillment-status a:active,
-  .meta-menu-link:active,
-  .language-menu-link:active,
-  .order-line-item .fulfillment-status a:focus, .meta-menu-link:focus, .language-menu-link:focus {
+  .order-line-item .fulfillment-status a:hover, .meta-menu-link:hover, .language-menu-link:hover, .order-line-item .fulfillment-status a:active, .meta-menu-link:active, .language-menu-link:active, .order-line-item .fulfillment-status a:focus, .meta-menu-link:focus, .language-menu-link:focus {
     text-decoration: underline; }
 
 .wishlist-item .header-row a {
   color: #2f2f2f;
   text-decoration: none; }
-  .wishlist-item .header-row a:hover,
-  .wishlist-item .header-row a:active,
-  .wishlist-item .header-row a:focus {
+  .wishlist-item .header-row a:hover, .wishlist-item .header-row a:active, .wishlist-item .header-row a:focus {
     text-decoration: underline; }
 
 /* gray underline, gold on hover */
 p a, .product-purchase-block .add-to-wishlist-link, .add-new-address-link, .homepage-press-releases h3 a, .dress-sizing-link {
   color: #8d8d8d;
   text-decoration: underline; }
-  p a:hover,
-  .product-purchase-block .add-to-wishlist-link:hover,
-  .add-new-address-link:hover,
-  .homepage-press-releases h3 a:hover,
-  .dress-sizing-link:hover,
-  p a:active,
-  .product-purchase-block .add-to-wishlist-link:active,
-  .add-new-address-link:active,
-  .homepage-press-releases h3 a:active,
-  .dress-sizing-link:active,
-  p a:focus, .product-purchase-block .add-to-wishlist-link:focus, .add-new-address-link:focus, .homepage-press-releases h3 a:focus, .dress-sizing-link:focus {
+  p a:hover, .product-purchase-block .add-to-wishlist-link:hover, .add-new-address-link:hover, .homepage-press-releases h3 a:hover, .dress-sizing-link:hover, p a:active, .product-purchase-block .add-to-wishlist-link:active, .add-new-address-link:active, .homepage-press-releases h3 a:active, .dress-sizing-link:active, p a:focus, .product-purchase-block .add-to-wishlist-link:focus, .add-new-address-link:focus, .homepage-press-releases h3 a:focus, .dress-sizing-link:focus {
     color: #c19946; }
 
 /* gold, underline on hover */
 address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link, .collections-hero .content a, .celebrity-gallery .scheme-dark .content a, .social-media-feed-item .content a, .homepage-press-releases .read-more, .article-summary-block .article-summary-read-more-link, .gallery-image-block .image-files a {
   color: #c19946;
   text-decoration: none; }
-  address a:hover,
-  .customer-account-content-hero .back-link:hover,
-  .wishlist-hero .back-link:hover, .collections-hero .content a:hover,
-  .celebrity-gallery .scheme-dark .content a:hover,
-  .social-media-feed-item .content a:hover,
-  .homepage-press-releases .read-more:hover,
-  .article-summary-block .article-summary-read-more-link:hover,
-  .gallery-image-block .image-files a:hover,
-  address a:active,
-  .customer-account-content-hero .back-link:active,
-  .wishlist-hero .back-link:active, .collections-hero .content a:active,
-  .celebrity-gallery .scheme-dark .content a:active,
-  .social-media-feed-item .content a:active,
-  .homepage-press-releases .read-more:active,
-  .article-summary-block .article-summary-read-more-link:active,
-  .gallery-image-block .image-files a:active,
-  address a:focus, .customer-account-content-hero .back-link:focus, .wishlist-hero .back-link:focus, .collections-hero .content a:focus, .celebrity-gallery .scheme-dark .content a:focus, .social-media-feed-item .content a:focus, .homepage-press-releases .read-more:focus, .article-summary-block .article-summary-read-more-link:focus, .gallery-image-block .image-files a:focus {
+  address a:hover, .customer-account-content-hero .back-link:hover, .wishlist-hero .back-link:hover, .collections-hero .content a:hover, .celebrity-gallery .scheme-dark .content a:hover, .social-media-feed-item .content a:hover, .homepage-press-releases .read-more:hover, .article-summary-block .article-summary-read-more-link:hover, .gallery-image-block .image-files a:hover, address a:active, .customer-account-content-hero .back-link:active, .wishlist-hero .back-link:active, .collections-hero .content a:active, .celebrity-gallery .scheme-dark .content a:active, .social-media-feed-item .content a:active, .homepage-press-releases .read-more:active, .article-summary-block .article-summary-read-more-link:active, .gallery-image-block .image-files a:active, address a:focus, .customer-account-content-hero .back-link:focus, .wishlist-hero .back-link:focus, .collections-hero .content a:focus, .celebrity-gallery .scheme-dark .content a:focus, .social-media-feed-item .content a:focus, .homepage-press-releases .read-more:focus, .article-summary-block .article-summary-read-more-link:focus, .gallery-image-block .image-files a:focus {
     text-decoration: underline; }
 
 .celebrity-gallery .scheme-light .content a {
   color: #a98741;
   text-decoration: none; }
-  .celebrity-gallery .scheme-light .content a:hover,
-  .celebrity-gallery .scheme-light .content a:active,
-  .celebrity-gallery .scheme-light .content a:focus {
+  .celebrity-gallery .scheme-light .content a:hover, .celebrity-gallery .scheme-light .content a:active, .celebrity-gallery .scheme-light .content a:focus {
     text-decoration: underline; }
 
 /* gold, underline on hover */
 .content-hero main p a, .customer-account-content-hero main p a, .wishlist-hero main p a, .other-enquires-hero main p a, .login-form-hero main p a, .register-form-hero main p a, .password-reset-form-hero main p a, .more-info-link {
   color: #c19946;
   text-decoration: none; }
-  .content-hero main p a:hover,
-  .customer-account-content-hero main p a:hover, .wishlist-hero main p a:hover, .other-enquires-hero main p a:hover, .login-form-hero main p a:hover, .register-form-hero main p a:hover, .password-reset-form-hero main p a:hover, .more-info-link:hover,
-  .content-hero main p a:active,
-  .customer-account-content-hero main p a:active, .wishlist-hero main p a:active, .other-enquires-hero main p a:active, .login-form-hero main p a:active, .register-form-hero main p a:active, .password-reset-form-hero main p a:active, .more-info-link:active,
-  .content-hero main p a:focus, .customer-account-content-hero main p a:focus, .wishlist-hero main p a:focus, .other-enquires-hero main p a:focus, .login-form-hero main p a:focus, .register-form-hero main p a:focus, .password-reset-form-hero main p a:focus, .more-info-link:focus {
+  .content-hero main p a:hover, .customer-account-content-hero main p a:hover, .wishlist-hero main p a:hover, .other-enquires-hero main p a:hover, .login-form-hero main p a:hover, .register-form-hero main p a:hover, .password-reset-form-hero main p a:hover, .more-info-link:hover, .content-hero main p a:active, .customer-account-content-hero main p a:active, .wishlist-hero main p a:active, .other-enquires-hero main p a:active, .login-form-hero main p a:active, .register-form-hero main p a:active, .password-reset-form-hero main p a:active, .more-info-link:active, .content-hero main p a:focus, .customer-account-content-hero main p a:focus, .wishlist-hero main p a:focus, .other-enquires-hero main p a:focus, .login-form-hero main p a:focus, .register-form-hero main p a:focus, .password-reset-form-hero main p a:focus, .more-info-link:focus {
     color: #8d8d8d;
     text-decoration: underline; }
 
@@ -592,17 +470,13 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
   transition: all 0.4s ease;
   color: #fff;
   text-decoration: none; }
-  .latest-collections-link:hover,
-  .latest-collections-link:active,
-  .latest-collections-link:focus {
+  .latest-collections-link:hover, .latest-collections-link:active, .latest-collections-link:focus {
     color: #4d4c4c; }
 
 /* white, gray on hover */
 .social-media-feed-item .source a {
   color: #fff; }
-  .social-media-feed-item .source a:hover,
-  .social-media-feed-item .source a:active,
-  .social-media-feed-item .source a:focus {
+  .social-media-feed-item .source a:hover, .social-media-feed-item .source a:active, .social-media-feed-item .source a:focus {
     color: #c19946; }
 
 .search-result-item .style-number, .cart-item .style-number, .order-line-item .style-number, .wishlist-item .style-number, .search-result-item .remove-item-link, .cart-item .remove-item-link, .order-line-item .remove-item-link, .wishlist-item .remove-item-link {
@@ -751,21 +625,27 @@ address a, .customer-account-content-hero .back-link, .wishlist-hero .back-link,
     height: 21px; } }
 
 @media screen and (max-width: 1024px) {
-  .site-footer .main-menu ul:after, .site-footer .meta-menu ul:after, .site-footer .language-menu ul:after, .site-footer .main-menu ul:before, .site-footer .meta-menu ul:before, .site-footer .language-menu ul:before {
+  
+  .site-footer .main-menu ul:after, .site-footer .meta-menu ul:after, .site-footer .language-menu ul:after,
+  .site-footer .main-menu ul:before, .site-footer .meta-menu ul:before, .site-footer .language-menu ul:before {
     content: "";
     display: table; }
+  
   .site-footer .main-menu ul:after, .site-footer .meta-menu ul:after, .site-footer .language-menu ul:after {
     clear: both; }
+  
   .site-footer .main-menu li, .site-footer .meta-menu li, .site-footer .language-menu li {
     display: block;
     float: left;
     padding: 0 8px; } }
 
 @media screen and (max-width: 768px) {
+  
   .site-footer .main-menu li, .site-footer .meta-menu li, .site-footer .language-menu li {
     width: 50%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  
   .site-footer .main-menu li, .site-footer .meta-menu li, .site-footer .language-menu li {
     width: 33.3333333333%; } }
 
@@ -1185,19 +1065,7 @@ hr {
   text-align: center;
   margin: 0;
   /* Fallback .png support for IE8 */ }
-  .site-logo a,
-  .usa-today-logo a,
-  .people-logo a,
-  .womens-wear-daily-logo a,
-  .martha-stewart-weddings-logo a,
-  .the-oprah-magazine-logo a,
-  .site-logo a:hover,
-  .usa-today-logo a:hover,
-  .people-logo a:hover,
-  .womens-wear-daily-logo a:hover,
-  .martha-stewart-weddings-logo a:hover,
-  .the-oprah-magazine-logo a:hover,
-  .site-logo a:focus, .usa-today-logo a:focus, .people-logo a:focus, .womens-wear-daily-logo a:focus, .martha-stewart-weddings-logo a:focus, .the-oprah-magazine-logo a:focus {
+  .site-logo a, .usa-today-logo a, .people-logo a, .womens-wear-daily-logo a, .martha-stewart-weddings-logo a, .the-oprah-magazine-logo a, .site-logo a:hover, .usa-today-logo a:hover, .people-logo a:hover, .womens-wear-daily-logo a:hover, .martha-stewart-weddings-logo a:hover, .the-oprah-magazine-logo a:hover, .site-logo a:focus, .usa-today-logo a:focus, .people-logo a:focus, .womens-wear-daily-logo a:focus, .martha-stewart-weddings-logo a:focus, .the-oprah-magazine-logo a:focus {
     text-decoration: none; }
   .site-logo a, .usa-today-logo a, .people-logo a, .womens-wear-daily-logo a, .martha-stewart-weddings-logo a, .the-oprah-magazine-logo a, .site-logo img, .usa-today-logo img, .people-logo img, .womens-wear-daily-logo img, .martha-stewart-weddings-logo img, .the-oprah-magazine-logo img {
     display: block; }
@@ -1350,10 +1218,8 @@ hr {
 .page-hero {
   /* Desktop */
   /* Mobile */ }
-  .about-page-hero h2,
-  .contact-page-hero h2,
-  .page-hero h2,
-  .about-page-hero h3, .contact-page-hero h3,
+  .about-page-hero h2, .contact-page-hero h2,
+  .page-hero h2, .about-page-hero h3, .contact-page-hero h3,
   .page-hero h3 {
     line-height: 1; }
   .about-page-hero h3, .contact-page-hero h3,
@@ -1422,27 +1288,27 @@ hr {
         top: 17px;
         font-size: 45px; } }
 
-.contact-page-hero .wrapper,
-.contact-page-hero .page-content,
-.contact-page-hero .event-location-overlay,
-.page-hero .wrapper, .page-hero .page-content, .page-hero .event-location-overlay, .login-register-page-hero .wrapper, .login-register-page-hero .page-content, .login-register-page-hero .event-location-overlay, .search-results-page-hero .wrapper,
-.search-results-page-hero .page-content,
-.search-results-page-hero .event-location-overlay,
-.customer-account-page-hero .wrapper, .customer-account-page-hero .page-content, .customer-account-page-hero .event-location-overlay, .sizing-page-hero .wrapper, .sizing-page-hero .page-content, .sizing-page-hero .event-location-overlay {
+.contact-page-hero .wrapper, .contact-page-hero .page-content, .contact-page-hero .event-location-overlay,
+.page-hero .wrapper,
+.page-hero .page-content,
+.page-hero .event-location-overlay, .login-register-page-hero .wrapper, .login-register-page-hero .page-content, .login-register-page-hero .event-location-overlay, .search-results-page-hero .wrapper, .search-results-page-hero .page-content, .search-results-page-hero .event-location-overlay,
+.customer-account-page-hero .wrapper,
+.customer-account-page-hero .page-content,
+.customer-account-page-hero .event-location-overlay, .sizing-page-hero .wrapper, .sizing-page-hero .page-content, .sizing-page-hero .event-location-overlay {
   /* gradient fade at edges of image */ }
-  .contact-page-hero .wrapper:before,
-  .contact-page-hero .page-content:before,
-  .contact-page-hero .event-location-overlay:before,
-  .page-hero .wrapper:before, .page-hero .page-content:before, .page-hero .event-location-overlay:before, .login-register-page-hero .wrapper:before, .login-register-page-hero .page-content:before, .login-register-page-hero .event-location-overlay:before, .search-results-page-hero .wrapper:before,
-  .search-results-page-hero .page-content:before,
-  .search-results-page-hero .event-location-overlay:before,
-  .customer-account-page-hero .wrapper:before, .customer-account-page-hero .page-content:before, .customer-account-page-hero .event-location-overlay:before, .sizing-page-hero .wrapper:before, .sizing-page-hero .page-content:before, .sizing-page-hero .event-location-overlay:before, .contact-page-hero .wrapper:after,
-  .contact-page-hero .page-content:after,
-  .contact-page-hero .event-location-overlay:after,
-  .page-hero .wrapper:after, .page-hero .page-content:after, .page-hero .event-location-overlay:after, .login-register-page-hero .wrapper:after, .login-register-page-hero .page-content:after, .login-register-page-hero .event-location-overlay:after, .search-results-page-hero .wrapper:after,
-  .search-results-page-hero .page-content:after,
-  .search-results-page-hero .event-location-overlay:after,
-  .customer-account-page-hero .wrapper:after, .customer-account-page-hero .page-content:after, .customer-account-page-hero .event-location-overlay:after, .sizing-page-hero .wrapper:after, .sizing-page-hero .page-content:after, .sizing-page-hero .event-location-overlay:after {
+  .contact-page-hero .wrapper:before, .contact-page-hero .page-content:before, .contact-page-hero .event-location-overlay:before,
+  .page-hero .wrapper:before,
+  .page-hero .page-content:before,
+  .page-hero .event-location-overlay:before, .login-register-page-hero .wrapper:before, .login-register-page-hero .page-content:before, .login-register-page-hero .event-location-overlay:before, .search-results-page-hero .wrapper:before, .search-results-page-hero .page-content:before, .search-results-page-hero .event-location-overlay:before,
+  .customer-account-page-hero .wrapper:before,
+  .customer-account-page-hero .page-content:before,
+  .customer-account-page-hero .event-location-overlay:before, .sizing-page-hero .wrapper:before, .sizing-page-hero .page-content:before, .sizing-page-hero .event-location-overlay:before, .contact-page-hero .wrapper:after, .contact-page-hero .page-content:after, .contact-page-hero .event-location-overlay:after,
+  .page-hero .wrapper:after,
+  .page-hero .page-content:after,
+  .page-hero .event-location-overlay:after, .login-register-page-hero .wrapper:after, .login-register-page-hero .page-content:after, .login-register-page-hero .event-location-overlay:after, .search-results-page-hero .wrapper:after, .search-results-page-hero .page-content:after, .search-results-page-hero .event-location-overlay:after,
+  .customer-account-page-hero .wrapper:after,
+  .customer-account-page-hero .page-content:after,
+  .customer-account-page-hero .event-location-overlay:after, .sizing-page-hero .wrapper:after, .sizing-page-hero .page-content:after, .sizing-page-hero .event-location-overlay:after {
     content: '';
     height: 100%;
     display: block;
@@ -1685,8 +1551,7 @@ select {
   textarea:focus,
   select:focus {
     /* border: 1px solid darken($borderColor, 10%); */ }
-  input[type="text"][disabled],
-  input[type="text"].disabled,
+  input[type="text"][disabled], input[type="text"].disabled,
   input[type="password"][disabled],
   input[type="password"].disabled,
   input[type="email"][disabled],
@@ -1900,22 +1765,22 @@ legend {
   label.inline,
   legend.inline {
     display: inline; }
-  .form-horizontal label.hidden-label,
-  label.hidden-label,
-  .form-horizontal legend.hidden-label,
+  .form-horizontal label.hidden-label, label.hidden-label, .form-horizontal
+  legend.hidden-label,
   legend.hidden-label {
     height: 0;
     width: 0;
     margin-bottom: 0;
     overflow: hidden; }
     .ie9 .form-horizontal label.hidden-label,
-    .lt-ie9 .form-horizontal label.hidden-label,
-    .ie9 label.hidden-label,
-    .lt-ie9 label.hidden-label,
-    .ie9 .form-horizontal legend.hidden-label,
-    .lt-ie9 .form-horizontal legend.hidden-label,
-    .ie9 legend.hidden-label,
-    .lt-ie9 legend.hidden-label {
+    .lt-ie9 .form-horizontal label.hidden-label, .ie9 label.hidden-label,
+    .lt-ie9 label.hidden-label, .ie9 .form-horizontal
+    legend.hidden-label,
+    .lt-ie9 .form-horizontal
+    legend.hidden-label, .ie9
+    legend.hidden-label,
+    .lt-ie9
+    legend.hidden-label {
       height: auto;
       margin-bottom: 2px;
       overflow: visible; }
@@ -1992,8 +1857,7 @@ label.error {
   vertical-align: middle;
   margin: 0; }
 
-.input-group .btn,
-.input-group input[type="submit"],
+.input-group .btn, .input-group input[type="submit"],
 .input-group .input-group-field {
   height: 37px; }
 
@@ -2025,22 +1889,429 @@ label.error {
   width: 1px; }
 
 .icon-fallback-text [class^="icon-"], .icon-fallback-text [class*=" icon-"],
-.icon-fallback-text .search-result-item .style-number .icon, .search-result-item .style-number .icon-fallback-text .icon, .icon-fallback-text .cart-item .style-number .icon, .cart-item .style-number .icon-fallback-text .icon, .icon-fallback-text .order-line-item .style-number .icon, .order-line-item .style-number .icon-fallback-text .icon, .icon-fallback-text .wishlist-item .style-number .icon, .wishlist-item .style-number .icon-fallback-text .icon, .icon-fallback-text .search-result-item .remove-item-link .icon, .search-result-item .remove-item-link .icon-fallback-text .icon, .icon-fallback-text .cart-item .remove-item-link .icon, .cart-item .remove-item-link .icon-fallback-text .icon, .icon-fallback-text .order-line-item .remove-item-link .icon, .order-line-item .remove-item-link .icon-fallback-text .icon, .icon-fallback-text .wishlist-item .remove-item-link .icon, .wishlist-item .remove-item-link .icon-fallback-text .icon, .icon-fallback-text .product-purchase-block button .icon, .product-purchase-block button .icon-fallback-text .icon, .icon-fallback-text .shopping-cart .checkout-button .icon, .shopping-cart .checkout-button .icon-fallback-text .icon, .icon-fallback-text .latest-articles-plugin-block .button-view-all .icon, .latest-articles-plugin-block .button-view-all .icon-fallback-text .icon, .icon-fallback-text .celebrities-plugin-block .button-view-all .icon, .celebrities-plugin-block .button-view-all .icon-fallback-text .icon, .icon-fallback-text .events-plugin-block .button-view-all .icon, .events-plugin-block .button-view-all .icon-fallback-text .icon, .icon-fallback-text .search-result-item .button .icon, .search-result-item .button .icon-fallback-text .icon, .icon-fallback-text .collection-grid-item .button .icon, .collection-grid-item .button .icon-fallback-text .icon, .icon-fallback-text .product-grid-item .button .icon, .product-grid-item .button .icon-fallback-text .icon, .icon-fallback-text .order-grid-item .button .icon, .order-grid-item .button .icon-fallback-text .icon, .icon-fallback-text .wishlist-item .add-to-cart-button .icon, .wishlist-item .add-to-cart-button .icon-fallback-text .icon, .icon-fallback-text .contact-form button .icon, .contact-form button .icon-fallback-text .icon, .icon-fallback-text .login-form-hero .register-button .icon, .login-form-hero .register-button .icon-fallback-text .icon, .icon-fallback-text .login-form-hero .login-submit-button .icon, .login-form-hero .login-submit-button .icon-fallback-text .icon, .icon-fallback-text .login-form-hero .reset-password-button .icon, .login-form-hero .reset-password-button .icon-fallback-text .icon, .icon-fallback-text .login-form-hero .register-submit-button .icon, .login-form-hero .register-submit-button .icon-fallback-text .icon, .icon-fallback-text .register-form-hero .register-button .icon, .register-form-hero .register-button .icon-fallback-text .icon, .icon-fallback-text .register-form-hero .login-submit-button .icon, .register-form-hero .login-submit-button .icon-fallback-text .icon, .icon-fallback-text .register-form-hero .reset-password-button .icon, .register-form-hero .reset-password-button .icon-fallback-text .icon, .icon-fallback-text .register-form-hero .register-submit-button .icon, .register-form-hero .register-submit-button .icon-fallback-text .icon, .icon-fallback-text .password-reset-form-hero .register-button .icon, .password-reset-form-hero .register-button .icon-fallback-text .icon, .icon-fallback-text .password-reset-form-hero .login-submit-button .icon, .password-reset-form-hero .login-submit-button .icon-fallback-text .icon, .icon-fallback-text .password-reset-form-hero .reset-password-button .icon, .password-reset-form-hero .reset-password-button .icon-fallback-text .icon, .icon-fallback-text .password-reset-form-hero .register-submit-button .icon, .password-reset-form-hero .register-submit-button .icon-fallback-text .icon, .icon-fallback-text .facebook-login-button .icon, .facebook-login-button .icon-fallback-text .icon, .icon-fallback-text .pinterest-icon, .icon-fallback-text .twitter-icon, .icon-fallback-text .instagram-icon, .icon-fallback-text .tumblr-icon, .icon-fallback-text .facebook-icon, .icon-fallback-text .contact-form input[type="radio"]:not(old) + label, .contact-form .icon-fallback-text input[type="radio"]:not(old) + label, .icon-fallback-text .contact-form input[type="checkbox"]:not(old) + label, .contact-form .icon-fallback-text input[type="checkbox"]:not(old) + label, .icon-fallback-text .customer-address-view-edit-block input[type="radio"]:not(old) + label, .customer-address-view-edit-block .icon-fallback-text input[type="radio"]:not(old) + label, .icon-fallback-text .customer-address-view-edit-block input[type="checkbox"]:not(old) + label, .customer-address-view-edit-block .icon-fallback-text input[type="checkbox"]:not(old) + label, .icon-fallback-text .login-form-hero form input[type="radio"]:not(old) + label, .login-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label, .icon-fallback-text .register-form-hero form input[type="radio"]:not(old) + label, .register-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label, .icon-fallback-text .password-reset-form-hero form input[type="radio"]:not(old) + label, .password-reset-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label, .icon-fallback-text .login-form-hero form input[type="checkbox"]:not(old) + label, .login-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label, .icon-fallback-text .register-form-hero form input[type="checkbox"]:not(old) + label, .register-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label, .icon-fallback-text .password-reset-form-hero form input[type="checkbox"]:not(old) + label, .password-reset-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label, .icon-fallback-text .product-mobile-header-block .icon, .product-mobile-header-block .icon-fallback-text .icon, .icon-fallback-text .product-offer-block .icon, .product-offer-block .icon-fallback-text .icon, .icon-fallback-text .product-description-expand-link .icon, .product-description-expand-link .icon-fallback-text .icon, .icon-fallback-text .shopping-cart .free-shipping .icon, .shopping-cart .free-shipping .icon-fallback-text .icon, .icon-fallback-text .shopping-cart .shipped-by-date .icon, .shopping-cart .shipped-by-date .icon-fallback-text .icon, .icon-fallback-text address .email, address .icon-fallback-text .email, .icon-fallback-text address .address, address .icon-fallback-text .address, .icon-fallback-text address .phone, address .icon-fallback-text .phone, .icon-fallback-text address .url, address .icon-fallback-text .url, .icon-fallback-text .mobile-side-nav .main-menu-link, .mobile-side-nav .icon-fallback-text .main-menu-link, .icon-fallback-text .mobile-side-nav .customer-account-menu-link, .mobile-side-nav .icon-fallback-text .customer-account-menu-link, .icon-fallback-text .carousel-hero .slick-next, .carousel-hero .icon-fallback-text .slick-next,
-.icon-fallback-text .carousel-hero .slick-prev, .carousel-hero .icon-fallback-text .slick-prev, .icon-fallback-text .vex.vex-theme-wireframe .vex-close, .vex.vex-theme-wireframe .icon-fallback-text .vex-close {
+.icon-fallback-text .search-result-item .style-number .icon,
+.search-result-item .style-number .icon-fallback-text .icon,
+.icon-fallback-text .cart-item .style-number .icon,
+.cart-item .style-number .icon-fallback-text .icon,
+.icon-fallback-text .order-line-item .style-number .icon,
+.order-line-item .style-number .icon-fallback-text .icon,
+.icon-fallback-text .wishlist-item .style-number .icon,
+.wishlist-item .style-number .icon-fallback-text .icon,
+.icon-fallback-text .search-result-item .remove-item-link .icon,
+.search-result-item .remove-item-link .icon-fallback-text .icon,
+.icon-fallback-text .cart-item .remove-item-link .icon,
+.cart-item .remove-item-link .icon-fallback-text .icon,
+.icon-fallback-text .order-line-item .remove-item-link .icon,
+.order-line-item .remove-item-link .icon-fallback-text .icon,
+.icon-fallback-text .wishlist-item .remove-item-link .icon,
+.wishlist-item .remove-item-link .icon-fallback-text .icon,
+.icon-fallback-text .product-purchase-block button .icon,
+.product-purchase-block button .icon-fallback-text .icon,
+.icon-fallback-text .shopping-cart .checkout-button .icon,
+.shopping-cart .checkout-button .icon-fallback-text .icon,
+.icon-fallback-text .latest-articles-plugin-block .button-view-all .icon,
+.latest-articles-plugin-block .button-view-all .icon-fallback-text .icon,
+.icon-fallback-text .celebrities-plugin-block .button-view-all .icon,
+.celebrities-plugin-block .button-view-all .icon-fallback-text .icon,
+.icon-fallback-text .events-plugin-block .button-view-all .icon,
+.events-plugin-block .button-view-all .icon-fallback-text .icon,
+.icon-fallback-text .search-result-item .button .icon,
+.search-result-item .button .icon-fallback-text .icon,
+.icon-fallback-text .collection-grid-item .button .icon,
+.collection-grid-item .button .icon-fallback-text .icon,
+.icon-fallback-text .product-grid-item .button .icon,
+.product-grid-item .button .icon-fallback-text .icon,
+.icon-fallback-text .order-grid-item .button .icon,
+.order-grid-item .button .icon-fallback-text .icon,
+.icon-fallback-text .wishlist-item .add-to-cart-button .icon,
+.wishlist-item .add-to-cart-button .icon-fallback-text .icon,
+.icon-fallback-text .contact-form button .icon,
+.contact-form button .icon-fallback-text .icon,
+.icon-fallback-text .login-form-hero .register-button .icon,
+.login-form-hero .register-button .icon-fallback-text .icon,
+.icon-fallback-text .login-form-hero .login-submit-button .icon,
+.login-form-hero .login-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .login-form-hero .reset-password-button .icon,
+.login-form-hero .reset-password-button .icon-fallback-text .icon,
+.icon-fallback-text .login-form-hero .register-submit-button .icon,
+.login-form-hero .register-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .register-form-hero .register-button .icon,
+.register-form-hero .register-button .icon-fallback-text .icon,
+.icon-fallback-text .register-form-hero .login-submit-button .icon,
+.register-form-hero .login-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .register-form-hero .reset-password-button .icon,
+.register-form-hero .reset-password-button .icon-fallback-text .icon,
+.icon-fallback-text .register-form-hero .register-submit-button .icon,
+.register-form-hero .register-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .password-reset-form-hero .register-button .icon,
+.password-reset-form-hero .register-button .icon-fallback-text .icon,
+.icon-fallback-text .password-reset-form-hero .login-submit-button .icon,
+.password-reset-form-hero .login-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .password-reset-form-hero .reset-password-button .icon,
+.password-reset-form-hero .reset-password-button .icon-fallback-text .icon,
+.icon-fallback-text .password-reset-form-hero .register-submit-button .icon,
+.password-reset-form-hero .register-submit-button .icon-fallback-text .icon,
+.icon-fallback-text .facebook-login-button .icon,
+.facebook-login-button .icon-fallback-text .icon,
+.icon-fallback-text .pinterest-icon,
+.icon-fallback-text .twitter-icon,
+.icon-fallback-text .instagram-icon,
+.icon-fallback-text .tumblr-icon,
+.icon-fallback-text .facebook-icon,
+.icon-fallback-text .contact-form input[type="radio"]:not(old) + label,
+.contact-form .icon-fallback-text input[type="radio"]:not(old) + label,
+.icon-fallback-text .contact-form input[type="checkbox"]:not(old) + label,
+.contact-form .icon-fallback-text input[type="checkbox"]:not(old) + label,
+.icon-fallback-text .customer-address-view-edit-block input[type="radio"]:not(old) + label,
+.customer-address-view-edit-block .icon-fallback-text input[type="radio"]:not(old) + label,
+.icon-fallback-text .customer-address-view-edit-block input[type="checkbox"]:not(old) + label,
+.customer-address-view-edit-block .icon-fallback-text input[type="checkbox"]:not(old) + label,
+.icon-fallback-text .login-form-hero form input[type="radio"]:not(old) + label,
+.login-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label,
+.icon-fallback-text .register-form-hero form input[type="radio"]:not(old) + label,
+.register-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label,
+.icon-fallback-text .password-reset-form-hero form input[type="radio"]:not(old) + label,
+.password-reset-form-hero form .icon-fallback-text input[type="radio"]:not(old) + label,
+.icon-fallback-text .login-form-hero form input[type="checkbox"]:not(old) + label,
+.login-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label,
+.icon-fallback-text .register-form-hero form input[type="checkbox"]:not(old) + label,
+.register-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label,
+.icon-fallback-text .password-reset-form-hero form input[type="checkbox"]:not(old) + label,
+.password-reset-form-hero form .icon-fallback-text input[type="checkbox"]:not(old) + label,
+.icon-fallback-text .product-mobile-header-block .icon,
+.product-mobile-header-block .icon-fallback-text .icon,
+.icon-fallback-text .product-offer-block .icon,
+.product-offer-block .icon-fallback-text .icon,
+.icon-fallback-text .product-description-expand-link .icon,
+.product-description-expand-link .icon-fallback-text .icon,
+.icon-fallback-text .shopping-cart .free-shipping .icon,
+.shopping-cart .free-shipping .icon-fallback-text .icon,
+.icon-fallback-text .shopping-cart .shipped-by-date .icon,
+.shopping-cart .shipped-by-date .icon-fallback-text .icon,
+.icon-fallback-text address .email,
+address .icon-fallback-text .email,
+.icon-fallback-text address .address,
+address .icon-fallback-text .address,
+.icon-fallback-text address .phone,
+address .icon-fallback-text .phone,
+.icon-fallback-text address .url,
+address .icon-fallback-text .url,
+.icon-fallback-text .mobile-side-nav .main-menu-link,
+.mobile-side-nav .icon-fallback-text .main-menu-link,
+.icon-fallback-text .mobile-side-nav .customer-account-menu-link,
+.mobile-side-nav .icon-fallback-text .customer-account-menu-link,
+.icon-fallback-text .carousel-hero .slick-next,
+.carousel-hero .icon-fallback-text .slick-next,
+.icon-fallback-text
+.carousel-hero .slick-prev,
+.carousel-hero .icon-fallback-text .slick-prev,
+.icon-fallback-text .vex.vex-theme-wireframe .vex-close,
+.vex.vex-theme-wireframe .icon-fallback-text .vex-close {
   display: none; }
   .supports-fontface .icon-fallback-text [class^="icon-"], .supports-fontface .icon-fallback-text [class*=" icon-"],
-  .supports-fontface .icon-fallback-text .search-result-item .style-number .icon, .search-result-item .style-number .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .cart-item .style-number .icon, .cart-item .style-number .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .order-line-item .style-number .icon, .order-line-item .style-number .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .wishlist-item .style-number .icon, .wishlist-item .style-number .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .search-result-item .remove-item-link .icon, .search-result-item .remove-item-link .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .cart-item .remove-item-link .icon, .cart-item .remove-item-link .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .order-line-item .remove-item-link .icon, .order-line-item .remove-item-link .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .wishlist-item .remove-item-link .icon, .wishlist-item .remove-item-link .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .product-purchase-block button .icon, .product-purchase-block button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .shopping-cart .checkout-button .icon, .shopping-cart .checkout-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .latest-articles-plugin-block .button-view-all .icon, .latest-articles-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .celebrities-plugin-block .button-view-all .icon, .celebrities-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .events-plugin-block .button-view-all .icon, .events-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .search-result-item .button .icon, .search-result-item .button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .collection-grid-item .button .icon, .collection-grid-item .button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .product-grid-item .button .icon, .product-grid-item .button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .order-grid-item .button .icon, .order-grid-item .button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .wishlist-item .add-to-cart-button .icon, .wishlist-item .add-to-cart-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .contact-form button .icon, .contact-form button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .login-form-hero .register-button .icon, .login-form-hero .register-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .login-form-hero .login-submit-button .icon, .login-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .login-form-hero .reset-password-button .icon, .login-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .login-form-hero .register-submit-button .icon, .login-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .register-form-hero .register-button .icon, .register-form-hero .register-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .register-form-hero .login-submit-button .icon, .register-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .register-form-hero .reset-password-button .icon, .register-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .register-form-hero .register-submit-button .icon, .register-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .password-reset-form-hero .register-button .icon, .password-reset-form-hero .register-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .password-reset-form-hero .login-submit-button .icon, .password-reset-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .password-reset-form-hero .reset-password-button .icon, .password-reset-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .password-reset-form-hero .register-submit-button .icon, .password-reset-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .facebook-login-button .icon, .facebook-login-button .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .pinterest-icon, .supports-fontface .icon-fallback-text .twitter-icon, .supports-fontface .icon-fallback-text .instagram-icon, .supports-fontface .icon-fallback-text .tumblr-icon, .supports-fontface .icon-fallback-text .facebook-icon, .supports-fontface .icon-fallback-text .contact-form input[type="radio"]:not(old) + label, .contact-form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label, .supports-fontface .icon-fallback-text .contact-form input[type="checkbox"]:not(old) + label, .contact-form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label, .supports-fontface .icon-fallback-text .customer-address-view-edit-block input[type="radio"]:not(old) + label, .customer-address-view-edit-block .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label, .supports-fontface .icon-fallback-text .customer-address-view-edit-block input[type="checkbox"]:not(old) + label, .customer-address-view-edit-block .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label, .supports-fontface .icon-fallback-text .login-form-hero form input[type="radio"]:not(old) + label, .login-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label, .supports-fontface .icon-fallback-text .register-form-hero form input[type="radio"]:not(old) + label, .register-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label, .supports-fontface .icon-fallback-text .password-reset-form-hero form input[type="radio"]:not(old) + label, .password-reset-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label, .supports-fontface .icon-fallback-text .login-form-hero form input[type="checkbox"]:not(old) + label, .login-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label, .supports-fontface .icon-fallback-text .register-form-hero form input[type="checkbox"]:not(old) + label, .register-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label, .supports-fontface .icon-fallback-text .password-reset-form-hero form input[type="checkbox"]:not(old) + label, .password-reset-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label, .supports-fontface .icon-fallback-text .product-mobile-header-block .icon, .product-mobile-header-block .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .product-offer-block .icon, .product-offer-block .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .product-description-expand-link .icon, .product-description-expand-link .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .shopping-cart .free-shipping .icon, .shopping-cart .free-shipping .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text .shopping-cart .shipped-by-date .icon, .shopping-cart .shipped-by-date .supports-fontface .icon-fallback-text .icon, .supports-fontface .icon-fallback-text address .email, address .supports-fontface .icon-fallback-text .email, .supports-fontface .icon-fallback-text address .address, address .supports-fontface .icon-fallback-text .address, .supports-fontface .icon-fallback-text address .phone, address .supports-fontface .icon-fallback-text .phone, .supports-fontface .icon-fallback-text address .url, address .supports-fontface .icon-fallback-text .url, .supports-fontface .icon-fallback-text .mobile-side-nav .main-menu-link, .mobile-side-nav .supports-fontface .icon-fallback-text .main-menu-link, .supports-fontface .icon-fallback-text .mobile-side-nav .customer-account-menu-link, .mobile-side-nav .supports-fontface .icon-fallback-text .customer-account-menu-link, .supports-fontface .icon-fallback-text .carousel-hero .slick-next, .carousel-hero .supports-fontface .icon-fallback-text .slick-next,
-  .supports-fontface .icon-fallback-text .carousel-hero .slick-prev, .carousel-hero .supports-fontface .icon-fallback-text .slick-prev, .supports-fontface .icon-fallback-text .vex.vex-theme-wireframe .vex-close, .vex.vex-theme-wireframe .supports-fontface .icon-fallback-text .vex-close {
+  .supports-fontface .icon-fallback-text .search-result-item .style-number .icon,
+  .search-result-item .style-number .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .cart-item .style-number .icon,
+  .cart-item .style-number .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .order-line-item .style-number .icon,
+  .order-line-item .style-number .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .wishlist-item .style-number .icon,
+  .wishlist-item .style-number .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .search-result-item .remove-item-link .icon,
+  .search-result-item .remove-item-link .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .cart-item .remove-item-link .icon,
+  .cart-item .remove-item-link .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .order-line-item .remove-item-link .icon,
+  .order-line-item .remove-item-link .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .wishlist-item .remove-item-link .icon,
+  .wishlist-item .remove-item-link .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .product-purchase-block button .icon,
+  .product-purchase-block button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .shopping-cart .checkout-button .icon,
+  .shopping-cart .checkout-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .latest-articles-plugin-block .button-view-all .icon,
+  .latest-articles-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .celebrities-plugin-block .button-view-all .icon,
+  .celebrities-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .events-plugin-block .button-view-all .icon,
+  .events-plugin-block .button-view-all .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .search-result-item .button .icon,
+  .search-result-item .button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .collection-grid-item .button .icon,
+  .collection-grid-item .button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .product-grid-item .button .icon,
+  .product-grid-item .button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .order-grid-item .button .icon,
+  .order-grid-item .button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .wishlist-item .add-to-cart-button .icon,
+  .wishlist-item .add-to-cart-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .contact-form button .icon,
+  .contact-form button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .login-form-hero .register-button .icon,
+  .login-form-hero .register-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .login-form-hero .login-submit-button .icon,
+  .login-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .login-form-hero .reset-password-button .icon,
+  .login-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .login-form-hero .register-submit-button .icon,
+  .login-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .register-form-hero .register-button .icon,
+  .register-form-hero .register-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .register-form-hero .login-submit-button .icon,
+  .register-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .register-form-hero .reset-password-button .icon,
+  .register-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .register-form-hero .register-submit-button .icon,
+  .register-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero .register-button .icon,
+  .password-reset-form-hero .register-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero .login-submit-button .icon,
+  .password-reset-form-hero .login-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero .reset-password-button .icon,
+  .password-reset-form-hero .reset-password-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero .register-submit-button .icon,
+  .password-reset-form-hero .register-submit-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .facebook-login-button .icon,
+  .facebook-login-button .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .pinterest-icon,
+  .supports-fontface .icon-fallback-text .twitter-icon,
+  .supports-fontface .icon-fallback-text .instagram-icon,
+  .supports-fontface .icon-fallback-text .tumblr-icon,
+  .supports-fontface .icon-fallback-text .facebook-icon,
+  .supports-fontface .icon-fallback-text .contact-form input[type="radio"]:not(old) + label,
+  .contact-form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .contact-form input[type="checkbox"]:not(old) + label,
+  .contact-form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .customer-address-view-edit-block input[type="radio"]:not(old) + label,
+  .customer-address-view-edit-block .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .customer-address-view-edit-block input[type="checkbox"]:not(old) + label,
+  .customer-address-view-edit-block .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .login-form-hero form input[type="radio"]:not(old) + label,
+  .login-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .register-form-hero form input[type="radio"]:not(old) + label,
+  .register-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero form input[type="radio"]:not(old) + label,
+  .password-reset-form-hero form .supports-fontface .icon-fallback-text input[type="radio"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .login-form-hero form input[type="checkbox"]:not(old) + label,
+  .login-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .register-form-hero form input[type="checkbox"]:not(old) + label,
+  .register-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .password-reset-form-hero form input[type="checkbox"]:not(old) + label,
+  .password-reset-form-hero form .supports-fontface .icon-fallback-text input[type="checkbox"]:not(old) + label,
+  .supports-fontface .icon-fallback-text .product-mobile-header-block .icon,
+  .product-mobile-header-block .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .product-offer-block .icon,
+  .product-offer-block .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .product-description-expand-link .icon,
+  .product-description-expand-link .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .shopping-cart .free-shipping .icon,
+  .shopping-cart .free-shipping .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text .shopping-cart .shipped-by-date .icon,
+  .shopping-cart .shipped-by-date .supports-fontface .icon-fallback-text .icon,
+  .supports-fontface .icon-fallback-text address .email,
+  address .supports-fontface .icon-fallback-text .email,
+  .supports-fontface .icon-fallback-text address .address,
+  address .supports-fontface .icon-fallback-text .address,
+  .supports-fontface .icon-fallback-text address .phone,
+  address .supports-fontface .icon-fallback-text .phone,
+  .supports-fontface .icon-fallback-text address .url,
+  address .supports-fontface .icon-fallback-text .url,
+  .supports-fontface .icon-fallback-text .mobile-side-nav .main-menu-link,
+  .mobile-side-nav .supports-fontface .icon-fallback-text .main-menu-link,
+  .supports-fontface .icon-fallback-text .mobile-side-nav .customer-account-menu-link,
+  .mobile-side-nav .supports-fontface .icon-fallback-text .customer-account-menu-link,
+  .supports-fontface .icon-fallback-text .carousel-hero .slick-next,
+  .carousel-hero .supports-fontface .icon-fallback-text .slick-next,
+  .supports-fontface .icon-fallback-text
+  .carousel-hero .slick-prev,
+  .carousel-hero .supports-fontface .icon-fallback-text .slick-prev,
+  .supports-fontface .icon-fallback-text .vex.vex-theme-wireframe .vex-close,
+  .vex.vex-theme-wireframe .supports-fontface .icon-fallback-text .vex-close {
     display: inline-block; }
 
 [class^="icon-"]:before, [class*=" icon-"]:before,
-.search-result-item .style-number .icon:before, .cart-item .style-number .icon:before, .order-line-item .style-number .icon:before, .wishlist-item .style-number .icon:before, .search-result-item .remove-item-link .icon:before, .cart-item .remove-item-link .icon:before, .order-line-item .remove-item-link .icon:before, .wishlist-item .remove-item-link .icon:before, .product-purchase-block button .icon:before, .shopping-cart .checkout-button .icon:before, .latest-articles-plugin-block .button-view-all .icon:before, .celebrities-plugin-block .button-view-all .icon:before, .events-plugin-block .button-view-all .icon:before, .search-result-item .button .icon:before, .collection-grid-item .button .icon:before, .product-grid-item .button .icon:before, .order-grid-item .button .icon:before, .wishlist-item .add-to-cart-button .icon:before, .contact-form button .icon:before, .login-form-hero .register-button .icon:before, .login-form-hero .login-submit-button .icon:before, .login-form-hero .reset-password-button .icon:before, .login-form-hero .register-submit-button .icon:before, .register-form-hero .register-button .icon:before, .register-form-hero .login-submit-button .icon:before, .register-form-hero .reset-password-button .icon:before, .register-form-hero .register-submit-button .icon:before, .password-reset-form-hero .register-button .icon:before, .password-reset-form-hero .login-submit-button .icon:before, .password-reset-form-hero .reset-password-button .icon:before, .password-reset-form-hero .register-submit-button .icon:before, .facebook-login-button .icon:before, .pinterest-icon:before, .twitter-icon:before, .instagram-icon:before, .tumblr-icon:before, .facebook-icon:before, .contact-form input[type="radio"]:not(old) + label:before, .contact-form input[type="checkbox"]:not(old) + label:before, .customer-address-view-edit-block input[type="radio"]:not(old) + label:before, .customer-address-view-edit-block input[type="checkbox"]:not(old) + label:before, .login-form-hero form input[type="radio"]:not(old) + label:before, .register-form-hero form input[type="radio"]:not(old) + label:before, .password-reset-form-hero form input[type="radio"]:not(old) + label:before, .login-form-hero form input[type="checkbox"]:not(old) + label:before, .register-form-hero form input[type="checkbox"]:not(old) + label:before, .password-reset-form-hero form input[type="checkbox"]:not(old) + label:before, .product-mobile-header-block .icon:before, .product-offer-block .icon:before, .product-description-expand-link .icon:before, .shopping-cart .free-shipping .icon:before, .shopping-cart .shipped-by-date .icon:before, address .email:before, address .address:before, address .phone:before, address .url:before, .mobile-side-nav .main-menu-link:before, .mobile-side-nav .customer-account-menu-link:before, .carousel-hero .slick-next:before,
-.carousel-hero .slick-prev:before, .vex.vex-theme-wireframe .vex-close:before {
+.search-result-item .style-number .icon:before,
+.cart-item .style-number .icon:before,
+.order-line-item .style-number .icon:before,
+.wishlist-item .style-number .icon:before,
+.search-result-item .remove-item-link .icon:before,
+.cart-item .remove-item-link .icon:before,
+.order-line-item .remove-item-link .icon:before,
+.wishlist-item .remove-item-link .icon:before,
+.product-purchase-block button .icon:before,
+.shopping-cart .checkout-button .icon:before,
+.latest-articles-plugin-block .button-view-all .icon:before,
+.celebrities-plugin-block .button-view-all .icon:before,
+.events-plugin-block .button-view-all .icon:before,
+.search-result-item .button .icon:before,
+.collection-grid-item .button .icon:before,
+.product-grid-item .button .icon:before,
+.order-grid-item .button .icon:before,
+.wishlist-item .add-to-cart-button .icon:before,
+.contact-form button .icon:before,
+.login-form-hero .register-button .icon:before,
+.login-form-hero .login-submit-button .icon:before,
+.login-form-hero .reset-password-button .icon:before,
+.login-form-hero .register-submit-button .icon:before,
+.register-form-hero .register-button .icon:before,
+.register-form-hero .login-submit-button .icon:before,
+.register-form-hero .reset-password-button .icon:before,
+.register-form-hero .register-submit-button .icon:before,
+.password-reset-form-hero .register-button .icon:before,
+.password-reset-form-hero .login-submit-button .icon:before,
+.password-reset-form-hero .reset-password-button .icon:before,
+.password-reset-form-hero .register-submit-button .icon:before,
+.facebook-login-button .icon:before,
+.pinterest-icon:before,
+.twitter-icon:before,
+.instagram-icon:before,
+.tumblr-icon:before,
+.facebook-icon:before,
+.contact-form input[type="radio"]:not(old) + label:before,
+.contact-form input[type="checkbox"]:not(old) + label:before,
+.customer-address-view-edit-block input[type="radio"]:not(old) + label:before,
+.customer-address-view-edit-block input[type="checkbox"]:not(old) + label:before,
+.login-form-hero form input[type="radio"]:not(old) + label:before,
+.register-form-hero form input[type="radio"]:not(old) + label:before,
+.password-reset-form-hero form input[type="radio"]:not(old) + label:before,
+.login-form-hero form input[type="checkbox"]:not(old) + label:before,
+.register-form-hero form input[type="checkbox"]:not(old) + label:before,
+.password-reset-form-hero form input[type="checkbox"]:not(old) + label:before,
+.product-mobile-header-block .icon:before,
+.product-offer-block .icon:before,
+.product-description-expand-link .icon:before,
+.shopping-cart .free-shipping .icon:before,
+.shopping-cart .shipped-by-date .icon:before,
+address .email:before,
+address .address:before,
+address .phone:before,
+address .url:before,
+.mobile-side-nav .main-menu-link:before,
+.mobile-side-nav .customer-account-menu-link:before,
+.carousel-hero .slick-next:before,
+.carousel-hero .slick-prev:before,
+.vex.vex-theme-wireframe .vex-close:before {
   /* hide icon by default */
   display: none; }
   .supports-fontface [class^="icon-"]:before, .supports-fontface [class*=" icon-"]:before,
-  .supports-fontface .search-result-item .style-number .icon:before, .search-result-item .style-number .supports-fontface .icon:before, .supports-fontface .cart-item .style-number .icon:before, .cart-item .style-number .supports-fontface .icon:before, .supports-fontface .order-line-item .style-number .icon:before, .order-line-item .style-number .supports-fontface .icon:before, .supports-fontface .wishlist-item .style-number .icon:before, .wishlist-item .style-number .supports-fontface .icon:before, .supports-fontface .search-result-item .remove-item-link .icon:before, .search-result-item .remove-item-link .supports-fontface .icon:before, .supports-fontface .cart-item .remove-item-link .icon:before, .cart-item .remove-item-link .supports-fontface .icon:before, .supports-fontface .order-line-item .remove-item-link .icon:before, .order-line-item .remove-item-link .supports-fontface .icon:before, .supports-fontface .wishlist-item .remove-item-link .icon:before, .wishlist-item .remove-item-link .supports-fontface .icon:before, .supports-fontface .product-purchase-block button .icon:before, .product-purchase-block button .supports-fontface .icon:before, .supports-fontface .shopping-cart .checkout-button .icon:before, .shopping-cart .checkout-button .supports-fontface .icon:before, .supports-fontface .latest-articles-plugin-block .button-view-all .icon:before, .latest-articles-plugin-block .button-view-all .supports-fontface .icon:before, .supports-fontface .celebrities-plugin-block .button-view-all .icon:before, .celebrities-plugin-block .button-view-all .supports-fontface .icon:before, .supports-fontface .events-plugin-block .button-view-all .icon:before, .events-plugin-block .button-view-all .supports-fontface .icon:before, .supports-fontface .search-result-item .button .icon:before, .search-result-item .button .supports-fontface .icon:before, .supports-fontface .collection-grid-item .button .icon:before, .collection-grid-item .button .supports-fontface .icon:before, .supports-fontface .product-grid-item .button .icon:before, .product-grid-item .button .supports-fontface .icon:before, .supports-fontface .order-grid-item .button .icon:before, .order-grid-item .button .supports-fontface .icon:before, .supports-fontface .wishlist-item .add-to-cart-button .icon:before, .wishlist-item .add-to-cart-button .supports-fontface .icon:before, .supports-fontface .contact-form button .icon:before, .contact-form button .supports-fontface .icon:before, .supports-fontface .login-form-hero .register-button .icon:before, .login-form-hero .register-button .supports-fontface .icon:before, .supports-fontface .login-form-hero .login-submit-button .icon:before, .login-form-hero .login-submit-button .supports-fontface .icon:before, .supports-fontface .login-form-hero .reset-password-button .icon:before, .login-form-hero .reset-password-button .supports-fontface .icon:before, .supports-fontface .login-form-hero .register-submit-button .icon:before, .login-form-hero .register-submit-button .supports-fontface .icon:before, .supports-fontface .register-form-hero .register-button .icon:before, .register-form-hero .register-button .supports-fontface .icon:before, .supports-fontface .register-form-hero .login-submit-button .icon:before, .register-form-hero .login-submit-button .supports-fontface .icon:before, .supports-fontface .register-form-hero .reset-password-button .icon:before, .register-form-hero .reset-password-button .supports-fontface .icon:before, .supports-fontface .register-form-hero .register-submit-button .icon:before, .register-form-hero .register-submit-button .supports-fontface .icon:before, .supports-fontface .password-reset-form-hero .register-button .icon:before, .password-reset-form-hero .register-button .supports-fontface .icon:before, .supports-fontface .password-reset-form-hero .login-submit-button .icon:before, .password-reset-form-hero .login-submit-button .supports-fontface .icon:before, .supports-fontface .password-reset-form-hero .reset-password-button .icon:before, .password-reset-form-hero .reset-password-button .supports-fontface .icon:before, .supports-fontface .password-reset-form-hero .register-submit-button .icon:before, .password-reset-form-hero .register-submit-button .supports-fontface .icon:before, .supports-fontface .facebook-login-button .icon:before, .facebook-login-button .supports-fontface .icon:before, .supports-fontface .pinterest-icon:before, .supports-fontface .twitter-icon:before, .supports-fontface .instagram-icon:before, .supports-fontface .tumblr-icon:before, .supports-fontface .facebook-icon:before, .supports-fontface .contact-form input[type="radio"]:not(old) + label:before, .contact-form .supports-fontface input[type="radio"]:not(old) + label:before, .supports-fontface .contact-form input[type="checkbox"]:not(old) + label:before, .contact-form .supports-fontface input[type="checkbox"]:not(old) + label:before, .supports-fontface .customer-address-view-edit-block input[type="radio"]:not(old) + label:before, .customer-address-view-edit-block .supports-fontface input[type="radio"]:not(old) + label:before, .supports-fontface .customer-address-view-edit-block input[type="checkbox"]:not(old) + label:before, .customer-address-view-edit-block .supports-fontface input[type="checkbox"]:not(old) + label:before, .supports-fontface .login-form-hero form input[type="radio"]:not(old) + label:before, .login-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before, .supports-fontface .register-form-hero form input[type="radio"]:not(old) + label:before, .register-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before, .supports-fontface .password-reset-form-hero form input[type="radio"]:not(old) + label:before, .password-reset-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before, .supports-fontface .login-form-hero form input[type="checkbox"]:not(old) + label:before, .login-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before, .supports-fontface .register-form-hero form input[type="checkbox"]:not(old) + label:before, .register-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before, .supports-fontface .password-reset-form-hero form input[type="checkbox"]:not(old) + label:before, .password-reset-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before, .supports-fontface .product-mobile-header-block .icon:before, .product-mobile-header-block .supports-fontface .icon:before, .supports-fontface .product-offer-block .icon:before, .product-offer-block .supports-fontface .icon:before, .supports-fontface .product-description-expand-link .icon:before, .product-description-expand-link .supports-fontface .icon:before, .supports-fontface .shopping-cart .free-shipping .icon:before, .shopping-cart .free-shipping .supports-fontface .icon:before, .supports-fontface .shopping-cart .shipped-by-date .icon:before, .shopping-cart .shipped-by-date .supports-fontface .icon:before, .supports-fontface address .email:before, address .supports-fontface .email:before, .supports-fontface address .address:before, address .supports-fontface .address:before, .supports-fontface address .phone:before, address .supports-fontface .phone:before, .supports-fontface address .url:before, address .supports-fontface .url:before, .supports-fontface .mobile-side-nav .main-menu-link:before, .mobile-side-nav .supports-fontface .main-menu-link:before, .supports-fontface .mobile-side-nav .customer-account-menu-link:before, .mobile-side-nav .supports-fontface .customer-account-menu-link:before, .supports-fontface .carousel-hero .slick-next:before, .carousel-hero .supports-fontface .slick-next:before,
-  .supports-fontface .carousel-hero .slick-prev:before, .carousel-hero .supports-fontface .slick-prev:before, .supports-fontface .vex.vex-theme-wireframe .vex-close:before, .vex.vex-theme-wireframe .supports-fontface .vex-close:before {
+  .supports-fontface .search-result-item .style-number .icon:before,
+  .search-result-item .style-number .supports-fontface .icon:before,
+  .supports-fontface .cart-item .style-number .icon:before,
+  .cart-item .style-number .supports-fontface .icon:before,
+  .supports-fontface .order-line-item .style-number .icon:before,
+  .order-line-item .style-number .supports-fontface .icon:before,
+  .supports-fontface .wishlist-item .style-number .icon:before,
+  .wishlist-item .style-number .supports-fontface .icon:before,
+  .supports-fontface .search-result-item .remove-item-link .icon:before,
+  .search-result-item .remove-item-link .supports-fontface .icon:before,
+  .supports-fontface .cart-item .remove-item-link .icon:before,
+  .cart-item .remove-item-link .supports-fontface .icon:before,
+  .supports-fontface .order-line-item .remove-item-link .icon:before,
+  .order-line-item .remove-item-link .supports-fontface .icon:before,
+  .supports-fontface .wishlist-item .remove-item-link .icon:before,
+  .wishlist-item .remove-item-link .supports-fontface .icon:before,
+  .supports-fontface .product-purchase-block button .icon:before,
+  .product-purchase-block button .supports-fontface .icon:before,
+  .supports-fontface .shopping-cart .checkout-button .icon:before,
+  .shopping-cart .checkout-button .supports-fontface .icon:before,
+  .supports-fontface .latest-articles-plugin-block .button-view-all .icon:before,
+  .latest-articles-plugin-block .button-view-all .supports-fontface .icon:before,
+  .supports-fontface .celebrities-plugin-block .button-view-all .icon:before,
+  .celebrities-plugin-block .button-view-all .supports-fontface .icon:before,
+  .supports-fontface .events-plugin-block .button-view-all .icon:before,
+  .events-plugin-block .button-view-all .supports-fontface .icon:before,
+  .supports-fontface .search-result-item .button .icon:before,
+  .search-result-item .button .supports-fontface .icon:before,
+  .supports-fontface .collection-grid-item .button .icon:before,
+  .collection-grid-item .button .supports-fontface .icon:before,
+  .supports-fontface .product-grid-item .button .icon:before,
+  .product-grid-item .button .supports-fontface .icon:before,
+  .supports-fontface .order-grid-item .button .icon:before,
+  .order-grid-item .button .supports-fontface .icon:before,
+  .supports-fontface .wishlist-item .add-to-cart-button .icon:before,
+  .wishlist-item .add-to-cart-button .supports-fontface .icon:before,
+  .supports-fontface .contact-form button .icon:before,
+  .contact-form button .supports-fontface .icon:before,
+  .supports-fontface .login-form-hero .register-button .icon:before,
+  .login-form-hero .register-button .supports-fontface .icon:before,
+  .supports-fontface .login-form-hero .login-submit-button .icon:before,
+  .login-form-hero .login-submit-button .supports-fontface .icon:before,
+  .supports-fontface .login-form-hero .reset-password-button .icon:before,
+  .login-form-hero .reset-password-button .supports-fontface .icon:before,
+  .supports-fontface .login-form-hero .register-submit-button .icon:before,
+  .login-form-hero .register-submit-button .supports-fontface .icon:before,
+  .supports-fontface .register-form-hero .register-button .icon:before,
+  .register-form-hero .register-button .supports-fontface .icon:before,
+  .supports-fontface .register-form-hero .login-submit-button .icon:before,
+  .register-form-hero .login-submit-button .supports-fontface .icon:before,
+  .supports-fontface .register-form-hero .reset-password-button .icon:before,
+  .register-form-hero .reset-password-button .supports-fontface .icon:before,
+  .supports-fontface .register-form-hero .register-submit-button .icon:before,
+  .register-form-hero .register-submit-button .supports-fontface .icon:before,
+  .supports-fontface .password-reset-form-hero .register-button .icon:before,
+  .password-reset-form-hero .register-button .supports-fontface .icon:before,
+  .supports-fontface .password-reset-form-hero .login-submit-button .icon:before,
+  .password-reset-form-hero .login-submit-button .supports-fontface .icon:before,
+  .supports-fontface .password-reset-form-hero .reset-password-button .icon:before,
+  .password-reset-form-hero .reset-password-button .supports-fontface .icon:before,
+  .supports-fontface .password-reset-form-hero .register-submit-button .icon:before,
+  .password-reset-form-hero .register-submit-button .supports-fontface .icon:before,
+  .supports-fontface .facebook-login-button .icon:before,
+  .facebook-login-button .supports-fontface .icon:before,
+  .supports-fontface .pinterest-icon:before,
+  .supports-fontface .twitter-icon:before,
+  .supports-fontface .instagram-icon:before,
+  .supports-fontface .tumblr-icon:before,
+  .supports-fontface .facebook-icon:before,
+  .supports-fontface .contact-form input[type="radio"]:not(old) + label:before,
+  .contact-form .supports-fontface input[type="radio"]:not(old) + label:before,
+  .supports-fontface .contact-form input[type="checkbox"]:not(old) + label:before,
+  .contact-form .supports-fontface input[type="checkbox"]:not(old) + label:before,
+  .supports-fontface .customer-address-view-edit-block input[type="radio"]:not(old) + label:before,
+  .customer-address-view-edit-block .supports-fontface input[type="radio"]:not(old) + label:before,
+  .supports-fontface .customer-address-view-edit-block input[type="checkbox"]:not(old) + label:before,
+  .customer-address-view-edit-block .supports-fontface input[type="checkbox"]:not(old) + label:before,
+  .supports-fontface .login-form-hero form input[type="radio"]:not(old) + label:before,
+  .login-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before,
+  .supports-fontface .register-form-hero form input[type="radio"]:not(old) + label:before,
+  .register-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before,
+  .supports-fontface .password-reset-form-hero form input[type="radio"]:not(old) + label:before,
+  .password-reset-form-hero form .supports-fontface input[type="radio"]:not(old) + label:before,
+  .supports-fontface .login-form-hero form input[type="checkbox"]:not(old) + label:before,
+  .login-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before,
+  .supports-fontface .register-form-hero form input[type="checkbox"]:not(old) + label:before,
+  .register-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before,
+  .supports-fontface .password-reset-form-hero form input[type="checkbox"]:not(old) + label:before,
+  .password-reset-form-hero form .supports-fontface input[type="checkbox"]:not(old) + label:before,
+  .supports-fontface .product-mobile-header-block .icon:before,
+  .product-mobile-header-block .supports-fontface .icon:before,
+  .supports-fontface .product-offer-block .icon:before,
+  .product-offer-block .supports-fontface .icon:before,
+  .supports-fontface .product-description-expand-link .icon:before,
+  .product-description-expand-link .supports-fontface .icon:before,
+  .supports-fontface .shopping-cart .free-shipping .icon:before,
+  .shopping-cart .free-shipping .supports-fontface .icon:before,
+  .supports-fontface .shopping-cart .shipped-by-date .icon:before,
+  .shopping-cart .shipped-by-date .supports-fontface .icon:before,
+  .supports-fontface address .email:before,
+  address .supports-fontface .email:before,
+  .supports-fontface address .address:before,
+  address .supports-fontface .address:before,
+  .supports-fontface address .phone:before,
+  address .supports-fontface .phone:before,
+  .supports-fontface address .url:before,
+  address .supports-fontface .url:before,
+  .supports-fontface .mobile-side-nav .main-menu-link:before,
+  .mobile-side-nav .supports-fontface .main-menu-link:before,
+  .supports-fontface .mobile-side-nav .customer-account-menu-link:before,
+  .mobile-side-nav .supports-fontface .customer-account-menu-link:before,
+  .supports-fontface .carousel-hero .slick-next:before,
+  .carousel-hero .supports-fontface .slick-next:before,
+  .supports-fontface
+  .carousel-hero .slick-prev:before,
+  .carousel-hero .supports-fontface .slick-prev:before,
+  .supports-fontface .vex.vex-theme-wireframe .vex-close:before,
+  .vex.vex-theme-wireframe .supports-fontface .vex-close:before {
     /* show the icon if modernizer detected support */
     display: inline;
     font-family: "theia-icons";
@@ -2281,8 +2552,7 @@ label.error {
       line-height: 1.42;
       text-transform: uppercase;
       font-weight: 700; }
-      .pagination-block > li > a:before,
-      .pagination-block > li > a:after,
+      .pagination-block > li > a:before, .pagination-block > li > a:after,
       .pagination-block > li > span:before,
       .pagination-block > li > span:after {
         top: -1px; }
@@ -2384,10 +2654,8 @@ label.error {
     display: block; }
   .site-nav--dropdown a {
     background-color: #f2f2f2; }
-    .site-nav--dropdown a:hover,
-    .site-nav--dropdown a:active,
-    .site-nav--dropdown a:focus {
-      background-color: #d8d8d8; }
+    .site-nav--dropdown a:hover, .site-nav--dropdown a:active, .site-nav--dropdown a:focus {
+      background-color: #d9d9d9; }
 
 /*============================================================================
   #Breadcrumbs
@@ -3889,23 +4157,23 @@ address .url:before {
     text-shadow: 0 1px rgba(0, 0, 0, 0.44);
     top: 66px;
     margin: 0; }
-  .contact-page-hero .wrapper,
-  .contact-page-hero .page-content,
-  .contact-page-hero .event-location-overlay,
-  .page-hero .wrapper, .page-hero .page-content, .page-hero .event-location-overlay {
+  .contact-page-hero .wrapper, .contact-page-hero .page-content, .contact-page-hero .event-location-overlay,
+  .page-hero .wrapper,
+  .page-hero .page-content,
+  .page-hero .event-location-overlay {
     height: 100%; }
-    .contact-page-hero .wrapper:before,
-    .contact-page-hero .page-content:before,
-    .contact-page-hero .event-location-overlay:before,
-    .contact-page-hero .wrapper:after,
-    .contact-page-hero .page-content:after,
-    .contact-page-hero .event-location-overlay:after,
-    .page-hero .wrapper:before, .page-hero .page-content:before, .page-hero .event-location-overlay:before, .page-hero .wrapper:after, .page-hero .page-content:after, .page-hero .event-location-overlay:after {
+    .contact-page-hero .wrapper:before, .contact-page-hero .page-content:before, .contact-page-hero .event-location-overlay:before, .contact-page-hero .wrapper:after, .contact-page-hero .page-content:after, .contact-page-hero .event-location-overlay:after,
+    .page-hero .wrapper:before,
+    .page-hero .page-content:before,
+    .page-hero .event-location-overlay:before,
+    .page-hero .wrapper:after,
+    .page-hero .page-content:after,
+    .page-hero .event-location-overlay:after {
       width: 160px; }
-    .contact-page-hero .wrapper:before,
-    .contact-page-hero .page-content:before,
-    .contact-page-hero .event-location-overlay:before,
-    .page-hero .wrapper:before, .page-hero .page-content:before, .page-hero .event-location-overlay:before {
+    .contact-page-hero .wrapper:before, .contact-page-hero .page-content:before, .contact-page-hero .event-location-overlay:before,
+    .page-hero .wrapper:before,
+    .page-hero .page-content:before,
+    .page-hero .event-location-overlay:before {
       /* **todo** - finish this cross browser mixin. */
       /* variables in sass are scoped to blocks, need to initialize them here. */
       background: #868d8a;
@@ -3916,10 +4184,10 @@ address .url:before {
       /* background: -ms-linear-gradient(top, $from 0%, $to 100%); */
       background: linear-gradient(to left, transparent 0%, #868d8a 100%);
       left: -99px; }
-    .contact-page-hero .wrapper:after,
-    .contact-page-hero .page-content:after,
-    .contact-page-hero .event-location-overlay:after,
-    .page-hero .wrapper:after, .page-hero .page-content:after, .page-hero .event-location-overlay:after {
+    .contact-page-hero .wrapper:after, .contact-page-hero .page-content:after, .contact-page-hero .event-location-overlay:after,
+    .page-hero .wrapper:after,
+    .page-hero .page-content:after,
+    .page-hero .event-location-overlay:after {
       /* **todo** - finish this cross browser mixin. */
       /* variables in sass are scoped to blocks, need to initialize them here. */
       background: #868d8a;
@@ -3974,18 +4242,18 @@ address .url:before {
 .search-results-page-hero,
 .customer-account-page-hero {
   background: #897456 url("customer-account-page-hero-bg.jpg") top center no-repeat; }
-  .search-results-page-hero .wrapper:before,
-  .search-results-page-hero .page-content:before,
-  .search-results-page-hero .event-location-overlay:before,
-  .search-results-page-hero .wrapper:after,
-  .search-results-page-hero .page-content:after,
-  .search-results-page-hero .event-location-overlay:after,
-  .customer-account-page-hero .wrapper:before, .customer-account-page-hero .page-content:before, .customer-account-page-hero .event-location-overlay:before, .customer-account-page-hero .wrapper:after, .customer-account-page-hero .page-content:after, .customer-account-page-hero .event-location-overlay:after {
+  .search-results-page-hero .wrapper:before, .search-results-page-hero .page-content:before, .search-results-page-hero .event-location-overlay:before, .search-results-page-hero .wrapper:after, .search-results-page-hero .page-content:after, .search-results-page-hero .event-location-overlay:after,
+  .customer-account-page-hero .wrapper:before,
+  .customer-account-page-hero .page-content:before,
+  .customer-account-page-hero .event-location-overlay:before,
+  .customer-account-page-hero .wrapper:after,
+  .customer-account-page-hero .page-content:after,
+  .customer-account-page-hero .event-location-overlay:after {
     width: 160px; }
-  .search-results-page-hero .wrapper:before,
-  .search-results-page-hero .page-content:before,
-  .search-results-page-hero .event-location-overlay:before,
-  .customer-account-page-hero .wrapper:before, .customer-account-page-hero .page-content:before, .customer-account-page-hero .event-location-overlay:before {
+  .search-results-page-hero .wrapper:before, .search-results-page-hero .page-content:before, .search-results-page-hero .event-location-overlay:before,
+  .customer-account-page-hero .wrapper:before,
+  .customer-account-page-hero .page-content:before,
+  .customer-account-page-hero .event-location-overlay:before {
     /* **todo** - finish this cross browser mixin. */
     /* variables in sass are scoped to blocks, need to initialize them here. */
     background: #897456;
@@ -3996,10 +4264,10 @@ address .url:before {
     /* background: -ms-linear-gradient(top, $from 0%, $to 100%); */
     background: linear-gradient(to left, transparent 0%, #897456 100%);
     left: -99px; }
-  .search-results-page-hero .wrapper:after,
-  .search-results-page-hero .page-content:after,
-  .search-results-page-hero .event-location-overlay:after,
-  .customer-account-page-hero .wrapper:after, .customer-account-page-hero .page-content:after, .customer-account-page-hero .event-location-overlay:after {
+  .search-results-page-hero .wrapper:after, .search-results-page-hero .page-content:after, .search-results-page-hero .event-location-overlay:after,
+  .customer-account-page-hero .wrapper:after,
+  .customer-account-page-hero .page-content:after,
+  .customer-account-page-hero .event-location-overlay:after {
     /* **todo** - finish this cross browser mixin. */
     /* variables in sass are scoped to blocks, need to initialize them here. */
     background: #897456;
@@ -4581,8 +4849,7 @@ address .url:before {
   .product-grid-hero > h2,
   .related-products-hero > h2,
   .collection-grid-hero > h2,
-  .order-grid-row > h2,
-  .latest-articles-plugin-block > h2, .celebrities-plugin-block > h2, .events-plugin-block > h2, .product-grid-hero > h3,
+  .order-grid-row > h2, .latest-articles-plugin-block > h2, .celebrities-plugin-block > h2, .events-plugin-block > h2, .product-grid-hero > h3,
   .related-products-hero > h3,
   .collection-grid-hero > h3,
   .order-grid-row > h3, .latest-articles-plugin-block > h3, .celebrities-plugin-block > h3, .events-plugin-block > h3 {
@@ -5860,7 +6127,7 @@ address .url:before {
 /*================================================================================
   # Animations
   ================================================================================*/
-@-webkit-keyframes "scaledown" {
+@-webkit-keyframes $animation-name {
   0% {
     opacity: 0;
     -webkit-transform: scale(12);
@@ -5878,7 +6145,7 @@ address .url:before {
     -o-transform: scale(1);
     transform: scale(1); } }
 
-@-moz-keyframes "scaledown" {
+@-moz-keyframes $animation-name {
   0% {
     opacity: 0;
     -webkit-transform: scale(12);
@@ -5896,7 +6163,7 @@ address .url:before {
     -o-transform: scale(1);
     transform: scale(1); } }
 
-@-o-keyframes "scaledown" {
+@-o-keyframes $animation-name {
   0% {
     opacity: 0;
     -webkit-transform: scale(12);
@@ -5914,7 +6181,7 @@ address .url:before {
     -o-transform: scale(1);
     transform: scale(1); } }
 
-@keyframes "scaledown" {
+@keyframes $animation-name {
   0% {
     opacity: 0;
     -webkit-transform: scale(12);
@@ -5932,25 +6199,25 @@ address .url:before {
     -o-transform: scale(1);
     transform: scale(1); } }
 
-@-webkit-keyframes "fadein" {
+@-webkit-keyframes $animation-name {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
-@-moz-keyframes "fadein" {
+@-moz-keyframes $animation-name {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
-@-o-keyframes "fadein" {
+@-o-keyframes $animation-name {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
-@keyframes "fadein" {
+@keyframes $animation-name {
   0% {
     opacity: 0; }
   100% {
@@ -6959,7 +7226,7 @@ span#resultMessage {
       -o-animation-delay: -0.16s;
       animation-delay: -0.16s; }
 
-@-webkit-keyframes bouncedelay {
+@-webkit-keyframes $animation-name {
   0%, 80%, 100% {
     -webkit-transform: scale(0.0);
     -moz-transform: scale(0.0);
@@ -6973,7 +7240,7 @@ span#resultMessage {
     -o-transform: scale(1.0);
     transform: scale(1.0); } }
 
-@-moz-keyframes bouncedelay {
+@-moz-keyframes $animation-name {
   0%, 80%, 100% {
     -webkit-transform: scale(0.0);
     -moz-transform: scale(0.0);
@@ -6987,7 +7254,7 @@ span#resultMessage {
     -o-transform: scale(1.0);
     transform: scale(1.0); } }
 
-@-o-keyframes bouncedelay {
+@-o-keyframes $animation-name {
   0%, 80%, 100% {
     -webkit-transform: scale(0.0);
     -moz-transform: scale(0.0);
@@ -7001,7 +7268,7 @@ span#resultMessage {
     -o-transform: scale(1.0);
     transform: scale(1.0); } }
 
-@keyframes bouncedelay {
+@keyframes $animation-name {
   0%, 80%, 100% {
     -webkit-transform: scale(0.0);
     -moz-transform: scale(0.0);
@@ -7427,8 +7694,7 @@ body.vex-open {
     text-align: center;
     color: #a98741;
     display: inline-block !important; }
-  .vex.vex-theme-wireframe .vex-close:hover:before,
-  .vex.vex-theme-wireframe .vex-close:active:before {
+  .vex.vex-theme-wireframe .vex-close:hover:before, .vex.vex-theme-wireframe .vex-close:active:before {
     color: #000; }
 
 @media screen and (max-width: 768px) {
@@ -7577,14 +7843,15 @@ body.vex-open {
   margin-top: 28px;
   margin-bottom: 56px; }
 
-@media screen and (min-width: 1025px) and (max-width: 1152px) {
-  .press-content-header, .press-content-body, .article-detail-header {
-    padding-left: 192px;
-    box-sizing: content-box; } }
-
-@media screen and (max-width: 1024px) {
-  .press-content-header, .press-content-body, .article-detail-header {
-    margin: 0 auto; } }
+.press-content-header, .press-content-body, .article-detail-header {
+  min-height: 320px; }
+  @media screen and (min-width: 1025px) and (max-width: 1152px) {
+    .press-content-header, .press-content-body, .article-detail-header {
+      padding-left: 192px;
+      box-sizing: content-box; } }
+  @media screen and (max-width: 1024px) {
+    .press-content-header, .press-content-body, .article-detail-header {
+      margin: 0 auto; } }
 
 .press-content-header {
   margin: 22px auto 29px; }
@@ -8167,3 +8434,8 @@ body.vex-open {
     /* ratchet up the font-size to the default base hight; */
     display: inline-block;
     vertical-align: middle; }
+
+.error-no-events-found {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 21px; }

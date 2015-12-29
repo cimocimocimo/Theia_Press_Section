@@ -10904,7 +10904,9 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
 %press-content-inner-base {
     @extend .wrapper-8-col;
-
+    
+    min-height: 320px;
+    
     @include at-query(null, $postLarge, $xLarge){
         padding-left: 192px;
         box-sizing: content-box;
@@ -11860,4 +11862,10 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         height: 200px;
         text-align: center;
     }
+}
+
+.error-no-events-found {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 21px;
 }
