@@ -7843,15 +7843,14 @@ body.vex-open {
   margin-top: 28px;
   margin-bottom: 56px; }
 
-.press-content-header, .press-content-body, .article-detail-header {
-  min-height: 320px; }
-  @media screen and (min-width: 1025px) and (max-width: 1152px) {
-    .press-content-header, .press-content-body, .article-detail-header {
-      padding-left: 192px;
-      box-sizing: content-box; } }
-  @media screen and (max-width: 1024px) {
-    .press-content-header, .press-content-body, .article-detail-header {
-      margin: 0 auto; } }
+@media screen and (min-width: 1025px) and (max-width: 1152px) {
+  .press-content-header, .press-content-body, .article-detail-header {
+    padding-left: 192px;
+    box-sizing: content-box; } }
+
+@media screen and (max-width: 1024px) {
+  .press-content-header, .press-content-body, .article-detail-header {
+    margin: 0 auto; } }
 
 .press-content-header {
   margin: 22px auto 29px; }
@@ -7861,13 +7860,14 @@ body.vex-open {
     .press-content-header {
       padding: 0 16px; } }
 
-.press-content-body h2 {
-  margin-bottom: 21px; }
-
-.press-content-body h4 {
-  font-size: 20px;
-  line-height: 25px;
-  margin-bottom: 6px; }
+.press-content-body {
+  min-height: 320px; }
+  .press-content-body h2 {
+    margin-bottom: 21px; }
+  .press-content-body h4 {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 6px; }
 
 .multicolumn2, .press-company-description {
   border-bottom: 1px solid #f2f2f2;

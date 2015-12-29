@@ -10905,8 +10905,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 %press-content-inner-base {
     @extend .wrapper-8-col;
     
-    min-height: 320px;
-    
     @include at-query(null, $postLarge, $xLarge){
         padding-left: 192px;
         box-sizing: content-box;
@@ -10926,8 +10924,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         margin: 0px;
     }
     
-    
-    
     @include at-query($max, $medium){
         padding: 0 $gutter;
 
@@ -10944,6 +10940,8 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 .press-content-body {
     @extend %press-content-inner-base;
     
+    min-height: 320px;
+
     h2 {
         margin-bottom: 21px;
     }
