@@ -37,6 +37,7 @@
           <h5>{{ celebrity.byline }}</h5>
         </div>
       {% endif %}
+
     </div>
 
     {% get_placeholder celebrity.content as celebrity_content %}
@@ -45,6 +46,12 @@
         {{ celebrity_content }}
       </div>
     {% endif %}
+
+    <div class="share-buttons-row">
+      <div class="share-buttons">
+        {% include 'social-share-buttons.tmpl.html' %}
+      </div>
+    </div>
 
     {% if dresses %}
       {% include 'celebrities/dress_list.tmpl.html' %}
