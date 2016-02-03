@@ -1,4 +1,5 @@
 from django.core.urlresolvers import resolve
+from django.contrib.sites.models import Site
 
 def appname(request):
     try:
@@ -7,3 +8,7 @@ def appname(request):
         app_name = None
 
     return {'appname': app_name}
+
+def site_domain(request):
+    current_site = Site.objects.get_current()
+    return {'site_domain': current_site.domain}
