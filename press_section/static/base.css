@@ -7829,7 +7829,8 @@ body.vex-open {
   text-align: center; }
 
 .share-buttons-row {
-  text-align: center; }
+  text-align: center;
+  margin: 32px 0; }
 
 .press-content-hero h2,
 .press-content-hero h3,
