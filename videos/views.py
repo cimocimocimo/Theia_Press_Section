@@ -10,7 +10,7 @@ from .models import Video
 def index(request, page_number=1):
 
     items_per_page = 4
-    query_set = Video.objects.all().order_by('published_date')
+    query_set = Video.objects.all().order_by('-published_date')
     paginator = Paginator(query_set, items_per_page)
     base_url = reverse('videos:index')
 
