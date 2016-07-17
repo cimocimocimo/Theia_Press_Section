@@ -5,7 +5,7 @@ from press_section.settings.s3_base import *
 Local Base Development Settings
 """
 
-TEMPLATE_DEBUG = DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 

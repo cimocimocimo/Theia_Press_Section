@@ -69,12 +69,6 @@ COMPRESS_CSS_FILTERS = [
 
 SITE_ID = 1
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader'
-)
-
 MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -82,7 +76,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
@@ -91,25 +85,33 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.language.LanguageCookieMiddleware'
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.request',
-    'django.core.context_processors.media',
-    'django.core.context_processors.csrf',
-    'django.core.context_processors.tz',
-    'sekizai.context_processors.sekizai',
-    'django.core.context_processors.static',
-    'cms.context_processors.cms_settings',
-    'press_section.context_processors.appname',
-    'press_section.context_processors.site_domain',
-)
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'press_section', 'templates'),
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'press_section', 'templates'),
+        ],
+        'OPTIONS': {
+            'context_processors':
+            (
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.request',
+                'django.core.context_processors.media',
+                'django.core.context_processors.csrf',
+                'django.core.context_processors.tz',
+                'sekizai.context_processors.sekizai',
+                'django.core.context_processors.static',
+                'cms.context_processors.cms_settings',
+                'press_section.context_processors.appname',
+                'press_section.context_processors.site_domain',
+            )
+        }
+    },
+]
 
 INSTALLED_APPS = (
 
@@ -135,7 +137,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'cms',
-    'mptt',
+    'treebeard',
     'menus',
     'sekizai',
     'djangocms_style',
@@ -205,23 +207,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-MIGRATION_MODULES = {
-    'cms': 'cms.migrations_django',
-    'menus': 'menus.migrations_django',
-    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
-    'djangocms_column': 'djangocms_column.migrations_django',
-    'djangocms_file': 'djangocms_file.migrations_django',
-    'djangocms_flash': 'djangocms_flash.migrations_django',
-    'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
-    'djangocms_inherit': 'djangocms_inherit.migrations_django',
-    'djangocms_link': 'djangocms_link.migrations_django',
-    'djangocms_picture': 'djangocms_picture.migrations_django',
-    'djangocms_style': 'djangocms_style.migrations_django',
-    'djangocms_teaser': 'djangocms_teaser.migrations_django',
-    'djangocms_video': 'djangocms_video.migrations_django',
-    'djangocms_snippet': 'djangocms_snippet.migrations_django',
-}
 
 CORS_ORIGIN_ALLOW_ALL = True
 
