@@ -35,14 +35,15 @@
         {% endif %}
     {% endblock %}{% endspaceless %}
 
+    <!-- Social tags ================================================ -->
+    {% block open_graph %}
+      {% include 'open_graph/required.tmpl.html' %}
     {% endblock %}
     
     {% comment %}
     <!-- **TODO** port these snippets to the press section from the Shopify templates. -->
-    {% include 'open-graph-tags' %}
-    {% include 'twitter-card' %}
-    {% endcomment %}
-
+    {% include 'twitter-card' %}    {% endcomment %}
+    
     <!-- Helpers ================================================== -->
     {% comment %}
     <!-- **TODO** -->
