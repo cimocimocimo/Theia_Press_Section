@@ -42,6 +42,7 @@
     
     {% comment %}
     <!-- **TODO** port these snippets to the press section from the Shopify templates. -->
+
     {% include 'twitter-card' %}    {% endcomment %}
     
     <!-- Helpers ================================================== -->
@@ -190,6 +191,17 @@
         }());
     </script>
     {% endcompress %}
+    
+    <!-- pinterest -->
+    <!--
+         http://stackoverflow.com/questions/9352021/how-can-i-rerender-pinterests-pin-it-button
+         Allows initialization of pin buttons after page load using pinterestParsePinButtons()
+         Optially pass an element to only parse it and children for pin buttons.
+       -->
+    <script defer async
+            type="text/javascript"
+            src="//assets.pinterest.com/js/pinit.js"
+            data-pin-build="pinterestParsePinButtons"></script>
     
     <script type="text/template" id="loaderAnimationTemplate">
         <div class="spinner">

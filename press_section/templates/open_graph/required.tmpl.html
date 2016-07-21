@@ -4,7 +4,7 @@
   Or uses the values passed using the "with" keyword
   Args: title, type, url, image
   {% endcomment %}
-  {% load staticfiles %}
+  {% load staticfiles static %}
 {% endspaceless %}<!-- Required Open Graph Tags -->
 <meta property="og:title" content="{% spaceless %}
                                    {% if title %}
@@ -12,25 +12,26 @@
                                    {% else %}
                                    {{ page_title }}
                                    {% endif %}
-{% endspaceless %}" />
+{% endspaceless %}">
 <meta property="og:type" content="{% spaceless %}
                                   {% if type %}
                                   {{ type }}
                                   {% else %}
-                                  article
+                                  website
                                   {% endif %}
-{% endspaceless %}" />
+{% endspaceless %}">
 <meta property="og:url" content="{% spaceless %}
                                  {% if url %}
                                  {{ url }}
                                  {% else %}
                                  {{ request.build_absolute_uri }}
                                  {% endif %}
-{% endspaceless %}" />
+{% endspaceless %}">
 <meta property="og:image" content="{% spaceless %}
                                    {% if image %}
                                    {{ image }}
                                    {% else %}
                                    {{ request.scheme }}://{{ request.get_host }}{% static "theia-logo.png" %}
                                    {% endif %}
-{% endspaceless %}" />
+{% endspaceless %}">
+<meta property="og:site_name" content="THEIA">

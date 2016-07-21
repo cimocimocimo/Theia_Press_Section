@@ -1,6 +1,20 @@
 {% extends "base.tmpl.html" %}
 {% load staticfiles sekizai_tags pagination_tags embed_video_tags %}
 
+{% block title %}{{ video.title }}{% endblock %}
+
+{% block meta %}
+  {% if video.content %}
+    <meta name="description" content="{{ video.content }}">
+  {% endif %}
+{% endblock %}
+
+{% block open_graph %}
+  {% video video.video as press_video %}
+    {% include 'open_graph/required.tmpl.html' with title=video.title type='video.other' url=press_video.url image=press_video.thumbnail %}
+  {% endvideo %}
+{% endblock %}
+
 {% block page_header %}
   <header class="press-content-header">
     <h2>{{ video.title }}</h2>
@@ -14,7 +28,10 @@
     <div class="video-detail-block">
 
       <div class="video-block">
-        {% video video.video "100%x100%" %}
+
+        {% video video.video as press_video %}
+          {% video press_video "100%x100%" %}
+        {% endvideo %}
       </div>
 
       <div class="body-block">
