@@ -1,6 +1,20 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block meta %}
+    {% if article.excerpt %}
+      <meta name="description" content="{{ article.excerpt }}">
+    {% endif %}
+{% endblock %}
+
+{% block open_graph %}
+  {% thumbnail article.screenshot '736' as img %}
+  {% include 'open_graph/required.tmpl.html' with title=article.title type='article' image=img %}
+  {% endthumbnail %}
+{% endblock %}
+
 {% block page_header %}
   <header class="article-detail-header">
     <h2>{{ article.title }}</h2>

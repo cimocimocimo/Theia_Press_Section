@@ -1,5 +1,11 @@
-{% load cms_tags compress staticfiles sekizai_tags menu_tags %}
-<!doctype html>
+{% spaceless %}
+  {% load cms_tags compress staticfiles sekizai_tags menu_tags %}
+  
+  {% comment %}Load CMS page data{% endcomment %}
+  {% page_attribute "page_title" as page_title %}
+  {% page_attribute "title" as title %}
+  
+{% endspaceless %}<!doctype html>
 <!--[if lt IE 9]><html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
@@ -11,32 +17,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <!-- Title and description ================================================== -->
-    <title>
-      {% block title %}
-        {% comment %}
-        <!-- **TODO** for the title tag generator from the Shopify theme. -->
-        {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-        {% endcomment %}
-      {% endblock %}
-    </title>
-
-    {% comment %}
-    <!-- **TODO** port this over -->
-    {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-    {% endcomment %}
+    <title>{% spaceless %}
+        {% block title %}
+          {{ page_title }}
+          {% comment %}
+          <!-- **TODO** for the title tag generator from the Shopify theme. -->
+          {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+          {% endcomment %}
+        {% endblock %}
+    {% endspaceless %}</title>
 
     <!-- Page meta ================================================== -->
-    {% block meta %}
+    {% spaceless %}{% block meta %}
+        {% page_attribute "meta_description" as meta_description %}
+        {% if meta_description %}
+          <meta name="description" content="{{ meta_description }}">
+        {% endif %}
+    {% endblock %}{% endspaceless %}
+
+    <!-- Social tags ================================================ -->
+    {% block open_graph %}
+      {% include 'open_graph/required.tmpl.html' %}
     {% endblock %}
     
     {% comment %}
     <!-- **TODO** port these snippets to the press section from the Shopify templates. -->
-    {% include 'open-graph-tags' %}
-    {% include 'twitter-card' %}
-    {% endcomment %}
 
+    {% include 'twitter-card' %}    {% endcomment %}
+    
     <!-- Helpers ================================================== -->
     {% comment %}
     <!-- **TODO** -->
@@ -183,6 +191,17 @@
         }());
     </script>
     {% endcompress %}
+    
+    <!-- pinterest -->
+    <!--
+         http://stackoverflow.com/questions/9352021/how-can-i-rerender-pinterests-pin-it-button
+         Allows initialization of pin buttons after page load using pinterestParsePinButtons()
+         Optially pass an element to only parse it and children for pin buttons.
+       -->
+    <script defer async
+            type="text/javascript"
+            src="//assets.pinterest.com/js/pinit.js"
+            data-pin-build="pinterestParsePinButtons"></script>
     
     <script type="text/template" id="loaderAnimationTemplate">
         <div class="spinner">

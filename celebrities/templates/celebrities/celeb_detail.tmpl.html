@@ -1,7 +1,15 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags thumbnail cms_extra_tags pagination_tags %}
 
+{% block title %}THEIA - {{ celebrity.name }}{% endblock %}
+
 {% block meta %}
+  {% if celebrity.byline %}
+    <meta name="description" content="{{ celebrity.byline }}">
+  {% endif %}
+{% endblock %}
+
+{% block open_graph %}
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="http://{{ site_domain }}{{ request.path }}" />
   <meta property="og:title" content="{{ celebrity.name }}" />
