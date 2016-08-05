@@ -226,11 +226,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic.svg#13db03934b676bad49f0835d401d12db" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic.svg#13db03934b676bad49f0835d401d12db') format('svg'); /* Legacy iOS */
     
     font-style:   normal;
     font-weight:  400;
@@ -238,11 +238,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-bold.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-bold.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-bold.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-bold.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-bold.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-bold.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a') format('svg'); /* Legacy iOS */
     
     font-style:   normal;
     font-weight:  700;
@@ -250,11 +250,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-bold-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-bold-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-bold-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-bold-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-bold-italic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-bold-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-bold-italic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-bold-italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25') format('svg'); /* Legacy iOS */
     
     font-style:   italic;
     font-weight:  700;
@@ -262,11 +262,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-italic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-italic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65') format('svg'); /* Legacy iOS */
     
     font-style:   italic;
     font-weight:  400;
@@ -2853,38 +2853,41 @@ label.error {
     width: 1px;
 }
 
+%icon-pseudo-element-base {
+    /* show the icon if modernizer detected support */
+    display: inline;
+    font-family: $socialIconFontStack;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%icon-font-base {
+    display: inline-block;
+}
 
 $iconSelector: '[class^="icon-"], [class*=" icon-"]';
 #{$iconSelector},
 %icon-base {
-
-    .icon-fallback-text & {
-        display: none;
-
-        .supports-fontface & {
-            display: inline-block;
-        }
-    }
-
+    @extend %icon-font-base;
+    
     &:before {
-        /* hide icon by default */
-        display: none;
+        @extend %icon-pseudo-element-base;
+    }
+}
 
-        .supports-fontface & {
-            /* show the icon if modernizer detected support */
-            display: inline;
-            font-family: $socialIconFontStack;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+%icon-suffix-base {
+    @extend %icon-font-base;
+    
+    &:after {
+        @extend %icon-pseudo-element-base;
     }
 }
 
@@ -3022,7 +3025,9 @@ $iconSelector: '[class^="icon-"], [class*=" icon-"]';
 .icon-arrow-up:before {
     content: "\e618";
 }
-
+.icon-arrow-up-suffix:after {
+    content: "\e618";
+}
 .icon-arrow-right:before {
     content: "\e619";
 }
