@@ -354,7 +354,7 @@ timber.infiniteScrollInit = function(){
         nextPageUrl = '',
         $paginationBlock = $('.pagination-block');
 
-    if ($infiniteScrollBlock[0].length === 0){
+    if ($infiniteScrollBlock[0] && $infiniteScrollBlock[0].length === 0){
         return;
     }
 
