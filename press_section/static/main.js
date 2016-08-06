@@ -500,6 +500,8 @@ timber.loader = {
 
 window.theia = (function(window, document, $){
 
+    // TODO: Load settings from Django settings somehow
+    // use the pageData object somehow?
     var settings = {
         shopUrl: 'theia2.myshopify.com'
     },
@@ -508,7 +510,22 @@ window.theia = (function(window, document, $){
             cartDrawerReady: 'theia.cartDrawerReady'
         };
 
+    //
+
     // Models
+
+    function Base(){
+        this.conduit = $(document);
+    }
+    Base.prototype.publish = function(channel, data){
+        this.conduit.trigger(eventNames[channel], data);
+    }
+    Base.prototype.subscribe = function(channel, fn){
+        this.conduit.on(eventNames[channel], fn);
+    }
+    Base.prototype.unsubscribe = function(channel){
+        this.conduit.off(eventNames[channel])
+    }
 
     /*
      * Cart
@@ -531,6 +548,7 @@ window.theia = (function(window, document, $){
 
         // 'this' is returned implicitly when called with new
     }
+    extend(Cart, Base);
     Cart.prototype.loadData = function(){
         var self = this;
 
@@ -544,12 +562,14 @@ window.theia = (function(window, document, $){
 
                 // set isReady and trigger ready event
                 self.isReady = true;
-
-                $(document).trigger(eventNames.cartReady);
+                self.publish('cartReady');
             })
             .fail(function( jxhr, status, err ) {
                 console.log("Error, status = " + status + ", err = " + err);
             });
+    }
+    Cart.prototype.getCount = function(){
+        return this.data.item_count;
     }
 
     function CartDrawer(cart){
@@ -558,31 +578,41 @@ window.theia = (function(window, document, $){
         this.cart = cart;
         this.isReady = false;
 
-        $(document).on(eventNames.cartReady, function(event){
+        this.subscribe('cartReady', function(event){
             self.loadHTML();
         });
     }
+    extend(CartDrawer, Base);
     CartDrawer.prototype.loadHTML = function(){
-        this.isReady = true;
+        if (this.cart.isReady){
 
-        $(document).trigger(eventNames.cartDrawerReady)
+        }
+
+        this.isReady = true;
+        this.publish('cartDrawerReady');
     }
 
     function CartIndicator(cart){
         var self = this;
 
         this.cart = cart;
+        this.$element = $('.js-cart-toggle');
+        this.$count = this.$element.find('.count');
 
-        $(document).on(eventNames.cartReady, function(event){
+        this.subscribe('cartReady', function(event){
             self.updateCount();
         });
 
-        $(document).on(eventNames.cartDrawerReady, function(event){
+        this.subscribe('cartDrawerReady', function(event){
             self.activateLink();
         });
     }
+    extend(CartIndicator, Base);
     CartIndicator.prototype.updateCount = function(){
         console.log( 'CartIndicator.updateCount()' );
+        this.$count
+            .text(this.cart.getCount())
+            .addClass('positive-count');
     }
     CartIndicator.prototype.activateLink = function(){
         console.log('CartIndicator.activateLink()');
@@ -599,6 +629,12 @@ window.theia = (function(window, document, $){
      when cart indicator is clicked, the cart dropdown is shown
 
      */
+
+    // helpers
+    function extend(ChildClass, ParentClass) {
+        ChildClass.prototype = new ParentClass();
+        ChildClass.prototype.constructor = ChildClass;
+    }
 
     function privateInit(){
         // create instances
