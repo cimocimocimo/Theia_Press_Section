@@ -610,13 +610,19 @@ window.theia = (function(window, document, $){
     }
     extend(CartIndicator, Base);
     CartIndicator.prototype.updateCount = function(){
-        console.log( 'CartIndicator.updateCount()' );
-        this.$count
-            .text(this.cart.getCount())
-            .addClass('positive-count');
+        var count = this.cart.getCount();
+
+        console.log( count );
+
+
+        if (count > 0){
+            this.$count
+                .text(count)
+                .addClass('positive-count');
+        }
     }
     CartIndicator.prototype.activateLink = function(){
-        console.log('CartIndicator.activateLink()');
+
     }
 
     /*

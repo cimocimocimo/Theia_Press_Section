@@ -6,7 +6,7 @@
     {% endif %}
     <li><a class="main-menu-link" href="{{ shopify.shop_url }}collections/shop/">Shop</a></li>
     <li><a class="main-menu-link" href="{{ shopify.shop_url }}collections/bridal/">Bridal</a></li>
-    <li><a class="main-menu-link js-has-sub-menu active" href="http://press.theiacouture.com/">Press</a>{% if mobile %}
+    <li><a class="main-menu-link js-has-sub-menu active" href="http://{{ site_domain }}/">Press</a>{% if mobile %}
       <ul class="sub-menu-mobile js-open">
         {% show_menu 0 2 100 100 "menu.tmpl.html" %}
       </ul>{% endif %}</li>
