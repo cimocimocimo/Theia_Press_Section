@@ -15,5 +15,10 @@ def site_domain(request):
     return {'site_domain': current_site.domain}
 
 # returns the main shop url for use in navigation and to show users
-def shopify_shop_url(request):
-    return {'shopify_shop_url': settings.SHOPIFY_SHOP_URL}
+def shopify_settings(request):
+    return {
+        'shopify': {
+            'shop_url': settings.SHOPIFY_SHOP_URL,
+            'shop_domain': settings.SHOPIFY_SHOP_DOMAIN
+        }
+    }

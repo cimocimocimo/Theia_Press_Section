@@ -76,6 +76,13 @@
     {% addtoblock 'js' %}
     <script>
         window.pageData = window.pageData || {};
+        
+        window.theiaSettings = {
+            shopify: {
+                shopUrl: '{{ shopify.shop_url }}',
+                shopDomain: '{{ shopify.shop_domain }}'
+            }
+        };
     </script>
     <script src="{% static 'smooth-scroll.min.js' %}"></script>
     <script src="{% static 'headroom.min.js' %}"></script>

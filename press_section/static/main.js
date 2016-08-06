@@ -503,7 +503,8 @@ window.theia = (function(window, document, $){
     // TODO: Load settings from Django settings somehow
     // use the pageData object somehow?
     var settings = {
-        shopUrl: 'theia2.myshopify.com'
+        shopUrl: window.theiaSettings.shopify.shopUrl,
+        shopDomain: window.theiaSettings.shopify.shopDomain
     },
         eventNames = {
             cartReady: 'theia.cartReady',
@@ -553,7 +554,7 @@ window.theia = (function(window, document, $){
         var self = this;
 
         $.ajax({
-            url: "//" + settings.shopUrl +  "/cart.json",
+            url: settings.shopUrl +  "cart.json",
             dataType: "jsonp"
         })
             .done(function( data ) {
