@@ -3,7 +3,7 @@ Documentation:  http://shopify.com/timber#ajax-cart
 {% endcomment %}
 <a id="cart-toggle{% if location %}-{{ location }}{% endif %}"
    class="customer-menu-link js-cart-toggle cart-count-link"
-   href="{{ shopify_shop_url }}cart">
+   href="{{ shopify.shop_url }}cart">
   <span class="icon-shopping-bag">
     <span id="cart-count{% if location %}-{{ location }}{% endif %}" class="count"></span>
   </span>
