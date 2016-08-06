@@ -498,7 +498,124 @@ timber.loader = {
     }
 };
 
+window.theia = (function(window, document, $){
+
+    var settings = {
+        shopUrl: 'theia2.myshopify.com'
+    },
+        eventNames = {
+            cartReady: 'theia.cartReady',
+            cartDrawerReady: 'theia.cartDrawerReady'
+        };
+
+    // Models
+
+    /*
+     * Cart
+     *
+     * Simple singleton for holding cart data while the user
+     * is on the page.
+     */
+    function Cart(){
+        // check for existing instance
+        if (typeof Cart._instance === 'Object'){
+            return Cart._instance;
+        }
+
+        // default properties
+        this.data = {};
+        this.isReady = false;
+
+        // store the instance
+        Cart._instance = this;
+
+        // 'this' is returned implicitly when called with new
+    }
+    Cart.prototype.loadData = function(){
+        var self = this;
+
+        $.ajax({
+            url: "//" + settings.shopUrl +  "/cart.json",
+            dataType: "jsonp"
+        })
+            .done(function( data ) {
+                // save the data
+                self.data = data;
+
+                // set isReady and trigger ready event
+                self.isReady = true;
+
+                $(document).trigger(eventNames.cartReady);
+            })
+            .fail(function( jxhr, status, err ) {
+                console.log("Error, status = " + status + ", err = " + err);
+            });
+    }
+
+    function CartDrawer(cart){
+        var self = this;
+
+        this.cart = cart;
+        this.isReady = false;
+
+        $(document).on(eventNames.cartReady, function(event){
+            self.loadHTML();
+        });
+    }
+    CartDrawer.prototype.loadHTML = function(){
+        this.isReady = true;
+
+        $(document).trigger(eventNames.cartDrawerReady)
+    }
+
+    function CartIndicator(cart){
+        var self = this;
+
+        this.cart = cart;
+
+        $(document).on(eventNames.cartReady, function(event){
+            self.updateCount();
+        });
+
+        $(document).on(eventNames.cartDrawerReady, function(event){
+            self.activateLink();
+        });
+    }
+    CartIndicator.prototype.updateCount = function(){
+        console.log( 'CartIndicator.updateCount()' );
+    }
+    CartIndicator.prototype.activateLink = function(){
+        console.log('CartIndicator.activateLink()');
+    }
+
+    /*
+
+     then update the cart quantity indicator
+
+     then create the cart dropdown drawer with the cart data
+
+     activate the cart quantity indicator click action
+
+     when cart indicator is clicked, the cart dropdown is shown
+
+     */
+
+    function privateInit(){
+        // create instances
+        var cart = new Cart(),
+            drawer = new CartDrawer(cart),
+            indicator = new CartIndicator(cart);
+
+        cart.loadData();
+    }
+
+    return {
+        init: privateInit
+    };
+})(window, document, jQuery);
+
 // Initialize Timber's JS on docready
 $(function() {
     window.timber.init();
+    window.theia.init();
 });
