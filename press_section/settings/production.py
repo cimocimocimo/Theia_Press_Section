@@ -13,6 +13,7 @@ ALLOWED_HOSTS = ['press.theiacouture.com', 'press-section-dev.elasticbeanstalk.c
 
 # Production Shopify settings
 SHOPIFY_SHOP_NAME = 'theia'
+SHOPIFY_SHOP_URL = 'https://theiacouture.com/'
 SHOPIFY_ADMIN_URL = "https://%s:%s@%s.myshopify.com/admin" % (SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
 
 # Database

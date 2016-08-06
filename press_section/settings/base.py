@@ -108,6 +108,7 @@ TEMPLATES = [
                 'cms.context_processors.cms_settings',
                 'press_section.context_processors.appname',
                 'press_section.context_processors.site_domain',
+                'press_section.context_processors.shopify_shop_url',
             )
         }
     },
