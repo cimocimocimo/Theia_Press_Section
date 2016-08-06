@@ -170,10 +170,11 @@ $radius: 3px;
 
 
 // header heights
-$headerTopRowHeight: 32px;
+$headerTopRowHeight: 53px;
 $desktopHeaderMainRowHeight: 85px;
 $mobileHeaderMainRowHeight: 88px;
-
+$headerHeightDesktop: $headerTopRowHeight + $desktopHeaderMainRowHeight;
+$headerHeightMobile: $headerTopRowHeight + $mobileHeaderMainRowHeight;
 
 // moblie side nav
 $mobileNavMenuWidth: 258px;
@@ -603,6 +604,39 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 %smaller-arial-text {
     font-family: $bodyFontStack;
     font-weight: 700;
+
+    @include at-query ($min, $postSmall) {
+        font-size: 0.6875em; /* ~11px */
+    }
+
+    @include at-query ($max, $small) {
+        font-size: 0.6875em; /* ~11px */
+    }
+}
+
+%small-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 200;
+
+    @include at-query ($min, $postSmall) {
+        font-size: 0.8125em; /* ~13px */
+    }
+
+    @include at-query ($max, $small) {
+        font-size: 0.625em; /* ~10px */
+    }
+}
+
+%smallish-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 700;
+
+    font-size: 0.75em; /* ~12px */
+}
+
+%smaller-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 200;
 
     @include at-query ($min, $postSmall) {
         font-size: 0.6875em; /* ~11px */
@@ -4999,7 +5033,7 @@ address {
         margin: 0;
         font-size: 13px;
         font-family: $centuryGothicFontStack;
-        font-weight: 700;
+        font-weight: 200;
         text-transform: uppercase;
     }
     
@@ -5225,7 +5259,7 @@ address {
 }
 
 .sub-menu-link {
-    @extend %small-arial-text;
+    @extend %small-century-gothic-text;
     @extend %sub-menu-link-base;
 
     .mobile-side-nav & {
@@ -7306,14 +7340,20 @@ address {
     .site-footer & {
         @extend %nav-menu-base;
 
-        @include at-query ($min, $postSmall) {
+        @mixin main-menu-separator(){
             li {
-                border-left: 1px solid $colorLightestGray;
-
                 &:first-child {
                     border-left-width: 0;
                 }
             }
+        }
+        
+        @include at-query (null, $postSmall, $medium) {
+            @include main-menu-separator;
+        }
+        
+        @include at-query ($min, $large) {
+            @include main-menu-separator;
         }
     }
 
@@ -7342,15 +7382,28 @@ address {
 
     .site-header &,
     .site-footer & {
-        @extend %small-bold-arial-text;
-
+        font-weight: 700;
+        font-size: 0.975em;
+        
         @include at-query ($min, $postSmall) {
             padding: $gutter/4 $gutter * 1.25;
         }
 
         @include at-query(null, $postMedium, $large){
-            padding-left: $gutter * (2/3);
-            padding-right: $gutter * (2/3);
+            padding-left: $gutter/4*3;
+            padding-right: $gutter/4*3;
+        }
+        
+        // custom breakpoint to stop menu wrapping at sizes just above medium.
+        @include at-query(null, $postMedium, 850px){
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        
+        // custom breakpoint to stop menu wrapping at sizes just above small.
+        @include at-query(null, $postSmall, 600px){
+            padding-left: 10px;
+            padding-right: 10px;
         }
         
         @include at-query ($max, $small) {
@@ -7359,6 +7412,11 @@ address {
             font-size: 12px;
         }
 
+        // custom breakpoint to stop menu wrapping on 320px wide screens (iPhone 4/5)
+        @include at-query($max, 380px){
+            font-size: 11px;
+            margin: 0 4px;
+        }
     }
     
     .mobile-side-nav & {
@@ -7366,7 +7424,7 @@ address {
         @extend %icon-base;
         @extend .icon-arrow-left;
 
-        font-weight: 700;
+        font-weight: 200;
         position: relative;
         padding: $gutter 0 $gutter 20px;
 
@@ -7386,6 +7444,10 @@ address {
                 @include transform(rotate(-90deg));
             }
         }
+    }
+    
+    &.on-sale-link {
+        color: $colorGold;
     }
 }
 
@@ -7486,11 +7548,12 @@ address {
 
     display: block;
     position: relative;
+    text-transform: uppercase;
 
     .site-header & {
 
         .label {
-            @extend %small-bold-arial-text;
+            @extend %small-century-gothic-text;
         }
 
         /* Desktop */
@@ -7562,8 +7625,9 @@ address {
 
 .secondary-menu-link {
     @extend %gray-hover-gold-link;
-    @extend %small-bold-arial-text;
+    @extend %small-century-gothic-text;
 
+    text-transform: uppercase;
     padding: 3px $gutter/2 2px;
 }
 
@@ -7578,7 +7642,7 @@ address {
     }
 
     .count {
-        @extend %smaller-arial-text;
+        @extend %smaller-century-gothic-text;
         @include prefix(border-radius, 2px);
         @include transform('scale(0)');
         @include transition();
@@ -9416,12 +9480,11 @@ $opacity-not-active: .25;
 .header-container {
     @extend %mobile-side-nav-transitions;
 
-    overflow-x: hidden;
-    position: relative;
     left: 0;
 
     &.menu-open {
         left: -$mobileNavMenuWidth;
+        overflow-y: hidden; // disables scroll when menu open
     }
 }
 
