@@ -354,7 +354,7 @@ timber.infiniteScrollInit = function(){
         nextPageUrl = '',
         $paginationBlock = $('.pagination-block');
 
-    if ($infiniteScrollBlock[0].length === 0){
+    if ($infiniteScrollBlock[0] && $infiniteScrollBlock[0].length === 0){
         return;
     }
 
@@ -498,7 +498,167 @@ timber.loader = {
     }
 };
 
+window.theia = (function(window, document, $){
+
+    // TODO: Load settings from Django settings somehow
+    // use the pageData object somehow?
+    var settings = {
+        shopUrl: window.theiaSettings.shopify.shopUrl,
+        shopDomain: window.theiaSettings.shopify.shopDomain
+    },
+        eventNames = {
+            cartReady: 'theia.cartReady',
+            cartDrawerReady: 'theia.cartDrawerReady'
+        };
+
+    //
+
+    // Models
+
+    function Base(){
+        this.conduit = $(document);
+    }
+    Base.prototype.publish = function(channel, data){
+        this.conduit.trigger(eventNames[channel], data);
+    }
+    Base.prototype.subscribe = function(channel, fn){
+        this.conduit.on(eventNames[channel], fn);
+    }
+    Base.prototype.unsubscribe = function(channel){
+        this.conduit.off(eventNames[channel])
+    }
+
+    /*
+     * Cart
+     *
+     * Simple singleton for holding cart data while the user
+     * is on the page.
+     */
+    function Cart(){
+        // check for existing instance
+        if (typeof Cart._instance === 'Object'){
+            return Cart._instance;
+        }
+
+        // default properties
+        this.data = {};
+        this.isReady = false;
+
+        // store the instance
+        Cart._instance = this;
+
+        // 'this' is returned implicitly when called with new
+    }
+    extend(Cart, Base);
+    Cart.prototype.loadData = function(){
+        var self = this;
+
+        $.ajax({
+            url: settings.shopUrl +  "cart.json",
+            dataType: "jsonp"
+        })
+            .done(function( data ) {
+                // save the data
+                self.data = data;
+
+                // set isReady and trigger ready event
+                self.isReady = true;
+                self.publish('cartReady');
+            })
+            .fail(function( jxhr, status, err ) {
+                console.log("Error, status = " + status + ", err = " + err);
+            });
+    }
+    Cart.prototype.getCount = function(){
+        return this.data.item_count;
+    }
+
+    function CartDrawer(cart){
+        var self = this;
+
+        this.cart = cart;
+        this.isReady = false;
+
+        this.subscribe('cartReady', function(event){
+            self.loadHTML();
+        });
+    }
+    extend(CartDrawer, Base);
+    CartDrawer.prototype.loadHTML = function(){
+        if (this.cart.isReady){
+
+        }
+
+        this.isReady = true;
+        this.publish('cartDrawerReady');
+    }
+
+    function CartIndicator(cart){
+        var self = this;
+
+        this.cart = cart;
+        this.$element = $('.js-cart-toggle');
+        this.$count = this.$element.find('.count');
+
+        this.subscribe('cartReady', function(event){
+            self.updateCount();
+        });
+
+        this.subscribe('cartDrawerReady', function(event){
+            self.activateLink();
+        });
+    }
+    extend(CartIndicator, Base);
+    CartIndicator.prototype.updateCount = function(){
+        var count = this.cart.getCount();
+
+        console.log( count );
+
+
+        if (count > 0){
+            this.$count
+                .text(count)
+                .addClass('positive-count');
+        }
+    }
+    CartIndicator.prototype.activateLink = function(){
+
+    }
+
+    /*
+
+     then update the cart quantity indicator
+
+     then create the cart dropdown drawer with the cart data
+
+     activate the cart quantity indicator click action
+
+     when cart indicator is clicked, the cart dropdown is shown
+
+     */
+
+    // helpers
+    function extend(ChildClass, ParentClass) {
+        ChildClass.prototype = new ParentClass();
+        ChildClass.prototype.constructor = ChildClass;
+    }
+
+    function privateInit(){
+        // create instances
+        var cart = new Cart(),
+            drawer = new CartDrawer(cart),
+            indicator = new CartIndicator(cart);
+
+        cart.loadData();
+    }
+
+    return {
+        init: privateInit
+    };
+})(window, document, jQuery);
+
 // Initialize Timber's JS on docready
 $(function() {
     window.timber.init();
+    window.theia.init();
 });
