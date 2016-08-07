@@ -1,8 +1,8 @@
 {% load cms_tags staticfiles sekizai_tags %}
 
-<div class="events-plugin-block">
+{% if event %}
+  <div class="events-plugin-block">
 
-  {% if event %}
     {% include 'events/events_plugin_summary.tmpl.html' %}
 
     <div class="button-row">
@@ -12,8 +12,5 @@
       </a>
     </div>
 
-  {% else %}
-    <p>No event is available.</p>
-  {% endif %}
-
-</div>
+  </div>
+{% endif %}

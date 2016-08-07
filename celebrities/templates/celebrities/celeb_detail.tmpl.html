@@ -1,6 +1,27 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags thumbnail cms_extra_tags pagination_tags %}
 
+{% block title %}THEIA - {{ celebrity.name }}{% endblock %}
+
+{% block meta %}
+  {% if celebrity.byline %}
+    <meta name="description" content="{{ celebrity.byline }}">
+  {% endif %}
+{% endblock %}
+
+{% block open_graph %}
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="http://{{ site_domain }}{{ request.path }}" />
+  <meta property="og:title" content="{{ celebrity.name }}" />
+  {% thumbnail celebrity.main_image '832' as img %}
+  <meta property="og:image" content="{{ img.url }}" />
+  {% endthumbnail %}
+  {% if celebrity.byline %}
+    <meta property="og:description" content="{{ celebrity.byline }}" />
+  {% endif %}
+  <meta property="og:site_name" content="THEIA" />
+{% endblock %}
+
 {% block page_header %}
   <h2>{{ celebrity.name }}</h2>
 {% endblock %}
@@ -24,6 +45,7 @@
           <h5>{{ celebrity.byline }}</h5>
         </div>
       {% endif %}
+
     </div>
 
     {% get_placeholder celebrity.content as celebrity_content %}
@@ -32,6 +54,12 @@
         {{ celebrity_content }}
       </div>
     {% endif %}
+
+    <div class="share-buttons-row">
+      <div class="share-buttons">
+        {% include 'social-share-buttons.tmpl.html' %}
+      </div>
+    </div>
 
     {% if dresses %}
       {% include 'celebrities/dress_list.tmpl.html' %}

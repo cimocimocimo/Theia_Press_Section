@@ -5,7 +5,7 @@ from press_section.settings.s3_base import *
 Local Base Development Settings
 """
 
-TEMPLATE_DEBUG = DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -22,6 +22,8 @@ DATABASES = {
 
 # Shopify settings
 SHOPIFY_SHOP_NAME = 'theia2'
+SHOPIFY_SHOP_URL = 'https://theia2.myshopify.com/'
+SHOPIFY_SHOP_DOMAIN = 'theia.myshopify.com'
 SHOPIFY_ADMIN_URL = "https://%s:%s@%s.myshopify.com/admin" % (SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
 
 # switch between local and s3 storage

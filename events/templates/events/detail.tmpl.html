@@ -1,6 +1,24 @@
 {% extends "base.tmpl.html" %}
 {% load cms_tags staticfiles sekizai_tags menu_tags pagination_tags thumbnail %}
 
+{% block title %}THEIA - {{ event.title }}{% endblock %}
+
+{% block meta %}
+  {% if event.content %}
+    <meta name="description" content="{{ event.content }}">
+  {% endif %}
+{% endblock %}
+
+{% block open_graph %}
+    {% if event.main_image %}
+      {% thumbnail event.main_image '736' as img %}
+        {% include 'open_graph/required.tmpl.html' with title=event.title image=img %}
+      {% endthumbnail %}
+    {% else %}
+      {% include 'open_graph/required.tmpl.html' with title=event.title %}
+    {% endif %}
+{% endblock %}
+
 {% block page_header %}
   <header class="press-content-header">
     <h2>{{ event.title }}</h2>

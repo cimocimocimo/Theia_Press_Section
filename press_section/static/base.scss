@@ -170,10 +170,11 @@ $radius: 3px;
 
 
 // header heights
-$headerTopRowHeight: 32px;
+$headerTopRowHeight: 53px;
 $desktopHeaderMainRowHeight: 85px;
 $mobileHeaderMainRowHeight: 88px;
-
+$headerHeightDesktop: $headerTopRowHeight + $desktopHeaderMainRowHeight;
+$headerHeightMobile: $headerTopRowHeight + $mobileHeaderMainRowHeight;
 
 // moblie side nav
 $mobileNavMenuWidth: 258px;
@@ -226,11 +227,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic.svg#13db03934b676bad49f0835d401d12db" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic.svg#13db03934b676bad49f0835d401d12db') format('svg'); /* Legacy iOS */
     
     font-style:   normal;
     font-weight:  400;
@@ -238,11 +239,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-bold.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-bold.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-bold.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-bold.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-bold.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-bold.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-bold.svg#e8822cb86844068280e5784dfd42de7a') format('svg'); /* Legacy iOS */
     
     font-style:   normal;
     font-weight:  700;
@@ -250,11 +251,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-bold-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-bold-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-bold-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-bold-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-bold-italic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-bold-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-bold-italic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-bold-italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-bold-italic.svg#abac0b3501277adea494bb2ed7019c25') format('svg'); /* Legacy iOS */
     
     font-style:   italic;
     font-weight:  700;
@@ -262,11 +263,11 @@ $zindexNavigation: 10000;
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('{{ "century-gothic-italic.eot" | asset_url }}'); /* IE9 Compat Modes */
-    src: url('{{ "century-gothic-italic.eot?#iefix" | asset_url }}') format('embedded-opentype'), /* IE6-IE8 */
-    url('{{ "century-gothic-italic.woff" | asset_url }}') format('woff'), /* Modern Browsers */
-    url('{{ "century-gothic-italic.ttf" | asset_url }}')  format('truetype'), /* Safari, Android, iOS */
-    url('{{ "century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65" | asset_url }}') format('svg'); /* Legacy iOS */
+    src: url('century-gothic-italic.eot'); /* IE9 Compat Modes */
+    src: url('century-gothic-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('century-gothic-italic.woff') format('woff'), /* Modern Browsers */
+    url('century-gothic-italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('century-gothic-italic.svg#0055fdb458fa7b470a37f9e48d363a65') format('svg'); /* Legacy iOS */
     
     font-style:   italic;
     font-weight:  400;
@@ -603,6 +604,39 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 %smaller-arial-text {
     font-family: $bodyFontStack;
     font-weight: 700;
+
+    @include at-query ($min, $postSmall) {
+        font-size: 0.6875em; /* ~11px */
+    }
+
+    @include at-query ($max, $small) {
+        font-size: 0.6875em; /* ~11px */
+    }
+}
+
+%small-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 200;
+
+    @include at-query ($min, $postSmall) {
+        font-size: 0.8125em; /* ~13px */
+    }
+
+    @include at-query ($max, $small) {
+        font-size: 0.625em; /* ~10px */
+    }
+}
+
+%smallish-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 700;
+
+    font-size: 0.75em; /* ~12px */
+}
+
+%smaller-century-gothic-text {
+    font-family: $centuryGothicFontStack;
+    font-weight: 200;
 
     @include at-query ($min, $postSmall) {
         font-size: 0.6875em; /* ~11px */
@@ -2853,38 +2887,41 @@ label.error {
     width: 1px;
 }
 
+%icon-pseudo-element-base {
+    /* show the icon if modernizer detected support */
+    display: inline;
+    font-family: $socialIconFontStack;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%icon-font-base {
+    display: inline-block;
+}
 
 $iconSelector: '[class^="icon-"], [class*=" icon-"]';
 #{$iconSelector},
 %icon-base {
-
-    .icon-fallback-text & {
-        display: none;
-
-        .supports-fontface & {
-            display: inline-block;
-        }
-    }
-
+    @extend %icon-font-base;
+    
     &:before {
-        /* hide icon by default */
-        display: none;
+        @extend %icon-pseudo-element-base;
+    }
+}
 
-        .supports-fontface & {
-            /* show the icon if modernizer detected support */
-            display: inline;
-            font-family: $socialIconFontStack;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 1;
-
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+%icon-suffix-base {
+    @extend %icon-font-base;
+    
+    &:after {
+        @extend %icon-pseudo-element-base;
     }
 }
 
@@ -3022,7 +3059,9 @@ $iconSelector: '[class^="icon-"], [class*=" icon-"]';
 .icon-arrow-up:before {
     content: "\e618";
 }
-
+.icon-arrow-up-suffix:after {
+    content: "\e618";
+}
 .icon-arrow-right:before {
     content: "\e619";
 }
@@ -4994,7 +5033,7 @@ address {
         margin: 0;
         font-size: 13px;
         font-family: $centuryGothicFontStack;
-        font-weight: 700;
+        font-weight: 200;
         text-transform: uppercase;
     }
     
@@ -5220,7 +5259,7 @@ address {
 }
 
 .sub-menu-link {
-    @extend %small-arial-text;
+    @extend %small-century-gothic-text;
     @extend %sub-menu-link-base;
 
     .mobile-side-nav & {
@@ -7301,14 +7340,20 @@ address {
     .site-footer & {
         @extend %nav-menu-base;
 
-        @include at-query ($min, $postSmall) {
+        @mixin main-menu-separator(){
             li {
-                border-left: 1px solid $colorLightestGray;
-
                 &:first-child {
                     border-left-width: 0;
                 }
             }
+        }
+        
+        @include at-query (null, $postSmall, $medium) {
+            @include main-menu-separator;
+        }
+        
+        @include at-query ($min, $large) {
+            @include main-menu-separator;
         }
     }
 
@@ -7337,15 +7382,28 @@ address {
 
     .site-header &,
     .site-footer & {
-        @extend %small-bold-arial-text;
-
+        font-weight: 700;
+        font-size: 0.975em;
+        
         @include at-query ($min, $postSmall) {
             padding: $gutter/4 $gutter * 1.25;
         }
 
         @include at-query(null, $postMedium, $large){
-            padding-left: $gutter * (2/3);
-            padding-right: $gutter * (2/3);
+            padding-left: $gutter/4*3;
+            padding-right: $gutter/4*3;
+        }
+        
+        // custom breakpoint to stop menu wrapping at sizes just above medium.
+        @include at-query(null, $postMedium, 850px){
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        
+        // custom breakpoint to stop menu wrapping at sizes just above small.
+        @include at-query(null, $postSmall, 600px){
+            padding-left: 10px;
+            padding-right: 10px;
         }
         
         @include at-query ($max, $small) {
@@ -7354,6 +7412,11 @@ address {
             font-size: 12px;
         }
 
+        // custom breakpoint to stop menu wrapping on 320px wide screens (iPhone 4/5)
+        @include at-query($max, 380px){
+            font-size: 11px;
+            margin: 0 4px;
+        }
     }
     
     .mobile-side-nav & {
@@ -7361,7 +7424,7 @@ address {
         @extend %icon-base;
         @extend .icon-arrow-left;
 
-        font-weight: 700;
+        font-weight: 200;
         position: relative;
         padding: $gutter 0 $gutter 20px;
 
@@ -7381,6 +7444,10 @@ address {
                 @include transform(rotate(-90deg));
             }
         }
+    }
+    
+    &.on-sale-link {
+        color: $colorGold;
     }
 }
 
@@ -7481,11 +7548,12 @@ address {
 
     display: block;
     position: relative;
+    text-transform: uppercase;
 
     .site-header & {
 
         .label {
-            @extend %small-bold-arial-text;
+            @extend %small-century-gothic-text;
         }
 
         /* Desktop */
@@ -7557,8 +7625,9 @@ address {
 
 .secondary-menu-link {
     @extend %gray-hover-gold-link;
-    @extend %small-bold-arial-text;
+    @extend %small-century-gothic-text;
 
+    text-transform: uppercase;
     padding: 3px $gutter/2 2px;
 }
 
@@ -7573,7 +7642,7 @@ address {
     }
 
     .count {
-        @extend %smaller-arial-text;
+        @extend %smaller-century-gothic-text;
         @include prefix(border-radius, 2px);
         @include transform('scale(0)');
         @include transition();
@@ -7591,6 +7660,8 @@ address {
         text-align: center;
 
         &:before {
+            @include prefix(border-radius, 1px);
+            
             // content: '';
             display: block;
             border: 1px solid #fff;
@@ -7599,7 +7670,6 @@ address {
             position: absolute;
             top: 1px;
             left: 1px;
-            @include prefix(border-radius, 1px);
         }
 
         &.positive-count {
@@ -9410,12 +9480,11 @@ $opacity-not-active: .25;
 .header-container {
     @extend %mobile-side-nav-transitions;
 
-    overflow-x: hidden;
-    position: relative;
     left: 0;
 
     &.menu-open {
         left: -$mobileNavMenuWidth;
+        overflow-y: hidden; // disables scroll when menu open
     }
 }
 
@@ -10881,6 +10950,11 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     }
 }
 
+.share-buttons-row {
+    text-align: center;
+    margin: $gutter*2 0;
+}
+
 .press-content-hero {
     h2,
     h3,
@@ -10904,7 +10978,7 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 
 %press-content-inner-base {
     @extend .wrapper-8-col;
-
+    
     @include at-query(null, $postLarge, $xLarge){
         padding-left: 192px;
         box-sizing: content-box;
@@ -10924,8 +10998,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         margin: 0px;
     }
     
-    
-    
     @include at-query($max, $medium){
         padding: 0 $gutter;
 
@@ -10942,6 +11014,8 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
 .press-content-body {
     @extend %press-content-inner-base;
     
+    min-height: 320px;
+
     h2 {
         margin-bottom: 21px;
     }
@@ -11258,16 +11332,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     
     .body-block {
         @extend %event-summary-block-base;
-        
-    }
-    
-    .more-info-link {
-        @extend %rsaquo;
-        @extend %gold-hover-gray-underline-link;
-        @extend %small-mid-arial-text;
-
-        text-transform: uppercase;
-        font-weight: 700;
     }
     
     %event-summary-heading-base {
@@ -11334,6 +11398,15 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     }
 }
 
+.more-info-link {
+    @extend %rsaquo;
+    @extend %gold-hover-gray-underline-link;
+    @extend %small-mid-arial-text;
+
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .event-detail-block {
     %event-detail-block-base {
         padding: 0 $gutter;
@@ -11383,10 +11456,6 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     @include at-query($max, $small){
         
     }
-}
-
-.event-location-block {
-
 }
 
 .event-location-map-block {
@@ -11452,6 +11521,78 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
     .block-body {
         @extend %event-location-address-inner-block-base;
 
+    }
+}
+
+.video-summary-block,
+.video-detail-block {
+    .header-block {
+        a {
+            color: $colorWarmGray;
+            text-decoration: none;
+        }
+
+        h3 {
+            font-size: 48px;
+        }
+    }
+    
+    .video-block {
+        position: relative;
+        height: 0;
+        padding-top: percentage(1080/1920);
+        margin-bottom: $gutter;
+        
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .body-block {
+        margin: $gutter*2 0;
+        text-align: center;
+    }
+
+    .share-buttons {
+        margin-top: $gutter*2;
+    }
+    
+
+    @include at-query(null, $postSmall, $large){
+        .header-block {
+            h3 {
+                font-size: 42px;
+            }
+        }
+        
+        .body-block {
+            margin: $gutter*1.5 0;
+        }
+
+        .share-buttons {
+            margin-top: $gutter*1.5;
+        }
+    }
+    
+    @include at-query($max, $small){
+        .header-block{
+            h3 {
+                font-size: 25px;
+                line-height: 1.1;
+            }
+        }
+        
+        .body-block {
+            margin: $gutter 0;
+        }
+        
+        .share-buttons {
+            margin-top: $gutter;
+        }
     }
 }
 
@@ -11793,4 +11934,10 @@ $has-layout-support-threshold: $critical-usage-threshold !default;
         height: 200px;
         text-align: center;
     }
+}
+
+.error-no-events-found {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 21px;
 }

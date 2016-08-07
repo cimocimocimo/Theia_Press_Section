@@ -33,7 +33,9 @@
         {% show_pager base_url=base_url %}
       </div>
     {% else %}
-      <p>No events are available.</p>
+      <div class="error-no-events-found">
+        <p>No events are available.</p>
+      </div>
     {% endif %}
   </div>
 {% endblock %}

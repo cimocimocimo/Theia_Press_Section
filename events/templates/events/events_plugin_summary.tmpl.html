@@ -1,11 +1,13 @@
 {% load thumbnail %}
 <div class="event-summary-block">
-  <h3>{{ event.title }}</h3>
   <a href="{% url 'events:detail' event.slug %}">
-    <div class="image">
-      {% thumbnail event.main_image '736' as img %}
+    <h3>{{ event.title }}</h3>
+    {% if event.main_image %}
+      <div class="image">
+        {% thumbnail event.main_image '736' as img %}
         <img src="{{  img.url }}" alt="" />
       {% endthumbnail %}
-    </div>
+      </div>
+    {% endif %}
   </a>  
 </div>
