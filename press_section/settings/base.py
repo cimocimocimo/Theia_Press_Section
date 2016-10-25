@@ -36,7 +36,7 @@ WSGI_APPLICATION = 'press_section.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 LANGUAGE_CODE = 'en'
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'US/Eastern'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
