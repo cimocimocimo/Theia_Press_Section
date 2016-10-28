@@ -4,24 +4,29 @@ from django.db import models
 import re
 
 class DropboxFileMetadataQueryset(models.query.QuerySet):
-    # We may add more
-    # get product export files
+    def export_type(self, export_type):
+        return self.filter(export_type=export_type)
 
-    # get inventory export files
-    pass
+    def company(self, company):
+        return self.filter(company=company)
 
 class DropboxFileMetadataManager(models.Manager):
-    # def get_queryset(self):
-    #     return DropboxFileMetadataQueryset(self.model, using=self._db)
+    def get_queryset(self):
+        return DropboxFileMetadataQueryset(self.model, using=self._db)
 
-    # def product_extract(self):
-    #     return self.get_queryset().product_extract
-    pass
+    def export_type(self, export_type):
+        return self.get_queryset().export_type(export_type)
+
+    def company(self, company):
+        return self.get_queryset().company(company)
 
 class DropboxFileMetadata(models.Model):
 
     objects = DropboxFileMetadataManager()
     _type_company_pattern = re.compile(r'^\d{14}\.SHPFY_([A-Za-z]+)Extract_([A-Za-z]+)\.CSV$')
+
+    class Meta:
+        get_latest_by = 'server_modified'
 
     # 20161022190044.SHPFY_InventoryExtract_KayUnger.CSV
     name = models.CharField(max_length=255, unique=True)
@@ -41,8 +46,6 @@ class DropboxFileMetadata(models.Model):
     path_lower = models.CharField(max_length=2048)
     # =u'/E-Commerce/20161022190044.SHPFY_InventoryExtract_KayUnger.CSV'
     path_display = models.CharField(max_length=2048)
-    # =u'1215074343'
-    parent_shared_folder_id = models.CharField(max_length=256)
 
     export_type = models.CharField(max_length=64)
     company = models.CharField(max_length=128)
@@ -65,3 +68,9 @@ class DropboxFileMetadata(models.Model):
             return match.group(1,2)
         else:
             return None
+
+    # parse the export_type and the company from the filename just before save.
+    def save(self, *args, **kwargs):
+        self.export_type, self.company = self._get_type_company_from_filename(self.name)
+        super(DropboxFileMetadata, self).save(*args, **kwargs) # Call the "real" save() method.
+
