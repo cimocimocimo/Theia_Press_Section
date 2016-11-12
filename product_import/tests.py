@@ -1,8 +1,8 @@
 from django.test import TestCase
 
-import dropbox, csv
+import dropbox, csv, requests
 from django.conf import settings
-from .dropbox_interface import DropboxInterface
+from .interfaces import DropboxInterface
 from .models import DropboxFileMetadata
 
 # Dropbox tests
@@ -61,9 +61,16 @@ class TestDropbox(TestCase):
         files = self.dropbox_interface.list_folder()
         self.dropbox_interface.save_metadata(files)
         filemeta = DropboxFileMetadata.objects.export_type('Inventory').company('Theia').latest()
-        text = self.dbx.files_download(filemeta.dropbox_id)[1].text
-        print(text)
-        pass
+        inventory_csv_file = self.dbx.files_download(filemeta.dropbox_id)
+        self.assertIsInstance(inventory_csv_file[0], dropbox.files.FileMetadata)
+        self.assertIsInstance(inventory_csv_file[1], requests.models.Response)
+
+    def test_get_latest_from_db(self):
+        files = self.dropbox_interface.list_folder()
+        self.dropbox_interface.save_metadata(files)
+        filemeta_db = self.dropbox_interface.get_latest_from_db('Inventory', 'Theia')
+        filemeta_compare = self.dropbox_interface.get_latest('Inventory', 'Theia')
+        self.assertEqual(filemeta_compare.id, filemeta_db.dropbox_id)
 
     def tearDown(self):
         pass
@@ -72,6 +79,21 @@ class TestDropbox(TestCase):
     def tearDownClass(cls):
         pass
 
-
 class TestInventory(TestCase):
-    pass
+    @classmethod
+    def setUpClass(cls):
+        cls.dropbox_interface = DropboxInterface()
+        cls.dbx = dropbox.Dropbox(settings.DROPBOX_TOKEN)
+        files = self.dropbox_interface.list_folder()
+        self.dropbox_interface.save_metadata(files)
+        filemeta = DropboxFileMetadata.objects.export_type('Inventory').company('Theia').latest()
+
+    def setUp(self):
+        pass
+
+# Goals
+# Add all UPCs to the current products on the site
+
+
+
+# Update the inventory for all the product variants in the store.

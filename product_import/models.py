@@ -74,3 +74,45 @@ class DropboxFileMetadata(models.Model):
         self.export_type, self.company = self._get_type_company_from_filename(self.name)
         super(DropboxFileMetadata, self).save(*args, **kwargs) # Call the "real" save() method.
 
+class InventoryLine(models.Model):
+    upc = models.PositiveIntegerField()
+    quantity = models.SmallIntegerField()
+    date = models.CharField(max_length=255)
+
+    def __str__(self):
+        return 'UPC: {}, quantity: {}'.format(
+            self.upc,
+            self.quantity
+        )
+
+
+class Product(models.Model):
+    season = models.CharField(max_length=128)
+    style_number = models.CharField(max_length=64)
+    name = models.CharField(max_length=256)
+    division = models.CharField(max_length=64)
+    wholesale_usd = models.PositiveIntegerField()
+    retail_usd = models.PositiveIntegerField()
+    category = models.CharField(max_length=64)
+    available_start = models.DateField()
+    available_end = models.DateField()
+    description = models.TextField()
+    archived = models.BooleanField()
+    brand_id = models.CharField(max_length=64)
+    wholesale_cad = models.PositiveIntegerField()
+    retail_cad = models.PositiveIntegerField()
+
+    def __str__(self):
+        return ''
+
+class Variant(models.Model):
+    pass
+
+
+class Color(models.Model):
+    # name from Momentis database
+    name
+    code
+    # name to display on the website
+    display_name
+

@@ -3,7 +3,7 @@ from django.conf import settings
 from .models import DropboxFileMetadata
 import pytz, csv
 
-class DropboxInterface():
+class DropboxInterface:
     path = '/e-commerce'
 
     def __init__(self, path=None):
@@ -44,10 +44,15 @@ class DropboxInterface():
         files.sort(key=lambda x: x.server_modified, reverse=True)
         return filter(lambda x: export_type in x.name and company in x.name, files)[0]
 
+    def get_latest_from_db(self, export_type, company):
+        return DropboxFileMetadata.objects.export_type(export_type).company(company).latest()
+
     def get_csv_by_id(self, dropbox_id):
         filemeta, response = self.dbx.files_download(dropbox_id)
         lines = response.text.splitlines()
-        # trim the trailing comma
+        # trim the trailing comma, the export files all seem to have it. By
+        # removing it here we avoid creating an empty column on the right side
+        # of the CSV.
         lines = [l.rstrip(',') for l in lines]
         return csv.DictReader(lines)
 
