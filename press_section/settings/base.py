@@ -36,7 +36,7 @@ WSGI_APPLICATION = 'press_section.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 LANGUAGE_CODE = 'en'
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'US/Eastern'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'press_section',
     'gallery',
     'videos',
+    'product_import',
 
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
@@ -221,3 +222,6 @@ TINYMCE_DEFAULT_CONFIG = {
 # Base Shopify settings
 SHOPIFY_API_KEY = os.environ['SHOPIFY_API_KEY']
 SHOPIFY_PASSWORD = os.environ['SHOPIFY_PASSWORD']
+
+# Dropbox Settings
+DROPBOX_TOKEN = os.environ['DROPBOX_TOKEN']

@@ -13,8 +13,8 @@ DATABASES = {
  'default': {
   'ENGINE': 'django.db.backends.mysql',
   'NAME': 'theia_press_section',
-  'USER': 'root',
-  'PASSWORD': '',
+  'USER': 'theia_dev_db',
+  'PASSWORD': os.environ['DEV_DATABASE_PASSWORD'],
   'HOST': 'localhost',
   'PORT': '3306',
  }
@@ -22,9 +22,9 @@ DATABASES = {
 
 # Shopify settings
 SHOPIFY_SHOP_NAME = 'theia2'
-SHOPIFY_SHOP_URL = 'https://theia2.myshopify.com/'
-SHOPIFY_SHOP_DOMAIN = 'theia.myshopify.com'
-SHOPIFY_ADMIN_URL = "https://%s:%s@%s.myshopify.com/admin" % (SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
+SHOPIFY_SHOP_DOMAIN = '{0}.myshopify.com'.format(SHOPIFY_SHOP_NAME)
+SHOPIFY_SHOP_URL = 'https://{0}/'.format(SHOPIFY_SHOP_DOMAIN)
+SHOPIFY_ADMIN_URL = "https://{0}:{1}@{2}.myshopify.com/admin".format(SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
 
 # switch between local and s3 storage
 ENABLE_STATIC_LOCAL_STORAGE = True
