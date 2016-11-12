@@ -108,11 +108,9 @@ class Product(models.Model):
 class Variant(models.Model):
     pass
 
-
 class Color(models.Model):
     # name from Momentis database
-    name
-    code
+    name = models.CharField(max_length=64)
+    code = models.CharField(max_length=8)
     # name to display on the website
-    display_name
-
+    display_name = models.CharField(max_length=64)
