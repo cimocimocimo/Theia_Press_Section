@@ -15,3 +15,6 @@
 /press_section/static/.sass-cache/
 /press_section/media/
 /node_modules/
+
+# secret keys
+.ebextensions/secret-keys.config
