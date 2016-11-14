@@ -1,4 +1,4 @@
-# IMPORTANT this file must be kept in sync with .ebignore. Except for files that
+# IMPORTANT this file must be kept in sync with .gitignore. Except for files that
 # are supposed to be deployed to EB but not tracked in Git.
 
 /.sass-cache/
@@ -20,4 +20,5 @@
 /node_modules/
 
 # secret keys
-.ebextensions/secret-keys.config
+# IMPORTANT this is a negation to ensure that the secret keys are deployed to EB.
+!.ebextensions/secret-keys.config
