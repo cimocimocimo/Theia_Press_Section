@@ -1,23 +1,14 @@
 # IMPORTANT this file must be kept in sync with .ebignore. Except for files that
 # are supposed to be deployed to EB but not tracked in Git.
 
-/.sass-cache/
 *.pyc
 *~
 *.db
 /media/
 /static/
 /press_section/local_settings.py
-.elasticbeanstalk/
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
 /press_section/static/CACHE/
-/press_section/static/.sass-cache/
 /press_section/media/
-/node_modules/
 
 # secret keys
 .ebextensions/secret-keys.config
