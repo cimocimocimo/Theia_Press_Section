@@ -1,0 +1,14 @@
+branch-defaults:
+  devel:
+    environment: press-section-development
+  master:
+    environment: press-section-dev
+  webhook:
+    environment: press-section-development
+global:
+  application_name: press_section
+  default_ec2_keyname: theia-press-section
+  default_platform: Python 2.7
+  default_region: us-east-1
+  profile: default
+  sc: git
