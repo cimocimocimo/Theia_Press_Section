@@ -94,6 +94,9 @@ class EventsPluginModel(CMSPlugin):
         default="Events")
 
 class EventLocationHours(models.Model):
+    class Meta:
+        unique_together = (('event', 'weekday'),)
+
     WEEKDAYS = [
         (1, "Monday"),
         (2, "Tuesday"),
@@ -109,7 +112,6 @@ class EventLocationHours(models.Model):
     )
     weekday = models.IntegerField(
         choices=WEEKDAYS,
-        unique=True
     )
     from_hour = models.TimeField()
     to_hour = models.TimeField()
