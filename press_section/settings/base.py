@@ -126,7 +126,7 @@ INSTALLED_APPS = (
     'press_section',
     'gallery',
     'videos',
-    'product_import',
+    # 'product_import',
 
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
