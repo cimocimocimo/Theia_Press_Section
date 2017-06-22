@@ -220,8 +220,8 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 # Base Shopify settings
-SHOPIFY_API_KEY = os.environ['SHOPIFY_API_KEY']
-SHOPIFY_PASSWORD = os.environ['SHOPIFY_PASSWORD']
+# SHOPIFY_API_KEY = os.environ['SHOPIFY_API_KEY']
+# SHOPIFY_PASSWORD = os.environ['SHOPIFY_PASSWORD']
 
 # Dropbox Settings
 DROPBOX_TOKEN = os.environ['DROPBOX_TOKEN']
