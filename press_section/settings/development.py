@@ -21,10 +21,10 @@ DATABASES = {
 }
 
 # Shopify settings
-# SHOPIFY_SHOP_NAME = 'theia2'
-# SHOPIFY_SHOP_DOMAIN = '{0}.myshopify.com'.format(SHOPIFY_SHOP_NAME)
-# SHOPIFY_SHOP_URL = 'https://{0}/'.format(SHOPIFY_SHOP_DOMAIN)
-# SHOPIFY_ADMIN_URL = "https://{0}:{1}@{2}.myshopify.com/admin".format(SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
+SHOPIFY_SHOP_NAME = 'theia2'
+SHOPIFY_SHOP_DOMAIN = '{0}.myshopify.com'.format(SHOPIFY_SHOP_NAME)
+SHOPIFY_SHOP_URL = 'https://{0}/'.format(SHOPIFY_SHOP_DOMAIN)
+SHOPIFY_ADMIN_URL = "https://{0}:{1}@{2}.myshopify.com/admin".format(SHOPIFY_API_KEY, SHOPIFY_PASSWORD, SHOPIFY_SHOP_NAME)
 
 # switch between local and s3 storage
 ENABLE_STATIC_LOCAL_STORAGE = True
