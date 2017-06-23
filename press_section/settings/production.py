@@ -7,10 +7,11 @@ from press_section.settings.media_s3_storage import *
 Production Settings
 """
 
-TEMPLATE_DEBUG = DEBUG = False
+TEMPLATE_DEBUG = DEBUG = True
 
-ALLOWED_HOSTS = ['press.theiacouture.com',
-                 'theia-press-prod.us-east-1.elasticbeanstalk.com/']
+ALLOWED_HOSTS = ['localhost',
+                 'press.theiacouture.com',
+                 'theia-press-prod.us-east-1.elasticbeanstalk.com']
 
 # Production Shopify settings
 # SHOPIFY_SHOP_NAME = 'theia'
