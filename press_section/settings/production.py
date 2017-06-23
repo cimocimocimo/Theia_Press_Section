@@ -19,7 +19,7 @@ ALLOWED_HOSTS = ['press.theiacouture.com', 'press-section-dev.elasticbeanstalk.c
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-if 'RDS_DB_NAME' in os.environ:
+if 'PROD_RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -30,5 +30,3 @@ if 'RDS_DB_NAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         },
     }
-
-
