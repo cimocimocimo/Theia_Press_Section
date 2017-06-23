@@ -9,7 +9,8 @@ Production Settings
 
 TEMPLATE_DEBUG = DEBUG = False
 
-ALLOWED_HOSTS = ['press.theiacouture.com', 'press-section-dev.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['press.theiacouture.com',
+                 'theia-press-prod.us-east-1.elasticbeanstalk.com/']
 
 # Production Shopify settings
 # SHOPIFY_SHOP_NAME = 'theia'
